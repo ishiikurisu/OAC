@@ -26,6 +26,7 @@ smaller:
 	li $v0, 4     # tell MIPS we are printing a string
 	la $a0, less  # store the variable hi on $a0
 	syscall       # and do it
+	addi $ra, $ra, 4
 	jr $ra
 	
 bigger:
@@ -43,9 +44,11 @@ bigger:
 bltj:
 	slt $t0, $a0, $a1
 	addi $t1, $0, 1
-	beq $t0, $t1, $a2
-	jr $ra
+	bne $t0, $t1, falsebranch
+	jr $a2	
+	falsebranch:
+		jr $ra
 
 .data
 	less: .asciiz "Is smaller!"
-	more: .asciiz "Is bigger!"
+	more: .asciiz "Not smaller!"
