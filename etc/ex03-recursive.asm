@@ -36,18 +36,13 @@ rec:
 	sw $ra, 0($sp)
 	# Trying to recurse
 	addi $t0, $0, 1
-	blt $a0, $t0, loop
-	# Finishing recursion
 	add $v0, $v0, $a0
+	# Finishing recursion
 	lw $a0, 4($sp)
 	lw $ra, 0($sp)
 	addi $sp, $sp, 8
 	jr $ra
 loop:
-	# Filling stack
-	subi $sp, $sp, 8
-	sw $a0, 4($sp) 
-	sw $ra, 0($sp)	
 	# rec(n-1)
 	subi $a0, $a0, 1
 	jal rec
