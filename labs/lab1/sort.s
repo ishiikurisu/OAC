@@ -15,7 +15,7 @@ MAIN:	la $a0,vetor
 	li $a1,N
 	jal sort
 
-	la $a0,vetor
+	la $a0,vetor #!
 	li $a1,N
 	jal show
 
@@ -49,7 +49,7 @@ for2:	slti $t0,$s1,0
 	add $t2,$s2,$t1
 	lw $t3,0($t2)
 	lw $t4,4($t2)
-	slt $t0,$t3,$t4
+	slt $t0,$t4,$t3
 	beq $t0,$zero,exit2
 	move $a0,$s2
 	move $a1,$s1
