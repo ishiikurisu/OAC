@@ -9,7 +9,7 @@
 
 \title{Relatório do Experimento 1 de OAC}
 \author{
-Cristiano Silva Júnior: 13/0070629 \\
+Arthur S. Couto: 16/0002575 \\
 Cristiano Silva Júnior: 13/0070629 \\
 Cristiano Silva Júnior: 13/0070629 \\
 Cristiano Silva Júnior: 13/0070629}
@@ -24,9 +24,23 @@ Lendo o programa \textit{sort.s} dado, nota-se que ele vai realizar um  ordename
 
 \subsection{Exercício 1.2}
 
-Reutilizando o programa \textit{sort.s}, podemos analisar este algoritmo de ordenamento para outras entradas. Considerando as entradas $v_o(n) = {1,2,3,...,n}$ e $v_i(n)={n,n-1,n-2,...,1}$ para $n={1,2,3,4,5,6,7,8,9,10,20,30,40,50,60,70,80,90,100}$, podemos calcular o número de instruções para cada $n$ e calcular o tempo de execução $t$ com os valores sugeridos de frequência de clock e de CPI. A relação $n \cdot t$ na figura 1.
+Reutilizando o programa \textit{sort.s}, podemos analisar este algoritmo de ordenamento para outras entradas. Considerando as entradas $v_o(n) = {1,2,3,...,n}$ e $v_i(n)={n,n-1,n-2,...,1}$ para $n={1,2,3,4,5,6,7,8,9,10,20,30,40,50,60,70,80,90,100}$, podemos calcular o número de instruções para cada $n$ e calcular o tempo de execução $t$ com os valores sugeridos de frequência de clock e de CPI. A relação $n \cdot t$ nas figuras 1 e 2.
 
 % TODO Calcular n x t
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{ex1/best.png}
+    \caption{Melhores casos de ordenamento}
+\end{figure}
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{ex1/worst.png}
+    \caption{Piores casos de ordenamento}
+\end{figure}
+
+Nota-se que o ordenamento de um vetor ordenado é simplesmente checar se o vetor já está ordenado, logo se espera que esta operação tenha complexidade $O(n)$; enquanto que a mesma operação em um vetor inversamente ordenado é pior caso da operação de ordenação. Como está sendo usado o algoritmo Bubble Sort, a complexidade deste ordenamento é $O(n^2)$. Estas complexidades ficam evidentes nos gráficos gerados.
 
 \section{Exercício 2}
 
