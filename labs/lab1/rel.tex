@@ -53,19 +53,19 @@ O programa \textit{sortc.s} foi comentado para identificar o que cada uma das di
 Para identificar quais diretivas poderiam ser utilizadas pelo MARS, comparou-se quais as diretivas aceitas pelo MARS que eram geradas pelo GCC. Aquelas diretivas que não eram comuns a ambos programas foram removidas. A saber, somente as seguintes diretivas são aceitas pelo MARS e pelo GCC:
 
 \begin{itemize}
-    \item .globl
-    \item .align
-    \item .word
-    \item .ascii
-    \item .data
-    \item .text
-    \item .set
+    \item \textit{.globl}
+    \item \textit{.align}
+    \item \textit{.word}
+    \item \textit{.ascii}
+    \item \textit{.data}
+    \item \textit{.text}
+    \item \textit{.set}
 \end{itemize}
 
 Todas as outras foram removidas. Aparentemente, o MARS é capaz de ignorar algumas diretivas que não fazem parte da sua especificação, como .ident e .end. Além disso, o GCC compreende que algumas instruções são realizadas de forma diferente pelo MARS. Foram elas:
 
 \begin{itemize}
-    \item o GCC produzia sempre dois pares de instruções \textit{lui} e \textit{addiu} chamando \textit{labels} em seus argumentos, o que é inválido para o MARS. Neste caso, substituiu-se esse par de instruções pelas pseudo-instrução \textit{la \$rt, label}
+    \item o GCC produzia sempre dois pares de instruções \textit{lui} e \textit{addiu} chamando \textit{labels} em seus argumentos, o que é inválido para o MARS. Neste caso, substituiu-se esse par de instruções pelas pseudo-instrução \textit{la \$rr, label} onde \textit{\$rr} é o registrador desejado e \textit{label} é um label qualquer. Neste sentido, também foi necessário substituir todas as ocorrências de \textit{j label} para \textit{jr label}, já que o MARS não aceita um \textit{label} como argumento para a instrução \textit{jump}.
     \item Dever-se-á substituir as chamadas de funções da \textit{stdio.h} do GCC por operações equivalentes em MIPS dependendo da necessidade do programa. Funções como \textit{printf} e \textit{scanf} fazem operações bastante complexas com strings, que são muito complicadas de serem implementadas em Assembly à princípio.
 \end{itemize}
 
@@ -73,6 +73,10 @@ Todas as outras foram removidas. Aparentemente, o MARS é capaz de ignorar algum
 
 % TODO Fazer com que os programas convertidos do C rodem no MARS
 % TODO Contar as instruções
+
+\begin{itemize}
+    \item Sem otimizações: 1840 instruções
+\end{itemize}
 
 \section{Exercício 3}
 
