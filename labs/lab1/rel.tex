@@ -44,7 +44,35 @@ Nota-se que o ordenamento de um vetor ordenado é simplesmente checar se o vetor
 
 \section{Exercício 2}
 
-Falar sobre os programas compilados.
+\subsection{Exercício 2.1}
+
+O programa \textit{sortc.s} foi comentado para identificar o que cada uma das diretivas faz baseado nas especificações do GCC.
+
+\subsection{Exercício 2.2}
+
+Para identificar quais diretivas poderiam ser utilizadas pelo MARS, comparou-se quais as diretivas aceitas pelo MARS que eram geradas pelo GCC. Aquelas diretivas que não eram comuns a ambos programas foram removidas. A saber, somente as seguintes diretivas são aceitas pelo MARS e pelo GCC:
+
+\begin{itemize}
+    \item .globl
+    \item .align
+    \item .word
+    \item .ascii
+    \item .data
+    \item .text
+    \item .set
+\end{itemize}
+
+Todas as outras foram removidas. Aparentemente, o MARS é capaz de ignorar algumas diretivas que não fazem parte da sua especificação, como .ident e .end. Além disso, o GCC compreende que algumas instruções são realizadas de forma diferente pelo MARS. Foram elas:
+
+\begin{itemize}
+    \item o GCC produzia sempre dois pares de instruções \textit{lui} e \textit{addiu} chamando \textit{labels} em seus argumentos, o que é inválido para o MARS. Neste caso, substituiu-se esse par de instruções pelas pseudo-instrução \textit{la \$rt, label}
+    \item Dever-se-á substituir as chamadas de funções da \textit{stdio.h} do GCC por operações equivalentes em MIPS dependendo da necessidade do programa. Funções como \textit{printf} e \textit{scanf} fazem operações bastante complexas com strings, que são muito complicadas de serem implementadas em Assembly à princípio.
+\end{itemize}
+
+\subsection{Exercício 2.3}
+
+% TODO Fazer com que os programas convertidos do C rodem no MARS
+% TODO Contar as instruções
 
 \section{Exercício 3}
 
