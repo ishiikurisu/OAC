@@ -1,2 +1,2 @@
-1,
-1,
+vetor: .word 1,
+vetor: .word 1,
