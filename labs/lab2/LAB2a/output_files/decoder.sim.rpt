@@ -1,0 +1,822 @@
+Simulator report for decoder
+Wed Apr 26 13:32:35 2017
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 10.0 us      ;
+; Simulation Netlist Size     ; 316 nodes    ;
+; Simulation Coverage         ;       9.25 % ;
+; Total Number of Transitions ; 6701         ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
+; Device                      ; EP2C70F896C6 ;
++-----------------------------+--------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                                                 ;
++--------------------------------------------------------------------------------------------+---------------------------------------+---------------+
+; Option                                                                                     ; Setting                               ; Default Value ;
++--------------------------------------------------------------------------------------------+---------------------------------------+---------------+
+; Simulation mode                                                                            ; Timing                                ; Timing        ;
+; Start time                                                                                 ; 0 ns                                  ; 0 ns          ;
+; Simulation results format                                                                  ; VWF                                   ;               ;
+; Vector input source                                                                        ; C:/Users/lamar/Desktop/LAB2/TopDE.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On                                    ; On            ;
+; Check outputs                                                                              ; Off                                   ; Off           ;
+; Report simulation coverage                                                                 ; On                                    ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                                    ; On            ;
+; Display missing 1-value coverage report                                                    ; On                                    ; On            ;
+; Display missing 0-value coverage report                                                    ; On                                    ; On            ;
+; Detect setup and hold time violations                                                      ; Off                                   ; Off           ;
+; Detect glitches                                                                            ; Off                                   ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                                   ; Off           ;
+; Generate Signal Activity File                                                              ; Off                                   ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                                   ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                                   ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                                    ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                            ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                                   ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off                                   ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto                                  ; Auto          ;
++--------------------------------------------------------------------------------------------+---------------------------------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II 64-Bit to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;       9.25 % ;
+; Total nodes checked                                 ; 316          ;
+; Total output ports checked                          ; 346          ;
+; Total output ports with complete 1/0-value coverage ; 32           ;
+; Total output ports with no 1/0-value coverage       ; 313          ;
+; Total output ports with no 1-value coverage         ; 313          ;
+; Total output ports with no 0-value coverage         ; 314          ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++----------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                          ;
++-------------------------+-------------------------+------------------+
+; Node Name               ; Output Port Name        ; Output Port Type ;
++-------------------------+-------------------------+------------------+
+; |TopDE|fdiv:f1|Add0~0   ; |TopDE|fdiv:f1|Add0~0   ; combout          ;
+; |TopDE|fdiv:f1|Add0~0   ; |TopDE|fdiv:f1|Add0~1   ; cout             ;
+; |TopDE|fdiv:f1|Add0~2   ; |TopDE|fdiv:f1|Add0~2   ; combout          ;
+; |TopDE|fdiv:f1|Add0~2   ; |TopDE|fdiv:f1|Add0~3   ; cout             ;
+; |TopDE|fdiv:f1|Add0~4   ; |TopDE|fdiv:f1|Add0~4   ; combout          ;
+; |TopDE|fdiv:f1|Add0~4   ; |TopDE|fdiv:f1|Add0~5   ; cout             ;
+; |TopDE|fdiv:f1|Add0~6   ; |TopDE|fdiv:f1|Add0~6   ; combout          ;
+; |TopDE|fdiv:f1|Add0~6   ; |TopDE|fdiv:f1|Add0~7   ; cout             ;
+; |TopDE|fdiv:f1|Add0~8   ; |TopDE|fdiv:f1|Add0~8   ; combout          ;
+; |TopDE|fdiv:f1|Add0~8   ; |TopDE|fdiv:f1|Add0~9   ; cout             ;
+; |TopDE|fdiv:f1|Add0~10  ; |TopDE|fdiv:f1|Add0~10  ; combout          ;
+; |TopDE|fdiv:f1|Add0~10  ; |TopDE|fdiv:f1|Add0~11  ; cout             ;
+; |TopDE|fdiv:f1|Add0~12  ; |TopDE|fdiv:f1|Add0~12  ; combout          ;
+; |TopDE|fdiv:f1|Add0~12  ; |TopDE|fdiv:f1|Add0~13  ; cout             ;
+; |TopDE|fdiv:f1|Add0~14  ; |TopDE|fdiv:f1|Add0~14  ; combout          ;
+; |TopDE|fdiv:f1|Add0~14  ; |TopDE|fdiv:f1|Add0~15  ; cout             ;
+; |TopDE|fdiv:f1|Add0~16  ; |TopDE|fdiv:f1|Add0~16  ; combout          ;
+; |TopDE|fdiv:f1|Add0~16  ; |TopDE|fdiv:f1|Add0~17  ; cout             ;
+; |TopDE|fdiv:f1|Add0~18  ; |TopDE|fdiv:f1|Add0~18  ; combout          ;
+; |TopDE|fdiv:f1|cont[4]  ; |TopDE|fdiv:f1|cont[4]  ; regout           ;
+; |TopDE|fdiv:f1|cont[7]  ; |TopDE|fdiv:f1|cont[7]  ; regout           ;
+; |TopDE|fdiv:f1|cont[6]  ; |TopDE|fdiv:f1|cont[6]  ; regout           ;
+; |TopDE|fdiv:f1|cont[5]  ; |TopDE|fdiv:f1|cont[5]  ; regout           ;
+; |TopDE|fdiv:f1|Equal0~1 ; |TopDE|fdiv:f1|Equal0~1 ; combout          ;
+; |TopDE|fdiv:f1|cont[3]  ; |TopDE|fdiv:f1|cont[3]  ; regout           ;
+; |TopDE|fdiv:f1|cont[2]  ; |TopDE|fdiv:f1|cont[2]  ; regout           ;
+; |TopDE|fdiv:f1|cont[1]  ; |TopDE|fdiv:f1|cont[1]  ; regout           ;
+; |TopDE|fdiv:f1|cont[0]  ; |TopDE|fdiv:f1|cont[0]  ; regout           ;
+; |TopDE|fdiv:f1|Equal0~2 ; |TopDE|fdiv:f1|Equal0~2 ; combout          ;
+; |TopDE|fdiv:f1|cont~2   ; |TopDE|fdiv:f1|cont~2   ; combout          ;
+; |TopDE|iCLK_50          ; |TopDE|iCLK_50~corein   ; combout          ;
+; |TopDE|iCLK_50~clkctrl  ; |TopDE|iCLK_50~clkctrl  ; outclk           ;
++-------------------------+-------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++----------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                         ;
++-------------------------------+-------------------------------+------------------+
+; Node Name                     ; Output Port Name              ; Output Port Type ;
++-------------------------------+-------------------------------+------------------+
+; |TopDE|fdiv:f1|Add0~18        ; |TopDE|fdiv:f1|Add0~19        ; cout             ;
+; |TopDE|fdiv:f1|Add0~20        ; |TopDE|fdiv:f1|Add0~20        ; combout          ;
+; |TopDE|fdiv:f1|Add0~20        ; |TopDE|fdiv:f1|Add0~21        ; cout             ;
+; |TopDE|fdiv:f1|Add0~22        ; |TopDE|fdiv:f1|Add0~22        ; combout          ;
+; |TopDE|fdiv:f1|Add0~22        ; |TopDE|fdiv:f1|Add0~23        ; cout             ;
+; |TopDE|fdiv:f1|Add0~24        ; |TopDE|fdiv:f1|Add0~24        ; combout          ;
+; |TopDE|fdiv:f1|Add0~24        ; |TopDE|fdiv:f1|Add0~25        ; cout             ;
+; |TopDE|fdiv:f1|Add0~26        ; |TopDE|fdiv:f1|Add0~26        ; combout          ;
+; |TopDE|fdiv:f1|Add0~26        ; |TopDE|fdiv:f1|Add0~27        ; cout             ;
+; |TopDE|fdiv:f1|Add0~28        ; |TopDE|fdiv:f1|Add0~28        ; combout          ;
+; |TopDE|fdiv:f1|Add0~28        ; |TopDE|fdiv:f1|Add0~29        ; cout             ;
+; |TopDE|fdiv:f1|Add0~30        ; |TopDE|fdiv:f1|Add0~30        ; combout          ;
+; |TopDE|fdiv:f1|Add0~30        ; |TopDE|fdiv:f1|Add0~31        ; cout             ;
+; |TopDE|fdiv:f1|Add0~32        ; |TopDE|fdiv:f1|Add0~32        ; combout          ;
+; |TopDE|fdiv:f1|Add0~32        ; |TopDE|fdiv:f1|Add0~33        ; cout             ;
+; |TopDE|fdiv:f1|Add0~34        ; |TopDE|fdiv:f1|Add0~34        ; combout          ;
+; |TopDE|fdiv:f1|Add0~34        ; |TopDE|fdiv:f1|Add0~35        ; cout             ;
+; |TopDE|fdiv:f1|Add0~36        ; |TopDE|fdiv:f1|Add0~36        ; combout          ;
+; |TopDE|fdiv:f1|Add0~36        ; |TopDE|fdiv:f1|Add0~37        ; cout             ;
+; |TopDE|fdiv:f1|Add0~38        ; |TopDE|fdiv:f1|Add0~38        ; combout          ;
+; |TopDE|fdiv:f1|Add0~38        ; |TopDE|fdiv:f1|Add0~39        ; cout             ;
+; |TopDE|fdiv:f1|Add0~40        ; |TopDE|fdiv:f1|Add0~40        ; combout          ;
+; |TopDE|fdiv:f1|Add0~40        ; |TopDE|fdiv:f1|Add0~41        ; cout             ;
+; |TopDE|fdiv:f1|Add0~42        ; |TopDE|fdiv:f1|Add0~42        ; combout          ;
+; |TopDE|fdiv:f1|Add0~42        ; |TopDE|fdiv:f1|Add0~43        ; cout             ;
+; |TopDE|fdiv:f1|Add0~44        ; |TopDE|fdiv:f1|Add0~44        ; combout          ;
+; |TopDE|fdiv:f1|Add0~44        ; |TopDE|fdiv:f1|Add0~45        ; cout             ;
+; |TopDE|fdiv:f1|Add0~46        ; |TopDE|fdiv:f1|Add0~46        ; combout          ;
+; |TopDE|fdiv:f1|Add0~46        ; |TopDE|fdiv:f1|Add0~47        ; cout             ;
+; |TopDE|fdiv:f1|Add0~48        ; |TopDE|fdiv:f1|Add0~48        ; combout          ;
+; |TopDE|fdiv:f1|Add0~48        ; |TopDE|fdiv:f1|Add0~49        ; cout             ;
+; |TopDE|fdiv:f1|Add0~50        ; |TopDE|fdiv:f1|Add0~50        ; combout          ;
+; |TopDE|fdiv:f1|Add0~50        ; |TopDE|fdiv:f1|Add0~51        ; cout             ;
+; |TopDE|fdiv:f1|Add0~52        ; |TopDE|fdiv:f1|Add0~52        ; combout          ;
+; |TopDE|fdiv:f1|Add0~52        ; |TopDE|fdiv:f1|Add0~53        ; cout             ;
+; |TopDE|fdiv:f1|Add0~54        ; |TopDE|fdiv:f1|Add0~54        ; combout          ;
+; |TopDE|fdiv:f1|Add0~54        ; |TopDE|fdiv:f1|Add0~55        ; cout             ;
+; |TopDE|fdiv:f1|Add0~56        ; |TopDE|fdiv:f1|Add0~56        ; combout          ;
+; |TopDE|fdiv:f1|Add0~56        ; |TopDE|fdiv:f1|Add0~57        ; cout             ;
+; |TopDE|fdiv:f1|Add0~58        ; |TopDE|fdiv:f1|Add0~58        ; combout          ;
+; |TopDE|fdiv:f1|Add0~58        ; |TopDE|fdiv:f1|Add0~59        ; cout             ;
+; |TopDE|fdiv:f1|Add0~60        ; |TopDE|fdiv:f1|Add0~60        ; combout          ;
+; |TopDE|fdiv:f1|Add0~60        ; |TopDE|fdiv:f1|Add0~61        ; cout             ;
+; |TopDE|fdiv:f1|Add0~62        ; |TopDE|fdiv:f1|Add0~62        ; combout          ;
+; |TopDE|x1                     ; |TopDE|x1                     ; combout          ;
+; |TopDE|fdiv:f1|clkout         ; |TopDE|fdiv:f1|clkout         ; regout           ;
+; |TopDE|decoder7:u0|Out[0]     ; |TopDE|decoder7:u0|Out[0]     ; regout           ;
+; |TopDE|decoder7:u0|Out[1]     ; |TopDE|decoder7:u0|Out[1]     ; regout           ;
+; |TopDE|decoder7:u0|Out[2]     ; |TopDE|decoder7:u0|Out[2]     ; regout           ;
+; |TopDE|decoder7:u0|Out[3]     ; |TopDE|decoder7:u0|Out[3]     ; regout           ;
+; |TopDE|decoder7:u0|Out[4]     ; |TopDE|decoder7:u0|Out[4]     ; regout           ;
+; |TopDE|decoder7:u0|Out[5]     ; |TopDE|decoder7:u0|Out[5]     ; regout           ;
+; |TopDE|decoder7:u0|Out[6]     ; |TopDE|decoder7:u0|Out[6]     ; regout           ;
+; |TopDE|decoder7:u1|Out[0]     ; |TopDE|decoder7:u1|Out[0]     ; regout           ;
+; |TopDE|decoder7:u1|Out[1]     ; |TopDE|decoder7:u1|Out[1]     ; regout           ;
+; |TopDE|decoder7:u1|Out[2]     ; |TopDE|decoder7:u1|Out[2]     ; regout           ;
+; |TopDE|decoder7:u1|Out[3]     ; |TopDE|decoder7:u1|Out[3]     ; regout           ;
+; |TopDE|decoder7:u1|Out[4]     ; |TopDE|decoder7:u1|Out[4]     ; regout           ;
+; |TopDE|decoder7:u1|Out[5]     ; |TopDE|decoder7:u1|Out[5]     ; regout           ;
+; |TopDE|decoder7:u1|Out[6]     ; |TopDE|decoder7:u1|Out[6]     ; regout           ;
+; |TopDE|decoder7:u2|Out[0]     ; |TopDE|decoder7:u2|Out[0]     ; regout           ;
+; |TopDE|decoder7:u2|Out[1]     ; |TopDE|decoder7:u2|Out[1]     ; regout           ;
+; |TopDE|decoder7:u2|Out[2]     ; |TopDE|decoder7:u2|Out[2]     ; regout           ;
+; |TopDE|decoder7:u2|Out[3]     ; |TopDE|decoder7:u2|Out[3]     ; regout           ;
+; |TopDE|decoder7:u2|Out[4]     ; |TopDE|decoder7:u2|Out[4]     ; regout           ;
+; |TopDE|decoder7:u2|Out[5]     ; |TopDE|decoder7:u2|Out[5]     ; regout           ;
+; |TopDE|decoder7:u2|Out[6]     ; |TopDE|decoder7:u2|Out[6]     ; regout           ;
+; |TopDE|decoder7:u3|Out[0]     ; |TopDE|decoder7:u3|Out[0]     ; regout           ;
+; |TopDE|decoder7:u3|Out[1]     ; |TopDE|decoder7:u3|Out[1]     ; regout           ;
+; |TopDE|decoder7:u3|Out[2]     ; |TopDE|decoder7:u3|Out[2]     ; regout           ;
+; |TopDE|decoder7:u3|Out[3]     ; |TopDE|decoder7:u3|Out[3]     ; regout           ;
+; |TopDE|decoder7:u3|Out[4]     ; |TopDE|decoder7:u3|Out[4]     ; regout           ;
+; |TopDE|decoder7:u3|Out[5]     ; |TopDE|decoder7:u3|Out[5]     ; regout           ;
+; |TopDE|decoder7:u3|Out[6]     ; |TopDE|decoder7:u3|Out[6]     ; regout           ;
+; |TopDE|decoder7:u4|Out[0]     ; |TopDE|decoder7:u4|Out[0]     ; regout           ;
+; |TopDE|decoder7:u4|Out[1]     ; |TopDE|decoder7:u4|Out[1]     ; regout           ;
+; |TopDE|decoder7:u4|Out[2]     ; |TopDE|decoder7:u4|Out[2]     ; regout           ;
+; |TopDE|decoder7:u4|Out[3]     ; |TopDE|decoder7:u4|Out[3]     ; regout           ;
+; |TopDE|decoder7:u4|Out[4]     ; |TopDE|decoder7:u4|Out[4]     ; regout           ;
+; |TopDE|decoder7:u4|Out[5]     ; |TopDE|decoder7:u4|Out[5]     ; regout           ;
+; |TopDE|decoder7:u4|Out[6]     ; |TopDE|decoder7:u4|Out[6]     ; regout           ;
+; |TopDE|decoder7:u5|Out[0]     ; |TopDE|decoder7:u5|Out[0]     ; regout           ;
+; |TopDE|decoder7:u5|Out[1]     ; |TopDE|decoder7:u5|Out[1]     ; regout           ;
+; |TopDE|decoder7:u5|Out[2]     ; |TopDE|decoder7:u5|Out[2]     ; regout           ;
+; |TopDE|decoder7:u5|Out[3]     ; |TopDE|decoder7:u5|Out[3]     ; regout           ;
+; |TopDE|decoder7:u5|Out[4]     ; |TopDE|decoder7:u5|Out[4]     ; regout           ;
+; |TopDE|decoder7:u5|Out[5]     ; |TopDE|decoder7:u5|Out[5]     ; regout           ;
+; |TopDE|decoder7:u5|Out[6]     ; |TopDE|decoder7:u5|Out[6]     ; regout           ;
+; |TopDE|decoder7:u6|Out[0]     ; |TopDE|decoder7:u6|Out[0]     ; regout           ;
+; |TopDE|decoder7:u6|Out[1]     ; |TopDE|decoder7:u6|Out[1]     ; regout           ;
+; |TopDE|decoder7:u6|Out[2]     ; |TopDE|decoder7:u6|Out[2]     ; regout           ;
+; |TopDE|decoder7:u6|Out[3]     ; |TopDE|decoder7:u6|Out[3]     ; regout           ;
+; |TopDE|decoder7:u6|Out[4]     ; |TopDE|decoder7:u6|Out[4]     ; regout           ;
+; |TopDE|decoder7:u6|Out[5]     ; |TopDE|decoder7:u6|Out[5]     ; regout           ;
+; |TopDE|decoder7:u6|Out[6]     ; |TopDE|decoder7:u6|Out[6]     ; regout           ;
+; |TopDE|decoder7:u7|Out[0]     ; |TopDE|decoder7:u7|Out[0]     ; regout           ;
+; |TopDE|decoder7:u7|Out[3]     ; |TopDE|decoder7:u7|Out[3]     ; regout           ;
+; |TopDE|decoder7:u7|Out[4]     ; |TopDE|decoder7:u7|Out[4]     ; regout           ;
+; |TopDE|decoder7:u7|Out[5]     ; |TopDE|decoder7:u7|Out[5]     ; regout           ;
+; |TopDE|fdiv:f1|cont[11]       ; |TopDE|fdiv:f1|cont[11]       ; regout           ;
+; |TopDE|fdiv:f1|cont[10]       ; |TopDE|fdiv:f1|cont[10]       ; regout           ;
+; |TopDE|fdiv:f1|cont[9]        ; |TopDE|fdiv:f1|cont[9]        ; regout           ;
+; |TopDE|fdiv:f1|Equal0~0       ; |TopDE|fdiv:f1|Equal0~0       ; combout          ;
+; |TopDE|fdiv:f1|cont[12]       ; |TopDE|fdiv:f1|cont[12]       ; regout           ;
+; |TopDE|fdiv:f1|cont[13]       ; |TopDE|fdiv:f1|cont[13]       ; regout           ;
+; |TopDE|fdiv:f1|cont[15]       ; |TopDE|fdiv:f1|cont[15]       ; regout           ;
+; |TopDE|fdiv:f1|cont[14]       ; |TopDE|fdiv:f1|cont[14]       ; regout           ;
+; |TopDE|fdiv:f1|Equal0~3       ; |TopDE|fdiv:f1|Equal0~3       ; combout          ;
+; |TopDE|fdiv:f1|Equal0~4       ; |TopDE|fdiv:f1|Equal0~4       ; combout          ;
+; |TopDE|fdiv:f1|cont[17]       ; |TopDE|fdiv:f1|cont[17]       ; regout           ;
+; |TopDE|fdiv:f1|cont[18]       ; |TopDE|fdiv:f1|cont[18]       ; regout           ;
+; |TopDE|fdiv:f1|cont[19]       ; |TopDE|fdiv:f1|cont[19]       ; regout           ;
+; |TopDE|fdiv:f1|cont[16]       ; |TopDE|fdiv:f1|cont[16]       ; regout           ;
+; |TopDE|fdiv:f1|Equal0~5       ; |TopDE|fdiv:f1|Equal0~5       ; combout          ;
+; |TopDE|fdiv:f1|cont[20]       ; |TopDE|fdiv:f1|cont[20]       ; regout           ;
+; |TopDE|fdiv:f1|cont[21]       ; |TopDE|fdiv:f1|cont[21]       ; regout           ;
+; |TopDE|fdiv:f1|Equal0~6       ; |TopDE|fdiv:f1|Equal0~6       ; combout          ;
+; |TopDE|fdiv:f1|cont[23]       ; |TopDE|fdiv:f1|cont[23]       ; regout           ;
+; |TopDE|fdiv:f1|cont[22]       ; |TopDE|fdiv:f1|cont[22]       ; regout           ;
+; |TopDE|fdiv:f1|Equal0~7       ; |TopDE|fdiv:f1|Equal0~7       ; combout          ;
+; |TopDE|fdiv:f1|cont[24]       ; |TopDE|fdiv:f1|cont[24]       ; regout           ;
+; |TopDE|fdiv:f1|cont[25]       ; |TopDE|fdiv:f1|cont[25]       ; regout           ;
+; |TopDE|fdiv:f1|cont[26]       ; |TopDE|fdiv:f1|cont[26]       ; regout           ;
+; |TopDE|fdiv:f1|cont[27]       ; |TopDE|fdiv:f1|cont[27]       ; regout           ;
+; |TopDE|fdiv:f1|Equal0~8       ; |TopDE|fdiv:f1|Equal0~8       ; combout          ;
+; |TopDE|fdiv:f1|cont[28]       ; |TopDE|fdiv:f1|cont[28]       ; regout           ;
+; |TopDE|fdiv:f1|cont[29]       ; |TopDE|fdiv:f1|cont[29]       ; regout           ;
+; |TopDE|fdiv:f1|cont[30]       ; |TopDE|fdiv:f1|cont[30]       ; regout           ;
+; |TopDE|fdiv:f1|cont[31]       ; |TopDE|fdiv:f1|cont[31]       ; regout           ;
+; |TopDE|fdiv:f1|Equal0~9       ; |TopDE|fdiv:f1|Equal0~9       ; combout          ;
+; |TopDE|fdiv:f1|Equal0~10      ; |TopDE|fdiv:f1|Equal0~10      ; combout          ;
+; |TopDE|fdiv:f1|clkout~0       ; |TopDE|fdiv:f1|clkout~0       ; combout          ;
+; |TopDE|decoder7:u0|WideOr6~0  ; |TopDE|decoder7:u0|WideOr6~0  ; combout          ;
+; |TopDE|decoder7:u0|WideOr5~0  ; |TopDE|decoder7:u0|WideOr5~0  ; combout          ;
+; |TopDE|decoder7:u0|WideOr4~0  ; |TopDE|decoder7:u0|WideOr4~0  ; combout          ;
+; |TopDE|decoder7:u0|WideOr3~0  ; |TopDE|decoder7:u0|WideOr3~0  ; combout          ;
+; |TopDE|decoder7:u0|WideOr2~0  ; |TopDE|decoder7:u0|WideOr2~0  ; combout          ;
+; |TopDE|decoder7:u0|WideOr1~0  ; |TopDE|decoder7:u0|WideOr1~0  ; combout          ;
+; |TopDE|decoder7:u0|WideOr0~0  ; |TopDE|decoder7:u0|WideOr0~0  ; combout          ;
+; |TopDE|decoder7:u1|WideOr6~0  ; |TopDE|decoder7:u1|WideOr6~0  ; combout          ;
+; |TopDE|decoder7:u1|WideOr5~0  ; |TopDE|decoder7:u1|WideOr5~0  ; combout          ;
+; |TopDE|decoder7:u1|WideOr4~0  ; |TopDE|decoder7:u1|WideOr4~0  ; combout          ;
+; |TopDE|decoder7:u1|WideOr3~0  ; |TopDE|decoder7:u1|WideOr3~0  ; combout          ;
+; |TopDE|decoder7:u1|WideOr2~0  ; |TopDE|decoder7:u1|WideOr2~0  ; combout          ;
+; |TopDE|decoder7:u1|WideOr1~0  ; |TopDE|decoder7:u1|WideOr1~0  ; combout          ;
+; |TopDE|decoder7:u1|WideOr0~0  ; |TopDE|decoder7:u1|WideOr0~0  ; combout          ;
+; |TopDE|decoder7:u2|WideOr6~0  ; |TopDE|decoder7:u2|WideOr6~0  ; combout          ;
+; |TopDE|decoder7:u2|WideOr5~0  ; |TopDE|decoder7:u2|WideOr5~0  ; combout          ;
+; |TopDE|decoder7:u2|WideOr4~0  ; |TopDE|decoder7:u2|WideOr4~0  ; combout          ;
+; |TopDE|decoder7:u2|WideOr3~0  ; |TopDE|decoder7:u2|WideOr3~0  ; combout          ;
+; |TopDE|decoder7:u2|WideOr2~0  ; |TopDE|decoder7:u2|WideOr2~0  ; combout          ;
+; |TopDE|decoder7:u2|WideOr1~0  ; |TopDE|decoder7:u2|WideOr1~0  ; combout          ;
+; |TopDE|decoder7:u2|WideOr0~0  ; |TopDE|decoder7:u2|WideOr0~0  ; combout          ;
+; |TopDE|decoder7:u3|WideOr6~0  ; |TopDE|decoder7:u3|WideOr6~0  ; combout          ;
+; |TopDE|decoder7:u3|WideOr5~0  ; |TopDE|decoder7:u3|WideOr5~0  ; combout          ;
+; |TopDE|decoder7:u3|WideOr4~0  ; |TopDE|decoder7:u3|WideOr4~0  ; combout          ;
+; |TopDE|decoder7:u3|WideOr3~0  ; |TopDE|decoder7:u3|WideOr3~0  ; combout          ;
+; |TopDE|decoder7:u3|WideOr2~0  ; |TopDE|decoder7:u3|WideOr2~0  ; combout          ;
+; |TopDE|decoder7:u3|WideOr1~0  ; |TopDE|decoder7:u3|WideOr1~0  ; combout          ;
+; |TopDE|decoder7:u3|WideOr0~0  ; |TopDE|decoder7:u3|WideOr0~0  ; combout          ;
+; |TopDE|num[1]                 ; |TopDE|num[1]                 ; regout           ;
+; |TopDE|num[0]                 ; |TopDE|num[0]                 ; regout           ;
+; |TopDE|num[3]                 ; |TopDE|num[3]                 ; regout           ;
+; |TopDE|num[2]                 ; |TopDE|num[2]                 ; regout           ;
+; |TopDE|decoder7:u4|WideOr6~0  ; |TopDE|decoder7:u4|WideOr6~0  ; combout          ;
+; |TopDE|decoder7:u4|WideOr5~0  ; |TopDE|decoder7:u4|WideOr5~0  ; combout          ;
+; |TopDE|decoder7:u4|WideOr4~0  ; |TopDE|decoder7:u4|WideOr4~0  ; combout          ;
+; |TopDE|decoder7:u4|WideOr3~0  ; |TopDE|decoder7:u4|WideOr3~0  ; combout          ;
+; |TopDE|decoder7:u4|WideOr2~0  ; |TopDE|decoder7:u4|WideOr2~0  ; combout          ;
+; |TopDE|decoder7:u4|WideOr1~0  ; |TopDE|decoder7:u4|WideOr1~0  ; combout          ;
+; |TopDE|decoder7:u4|WideOr0~0  ; |TopDE|decoder7:u4|WideOr0~0  ; combout          ;
+; |TopDE|decoder7:u5|WideOr6~0  ; |TopDE|decoder7:u5|WideOr6~0  ; combout          ;
+; |TopDE|decoder7:u5|WideOr5~0  ; |TopDE|decoder7:u5|WideOr5~0  ; combout          ;
+; |TopDE|decoder7:u5|WideOr4~0  ; |TopDE|decoder7:u5|WideOr4~0  ; combout          ;
+; |TopDE|decoder7:u5|WideOr3~0  ; |TopDE|decoder7:u5|WideOr3~0  ; combout          ;
+; |TopDE|decoder7:u5|WideOr2~0  ; |TopDE|decoder7:u5|WideOr2~0  ; combout          ;
+; |TopDE|decoder7:u5|WideOr1~0  ; |TopDE|decoder7:u5|WideOr1~0  ; combout          ;
+; |TopDE|decoder7:u5|WideOr0~0  ; |TopDE|decoder7:u5|WideOr0~0  ; combout          ;
+; |TopDE|decoder7:u6|WideOr6~0  ; |TopDE|decoder7:u6|WideOr6~0  ; combout          ;
+; |TopDE|decoder7:u6|WideOr5~0  ; |TopDE|decoder7:u6|WideOr5~0  ; combout          ;
+; |TopDE|decoder7:u6|WideOr4~0  ; |TopDE|decoder7:u6|WideOr4~0  ; combout          ;
+; |TopDE|decoder7:u6|WideOr3~0  ; |TopDE|decoder7:u6|WideOr3~0  ; combout          ;
+; |TopDE|decoder7:u6|WideOr2~0  ; |TopDE|decoder7:u6|WideOr2~0  ; combout          ;
+; |TopDE|decoder7:u6|WideOr1~0  ; |TopDE|decoder7:u6|WideOr1~0  ; combout          ;
+; |TopDE|decoder7:u6|WideOr0~0  ; |TopDE|decoder7:u6|WideOr0~0  ; combout          ;
+; |TopDE|fdiv:f1|cont~0         ; |TopDE|fdiv:f1|cont~0         ; combout          ;
+; |TopDE|fdiv:f1|cont~1         ; |TopDE|fdiv:f1|cont~1         ; combout          ;
+; |TopDE|fdiv:f1|cont~3         ; |TopDE|fdiv:f1|cont~3         ; combout          ;
+; |TopDE|fdiv:f1|cont~4         ; |TopDE|fdiv:f1|cont~4         ; combout          ;
+; |TopDE|fdiv:f1|cont~5         ; |TopDE|fdiv:f1|cont~5         ; combout          ;
+; |TopDE|fdiv:f1|cont~6         ; |TopDE|fdiv:f1|cont~6         ; combout          ;
+; |TopDE|fdiv:f1|cont~7         ; |TopDE|fdiv:f1|cont~7         ; combout          ;
+; |TopDE|fdiv:f1|cont~8         ; |TopDE|fdiv:f1|cont~8         ; combout          ;
+; |TopDE|fdiv:f1|cont~9         ; |TopDE|fdiv:f1|cont~9         ; combout          ;
+; |TopDE|fdiv:f1|cont~10        ; |TopDE|fdiv:f1|cont~10        ; combout          ;
+; |TopDE|fdiv:f1|cont~11        ; |TopDE|fdiv:f1|cont~11        ; combout          ;
+; |TopDE|num[1]~0               ; |TopDE|num[1]~0               ; combout          ;
+; |TopDE|num[3]~1               ; |TopDE|num[3]~1               ; combout          ;
+; |TopDE|num[2]~2               ; |TopDE|num[2]~2               ; combout          ;
+; |TopDE|num[0]~3               ; |TopDE|num[0]~3               ; combout          ;
+; |TopDE|oLEDR[0]               ; |TopDE|oLEDR[0]               ; padio            ;
+; |TopDE|oLEDR[1]               ; |TopDE|oLEDR[1]               ; padio            ;
+; |TopDE|oLEDR[2]               ; |TopDE|oLEDR[2]               ; padio            ;
+; |TopDE|oLEDR[3]               ; |TopDE|oLEDR[3]               ; padio            ;
+; |TopDE|oLEDR[4]               ; |TopDE|oLEDR[4]               ; padio            ;
+; |TopDE|oLEDR[5]               ; |TopDE|oLEDR[5]               ; padio            ;
+; |TopDE|oLEDR[6]               ; |TopDE|oLEDR[6]               ; padio            ;
+; |TopDE|oLEDR[7]               ; |TopDE|oLEDR[7]               ; padio            ;
+; |TopDE|oLEDR[8]               ; |TopDE|oLEDR[8]               ; padio            ;
+; |TopDE|oLEDR[9]               ; |TopDE|oLEDR[9]               ; padio            ;
+; |TopDE|oLEDR[10]              ; |TopDE|oLEDR[10]              ; padio            ;
+; |TopDE|oLEDR[11]              ; |TopDE|oLEDR[11]              ; padio            ;
+; |TopDE|oLEDR[12]              ; |TopDE|oLEDR[12]              ; padio            ;
+; |TopDE|oLEDR[13]              ; |TopDE|oLEDR[13]              ; padio            ;
+; |TopDE|oLEDR[14]              ; |TopDE|oLEDR[14]              ; padio            ;
+; |TopDE|oLEDR[15]              ; |TopDE|oLEDR[15]              ; padio            ;
+; |TopDE|oLEDR[16]              ; |TopDE|oLEDR[16]              ; padio            ;
+; |TopDE|oLEDR[17]              ; |TopDE|oLEDR[17]              ; padio            ;
+; |TopDE|oLEDG[0]               ; |TopDE|oLEDG[0]               ; padio            ;
+; |TopDE|oLEDG[1]               ; |TopDE|oLEDG[1]               ; padio            ;
+; |TopDE|oLEDG[2]               ; |TopDE|oLEDG[2]               ; padio            ;
+; |TopDE|oLEDG[3]               ; |TopDE|oLEDG[3]               ; padio            ;
+; |TopDE|oLEDG[4]               ; |TopDE|oLEDG[4]               ; padio            ;
+; |TopDE|oLEDG[5]               ; |TopDE|oLEDG[5]               ; padio            ;
+; |TopDE|oLEDG[6]               ; |TopDE|oLEDG[6]               ; padio            ;
+; |TopDE|oLEDG[7]               ; |TopDE|oLEDG[7]               ; padio            ;
+; |TopDE|oLEDG[8]               ; |TopDE|oLEDG[8]               ; padio            ;
+; |TopDE|oHEX0_D[0]             ; |TopDE|oHEX0_D[0]             ; padio            ;
+; |TopDE|oHEX0_D[1]             ; |TopDE|oHEX0_D[1]             ; padio            ;
+; |TopDE|oHEX0_D[2]             ; |TopDE|oHEX0_D[2]             ; padio            ;
+; |TopDE|oHEX0_D[3]             ; |TopDE|oHEX0_D[3]             ; padio            ;
+; |TopDE|oHEX0_D[4]             ; |TopDE|oHEX0_D[4]             ; padio            ;
+; |TopDE|oHEX0_D[5]             ; |TopDE|oHEX0_D[5]             ; padio            ;
+; |TopDE|oHEX0_D[6]             ; |TopDE|oHEX0_D[6]             ; padio            ;
+; |TopDE|oHEX1_D[0]             ; |TopDE|oHEX1_D[0]             ; padio            ;
+; |TopDE|oHEX1_D[1]             ; |TopDE|oHEX1_D[1]             ; padio            ;
+; |TopDE|oHEX1_D[2]             ; |TopDE|oHEX1_D[2]             ; padio            ;
+; |TopDE|oHEX1_D[3]             ; |TopDE|oHEX1_D[3]             ; padio            ;
+; |TopDE|oHEX1_D[4]             ; |TopDE|oHEX1_D[4]             ; padio            ;
+; |TopDE|oHEX1_D[5]             ; |TopDE|oHEX1_D[5]             ; padio            ;
+; |TopDE|oHEX1_D[6]             ; |TopDE|oHEX1_D[6]             ; padio            ;
+; |TopDE|oHEX2_D[0]             ; |TopDE|oHEX2_D[0]             ; padio            ;
+; |TopDE|oHEX2_D[1]             ; |TopDE|oHEX2_D[1]             ; padio            ;
+; |TopDE|oHEX2_D[2]             ; |TopDE|oHEX2_D[2]             ; padio            ;
+; |TopDE|oHEX2_D[3]             ; |TopDE|oHEX2_D[3]             ; padio            ;
+; |TopDE|oHEX2_D[4]             ; |TopDE|oHEX2_D[4]             ; padio            ;
+; |TopDE|oHEX2_D[5]             ; |TopDE|oHEX2_D[5]             ; padio            ;
+; |TopDE|oHEX2_D[6]             ; |TopDE|oHEX2_D[6]             ; padio            ;
+; |TopDE|oHEX3_D[0]             ; |TopDE|oHEX3_D[0]             ; padio            ;
+; |TopDE|oHEX3_D[1]             ; |TopDE|oHEX3_D[1]             ; padio            ;
+; |TopDE|oHEX3_D[2]             ; |TopDE|oHEX3_D[2]             ; padio            ;
+; |TopDE|oHEX3_D[3]             ; |TopDE|oHEX3_D[3]             ; padio            ;
+; |TopDE|oHEX3_D[4]             ; |TopDE|oHEX3_D[4]             ; padio            ;
+; |TopDE|oHEX3_D[5]             ; |TopDE|oHEX3_D[5]             ; padio            ;
+; |TopDE|oHEX3_D[6]             ; |TopDE|oHEX3_D[6]             ; padio            ;
+; |TopDE|oHEX4_D[0]             ; |TopDE|oHEX4_D[0]             ; padio            ;
+; |TopDE|oHEX4_D[1]             ; |TopDE|oHEX4_D[1]             ; padio            ;
+; |TopDE|oHEX4_D[2]             ; |TopDE|oHEX4_D[2]             ; padio            ;
+; |TopDE|oHEX4_D[3]             ; |TopDE|oHEX4_D[3]             ; padio            ;
+; |TopDE|oHEX4_D[4]             ; |TopDE|oHEX4_D[4]             ; padio            ;
+; |TopDE|oHEX4_D[5]             ; |TopDE|oHEX4_D[5]             ; padio            ;
+; |TopDE|oHEX4_D[6]             ; |TopDE|oHEX4_D[6]             ; padio            ;
+; |TopDE|oHEX5_D[0]             ; |TopDE|oHEX5_D[0]             ; padio            ;
+; |TopDE|oHEX5_D[1]             ; |TopDE|oHEX5_D[1]             ; padio            ;
+; |TopDE|oHEX5_D[2]             ; |TopDE|oHEX5_D[2]             ; padio            ;
+; |TopDE|oHEX5_D[3]             ; |TopDE|oHEX5_D[3]             ; padio            ;
+; |TopDE|oHEX5_D[4]             ; |TopDE|oHEX5_D[4]             ; padio            ;
+; |TopDE|oHEX5_D[5]             ; |TopDE|oHEX5_D[5]             ; padio            ;
+; |TopDE|oHEX5_D[6]             ; |TopDE|oHEX5_D[6]             ; padio            ;
+; |TopDE|oHEX6_D[0]             ; |TopDE|oHEX6_D[0]             ; padio            ;
+; |TopDE|oHEX6_D[1]             ; |TopDE|oHEX6_D[1]             ; padio            ;
+; |TopDE|oHEX6_D[2]             ; |TopDE|oHEX6_D[2]             ; padio            ;
+; |TopDE|oHEX6_D[3]             ; |TopDE|oHEX6_D[3]             ; padio            ;
+; |TopDE|oHEX6_D[4]             ; |TopDE|oHEX6_D[4]             ; padio            ;
+; |TopDE|oHEX6_D[5]             ; |TopDE|oHEX6_D[5]             ; padio            ;
+; |TopDE|oHEX6_D[6]             ; |TopDE|oHEX6_D[6]             ; padio            ;
+; |TopDE|oHEX7_D[0]             ; |TopDE|oHEX7_D[0]             ; padio            ;
+; |TopDE|oHEX7_D[1]             ; |TopDE|oHEX7_D[1]             ; padio            ;
+; |TopDE|oHEX7_D[2]             ; |TopDE|oHEX7_D[2]             ; padio            ;
+; |TopDE|oHEX7_D[3]             ; |TopDE|oHEX7_D[3]             ; padio            ;
+; |TopDE|oHEX7_D[4]             ; |TopDE|oHEX7_D[4]             ; padio            ;
+; |TopDE|oHEX7_D[5]             ; |TopDE|oHEX7_D[5]             ; padio            ;
+; |TopDE|oHEX7_D[6]             ; |TopDE|oHEX7_D[6]             ; padio            ;
+; |TopDE|oHEX0_DP               ; |TopDE|oHEX0_DP               ; padio            ;
+; |TopDE|oHEX1_DP               ; |TopDE|oHEX1_DP               ; padio            ;
+; |TopDE|oHEX2_DP               ; |TopDE|oHEX2_DP               ; padio            ;
+; |TopDE|oHEX3_DP               ; |TopDE|oHEX3_DP               ; padio            ;
+; |TopDE|oHEX4_DP               ; |TopDE|oHEX4_DP               ; padio            ;
+; |TopDE|oHEX5_DP               ; |TopDE|oHEX5_DP               ; padio            ;
+; |TopDE|oHEX6_DP               ; |TopDE|oHEX6_DP               ; padio            ;
+; |TopDE|oHEX7_DP               ; |TopDE|oHEX7_DP               ; padio            ;
+; |TopDE|iSW[0]                 ; |TopDE|iSW[0]~corein          ; combout          ;
+; |TopDE|iSW[1]                 ; |TopDE|iSW[1]~corein          ; combout          ;
+; |TopDE|iSW[2]                 ; |TopDE|iSW[2]~corein          ; combout          ;
+; |TopDE|iSW[3]                 ; |TopDE|iSW[3]~corein          ; combout          ;
+; |TopDE|iSW[4]                 ; |TopDE|iSW[4]~corein          ; combout          ;
+; |TopDE|iSW[5]                 ; |TopDE|iSW[5]~corein          ; combout          ;
+; |TopDE|iSW[6]                 ; |TopDE|iSW[6]~corein          ; combout          ;
+; |TopDE|iSW[7]                 ; |TopDE|iSW[7]~corein          ; combout          ;
+; |TopDE|iSW[8]                 ; |TopDE|iSW[8]~corein          ; combout          ;
+; |TopDE|iSW[9]                 ; |TopDE|iSW[9]~corein          ; combout          ;
+; |TopDE|iSW[10]                ; |TopDE|iSW[10]~corein         ; combout          ;
+; |TopDE|iSW[11]                ; |TopDE|iSW[11]~corein         ; combout          ;
+; |TopDE|iSW[12]                ; |TopDE|iSW[12]~corein         ; combout          ;
+; |TopDE|iSW[13]                ; |TopDE|iSW[13]~corein         ; combout          ;
+; |TopDE|iSW[14]                ; |TopDE|iSW[14]~corein         ; combout          ;
+; |TopDE|iSW[15]                ; |TopDE|iSW[15]~corein         ; combout          ;
+; |TopDE|iSW[16]                ; |TopDE|iSW[16]~corein         ; combout          ;
+; |TopDE|iSW[17]                ; |TopDE|iSW[17]~corein         ; combout          ;
+; |TopDE|iKEY[0]                ; |TopDE|iKEY[0]~corein         ; combout          ;
+; |TopDE|iKEY[1]                ; |TopDE|iKEY[1]~corein         ; combout          ;
+; |TopDE|iKEY[2]                ; |TopDE|iKEY[2]~corein         ; combout          ;
+; |TopDE|fdiv:f1|clkout~clkctrl ; |TopDE|fdiv:f1|clkout~clkctrl ; outclk           ;
++-------------------------------+-------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++----------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                         ;
++-------------------------------+-------------------------------+------------------+
+; Node Name                     ; Output Port Name              ; Output Port Type ;
++-------------------------------+-------------------------------+------------------+
+; |TopDE|fdiv:f1|Add0~18        ; |TopDE|fdiv:f1|Add0~19        ; cout             ;
+; |TopDE|fdiv:f1|Add0~20        ; |TopDE|fdiv:f1|Add0~20        ; combout          ;
+; |TopDE|fdiv:f1|Add0~20        ; |TopDE|fdiv:f1|Add0~21        ; cout             ;
+; |TopDE|fdiv:f1|Add0~22        ; |TopDE|fdiv:f1|Add0~22        ; combout          ;
+; |TopDE|fdiv:f1|Add0~22        ; |TopDE|fdiv:f1|Add0~23        ; cout             ;
+; |TopDE|fdiv:f1|Add0~24        ; |TopDE|fdiv:f1|Add0~24        ; combout          ;
+; |TopDE|fdiv:f1|Add0~24        ; |TopDE|fdiv:f1|Add0~25        ; cout             ;
+; |TopDE|fdiv:f1|Add0~26        ; |TopDE|fdiv:f1|Add0~26        ; combout          ;
+; |TopDE|fdiv:f1|Add0~26        ; |TopDE|fdiv:f1|Add0~27        ; cout             ;
+; |TopDE|fdiv:f1|Add0~28        ; |TopDE|fdiv:f1|Add0~28        ; combout          ;
+; |TopDE|fdiv:f1|Add0~28        ; |TopDE|fdiv:f1|Add0~29        ; cout             ;
+; |TopDE|fdiv:f1|Add0~30        ; |TopDE|fdiv:f1|Add0~30        ; combout          ;
+; |TopDE|fdiv:f1|Add0~30        ; |TopDE|fdiv:f1|Add0~31        ; cout             ;
+; |TopDE|fdiv:f1|Add0~32        ; |TopDE|fdiv:f1|Add0~32        ; combout          ;
+; |TopDE|fdiv:f1|Add0~32        ; |TopDE|fdiv:f1|Add0~33        ; cout             ;
+; |TopDE|fdiv:f1|Add0~34        ; |TopDE|fdiv:f1|Add0~34        ; combout          ;
+; |TopDE|fdiv:f1|Add0~34        ; |TopDE|fdiv:f1|Add0~35        ; cout             ;
+; |TopDE|fdiv:f1|Add0~36        ; |TopDE|fdiv:f1|Add0~36        ; combout          ;
+; |TopDE|fdiv:f1|Add0~36        ; |TopDE|fdiv:f1|Add0~37        ; cout             ;
+; |TopDE|fdiv:f1|Add0~38        ; |TopDE|fdiv:f1|Add0~38        ; combout          ;
+; |TopDE|fdiv:f1|Add0~38        ; |TopDE|fdiv:f1|Add0~39        ; cout             ;
+; |TopDE|fdiv:f1|Add0~40        ; |TopDE|fdiv:f1|Add0~40        ; combout          ;
+; |TopDE|fdiv:f1|Add0~40        ; |TopDE|fdiv:f1|Add0~41        ; cout             ;
+; |TopDE|fdiv:f1|Add0~42        ; |TopDE|fdiv:f1|Add0~42        ; combout          ;
+; |TopDE|fdiv:f1|Add0~42        ; |TopDE|fdiv:f1|Add0~43        ; cout             ;
+; |TopDE|fdiv:f1|Add0~44        ; |TopDE|fdiv:f1|Add0~44        ; combout          ;
+; |TopDE|fdiv:f1|Add0~44        ; |TopDE|fdiv:f1|Add0~45        ; cout             ;
+; |TopDE|fdiv:f1|Add0~46        ; |TopDE|fdiv:f1|Add0~46        ; combout          ;
+; |TopDE|fdiv:f1|Add0~46        ; |TopDE|fdiv:f1|Add0~47        ; cout             ;
+; |TopDE|fdiv:f1|Add0~48        ; |TopDE|fdiv:f1|Add0~48        ; combout          ;
+; |TopDE|fdiv:f1|Add0~48        ; |TopDE|fdiv:f1|Add0~49        ; cout             ;
+; |TopDE|fdiv:f1|Add0~50        ; |TopDE|fdiv:f1|Add0~50        ; combout          ;
+; |TopDE|fdiv:f1|Add0~50        ; |TopDE|fdiv:f1|Add0~51        ; cout             ;
+; |TopDE|fdiv:f1|Add0~52        ; |TopDE|fdiv:f1|Add0~52        ; combout          ;
+; |TopDE|fdiv:f1|Add0~52        ; |TopDE|fdiv:f1|Add0~53        ; cout             ;
+; |TopDE|fdiv:f1|Add0~54        ; |TopDE|fdiv:f1|Add0~54        ; combout          ;
+; |TopDE|fdiv:f1|Add0~54        ; |TopDE|fdiv:f1|Add0~55        ; cout             ;
+; |TopDE|fdiv:f1|Add0~56        ; |TopDE|fdiv:f1|Add0~56        ; combout          ;
+; |TopDE|fdiv:f1|Add0~56        ; |TopDE|fdiv:f1|Add0~57        ; cout             ;
+; |TopDE|fdiv:f1|Add0~58        ; |TopDE|fdiv:f1|Add0~58        ; combout          ;
+; |TopDE|fdiv:f1|Add0~58        ; |TopDE|fdiv:f1|Add0~59        ; cout             ;
+; |TopDE|fdiv:f1|Add0~60        ; |TopDE|fdiv:f1|Add0~60        ; combout          ;
+; |TopDE|fdiv:f1|Add0~60        ; |TopDE|fdiv:f1|Add0~61        ; cout             ;
+; |TopDE|fdiv:f1|Add0~62        ; |TopDE|fdiv:f1|Add0~62        ; combout          ;
+; |TopDE|x1                     ; |TopDE|x1                     ; combout          ;
+; |TopDE|fdiv:f1|clkout         ; |TopDE|fdiv:f1|clkout         ; regout           ;
+; |TopDE|decoder7:u0|Out[0]     ; |TopDE|decoder7:u0|Out[0]     ; regout           ;
+; |TopDE|decoder7:u0|Out[1]     ; |TopDE|decoder7:u0|Out[1]     ; regout           ;
+; |TopDE|decoder7:u0|Out[2]     ; |TopDE|decoder7:u0|Out[2]     ; regout           ;
+; |TopDE|decoder7:u0|Out[3]     ; |TopDE|decoder7:u0|Out[3]     ; regout           ;
+; |TopDE|decoder7:u0|Out[4]     ; |TopDE|decoder7:u0|Out[4]     ; regout           ;
+; |TopDE|decoder7:u0|Out[5]     ; |TopDE|decoder7:u0|Out[5]     ; regout           ;
+; |TopDE|decoder7:u0|Out[6]     ; |TopDE|decoder7:u0|Out[6]     ; regout           ;
+; |TopDE|decoder7:u1|Out[0]     ; |TopDE|decoder7:u1|Out[0]     ; regout           ;
+; |TopDE|decoder7:u1|Out[1]     ; |TopDE|decoder7:u1|Out[1]     ; regout           ;
+; |TopDE|decoder7:u1|Out[2]     ; |TopDE|decoder7:u1|Out[2]     ; regout           ;
+; |TopDE|decoder7:u1|Out[3]     ; |TopDE|decoder7:u1|Out[3]     ; regout           ;
+; |TopDE|decoder7:u1|Out[4]     ; |TopDE|decoder7:u1|Out[4]     ; regout           ;
+; |TopDE|decoder7:u1|Out[5]     ; |TopDE|decoder7:u1|Out[5]     ; regout           ;
+; |TopDE|decoder7:u1|Out[6]     ; |TopDE|decoder7:u1|Out[6]     ; regout           ;
+; |TopDE|decoder7:u2|Out[0]     ; |TopDE|decoder7:u2|Out[0]     ; regout           ;
+; |TopDE|decoder7:u2|Out[1]     ; |TopDE|decoder7:u2|Out[1]     ; regout           ;
+; |TopDE|decoder7:u2|Out[2]     ; |TopDE|decoder7:u2|Out[2]     ; regout           ;
+; |TopDE|decoder7:u2|Out[3]     ; |TopDE|decoder7:u2|Out[3]     ; regout           ;
+; |TopDE|decoder7:u2|Out[4]     ; |TopDE|decoder7:u2|Out[4]     ; regout           ;
+; |TopDE|decoder7:u2|Out[5]     ; |TopDE|decoder7:u2|Out[5]     ; regout           ;
+; |TopDE|decoder7:u2|Out[6]     ; |TopDE|decoder7:u2|Out[6]     ; regout           ;
+; |TopDE|decoder7:u3|Out[0]     ; |TopDE|decoder7:u3|Out[0]     ; regout           ;
+; |TopDE|decoder7:u3|Out[1]     ; |TopDE|decoder7:u3|Out[1]     ; regout           ;
+; |TopDE|decoder7:u3|Out[2]     ; |TopDE|decoder7:u3|Out[2]     ; regout           ;
+; |TopDE|decoder7:u3|Out[3]     ; |TopDE|decoder7:u3|Out[3]     ; regout           ;
+; |TopDE|decoder7:u3|Out[4]     ; |TopDE|decoder7:u3|Out[4]     ; regout           ;
+; |TopDE|decoder7:u3|Out[5]     ; |TopDE|decoder7:u3|Out[5]     ; regout           ;
+; |TopDE|decoder7:u3|Out[6]     ; |TopDE|decoder7:u3|Out[6]     ; regout           ;
+; |TopDE|decoder7:u4|Out[0]     ; |TopDE|decoder7:u4|Out[0]     ; regout           ;
+; |TopDE|decoder7:u4|Out[1]     ; |TopDE|decoder7:u4|Out[1]     ; regout           ;
+; |TopDE|decoder7:u4|Out[2]     ; |TopDE|decoder7:u4|Out[2]     ; regout           ;
+; |TopDE|decoder7:u4|Out[3]     ; |TopDE|decoder7:u4|Out[3]     ; regout           ;
+; |TopDE|decoder7:u4|Out[4]     ; |TopDE|decoder7:u4|Out[4]     ; regout           ;
+; |TopDE|decoder7:u4|Out[5]     ; |TopDE|decoder7:u4|Out[5]     ; regout           ;
+; |TopDE|decoder7:u4|Out[6]     ; |TopDE|decoder7:u4|Out[6]     ; regout           ;
+; |TopDE|decoder7:u5|Out[0]     ; |TopDE|decoder7:u5|Out[0]     ; regout           ;
+; |TopDE|decoder7:u5|Out[1]     ; |TopDE|decoder7:u5|Out[1]     ; regout           ;
+; |TopDE|decoder7:u5|Out[2]     ; |TopDE|decoder7:u5|Out[2]     ; regout           ;
+; |TopDE|decoder7:u5|Out[3]     ; |TopDE|decoder7:u5|Out[3]     ; regout           ;
+; |TopDE|decoder7:u5|Out[4]     ; |TopDE|decoder7:u5|Out[4]     ; regout           ;
+; |TopDE|decoder7:u5|Out[5]     ; |TopDE|decoder7:u5|Out[5]     ; regout           ;
+; |TopDE|decoder7:u5|Out[6]     ; |TopDE|decoder7:u5|Out[6]     ; regout           ;
+; |TopDE|decoder7:u6|Out[0]     ; |TopDE|decoder7:u6|Out[0]     ; regout           ;
+; |TopDE|decoder7:u6|Out[1]     ; |TopDE|decoder7:u6|Out[1]     ; regout           ;
+; |TopDE|decoder7:u6|Out[2]     ; |TopDE|decoder7:u6|Out[2]     ; regout           ;
+; |TopDE|decoder7:u6|Out[3]     ; |TopDE|decoder7:u6|Out[3]     ; regout           ;
+; |TopDE|decoder7:u6|Out[4]     ; |TopDE|decoder7:u6|Out[4]     ; regout           ;
+; |TopDE|decoder7:u6|Out[5]     ; |TopDE|decoder7:u6|Out[5]     ; regout           ;
+; |TopDE|decoder7:u6|Out[6]     ; |TopDE|decoder7:u6|Out[6]     ; regout           ;
+; |TopDE|decoder7:u7|Out[0]     ; |TopDE|decoder7:u7|Out[0]     ; regout           ;
+; |TopDE|decoder7:u7|Out[3]     ; |TopDE|decoder7:u7|Out[3]     ; regout           ;
+; |TopDE|decoder7:u7|Out[4]     ; |TopDE|decoder7:u7|Out[4]     ; regout           ;
+; |TopDE|decoder7:u7|Out[5]     ; |TopDE|decoder7:u7|Out[5]     ; regout           ;
+; |TopDE|fdiv:f1|cont[11]       ; |TopDE|fdiv:f1|cont[11]       ; regout           ;
+; |TopDE|fdiv:f1|cont[10]       ; |TopDE|fdiv:f1|cont[10]       ; regout           ;
+; |TopDE|fdiv:f1|cont[9]        ; |TopDE|fdiv:f1|cont[9]        ; regout           ;
+; |TopDE|fdiv:f1|cont[8]        ; |TopDE|fdiv:f1|cont[8]        ; regout           ;
+; |TopDE|fdiv:f1|Equal0~0       ; |TopDE|fdiv:f1|Equal0~0       ; combout          ;
+; |TopDE|fdiv:f1|cont[12]       ; |TopDE|fdiv:f1|cont[12]       ; regout           ;
+; |TopDE|fdiv:f1|cont[13]       ; |TopDE|fdiv:f1|cont[13]       ; regout           ;
+; |TopDE|fdiv:f1|cont[15]       ; |TopDE|fdiv:f1|cont[15]       ; regout           ;
+; |TopDE|fdiv:f1|cont[14]       ; |TopDE|fdiv:f1|cont[14]       ; regout           ;
+; |TopDE|fdiv:f1|Equal0~3       ; |TopDE|fdiv:f1|Equal0~3       ; combout          ;
+; |TopDE|fdiv:f1|Equal0~4       ; |TopDE|fdiv:f1|Equal0~4       ; combout          ;
+; |TopDE|fdiv:f1|cont[17]       ; |TopDE|fdiv:f1|cont[17]       ; regout           ;
+; |TopDE|fdiv:f1|cont[18]       ; |TopDE|fdiv:f1|cont[18]       ; regout           ;
+; |TopDE|fdiv:f1|cont[19]       ; |TopDE|fdiv:f1|cont[19]       ; regout           ;
+; |TopDE|fdiv:f1|cont[16]       ; |TopDE|fdiv:f1|cont[16]       ; regout           ;
+; |TopDE|fdiv:f1|Equal0~5       ; |TopDE|fdiv:f1|Equal0~5       ; combout          ;
+; |TopDE|fdiv:f1|cont[20]       ; |TopDE|fdiv:f1|cont[20]       ; regout           ;
+; |TopDE|fdiv:f1|cont[21]       ; |TopDE|fdiv:f1|cont[21]       ; regout           ;
+; |TopDE|fdiv:f1|Equal0~6       ; |TopDE|fdiv:f1|Equal0~6       ; combout          ;
+; |TopDE|fdiv:f1|cont[23]       ; |TopDE|fdiv:f1|cont[23]       ; regout           ;
+; |TopDE|fdiv:f1|cont[22]       ; |TopDE|fdiv:f1|cont[22]       ; regout           ;
+; |TopDE|fdiv:f1|Equal0~7       ; |TopDE|fdiv:f1|Equal0~7       ; combout          ;
+; |TopDE|fdiv:f1|cont[24]       ; |TopDE|fdiv:f1|cont[24]       ; regout           ;
+; |TopDE|fdiv:f1|cont[25]       ; |TopDE|fdiv:f1|cont[25]       ; regout           ;
+; |TopDE|fdiv:f1|cont[26]       ; |TopDE|fdiv:f1|cont[26]       ; regout           ;
+; |TopDE|fdiv:f1|cont[27]       ; |TopDE|fdiv:f1|cont[27]       ; regout           ;
+; |TopDE|fdiv:f1|Equal0~8       ; |TopDE|fdiv:f1|Equal0~8       ; combout          ;
+; |TopDE|fdiv:f1|cont[28]       ; |TopDE|fdiv:f1|cont[28]       ; regout           ;
+; |TopDE|fdiv:f1|cont[29]       ; |TopDE|fdiv:f1|cont[29]       ; regout           ;
+; |TopDE|fdiv:f1|cont[30]       ; |TopDE|fdiv:f1|cont[30]       ; regout           ;
+; |TopDE|fdiv:f1|cont[31]       ; |TopDE|fdiv:f1|cont[31]       ; regout           ;
+; |TopDE|fdiv:f1|Equal0~9       ; |TopDE|fdiv:f1|Equal0~9       ; combout          ;
+; |TopDE|fdiv:f1|Equal0~10      ; |TopDE|fdiv:f1|Equal0~10      ; combout          ;
+; |TopDE|fdiv:f1|clkout~0       ; |TopDE|fdiv:f1|clkout~0       ; combout          ;
+; |TopDE|decoder7:u0|WideOr6~0  ; |TopDE|decoder7:u0|WideOr6~0  ; combout          ;
+; |TopDE|decoder7:u0|WideOr5~0  ; |TopDE|decoder7:u0|WideOr5~0  ; combout          ;
+; |TopDE|decoder7:u0|WideOr4~0  ; |TopDE|decoder7:u0|WideOr4~0  ; combout          ;
+; |TopDE|decoder7:u0|WideOr3~0  ; |TopDE|decoder7:u0|WideOr3~0  ; combout          ;
+; |TopDE|decoder7:u0|WideOr2~0  ; |TopDE|decoder7:u0|WideOr2~0  ; combout          ;
+; |TopDE|decoder7:u0|WideOr1~0  ; |TopDE|decoder7:u0|WideOr1~0  ; combout          ;
+; |TopDE|decoder7:u0|WideOr0~0  ; |TopDE|decoder7:u0|WideOr0~0  ; combout          ;
+; |TopDE|decoder7:u1|WideOr6~0  ; |TopDE|decoder7:u1|WideOr6~0  ; combout          ;
+; |TopDE|decoder7:u1|WideOr5~0  ; |TopDE|decoder7:u1|WideOr5~0  ; combout          ;
+; |TopDE|decoder7:u1|WideOr4~0  ; |TopDE|decoder7:u1|WideOr4~0  ; combout          ;
+; |TopDE|decoder7:u1|WideOr3~0  ; |TopDE|decoder7:u1|WideOr3~0  ; combout          ;
+; |TopDE|decoder7:u1|WideOr2~0  ; |TopDE|decoder7:u1|WideOr2~0  ; combout          ;
+; |TopDE|decoder7:u1|WideOr1~0  ; |TopDE|decoder7:u1|WideOr1~0  ; combout          ;
+; |TopDE|decoder7:u1|WideOr0~0  ; |TopDE|decoder7:u1|WideOr0~0  ; combout          ;
+; |TopDE|decoder7:u2|WideOr6~0  ; |TopDE|decoder7:u2|WideOr6~0  ; combout          ;
+; |TopDE|decoder7:u2|WideOr5~0  ; |TopDE|decoder7:u2|WideOr5~0  ; combout          ;
+; |TopDE|decoder7:u2|WideOr4~0  ; |TopDE|decoder7:u2|WideOr4~0  ; combout          ;
+; |TopDE|decoder7:u2|WideOr3~0  ; |TopDE|decoder7:u2|WideOr3~0  ; combout          ;
+; |TopDE|decoder7:u2|WideOr2~0  ; |TopDE|decoder7:u2|WideOr2~0  ; combout          ;
+; |TopDE|decoder7:u2|WideOr1~0  ; |TopDE|decoder7:u2|WideOr1~0  ; combout          ;
+; |TopDE|decoder7:u2|WideOr0~0  ; |TopDE|decoder7:u2|WideOr0~0  ; combout          ;
+; |TopDE|decoder7:u3|WideOr6~0  ; |TopDE|decoder7:u3|WideOr6~0  ; combout          ;
+; |TopDE|decoder7:u3|WideOr5~0  ; |TopDE|decoder7:u3|WideOr5~0  ; combout          ;
+; |TopDE|decoder7:u3|WideOr4~0  ; |TopDE|decoder7:u3|WideOr4~0  ; combout          ;
+; |TopDE|decoder7:u3|WideOr3~0  ; |TopDE|decoder7:u3|WideOr3~0  ; combout          ;
+; |TopDE|decoder7:u3|WideOr2~0  ; |TopDE|decoder7:u3|WideOr2~0  ; combout          ;
+; |TopDE|decoder7:u3|WideOr1~0  ; |TopDE|decoder7:u3|WideOr1~0  ; combout          ;
+; |TopDE|decoder7:u3|WideOr0~0  ; |TopDE|decoder7:u3|WideOr0~0  ; combout          ;
+; |TopDE|num[1]                 ; |TopDE|num[1]                 ; regout           ;
+; |TopDE|num[0]                 ; |TopDE|num[0]                 ; regout           ;
+; |TopDE|num[3]                 ; |TopDE|num[3]                 ; regout           ;
+; |TopDE|num[2]                 ; |TopDE|num[2]                 ; regout           ;
+; |TopDE|decoder7:u4|WideOr6~0  ; |TopDE|decoder7:u4|WideOr6~0  ; combout          ;
+; |TopDE|decoder7:u4|WideOr5~0  ; |TopDE|decoder7:u4|WideOr5~0  ; combout          ;
+; |TopDE|decoder7:u4|WideOr4~0  ; |TopDE|decoder7:u4|WideOr4~0  ; combout          ;
+; |TopDE|decoder7:u4|WideOr3~0  ; |TopDE|decoder7:u4|WideOr3~0  ; combout          ;
+; |TopDE|decoder7:u4|WideOr2~0  ; |TopDE|decoder7:u4|WideOr2~0  ; combout          ;
+; |TopDE|decoder7:u4|WideOr1~0  ; |TopDE|decoder7:u4|WideOr1~0  ; combout          ;
+; |TopDE|decoder7:u4|WideOr0~0  ; |TopDE|decoder7:u4|WideOr0~0  ; combout          ;
+; |TopDE|decoder7:u5|WideOr6~0  ; |TopDE|decoder7:u5|WideOr6~0  ; combout          ;
+; |TopDE|decoder7:u5|WideOr5~0  ; |TopDE|decoder7:u5|WideOr5~0  ; combout          ;
+; |TopDE|decoder7:u5|WideOr4~0  ; |TopDE|decoder7:u5|WideOr4~0  ; combout          ;
+; |TopDE|decoder7:u5|WideOr3~0  ; |TopDE|decoder7:u5|WideOr3~0  ; combout          ;
+; |TopDE|decoder7:u5|WideOr2~0  ; |TopDE|decoder7:u5|WideOr2~0  ; combout          ;
+; |TopDE|decoder7:u5|WideOr1~0  ; |TopDE|decoder7:u5|WideOr1~0  ; combout          ;
+; |TopDE|decoder7:u5|WideOr0~0  ; |TopDE|decoder7:u5|WideOr0~0  ; combout          ;
+; |TopDE|decoder7:u6|WideOr6~0  ; |TopDE|decoder7:u6|WideOr6~0  ; combout          ;
+; |TopDE|decoder7:u6|WideOr5~0  ; |TopDE|decoder7:u6|WideOr5~0  ; combout          ;
+; |TopDE|decoder7:u6|WideOr4~0  ; |TopDE|decoder7:u6|WideOr4~0  ; combout          ;
+; |TopDE|decoder7:u6|WideOr3~0  ; |TopDE|decoder7:u6|WideOr3~0  ; combout          ;
+; |TopDE|decoder7:u6|WideOr2~0  ; |TopDE|decoder7:u6|WideOr2~0  ; combout          ;
+; |TopDE|decoder7:u6|WideOr1~0  ; |TopDE|decoder7:u6|WideOr1~0  ; combout          ;
+; |TopDE|decoder7:u6|WideOr0~0  ; |TopDE|decoder7:u6|WideOr0~0  ; combout          ;
+; |TopDE|fdiv:f1|cont~0         ; |TopDE|fdiv:f1|cont~0         ; combout          ;
+; |TopDE|fdiv:f1|cont~1         ; |TopDE|fdiv:f1|cont~1         ; combout          ;
+; |TopDE|fdiv:f1|cont~3         ; |TopDE|fdiv:f1|cont~3         ; combout          ;
+; |TopDE|fdiv:f1|cont~4         ; |TopDE|fdiv:f1|cont~4         ; combout          ;
+; |TopDE|fdiv:f1|cont~5         ; |TopDE|fdiv:f1|cont~5         ; combout          ;
+; |TopDE|fdiv:f1|cont~6         ; |TopDE|fdiv:f1|cont~6         ; combout          ;
+; |TopDE|fdiv:f1|cont~7         ; |TopDE|fdiv:f1|cont~7         ; combout          ;
+; |TopDE|fdiv:f1|cont~8         ; |TopDE|fdiv:f1|cont~8         ; combout          ;
+; |TopDE|fdiv:f1|cont~9         ; |TopDE|fdiv:f1|cont~9         ; combout          ;
+; |TopDE|fdiv:f1|cont~10        ; |TopDE|fdiv:f1|cont~10        ; combout          ;
+; |TopDE|fdiv:f1|cont~11        ; |TopDE|fdiv:f1|cont~11        ; combout          ;
+; |TopDE|num[1]~0               ; |TopDE|num[1]~0               ; combout          ;
+; |TopDE|num[3]~1               ; |TopDE|num[3]~1               ; combout          ;
+; |TopDE|num[2]~2               ; |TopDE|num[2]~2               ; combout          ;
+; |TopDE|num[0]~3               ; |TopDE|num[0]~3               ; combout          ;
+; |TopDE|oLEDR[0]               ; |TopDE|oLEDR[0]               ; padio            ;
+; |TopDE|oLEDR[1]               ; |TopDE|oLEDR[1]               ; padio            ;
+; |TopDE|oLEDR[2]               ; |TopDE|oLEDR[2]               ; padio            ;
+; |TopDE|oLEDR[3]               ; |TopDE|oLEDR[3]               ; padio            ;
+; |TopDE|oLEDR[4]               ; |TopDE|oLEDR[4]               ; padio            ;
+; |TopDE|oLEDR[5]               ; |TopDE|oLEDR[5]               ; padio            ;
+; |TopDE|oLEDR[6]               ; |TopDE|oLEDR[6]               ; padio            ;
+; |TopDE|oLEDR[7]               ; |TopDE|oLEDR[7]               ; padio            ;
+; |TopDE|oLEDR[8]               ; |TopDE|oLEDR[8]               ; padio            ;
+; |TopDE|oLEDR[9]               ; |TopDE|oLEDR[9]               ; padio            ;
+; |TopDE|oLEDR[10]              ; |TopDE|oLEDR[10]              ; padio            ;
+; |TopDE|oLEDR[11]              ; |TopDE|oLEDR[11]              ; padio            ;
+; |TopDE|oLEDR[12]              ; |TopDE|oLEDR[12]              ; padio            ;
+; |TopDE|oLEDR[13]              ; |TopDE|oLEDR[13]              ; padio            ;
+; |TopDE|oLEDR[14]              ; |TopDE|oLEDR[14]              ; padio            ;
+; |TopDE|oLEDR[15]              ; |TopDE|oLEDR[15]              ; padio            ;
+; |TopDE|oLEDR[16]              ; |TopDE|oLEDR[16]              ; padio            ;
+; |TopDE|oLEDR[17]              ; |TopDE|oLEDR[17]              ; padio            ;
+; |TopDE|oLEDG[0]               ; |TopDE|oLEDG[0]               ; padio            ;
+; |TopDE|oLEDG[1]               ; |TopDE|oLEDG[1]               ; padio            ;
+; |TopDE|oLEDG[2]               ; |TopDE|oLEDG[2]               ; padio            ;
+; |TopDE|oLEDG[3]               ; |TopDE|oLEDG[3]               ; padio            ;
+; |TopDE|oLEDG[4]               ; |TopDE|oLEDG[4]               ; padio            ;
+; |TopDE|oLEDG[5]               ; |TopDE|oLEDG[5]               ; padio            ;
+; |TopDE|oLEDG[6]               ; |TopDE|oLEDG[6]               ; padio            ;
+; |TopDE|oLEDG[7]               ; |TopDE|oLEDG[7]               ; padio            ;
+; |TopDE|oLEDG[8]               ; |TopDE|oLEDG[8]               ; padio            ;
+; |TopDE|oHEX0_D[0]             ; |TopDE|oHEX0_D[0]             ; padio            ;
+; |TopDE|oHEX0_D[1]             ; |TopDE|oHEX0_D[1]             ; padio            ;
+; |TopDE|oHEX0_D[2]             ; |TopDE|oHEX0_D[2]             ; padio            ;
+; |TopDE|oHEX0_D[3]             ; |TopDE|oHEX0_D[3]             ; padio            ;
+; |TopDE|oHEX0_D[4]             ; |TopDE|oHEX0_D[4]             ; padio            ;
+; |TopDE|oHEX0_D[5]             ; |TopDE|oHEX0_D[5]             ; padio            ;
+; |TopDE|oHEX0_D[6]             ; |TopDE|oHEX0_D[6]             ; padio            ;
+; |TopDE|oHEX1_D[0]             ; |TopDE|oHEX1_D[0]             ; padio            ;
+; |TopDE|oHEX1_D[1]             ; |TopDE|oHEX1_D[1]             ; padio            ;
+; |TopDE|oHEX1_D[2]             ; |TopDE|oHEX1_D[2]             ; padio            ;
+; |TopDE|oHEX1_D[3]             ; |TopDE|oHEX1_D[3]             ; padio            ;
+; |TopDE|oHEX1_D[4]             ; |TopDE|oHEX1_D[4]             ; padio            ;
+; |TopDE|oHEX1_D[5]             ; |TopDE|oHEX1_D[5]             ; padio            ;
+; |TopDE|oHEX1_D[6]             ; |TopDE|oHEX1_D[6]             ; padio            ;
+; |TopDE|oHEX2_D[0]             ; |TopDE|oHEX2_D[0]             ; padio            ;
+; |TopDE|oHEX2_D[1]             ; |TopDE|oHEX2_D[1]             ; padio            ;
+; |TopDE|oHEX2_D[2]             ; |TopDE|oHEX2_D[2]             ; padio            ;
+; |TopDE|oHEX2_D[3]             ; |TopDE|oHEX2_D[3]             ; padio            ;
+; |TopDE|oHEX2_D[4]             ; |TopDE|oHEX2_D[4]             ; padio            ;
+; |TopDE|oHEX2_D[5]             ; |TopDE|oHEX2_D[5]             ; padio            ;
+; |TopDE|oHEX2_D[6]             ; |TopDE|oHEX2_D[6]             ; padio            ;
+; |TopDE|oHEX3_D[0]             ; |TopDE|oHEX3_D[0]             ; padio            ;
+; |TopDE|oHEX3_D[1]             ; |TopDE|oHEX3_D[1]             ; padio            ;
+; |TopDE|oHEX3_D[2]             ; |TopDE|oHEX3_D[2]             ; padio            ;
+; |TopDE|oHEX3_D[3]             ; |TopDE|oHEX3_D[3]             ; padio            ;
+; |TopDE|oHEX3_D[4]             ; |TopDE|oHEX3_D[4]             ; padio            ;
+; |TopDE|oHEX3_D[5]             ; |TopDE|oHEX3_D[5]             ; padio            ;
+; |TopDE|oHEX3_D[6]             ; |TopDE|oHEX3_D[6]             ; padio            ;
+; |TopDE|oHEX4_D[0]             ; |TopDE|oHEX4_D[0]             ; padio            ;
+; |TopDE|oHEX4_D[1]             ; |TopDE|oHEX4_D[1]             ; padio            ;
+; |TopDE|oHEX4_D[2]             ; |TopDE|oHEX4_D[2]             ; padio            ;
+; |TopDE|oHEX4_D[3]             ; |TopDE|oHEX4_D[3]             ; padio            ;
+; |TopDE|oHEX4_D[4]             ; |TopDE|oHEX4_D[4]             ; padio            ;
+; |TopDE|oHEX4_D[5]             ; |TopDE|oHEX4_D[5]             ; padio            ;
+; |TopDE|oHEX4_D[6]             ; |TopDE|oHEX4_D[6]             ; padio            ;
+; |TopDE|oHEX5_D[0]             ; |TopDE|oHEX5_D[0]             ; padio            ;
+; |TopDE|oHEX5_D[1]             ; |TopDE|oHEX5_D[1]             ; padio            ;
+; |TopDE|oHEX5_D[2]             ; |TopDE|oHEX5_D[2]             ; padio            ;
+; |TopDE|oHEX5_D[3]             ; |TopDE|oHEX5_D[3]             ; padio            ;
+; |TopDE|oHEX5_D[4]             ; |TopDE|oHEX5_D[4]             ; padio            ;
+; |TopDE|oHEX5_D[5]             ; |TopDE|oHEX5_D[5]             ; padio            ;
+; |TopDE|oHEX5_D[6]             ; |TopDE|oHEX5_D[6]             ; padio            ;
+; |TopDE|oHEX6_D[0]             ; |TopDE|oHEX6_D[0]             ; padio            ;
+; |TopDE|oHEX6_D[1]             ; |TopDE|oHEX6_D[1]             ; padio            ;
+; |TopDE|oHEX6_D[2]             ; |TopDE|oHEX6_D[2]             ; padio            ;
+; |TopDE|oHEX6_D[3]             ; |TopDE|oHEX6_D[3]             ; padio            ;
+; |TopDE|oHEX6_D[4]             ; |TopDE|oHEX6_D[4]             ; padio            ;
+; |TopDE|oHEX6_D[5]             ; |TopDE|oHEX6_D[5]             ; padio            ;
+; |TopDE|oHEX6_D[6]             ; |TopDE|oHEX6_D[6]             ; padio            ;
+; |TopDE|oHEX7_D[0]             ; |TopDE|oHEX7_D[0]             ; padio            ;
+; |TopDE|oHEX7_D[1]             ; |TopDE|oHEX7_D[1]             ; padio            ;
+; |TopDE|oHEX7_D[2]             ; |TopDE|oHEX7_D[2]             ; padio            ;
+; |TopDE|oHEX7_D[3]             ; |TopDE|oHEX7_D[3]             ; padio            ;
+; |TopDE|oHEX7_D[4]             ; |TopDE|oHEX7_D[4]             ; padio            ;
+; |TopDE|oHEX7_D[5]             ; |TopDE|oHEX7_D[5]             ; padio            ;
+; |TopDE|oHEX7_D[6]             ; |TopDE|oHEX7_D[6]             ; padio            ;
+; |TopDE|oHEX0_DP               ; |TopDE|oHEX0_DP               ; padio            ;
+; |TopDE|oHEX1_DP               ; |TopDE|oHEX1_DP               ; padio            ;
+; |TopDE|oHEX2_DP               ; |TopDE|oHEX2_DP               ; padio            ;
+; |TopDE|oHEX3_DP               ; |TopDE|oHEX3_DP               ; padio            ;
+; |TopDE|oHEX4_DP               ; |TopDE|oHEX4_DP               ; padio            ;
+; |TopDE|oHEX5_DP               ; |TopDE|oHEX5_DP               ; padio            ;
+; |TopDE|oHEX6_DP               ; |TopDE|oHEX6_DP               ; padio            ;
+; |TopDE|oHEX7_DP               ; |TopDE|oHEX7_DP               ; padio            ;
+; |TopDE|iSW[0]                 ; |TopDE|iSW[0]~corein          ; combout          ;
+; |TopDE|iSW[1]                 ; |TopDE|iSW[1]~corein          ; combout          ;
+; |TopDE|iSW[2]                 ; |TopDE|iSW[2]~corein          ; combout          ;
+; |TopDE|iSW[3]                 ; |TopDE|iSW[3]~corein          ; combout          ;
+; |TopDE|iSW[4]                 ; |TopDE|iSW[4]~corein          ; combout          ;
+; |TopDE|iSW[5]                 ; |TopDE|iSW[5]~corein          ; combout          ;
+; |TopDE|iSW[6]                 ; |TopDE|iSW[6]~corein          ; combout          ;
+; |TopDE|iSW[7]                 ; |TopDE|iSW[7]~corein          ; combout          ;
+; |TopDE|iSW[8]                 ; |TopDE|iSW[8]~corein          ; combout          ;
+; |TopDE|iSW[9]                 ; |TopDE|iSW[9]~corein          ; combout          ;
+; |TopDE|iSW[10]                ; |TopDE|iSW[10]~corein         ; combout          ;
+; |TopDE|iSW[11]                ; |TopDE|iSW[11]~corein         ; combout          ;
+; |TopDE|iSW[12]                ; |TopDE|iSW[12]~corein         ; combout          ;
+; |TopDE|iSW[13]                ; |TopDE|iSW[13]~corein         ; combout          ;
+; |TopDE|iSW[14]                ; |TopDE|iSW[14]~corein         ; combout          ;
+; |TopDE|iSW[15]                ; |TopDE|iSW[15]~corein         ; combout          ;
+; |TopDE|iSW[16]                ; |TopDE|iSW[16]~corein         ; combout          ;
+; |TopDE|iSW[17]                ; |TopDE|iSW[17]~corein         ; combout          ;
+; |TopDE|iKEY[0]                ; |TopDE|iKEY[0]~corein         ; combout          ;
+; |TopDE|iKEY[1]                ; |TopDE|iKEY[1]~corein         ; combout          ;
+; |TopDE|iKEY[2]                ; |TopDE|iKEY[2]~corein         ; combout          ;
+; |TopDE|fdiv:f1|clkout~clkctrl ; |TopDE|fdiv:f1|clkout~clkctrl ; outclk           ;
++-------------------------------+-------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Simulator
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Wed Apr 26 13:32:34 2017
+Info: Command: quartus_sim --simulation_results_format=VWF decoder -c decoder
+Info (324025): Using vector source file "C:/Users/lamar/Desktop/LAB2/TopDE.vwf"
+Info (310003): Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info (310004): Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info (310002): Simulation partitioned into 1 sub-simulations
+Info (328053): Simulation coverage is       9.25 %
+Info (328052): Number of transitions in simulation is 6701
+Info (324045): Vector file decoder.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II 64-Bit Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 386 megabytes
+    Info: Processing ended: Wed Apr 26 13:32:35 2017
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
