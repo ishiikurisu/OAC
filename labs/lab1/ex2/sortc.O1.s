@@ -1,9 +1,25 @@
+	.file	1 "sortc.c"
+	.section .mdebug.abi32
+	.previous
+	.nan	legacy
+	.module	fp=32
+	.module	oddspreg
+	.section	.rodata.str1.4,"aMS",@progbits,1
+	.align	2
 .LC0:
+	.ascii	"%d\011\000"
 	.text
+	.align	2
 	.globl	show
 	.set	nomips16
 	.set	nomicromips
+	.ent	show
+	.type	show, @function
 show:
+	.frame	$sp,40,$31		# vars= 0, regs= 5/0, args= 16, gp= 0
+	.mask	0x800f0000,-4
+	.fmask	0x00000000,0
+	.set	noreorder
 	.set	nomacro
 	addiu	$sp,$sp,-40
 	sw	$31,36($sp)
@@ -16,7 +32,8 @@ show:
 	move	$19,$5
 	move	$16,$4
 	move	$17,$0
-	la	$18, .LC0
+	lui	$18,%hi(.LC0)
+	addiu	$18,$18,%lo(.LC0)
 .L3:
 	lw	$5,0($16)
 	jal	printf
@@ -35,16 +52,19 @@ show:
 	lw	$18,28($sp)
 	lw	$17,24($sp)
 	lw	$16,20($sp)
-	jr	$31
+	j	$31
 	addiu	$sp,$sp,40
 
 	.set	macro
 	.set	reorder
 	.end	show
 	.size	show, .-show
+	.align	2
 	.globl	swap
 	.set	nomips16
 	.set	nomicromips
+	.ent	swap
+	.type	swap, @function
 swap:
 	.frame	$sp,0,$31		# vars= 0, regs= 0/0, args= 0, gp= 0
 	.mask	0x00000000,0
@@ -58,16 +78,19 @@ swap:
 	addu	$4,$4,$5
 	lw	$5,0($4)
 	sw	$5,0($2)
-	jr	$31
+	j	$31
 	sw	$3,0($4)
 
 	.set	macro
 	.set	reorder
 	.end	swap
 	.size	swap, .-swap
+	.align	2
 	.globl	sort
 	.set	nomips16
 	.set	nomicromips
+	.ent	sort
+	.type	sort, @function
 sort:
 	.frame	$sp,48,$31		# vars= 0, regs= 8/0, args= 16, gp= 0
 	.mask	0x807f0000,-4
@@ -136,16 +159,19 @@ sort:
 	lw	$16,16($sp)
 	addiu	$sp,$sp,48
 .L16:
-	jr	$31
+	j	$31
 	nop
 
 	.set	macro
 	.set	reorder
 	.end	sort
 	.size	sort, .-sort
+	.align	2
 	.globl	main
 	.set	nomips16
 	.set	nomicromips
+	.ent	main
+	.type	main, @function
 main:
 	.frame	$sp,24,$31		# vars= 0, regs= 2/0, args= 16, gp= 0
 	.mask	0x80010000,-4
@@ -180,6 +206,8 @@ main:
 	.globl	v
 	.data
 	.align	2
+	.type	v, @object
+	.size	v, 40
 v:
 	.word	5
 	.word	8
@@ -191,3 +219,4 @@ v:
 	.word	0
 	.word	1
 	.word	9
+	.ident	"GCC: (Sourcery CodeBench Lite 2016.05-7) 5.3.0"

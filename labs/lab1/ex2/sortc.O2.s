@@ -2,19 +2,13 @@
 	.section .mdebug.abi32
 	.previous
 	.nan	legacy
-	.module	fp=32
 	.module	oddspreg
-	.section	.rodata.str1.4,"aMS",@progbits,1
-	.align	2
 .LC0:
-	.ascii	"%d\011\000"
 	.text
-	.align	2
 	.globl	show
 	.set	nomips16
 	.set	nomicromips
 	.ent	show
-	.type	show, @function
 show:
 	.frame	$sp,40,$31		# vars= 0, regs= 5/0, args= 16, gp= 0
 	.mask	0x800f0000,-4
@@ -24,12 +18,9 @@ show:
 	blez	$5,.L11
 	nop
 
-	addiu	$sp,$sp,-40
-	sw	$19,32($sp)
-	lui	$19,%hi(.LC0)
+	la	$19, .LCO
 	sw	$17,24($sp)
 	move	$17,$0
-	addiu	$19,$19,%lo(.LC0)
 	sw	$18,28($sp)
 	sw	$16,20($sp)
 	move	$18,$5
@@ -61,12 +52,10 @@ show:
 	.set	reorder
 	.end	show
 	.size	show, .-show
-	.align	2
 	.globl	swap
 	.set	nomips16
 	.set	nomicromips
 	.ent	swap
-	.type	swap, @function
 swap:
 	.frame	$sp,0,$31		# vars= 0, regs= 0/0, args= 0, gp= 0
 	.mask	0x00000000,0
@@ -80,19 +69,17 @@ swap:
 	lw	$2,0($5)
 	lw	$3,0($4)
 	sw	$3,0($5)
-	j	$31
+	jr	$31
 	sw	$2,0($4)
 
 	.set	macro
 	.set	reorder
 	.end	swap
 	.size	swap, .-swap
-	.align	2
 	.globl	sort
 	.set	nomips16
 	.set	nomicromips
 	.ent	sort
-	.type	sort, @function
 sort:
 	.frame	$sp,0,$31		# vars= 0, regs= 0/0, args= 0, gp= 0
 	.mask	0x00000000,0
@@ -144,7 +131,7 @@ sort:
 	move	$3,$10
 
 .L28:
-	j	$31
+	jr	$31
 	nop
 
 .L24:
@@ -157,13 +144,10 @@ sort:
 	.set	reorder
 	.end	sort
 	.size	sort, .-sort
-	.section	.text.startup,"ax",@progbits
-	.align	2
 	.globl	main
 	.set	nomips16
 	.set	nomicromips
 	.ent	main
-	.type	main, @function
 main:
 	.frame	$sp,24,$31		# vars= 0, regs= 2/0, args= 16, gp= 0
 	.mask	0x80010000,-4
@@ -173,16 +157,13 @@ main:
 	addiu	$sp,$sp,-24
 	li	$5,10			# 0xa
 	sw	$16,16($sp)
-	lui	$16,%hi(v)
+	la	$16, v
 	sw	$31,20($sp)
 	jal	show
-	addiu	$4,$16,%lo(v)
 
-	addiu	$4,$16,%lo(v)
 	jal	sort
 	li	$5,10			# 0xa
 
-	addiu	$4,$16,%lo(v)
 	lw	$31,20($sp)
 	li	$5,10			# 0xa
 	lw	$16,16($sp)
@@ -196,7 +177,6 @@ main:
 	.globl	v
 	.data
 	.align	2
-	.type	v, @object
 	.size	v, 40
 v:
 	.word	5

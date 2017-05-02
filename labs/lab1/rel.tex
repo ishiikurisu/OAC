@@ -27,7 +27,6 @@ Lendo o programa \textit{sort.s} dado, nota-se que ele vai realizar um  ordename
 
 Reutilizando o programa \textit{sort.s}, podemos analisar este algoritmo de ordenamento para outras entradas. Considerando as entradas $v_o(n) = {1,2,3,...,n}$ e $v_i(n)={n,n-1,n-2,...,1}$ para $n={1,2,3,4,5,6,7,8,9,10,20,30,40,50,60,70,80,90,100}$, podemos calcular o número de instruções para cada $n$ e calcular o tempo de execução $t$ com os valores sugeridos de frequência de clock e de CPI. A relação $n \cdot t$ nas figuras 1 e 2.
 
-% TODO Calcular n x t
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{ex1/best.png}
@@ -74,9 +73,14 @@ Todas as outras foram removidas. Aparentemente, o MARS é capaz de ignorar algum
 
 % TODO Fazer com que os programas convertidos do C rodem no MARS
 % TODO Contar as instruções
+Para testar o GCC, compilamos os programas em C para Assembly MIPS utilizando a diretriz \textit{-Oi} (onde $i$ é um número entre 0 e 3 ou a letra $s$), que é responsável por otimizar o código gerado pelo compilador. Paramos a compilação no código de gerar o Assembly pela diretriz \textit{-S} e adaptamos o código gerado para rodar em Assembly. Sendo assim, podemos comparar o quanto cada otimização pode melhorar o nosso código original:
 
 \begin{itemize}
-    \item Sem otimizações: 1840 instruções
+    \item Sem otimizações: 1840 instruções em 3822 bytes
+    \item Otimização \textit{-O1}: 3359 bytes
+    \item Otimização \textit{-O2}: 3183 bytes
+    \item Otimização \textit{-O3}: 3169 bytes
+    \item Otimização \textit{-Os}: 2993 bytes
 \end{itemize}
 
 \section{Exercício 3}
