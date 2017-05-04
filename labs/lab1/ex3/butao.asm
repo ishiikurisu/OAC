@@ -8,7 +8,7 @@
 .eqv delx $f5
 .eqv delxyswap $f6
 .eqv distline $f7
-.data
+.data 
 
 COORD:.float 160.5,120.5,160.6,120.5
 TOLERANCE:.float 0.0005
@@ -20,7 +20,7 @@ lw $t0,0($t0)
 mtc1 $t0,half
 j MAIN
 
-############DROP BUCKET############
+############DROP BUCKET############ 
 DROPBUCKET:                       #
 addi $sp,$sp,-4                   #
 sw $ra,0($sp)                     #
@@ -649,8 +649,8 @@ jr $ra                               #
 
 ###########POLY PROCESS####
 POLYPROC:                 #
-#a0 stores the colour     #
-#a1 stores tolerance      #
+#a0 stores the colour     #
+#a1 stores tolerance      #
 #a2: the amount of points #
 #points: stack            #
                           #
@@ -1098,23 +1098,535 @@ addi $sp,$sp,4               #
 jr $ra                       #
 ############CHAR M############
 
+############FLAG TEXT#########
+PRINTBRAZILFLAGTEXT:         #
+addi $sp,$sp,-4              #
+sw $ra,0($sp)                #
+#O                           #
+li $a0,40                    #
+li $a1,712                   #
+li $a2,848                   #
+li $a3,0                     #
+jal PRINTCHARO               #
+#O                           #
+#R                           #
+li $a0,40                    #
+li $a1,776                   #
+li $a2,856                   #
+li $a3,0                     #
+jal PRINTCHARR               #
+#R                           #
+#D                           #
+li $a0,40                    #
+li $a1,840                   #
+li $a2,864                   #
+li $a3,0                     #
+jal PRINTCHARD               #
+#D                           #
+#E                           #
+li $a0,40                    #
+li $a1,904                   #
+li $a2,872                   #
+li $a3,0                     #
+jal PRINTCHARE               #
+#E                           #
+#M                           #
+li $a0,40                    #
+li $a1,968                   #
+li $a2,880                   #
+li $a3,0                     #
+jal PRINTCHARM               #
+#M                           #
+#E                           #
+li $a0,40                    #
+li $a1,1096                  #
+li $a2,896                   #
+li $a3,0                     #
+jal PRINTCHARE               #
+#E                           #
+#P                           #
+li $a0,40                    #
+li $a1,1224                  #
+li $a2,912                   #
+li $a3,0                     #
+jal PRINTCHARP               #
+#P                           #
+#R                           #
+li $a0,40                    #
+li $a1,1288                  #
+li $a2,920                   #
+li $a3,0                     #
+jal PRINTCHARR               #
+#R                           #
+#O                           #
+li $a0,40                    #
+li $a1,1352                  #
+li $a2,928                   #
+li $a3,0                     #
+jal PRINTCHARO               #
+#O                           #
+#G                           #
+li $a0,40                    #
+li $a1,1416                  #
+li $a2,936                   #
+li $a3,0                     #
+jal PRINTCHARG               #
+#G                           #
+#R                           #
+li $a0,40                    #
+li $a1,1480                  #
+li $a2,944                   #
+li $a3,0                     #
+jal PRINTCHARR               #
+#R                           #
+#E                           #
+li $a0,40                    #
+li $a1,1544                  #
+li $a2,952                   #
+li $a3,0                     #
+jal PRINTCHARE               #
+#E                           #
+#S                           #
+li $a0,40                    #
+li $a1,1608                  #
+li $a2,960                   #
+li $a3,0                     #
+jal PRINTCHARS               #
+#S                           #
+#S                           #
+li $a0,40                    #
+li $a1,1672                  #
+li $a2,968                   #
+li $a3,0                     #
+jal PRINTCHARS               #
+#S                           #
+#O                           #
+li $a0,40                    #
+li $a1,1736                  #
+li $a2,976                   #
+li $a3,0                     #
+jal PRINTCHARO               #
+#O                           #
+                             #
+lw $ra,0($sp)                #
+addi $sp,$sp,4               #
+jr $ra                       #
+############FLAG TEXT#########
+
+##########################
+##########################
+############UK############
+##########################
+##########################
+PRINTUKFLAG:             #
+addi $sp,$sp,-4          #
+sw $ra,0($sp)            #
+                         #
+li $a0,128               #blue background
+li $t0,1272              #
+li $t1,952               #
+li $t4,8000              #
+jal DOTPROC              #
+                         #
+li $a0,255               #white straps back
+li $t0,0                 #
+li $t1,0                 #
+li $t2,2552              #
+li $t3,1912              #
+li $t4,160               #
+jal LINEPROC             #
+li $t0,2552              #
+li $t1,0                 #
+li $t2,0                 #
+li $t3,1912              #
+jal LINEPROC             #
+                         #
+li $a0,6                 #red straps back
+li $t0,0                 #
+li $t1,0                 #
+li $t2,2552              #
+li $t3,1912              #
+li $t4,80                #
+jal LINEPROC             #
+li $t0,2552              #
+li $t1,0                 #
+li $t2,0                 #
+li $t3,1912              #
+jal LINEPROC             #
+                         #
+li $a0,255               #white straps front
+li $t0,1272              #
+li $t1,0                 #
+li $t2,1272              #
+li $t3,1912              #
+li $t4,320               #
+jal LINEPROC             #
+li $t0,0                 #
+li $t1,952               #
+li $t2,2552              #
+li $t3,952               #
+jal LINEPROC             #
+                         #
+li $a0,6                 #red straps front
+li $t0,1272              #
+li $t1,0                 #
+li $t2,1272              #
+li $t3,1912              #
+li $t4,160               #
+jal LINEPROC             #
+li $t0,0                 #
+li $t1,952               #
+li $t2,2552              #
+li $t3,952               #
+jal LINEPROC             #
+                         #
+lw $ra,0($sp)            #
+addi $sp,$sp,4           #
+jr $ra                   #
+##########################
+##########################
+############UK############
+##########################
+##########################
+
+##############################
+##############################
+############FRANCE############
+##############################
+##############################
+PRINTFRANCEFLAG:             #
+addi $sp,$sp,-4              #
+sw $ra,0($sp)                #
+                             #
+li $a0,255                   #three lines
+li $t0,1280                  #
+li $t1,0                     #
+li $t2,1280                  #
+li $t3,1912                  #
+li $t4,424                   #
+jal LINEPROC                 #
+li $a0,128                   #
+li $t0,424                   #
+li $t1,0                     #
+li $t2,424                   #
+li $t3,1912                  #
+li $t4,432                   #
+jal LINEPROC                 #
+li $a0,6                     #
+li $t0,2136                  #
+li $t1,0                     #
+li $t2,2136                  #
+li $t3,1912                  #
+li $t4,432                   #
+jal LINEPROC                 #
+                             #
+lw $ra,0($sp)                #
+addi $sp,$sp,4               #
+jr $ra                       #
+##############################
+##############################
+############FRANCE############
+##############################
+##############################
+
+##############################
+##############################
+############BRAZIL############
+##############################
+##############################
+PRINTBRAZILFLAG:             #
+addi $sp,$sp,-4              #
+sw $ra,0($sp)                #
+                             #
+li $a0,40                    #green background
+li $t0,1272                  #
+li $t1,952                   #
+li $t4,8000                  #
+jal DOTPROC                  #
+                             #
+li $a0,54                    #yellow diamond
+li $t0,1272                  #
+li $t1,0                     #
+li $t2,2552                  #
+li $t3,952                   #
+li $t4,8                     #
+jal LINEPROC                 #
+li $t0,2552                  #
+li $t1,952                   #
+li $t2,1272                  #
+li $t3,1912                  #
+jal LINEPROC                 #
+li $t0,1272                  #
+li $t1,1912                  #
+li $t2,0                     #
+li $t3,952                   #
+jal LINEPROC                 #
+li $t0,0                     #
+li $t1,952                   #
+li $t2,1272                  #
+li $t3,0                     #
+jal LINEPROC                 #
+li $a2,159                   #
+li $a3,119                   #
+jal DROPBUCKET               #
+                             #
+li $a0,128                   #blue circle
+li $t0,1272                  #
+li $t1,952                   #
+li $t4,640                   #
+jal DOTPROC                  #
+                             #
+li $a0,255                   #white strap
+li $t0,640                   #
+li $t1,880                   #
+li $t2,1920                  #
+li $t3,1040                  #
+li $t4,80                    #
+jal LINEPROC                 #
+                             #
+li $a0,54                    #cutting strap
+li $t0,1272                  #
+li $t1,952                   #
+li $t2,8                     #
+li $t3,81                    #
+jal CIRCLEPROC               #
+li $a2,70                    #
+li $a3,100                   #
+jal DROPBUCKET               #
+li $a2,250                   #
+li $a3,140                   #
+jal DROPBUCKET               #
+                             #
+li $a0,255                   #make stars
+li $t0,1496                  #
+li $t1,856                   #
+li $t4,24                    #
+jal DOTPROC                  #
+li $t0,1760                  #
+li $t1,1168                  #
+jal DOTPROC                  #
+li $t0,1840                  #
+li $t1,1144                  #
+li $t4,16                    #
+jal DOTPROC                  #
+li $t0,1816                  #
+li $t1,1240                  #
+jal DOTPROC                  #
+li $t0,1784                  #
+li $t1,1288                  #
+jal DOTPROC                  #
+li $t0,1752                  #
+li $t1,1336                  #
+jal DOTPROC                  #
+li $t0,1560                  #
+li $t1,1360                  #
+li $t4,24                    #
+jal DOTPROC                  #
+li $t0,1640                  #
+li $t1,1280                  #
+li $t4,16                    #
+jal DOTPROC                  #
+li $t0,1624                  #
+li $t1,1344                  #
+jal DOTPROC                  #
+li $t0,1608                  #
+li $t1,1424                  #
+jal DOTPROC                  #
+li $t0,1560                  #
+li $t1,1280                  #
+jal DOTPROC                  #
+li $t0,1480                  #
+li $t1,1296                  #
+jal DOTPROC                  #
+li $t0,1440                  #
+li $t1,1120                  #
+li $t4,24                    #
+jal DOTPROC                  #
+li $t0,1280                  #
+li $t1,1480                  #
+li $t4,8                     #
+jal DOTPROC                  #
+li $t0,1320                  #
+li $t1,1344                  #
+li $t4,16                    #
+jal DOTPROC                  #
+li $t0,1304                  #
+li $t1,1224                  #
+jal DOTPROC                  #
+li $t0,1344                  #
+li $t1,1264                  #
+jal DOTPROC                  #
+li $t0,1264                  #
+li $t1,1280                  #
+jal DOTPROC                  #
+li $t0,1296                  #
+li $t1,1312                  #
+li $t4,8                     #
+jal DOTPROC                  #
+li $t0,1120                  #
+li $t1,1160                  #
+li $t4,24                    #
+jal DOTPROC                  #
+li $t0,920                   #
+li $t1,1240                  #
+jal DOTPROC                  #
+li $t0,760                   #
+li $t1,1080                  #
+jal DOTPROC                  #
+li $t0,880                   #
+li $t1,1320                  #
+li $t4,8                     #
+jal DOTPROC                  #
+li $t0,984                   #
+li $t1,1184                  #
+li $t4,16                    #
+jal DOTPROC                  #
+li $t0,1104                  #
+li $t1,1280                  #
+jal DOTPROC                  #
+li $t0,1096                  #
+li $t1,1328                  #
+jal DOTPROC                  #
+li $t0,1144                  #
+li $t1,1344                  #
+jal DOTPROC                  #final star
+                             #
+jal PRINTBRAZILFLAGTEXT      #write in strap
+                             #
+lw $ra,0($sp)                #
+addi $sp,$sp,4               #
+jr $ra                       #
+##############################
+##############################
+############BRAZIL############
+##############################
+##############################
+
+
+##############################
+##############################
+############SWEDEN############
+##############################
+##############################
+PRINTSWEDENFLAG:             #
+addi $sp,$sp,-4              #
+sw $ra,0($sp)                #
+                             #
+li $a0,208                   #blue background
+li $t0,1272                  #
+li $t1,952                   #
+li $t4,8000                  #
+jal DOTPROC                  #
+                             #
+li $a0,54                    #yellow straps
+li $t0,952                   #
+li $t1,0                     #
+li $t2,952                   #
+li $t3,1912                  #
+li $t4,240                   #
+jal LINEPROC                 #
+li $t0,0                     #
+li $t1,952                   #
+li $t2,2552                  #
+li $t3,952                   #
+jal LINEPROC                 #
+                             #
+lw $ra,0($sp)                #
+addi $sp,$sp,4               #
+jr $ra                       #
+##############################
+##############################
+############SWEDEN############
+##############################
+##############################
+
+##############################
+##############################
+############ISRAEL############
+##############################
+##############################
+PRINTISRAELFLAG:             #
+addi $sp,$sp,-4              #
+sw $ra,0($sp)                #
+                             #
+li $a0,255                   #white background
+li $t0,1272                  #
+li $t1,952                   #
+li $t4,8000                  #
+jal DOTPROC                  #
+                             #
+li $a0,128                   #blue straps
+li $t0,0                     #
+li $t1,240                   #
+li $t2,2552                  #
+li $t3,240                   #
+li $t4,80                    #
+jal LINEPROC                 #
+li $t0,0                     #
+li $t1,1680                  #
+li $t2,2552                  #
+li $t3,1680                  #
+jal LINEPROC                 #
+                             #
+li $a0,128                   #david`s star
+li $t0,1272                  #
+li $t1,400                   #
+li $t2,1752                  #
+li $t3,1240                  #
+li $t4,40                    #
+jal LINEPROC                 #
+li $t0,1752                  #
+li $t1,1240                  #
+li $t2,792                   #
+li $t3,1240                  #
+jal LINEPROC                 #
+li $t0,792                   #
+li $t1,1240                  #
+li $t2,1272                  #
+li $t3,400                   #
+jal LINEPROC                 #
+li $t0,1272                  #
+li $t1,1520                  #
+li $t2,808                   #
+li $t3,680                   #
+jal LINEPROC                 #
+li $t0,808                   #
+li $t1,680                   #
+li $t2,1768                  #
+li $t3,680                   #
+jal LINEPROC                 #
+li $t0,1768                  #
+li $t1,680                   #
+li $t2,1272                  #
+li $t3,1520                  #
+jal LINEPROC                 #
+                             #
+lw $ra,0($sp)                #
+addi $sp,$sp,4               #
+jr $ra                       #
+##############################
+##############################
+############ISRAEL############
+##############################
+##############################
+
 ############################
 ############################
-############BUTAO###########
+############LOVE############
 ############################
 ############################
-PRINTBUTAOFLAG:            #
+PRINTLOVEFLAG:             #
 addi $sp,$sp,-4            #
 sw $ra,0($sp)              #
                            #
-li $a0,6                   #red background
+li $a0,5                   #red background
 li $t0,1272                #
 li $t1,952                 #
 li $t4,8000                #
 jal DOTPROC                #
                            #
 li $a0,248                 #blue heart
-li $a1,6                   #
+li $a1,16                  #
 li $a2,22                  #
 li $t0,1272                #
 li $t1,1912                #
@@ -1231,6 +1743,1284 @@ li $a0,248                 #blue heart print
 li $a2,159                 #
 li $a3,119                 #
 jal DROPBUCKET             #
+                           #
+li $a0,128                 #david`s star
+li $t0,1272                #
+li $t1,400                 #
+li $t2,1752                #
+li $t3,1240                #
+li $t4,32                  #
+jal LINEPROC               #
+li $t0,1752                #
+li $t1,1240                #
+li $t2,792                 #
+li $t3,1240                #
+jal LINEPROC               #
+li $t0,792                 #
+li $t1,1240                #
+li $t2,1272                #
+li $t3,400                 #
+jal LINEPROC               #
+li $t0,1272                #
+li $t1,1520                #
+li $t2,808                 #
+li $t3,680                 #
+jal LINEPROC               #
+li $t0,808                 #
+li $t1,680                 #
+li $t2,1768                #
+li $t3,680                 #
+jal LINEPROC               #
+li $t0,1768                #
+li $t1,680                 #
+li $t2,1272                #
+li $t3,1520                #
+jal LINEPROC               #
+                           #
+li $a0,5                   #red ruby
+li $a2,159                 #
+li $a3,119                 #
+jal DROPBUCKET             #
+                           #
+li $a0,196                 #paint it purple
+li $a2,159                 #
+li $a3,70                  #
+jal DROPBUCKET             #
+li $a2,159                 #
+li $a3,180                 #
+jal DROPBUCKET             #
+li $a2,131                 #
+li $a3,90                  #
+jal DROPBUCKET             #
+li $a2,211                 #
+li $a3,90                  #
+jal DROPBUCKET             #
+li $a2,131                 #
+li $a3,150                 #
+jal DROPBUCKET             #
+li $a2,211                 #
+li $a3,150                 #
+jal DROPBUCKET             #
+li $a2,159                 #
+li $a3,50                  #
+jal DROPBUCKET             #
+                           #
+lw $ra,0($sp)              #
+addi $sp,$sp,4             #
+jr $ra                     #
+############################
+############################
+############LOVE############
+############################
+############################
+
+###############################
+###############################
+############SCIENCE############
+###############################
+###############################
+PRINTSCIENCEFLAG:             #
+addi $sp,$sp,-4               #
+sw $ra,0($sp)                 #
+                              #
+li $a0,73                     #blue background
+li $t0,1272                   #
+li $t1,952                    #
+li $t4,4000                   #
+jal DOTPROC                   #
+                              #
+li $a0,184                    #big atom
+li $t0,1272                   #
+li $t1,952                    #
+li $t4,120                    #
+jal DOTPROC                   #
+li $a0,61                     #
+li $t0,1272                   #
+li $t1,952                    #
+li $t2,1272                   #
+li $t3,952                    #
+li $t4,16                     #
+li $t5,240                    #
+jal ELIPSEPROC                #
+                              #
+li $a0,168                    #orbitals rad
+li $t0,800                    #
+li $t1,952                    #
+li $t2,1744                   #
+li $t3,952                    #
+li $t4,24                     #
+li $t5,1100                   #
+jal ELIPSEPROC                #
+li $t0,944                    #
+li $t1,624                    #
+li $t2,1600                   #
+li $t3,1280                   #
+li $t5,1100                   #
+jal ELIPSEPROC                #
+li $t0,944                    #
+li $t1,1280                   #
+li $t2,1600                   #
+li $t3,624                    #
+li $t5,1100                   #
+jal ELIPSEPROC                #
+                              #
+li $a0,184                    #orbitals
+li $t0,800                    #
+li $t1,952                    #
+li $t2,1744                   #
+li $t3,952                    #
+li $t4,8                      #
+li $t5,1100                   #
+jal ELIPSEPROC                #
+li $t0,944                    #
+li $t1,624                    #
+li $t2,1600                   #
+li $t3,1280                   #
+li $t5,1100                   #
+jal ELIPSEPROC                #
+li $t0,944                    #
+li $t1,1280                   #
+li $t2,1600                   #
+li $t3,624                    #
+li $t5,1100                   #
+jal ELIPSEPROC                #
+                              #
+li $a0,184                    #electrons
+li $t0,720                    #
+li $t1,952                    #
+li $t4,40                     #
+jal DOTPROC                   #
+li $a0,61                     #
+li $t0,720                    #
+li $t1,952                    #
+li $t2,720                    #
+li $t3,952                    #
+li $t4,16                     #
+li $t5,80                     #
+jal ELIPSEPROC                #
+li $a0,184                    #
+li $t0,1656                   #
+li $t1,1336                   #
+li $t4,40                     #
+jal DOTPROC                   #
+li $a0,61                     #
+li $t0,1656                   #
+li $t1,1336                   #
+li $t2,1656                   #
+li $t3,1336                   #
+li $t4,16                     #
+li $t5,80                     #
+jal ELIPSEPROC                #
+li $a0,184                    #
+li $t0,1656                   #
+li $t1,568                    #
+li $t4,40                     #
+jal DOTPROC                   #
+li $a0,61                     #
+li $t0,1656                   #
+li $t1,568                    #
+li $t2,1656                   #
+li $t3,568                    #
+li $t4,16                     #
+li $t5,80                     #
+jal ELIPSEPROC                #
+                              #
+lw $ra,0($sp)                 #
+addi $sp,$sp,4                #
+jr $ra                        #
+###############################
+###############################
+############SCIENCE############
+###############################
+###############################
+
+###############################
+###############################
+############JAPAN##############
+###############################
+###############################
+PRINTJAPANFLAG:               #
+addi $sp,$sp,-4               #
+sw $ra,0($sp)                 #
+                              #
+li $a0,255                    #white background
+li $t0,1272                   #
+li $t1,952                    #
+li $t4,4000                   #
+jal DOTPROC                   #
+                              #
+li $a0,6                      #red sun
+li $t0,1272                   #
+li $t1,952                    #
+li $t4,560                    #
+jal DOTPROC                   #
+                              #
+lw $ra,0($sp)                 #
+addi $sp,$sp,4                #
+jr $ra                        #
+###############################
+###############################
+############JAPAN##############
+###############################
+###############################
+
+###############################
+###############################
+############US#################
+###############################
+###############################
+PRINTUSFLAG:                  #
+addi $sp,$sp,-4               #
+sw $ra,0($sp)                 #
+                              #
+li $a0,255                    #white background
+li $t0,1272                   #
+li $t1,852                    #
+li $t4,4000                   #
+jal DOTPROC                   #
+                              #
+li $a0,6                      #
+li $t0,0                      #
+li $t1,72                     #
+li $t2,2552                   #
+li $t3,72                     #
+li $t4,72                     #
+jal LINEPROC                  #
+li $t0,0                      #
+li $t1,368                    #
+li $t2,2552                   #
+li $t3,368                    #
+jal LINEPROC                  #
+li $t0,0                      #
+li $t1,664                    #
+li $t2,2552                   #
+li $t3,664                    #
+jal LINEPROC                  #
+li $t0,0                      #
+li $t1,952                    #
+li $t2,2552                   #
+li $t3,952                    #
+jal LINEPROC                  #
+li $t0,0                      #
+li $t1,1248                   #
+li $t2,2552                   #
+li $t3,1248                   #
+jal LINEPROC                  #
+li $t0,0                      #
+li $t1,1544                   #
+li $t2,2552                   #
+li $t3,1544                   #
+jal LINEPROC                  #
+li $t0,0                      #
+li $t1,1840                   #
+li $t2,2552                   #
+li $t3,1840                   #
+jal LINEPROC                  #
+                              #
+li $a0,128                    #
+li $t0,1272                   #
+li $t1,1016                   #
+li $t2,1272                   #
+li $t3,0                      #
+li $t4,0                      #
+jal LINEPROC                  #
+li $t0,0                      #
+li $t1,1024                   #
+li $t2,1264                   #
+li $t3,1024                   #
+jal LINEPROC                  #
+li $a2,0                      #
+li $a3,0                      #
+jal DROPBUCKET                #
+li $a2,0                      #
+li $a3,27                     #
+jal DROPBUCKET                #
+li $a2,0                      #
+li $a3,46                     #
+jal DROPBUCKET                #
+li $a2,0                      #
+li $a3,64                     #
+jal DROPBUCKET                #
+li $a2,0                      #
+li $a3,83                     #
+jal DROPBUCKET                #
+li $a2,0                      #
+li $a3,101                    #
+jal DROPBUCKET                #
+li $a2,0                      #
+li $a3,119                    #
+jal DROPBUCKET                #
+                              #
+li $a0,255                    #
+li $t0,176                    #
+li $t1,96                     #
+li $t4,24                     #
+jal DOTPROC                   #
+li $t0,360                    #
+li $t1,96                     #
+jal DOTPROC                   #
+li $t0,544                    #
+li $t1,96                     #
+jal DOTPROC                   #
+li $t0,728                    #
+li $t1,96                     #
+jal DOTPROC                   #
+li $t0,912                    #
+li $t1,96                     #
+jal DOTPROC                   #
+li $t0,1096                   #
+li $t1,96                     #
+jal DOTPROC                   #
+li $t0,176                    #
+li $t1,304                    #
+jal DOTPROC                   #
+li $t0,360                    #
+li $t1,304                    #
+jal DOTPROC                   #
+li $t0,544                    #
+li $t1,304                    #
+jal DOTPROC                   #
+li $t0,728                    #
+li $t1,304                    #
+jal DOTPROC                   #
+li $t0,912                    #
+li $t1,304                    #
+jal DOTPROC                   #
+li $t0,1096                   #
+li $t1,304                    #
+jal DOTPROC                   #
+li $t0,176                    #
+li $t1,512                    #
+jal DOTPROC                   #
+li $t0,360                    #
+li $t1,512                    #
+jal DOTPROC                   #
+li $t0,544                    #
+li $t1,512                    #
+jal DOTPROC                   #
+li $t0,728                    #
+li $t1,512                    #
+jal DOTPROC                   #
+li $t0,912                    #
+li $t1,512                    #
+jal DOTPROC                   #
+li $t0,1096                   #
+li $t1,512                    #
+jal DOTPROC                   #
+li $t0,176                    #
+li $t1,712                    #
+jal DOTPROC                   #
+li $t0,360                    #
+li $t1,712                    #
+jal DOTPROC                   #
+li $t0,544                    #
+li $t1,712                    #
+jal DOTPROC                   #
+li $t0,728                    #
+li $t1,712                    #
+jal DOTPROC                   #
+li $t0,912                    #
+li $t1,712                    #
+jal DOTPROC                   #
+li $t0,1096                   #
+li $t1,712                    #
+jal DOTPROC                   ###8bull
+li $t0,176                    #
+li $t1,920                    #
+jal DOTPROC                   #
+li $t0,360                    #
+li $t1,920                    #
+jal DOTPROC                   #
+li $t0,544                    #
+li $t1,920                    #
+jal DOTPROC                   #
+li $t0,728                    #
+li $t1,920                    #
+jal DOTPROC                   #
+li $t0,912                    #
+li $t1,920                    #
+jal DOTPROC                   #
+li $t0,1096                   #
+li $t1,920                    #
+jal DOTPROC                   #
+li $t0,272                    #
+li $t1,200                    #
+jal DOTPROC                   #
+li $t0,456                    #
+li $t1,200                    #
+jal DOTPROC                   #
+li $t0,632                    #
+li $t1,200                    #
+jal DOTPROC                   #
+li $t0,816                    #
+li $t1,200                    #
+jal DOTPROC                   #
+li $t0,1000                   #
+li $t1,200                    #
+jal DOTPROC                   #
+li $t0,272                    #
+li $t1,408                    #
+jal DOTPROC                   #
+li $t0,456                    #
+li $t1,408                    #
+jal DOTPROC                   #
+li $t0,632                    #
+li $t1,408                    #
+jal DOTPROC                   #
+li $t0,816                    #
+li $t1,408                    #
+jal DOTPROC                   #
+li $t0,1000                   #
+li $t1,408                    #
+jal DOTPROC                   #
+li $t0,272                    #
+li $t1,608                    #
+jal DOTPROC                   #
+li $t0,456                    #
+li $t1,608                    #
+jal DOTPROC                   #
+li $t0,632                    #
+li $t1,608                    #
+jal DOTPROC                   #
+li $t0,816                    #
+li $t1,608                    #
+jal DOTPROC                   #
+li $t0,1000                   #
+li $t1,608                    #
+jal DOTPROC                   #
+li $t0,272                    #
+li $t1,816                    #
+jal DOTPROC                   #
+li $t0,456                    #
+li $t1,816                    #
+jal DOTPROC                   #
+li $t0,632                    #
+li $t1,816                    #
+jal DOTPROC                   #
+li $t0,816                    #
+li $t1,816                    #
+jal DOTPROC                   #
+li $t0,1000                   #
+li $t1,816                    #
+jal DOTPROC                   #
+                              #
+lw $ra,0($sp)                 #
+addi $sp,$sp,4                #
+jr $ra                        #
+###############################
+###############################
+############US#################
+###############################
+###############################
+
+############################
+############################
+############BUTAO###########
+############################
+############################
+PRINTBUTAOFLAG:            #
+addi $sp,$sp,-4            #
+sw $ra,0($sp)              #
+                           #
+li $a0,22                  #red background
+li $t0,1272                #
+li $t1,952                 #
+li $t4,8000                #
+jal DOTPROC                #
+
+li $a0,55                  #
+li $t0,2559                #
+li $t1,0                   #
+li $t2,0                   #
+li $t3,1919                #
+li $t4,6                   #
+jal LINEPROC               #
+
+li $a1,0
+li $a2,0
+jal DROPBUCKET
+
+li $a0,164                    #
+li $t0,1040                 #
+li $t1,1656                  #
+li $t4,80                     #
+jal DOTPROC                   #
+li $a0,255                    #
+li $t0,1040                 #
+li $t1,1656                  #
+li $t4,72                     #
+jal DOTPROC                   #
+
+li $a0,164                    #
+li $t0,1192                #
+li $t1,1296                 #
+li $t4,80                     #
+jal DOTPROC                   #
+li $a0,255                    #
+li $t0,1192                #
+li $t1,1296                 #
+li $t4,72                     #
+jal DOTPROC                   #
+
+li $a0,164                    #
+li $t0,2000                 #
+li $t1,760                  #
+li $t4,80                     #
+jal DOTPROC                   #
+li $a0,255                    #
+li $t0,2000                 #
+li $t1,760                  #
+li $t4,72                     #
+jal DOTPROC                   #
+                           #
+li $a0,164                 #blue heart
+li $a1,6                   #
+li $a2,130                 #
+li $t0,384                 #
+li $t1,1624                #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,560                 #
+li $t1,1496                #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,408                 #
+li $t1,1536                #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,624                 #
+li $t1,1424                #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,512                 #
+li $t1,1432                #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,680                 #
+li $t1,1368                #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,520                 #
+li $t1,1328                #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,680                 #
+li $t1,1352                #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,808                 #
+li $t1,1312                #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,888                 #
+li $t1,1200                #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,936                 #
+li $t1,1008                #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,992                 #
+li $t1,880                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1072                #
+li $t1,840                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1216                #
+li $t1,832                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1320                #
+li $t1,880                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1432                #
+li $t1,936                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1464                #
+li $t1,928                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1440                #
+li $t1,800                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1368                #
+li $t1,688                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1352                #
+li $t1,592                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1392                #
+li $t1,528                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1480                #
+li $t1,440                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+                           ##BRAKE
+li $t0,1576                #
+li $t1,384                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              ##DONE
+li $t0,1688                #
+li $t1,392                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1776                #
+li $t1,368                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1800                #
+li $t1,392                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1840                #
+li $t1,392                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1856                #
+li $t1,416                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1912                #
+li $t1,440                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1968                #
+li $t1,432                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,2072                #
+li $t1,240                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,2008                #
+li $t1,416                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,2112                #
+li $t1,384                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,2024                #
+li $t1,456                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,2176                #
+li $t1,448                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1984                #
+li $t1,504                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1968                #
+li $t1,552                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1952                #
+li $t1,664                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1936                #
+li $t1,608                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1912                #
+li $t1,696                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1912                #
+li $t1,584                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1872                #
+li $t1,568                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1856                #
+li $t1,544                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1800                #
+li $t1,552                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+                           ##BRAKE
+li $t0,1784                #
+li $t1,592                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              ##DONE
+li $t0,1824                #
+li $t1,640                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1880                #
+li $t1,664                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1880                #
+li $t1,752                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1856                #
+li $t1,728                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1840                #
+li $t1,752                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1824                #
+li $t1,704                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1736                #
+li $t1,640                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1688                #
+li $t1,640                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1656                #
+li $t1,632                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1624                #
+li $t1,568                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1568                #
+li $t1,592                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1560                #
+li $t1,656                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1624                #
+li $t1,736                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1760                #
+li $t1,800                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1888                #
+li $t1,792                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1904                #
+li $t1,736                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1920                #
+li $t1,800                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1968                #
+li $t1,808                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1984                #
+li $t1,768                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,2016                #
+li $t1,816                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,2048                #
+li $t1,792                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+                           ##BRAKE
+li $t0,2040                #
+li $t1,752                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              ##DONE
+li $t0,2096                #
+li $t1,824                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,2024                #
+li $t1,880                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1976                #
+li $t1,912                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1888                #
+li $t1,864                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1824                #
+li $t1,904                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1736                #
+li $t1,912                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1664                #
+li $t1,880                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1656                #
+li $t1,992                 #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1616                #
+li $t1,1096                #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1568                #
+li $t1,1168                #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1712                #
+li $t1,1216                #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1792                #
+li $t1,1136                #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1864                #
+li $t1,1136                #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1824                #
+li $t1,1184                #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1808                #
+li $t1,1208                #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1888                #
+li $t1,1264                #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1840                #
+li $t1,1248                #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1808                #
+li $t1,1248                #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1760                #
+li $t1,1304                #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1760                #
+li $t1,1368                #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1784                #
+li $t1,1424                #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+                           ##BRAKE
+li $t0,1704                #
+li $t1,1376                #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              ##DONE
+li $t0,1688                #
+li $t1,1288                #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1448                #
+li $t1,1208                #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1464                #
+li $t1,1104                #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1344                #
+li $t1,1096                #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1184                #
+li $t1,1032                #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1104                #
+li $t1,1040                #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1040                #
+li $t1,1144                #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1064                #
+li $t1,1240                #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1096                #
+li $t1,1144                #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1176                #
+li $t1,1144                #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1144                #
+li $t1,1168                #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1144                #
+li $t1,1200                #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1208                #
+li $t1,1200                #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1232                #
+li $t1,1232                #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1160                #
+li $t1,1248                #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1144                #
+li $t1,1320                #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1184                #
+li $t1,1368                #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1144                #
+li $t1,1376                #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1088                #
+li $t1,1336                #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1056                #
+li $t1,1320                #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1056                #
+li $t1,1400                #
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+
+li $t0,1104
+li $t1,1472
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1152
+li $t1,1480
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1208
+li $t1,1592
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1168
+li $t1,1544
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1128
+li $t1,1544
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1128
+li $t1,1648
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1080
+li $t1,1592
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1040
+li $t1,1568
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,984
+li $t1,1624
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,960
+li $t1,1576
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,976
+li $t1,1536
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,1032
+li $t1,1512
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,976
+li $t1,1416
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,984
+li $t1,1336
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,920
+li $t1,1352
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,824
+li $t1,1448
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,704
+li $t1,1520
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,744
+li $t1,1464
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,640
+li $t1,1520
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+li $t0,688
+li $t1,1464
+addi $sp,$sp,-8            #
+sw $t0,0($sp)              #
+sw $t1,4($sp)              #
+jal POLYPROC               #
+
+li $a0,255
+li $a2,152
+li $a3,119
+jal DROPBUCKET
+
+li $a2,77
+li $a3,186
+jal DROPBUCKET
+
+li $a2,77
+li $a3,180
+jal DROPBUCKET
+
+li $a2,191
+li $a3,128
+jal DROPBUCKET
+
+li $a2,184
+li $a3,70
+jal DROPBUCKET
+
+li $a2,242
+li $a3,64
+jal DROPBUCKET
+
+li $a2,228
+li $a3,82
+jal DROPBUCKET
+
+li $a2,250
+li $a3,50
+jal DROPBUCKET
+
+li $a0,164                    #
+li $t0,1832                   #
+li $t1,424                    #
+li $t4,40                     #
+jal DOTPROC                   #
+li $a0,255                    #
+li $t0,1832                   #
+li $t1,424                    #
+li $t4,32                     #
+jal DOTPROC                   #
+li $a0,0                    #
+li $t0,1852                   #
+li $t1,424                    #
+li $t4,20                     #
+jal DOTPROC                   #
+
+li $a0,164                    #
+li $t0,1792                   #
+li $t1,464                    #
+li $t4,40                     #
+jal DOTPROC                   #
+li $a0,255                    #
+li $t0,1792                   #
+li $t1,464                    #
+li $t4,32                     #
+jal DOTPROC                   #
+li $a0,0                    #
+li $t0,1812                   #
+li $t1,464                    #
+li $t4,20                     #
+jal DOTPROC                   #
+
+li $a0,164                    #
+li $t0,1712                   #
+li $t1,564                    #
+li $t4,40                     #
+jal DOTPROC                   #
+li $a0,255                    #
+li $t0,1712                   #
+li $t1,564                    #
+li $t4,32                     #
+jal DOTPROC                   #
+
+li $a0,164                    #
+li $t0,1848                  #
+li $t1,1352                   #
+li $t4,80                     #
+jal DOTPROC                   #
+li $a0,255                    #
+li $t0,1848                  #
+li $t1,1352                   #
+li $t4,72                     #
+jal DOTPROC                   #
+
+
                            #
 lw $ra,0($sp)              #
 addi $sp,$sp,4             #
