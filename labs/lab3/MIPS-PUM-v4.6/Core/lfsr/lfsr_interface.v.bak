@@ -1,0 +1,6 @@
+module lfsr_interface(
+	 input         iCLK_50,
+    input         wReadEnable, 
+    input  [31:0] wAddress,
+    output [31:0] wReadData
+);

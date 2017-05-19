@@ -1,0 +1,5 @@
+set tool_name "ModelSim-Altera (Verilog)"
+set corner_file_list {
+	{{"Slow Model"} {TopDE-FastCompilation.vo TopDE-FastCompilation_v.sdo}}
+	{{"Fast Model"} {TopDE-FastCompilation_fast.vo TopDE-FastCompilation_v_fast.sdo}}
+}

@@ -1,0 +1,31 @@
+module IrDA_Interface(
+    input         iCLK_50,
+    input         iCLK,
+    input         Reset,
+    output        oIRDA_TXD,    //    IrDA Transmitter
+    input         iIRDA_RXD,    //    IrDA Receiver
+    //  Barramento de IO
+    input         wReadEnable, wWriteEnable,
+    input  [3:0]  wByteEnable,
+    input  [31:0] wAddress, wWriteData,
+    output [31:0] wReadData
+);
+
+
+/*
+always @(posedge iCLK)
+        if(wWriteEnable)
+            if (wAddress == IrDA_WRITE_ADDRESS)   wTxData  <= wWriteData[7:0];  else
+            if (wAddress == IrDA_CONTROL_ADDRESS) TxStart  <= wWriteData[0];
+        // TODO: else para prevenir síntese de latches
+
+always @(*)
+        if(wReadEnable)
+            if(wAddress == IrDA_READ_ADDRESS || wAddress == IrDA_WRITE_ADDRESS || wAddress == IrDA_CONTROL_ADDRESS)
+                    wReadData = {8'b0,RsControl,wTxData,RxData};
+            else    wReadData = 32'hzzzzzzzz;
+        else wReadData = 32'hzzzzzzzz;
+
+*/
+
+endmodule

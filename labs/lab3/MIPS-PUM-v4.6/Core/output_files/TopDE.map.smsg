@@ -1,0 +1,2 @@
+Info (10281): Verilog HDL Declaration information at Oscillator.sv(12): object "OUT" differs only in case from object "out" in the same scope
+Info (10281): Verilog HDL Declaration information at Channel.sv(7): object "CHANNEL" differs only in case from object "channel" in the same scope

@@ -1,0 +1,139 @@
+Flow report for TopDE-FastCompilation
+Fri May 19 08:57:37 2017
+Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+  8. Flow Messages
+  9. Flow Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------+
+; Flow Summary                                                                    ;
++------------------------------------+--------------------------------------------+
+; Flow Status                        ; Successful - Fri May 19 08:57:37 2017      ;
+; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
+; Revision Name                      ; TopDE-FastCompilation                      ;
+; Top-level Entity Name              ; TopDE                                      ;
+; Family                             ; Cyclone II                                 ;
+; Device                             ; EP2C70F896C6                               ;
+; Timing Models                      ; Final                                      ;
+; Total logic elements               ; 22,843 / 68,416 ( 33 % )                   ;
+;     Total combinational functions  ; 22,331 / 68,416 ( 33 % )                   ;
+;     Dedicated logic registers      ; 6,741 / 68,416 ( 10 % )                    ;
+; Total registers                    ; 6741                                       ;
+; Total pins                         ; 568 / 622 ( 91 % )                         ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 858,583 / 1,152,000 ( 75 % )               ;
+; Embedded Multiplier 9-bit elements ; 57 / 300 ( 19 % )                          ;
+; Total PLLs                         ; 3 / 4 ( 75 % )                             ;
++------------------------------------+--------------------------------------------+
+
+
++-------------------------------------------+
+; Flow Settings                             ;
++-------------------+-----------------------+
+; Option            ; Setting               ;
++-------------------+-----------------------+
+; Start date & time ; 05/19/2017 08:46:25   ;
+; Main task         ; Compilation           ;
+; Revision Name     ; TopDE-FastCompilation ;
++-------------------+-----------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                                                                     ;
++-------------------------------------+---------------------------------------------------------------------------------------------------------+-----------------------+-------------+----------------+
+; Assignment Name                     ; Value                                                                                                   ; Default Value         ; Entity Name ; Section Id     ;
++-------------------------------------+---------------------------------------------------------------------------------------------------------+-----------------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 102021913922901.149519438401184                                                                         ; --                    ; --          ; --             ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                                                                                     ; --                    ; --          ; eda_simulation ;
+; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                                                                                             ; --                    ; --          ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)                                                                               ; <None>                ; --          ; --             ;
+; EDA_TIME_SCALE                      ; 1 ps                                                                                                    ; --                    ; --          ; eda_simulation ;
+; ENABLE_SIGNALTAP                    ; Off                                                                                                     ; --                    ; --          ; --             ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                                                                                      ; --                    ; --          ; --             ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                                                                                       ; --                    ; --          ; --             ;
+; PARTITION_COLOR                     ; 16764057                                                                                                ; --                    ; TopDE       ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                                                                                   ; --                    ; TopDE       ; Top            ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                                                                                                  ; --                    ; TopDE       ; Top            ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                                                                                     ; --                    ; --          ; --             ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                                                                   ; --                    ; --          ; --             ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                                                                                            ; --                    ; --          ; --             ;
+; SLD_FILE                            ; C:/Users/lamar/Dropbox/kiko/Disciplinas/UnB/OAC/2016-2/MIPS-PUM-v4.5/Core/Testes/stp1_auto_stripped.stp ; --                    ; --          ; --             ;
+; SMART_RECOMPILE                     ; On                                                                                                      ; Off                   ; --          ; --             ;
+; TIMEQUEST_DO_REPORT_TIMING          ; On                                                                                                      ; Off                   ; --          ; --             ;
+; TOP_LEVEL_ENTITY                    ; TopDE                                                                                                   ; TopDE-FastCompilation ; --          ; --             ;
+; USE_SIGNALTAP_FILE                  ; Testes/stp1.stp                                                                                         ; --                    ; --          ; --             ;
+; VERILOG_INPUT_VERSION               ; SystemVerilog_2005                                                                                      ; Verilog_2001          ; --          ; --             ;
+; VERILOG_SHOW_LMF_MAPPING_MESSAGES   ; Off                                                                                                     ; --                    ; --          ; --             ;
++-------------------------------------+---------------------------------------------------------------------------------------------------------+-----------------------+-------------+----------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:05:18     ; 1.0                     ; 661 MB              ; 00:04:50                           ;
+; Fitter                    ; 00:03:53     ; 1.0                     ; 1047 MB             ; 00:03:38                           ;
+; Assembler                 ; 00:00:16     ; 1.0                     ; 533 MB              ; 00:00:10                           ;
+; TimeQuest Timing Analyzer ; 00:00:16     ; 1.0                     ; 924 MB              ; 00:00:13                           ;
+; EDA Netlist Writer        ; 00:00:34     ; 1.0                     ; 669 MB              ; 00:00:24                           ;
+; Total                     ; 00:10:17     ; --                      ; --                  ; 00:09:15                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                        ;
++---------------------------+------------------+-----------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
++---------------------------+------------------+-----------+------------+----------------+
+; Analysis & Synthesis      ; box              ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; box              ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; box              ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; box              ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; box              ; Windows 7 ; 6.2        ; x86_64         ;
++---------------------------+------------------+-----------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off TopDE-FastCompilation -c TopDE-FastCompilation
+quartus_fit --read_settings_files=off --write_settings_files=off TopDE-FastCompilation -c TopDE-FastCompilation
+quartus_asm --read_settings_files=off --write_settings_files=off TopDE-FastCompilation -c TopDE-FastCompilation
+quartus_sta TopDE-FastCompilation -c TopDE-FastCompilation
+quartus_eda --read_settings_files=off --write_settings_files=off TopDE-FastCompilation -c TopDE-FastCompilation
+
+
+
