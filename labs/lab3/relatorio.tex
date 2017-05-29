@@ -46,6 +46,7 @@ Analisando o código em \textit{Verilog} do processador descrito no projeto \tex
 \end{figure}
 
 % TODO Gerar uma figura própria.
+% TODO Escrever uma breve descrição do circuito do processador
 
 \subsection{Exercício 8}
 
@@ -53,14 +54,23 @@ Criar um programa \textit{teste.s} para testar todos os comandos do processador.
 
 \subsection{Exercício 9}
 
-Checar o tamanho do processador com e sem a FPULA.
+Para sintetizar a FPULA no processador em questão, basta descomentar a linha \textit{\` define FPU}. Desta forma, foi possível comparar o sintetizador com e sem a FPULA. A diferença entre os requisitos físicos está descrito na tabela 1.
+
+\begin{center}
+  \begin{tabular}{ | c | c | c | }
+    \hline
+    Parâmetro                  & Sem FPULA & Com FPULA \\ \hline \hline
+    \# de elementos lógicos    & 24357     & 24463     \\ \hline
+    \# de registradores        & 6742      & 6742      \\ \hline
+    Memória RAM                & X         & X         \\ \hline
+    Máxima frequência de clock & X         & X         \\ \hline
+  \end{tabular}
+\end{center}
+
+Note que não há diferenças no número de registradores. Isto é esperado, já que a FPULA não segura estados.
 
 \subsection{Exercício 10}
 
 Implementar as funções \textit{ceil}, \textit{floor} e \textit{round}.
-
-
-
-
 
 \end{document}
