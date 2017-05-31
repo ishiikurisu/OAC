@@ -1,0 +1,32 @@
+DEPTH = 2048;
+WIDTH = 32;
+ADDRESS_RADIX = HEX;
+DATA_RADIX = HEX;
+CONTENT
+BEGIN
+
+00000000 : 3c011001;  % 10: 	la $t1,NUM		# $t1 = Endereco NUM %
+00000001 : 34290000;  % 10:  %
+00000002 : 8d280000;  % 11: 	lw $t0,0($t1)		# $t0 = numero 5 %
+00000003 : ad280008;  % 12: 	sw $t0,8($t1)		# grava número em NUM+8 na memória %
+00000004 : 8d280008;  % 13: 	lw $t0,8($t1)		# Le o numero gravado %
+00000005 : 1100000e;  % 14: 	beq $t0,$zero,FIM  	# caso o numero lido seja 0 é porque deu ruim no sw ou no lw %
+00000006 : 44884000;  % 15: 	mtc1 $t0,$f8		# passa o numero para o C1 %
+00000007 : 46804220;  % 16: 	cvt.s.w $f8,$f8		# converte o numero para fp 40A00000 %
+00000008 : 46004006;  % 17: 	mov.s $f0,$f8		# copia para $f0 %
+00000009 : 3c011001;  % 18: 	l.s $f8,F1   		# carrega o numero em F1 3.6666666  406aaaab %
+0000000a : c4280004;  % 18:  %
+0000000b : 46004200;  % 19: 	add.s $f8,$f8,$f0	# soma 5.0+3.6666666 = 8.6666667  410aaaab %
+0000000c : 46004204;  % 20: 	sqrt.s $f8,$f8		# raiz de 8.6666667 = 2.943920... 403c6931 %
+0000000d : 4600443c;  % 21: 	c.lt.s 4,$f8,$f0	# compara  2.943920... < 5.0 ? aciona flag 4 %
+0000000e : 45110002;  % 22: 	bc1t 4,PULA		# se for verdadeiro PULA %
+0000000f : 3408eeee;  % 23: 	li $t0,0xEEEE		# diz que houve EEEErro %
+00000010 : 08100010;  % 24: FIM1:	j FIM1			# trava o processador %
+00000011 : 0c100015;  % 26: 	jal MULT		# testa o jal %
+00000012 : 46004224;  % 27: 	cvt.w.s $f8,$f8		# converte 8.6666667 para inteiro (FPGA!=Mars) %
+00000013 : 44084000;  % 28: 	mfc1 $t0,$f8		# coloca em $t0 8(Mars) ou 9(FPGA) %
+00000014 : 08100014;  % 29: FIM:	j FIM			# trava o processsador %
+00000015 : 46084202;  % 31: MULT: mul.s $f8,$f8,$f8		# testa mul  $f8*$f8 = 8.666666  406aaaab %
+00000016 : 03e00008;  % 32: FORA: jr $ra  			# testa jr %
+
+END;
