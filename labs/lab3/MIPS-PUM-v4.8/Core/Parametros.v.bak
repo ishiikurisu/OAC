@@ -33,8 +33,7 @@ parameter
 	 OPMADDU		 = 5'b11001,				 //25 		 Relatorio questao B.9) - Grupo 2 - (2/2016)
 	 OPMSUB		 = 5'b11010,				 //26 		 Relatorio questao B.9) - Grupo 2 - (2/2016)
 	 OPMSUBU		 = 5'b11011,				 //27 		 Relatorio questao B.9) - Grupo 2 - (2/2016)
-	 
-`ifdef FPU
+
 /* Operacoes da ULA FP */
     OPADDS      = 4'b0001,
     OPSUBS      = 4'b0010,
@@ -48,7 +47,7 @@ parameter
     OPCLE       = 4'b1010,
     OPCVTSW     = 4'b1011,
     OPCVTWS     = 4'b1100,
-`endif
+
 
 /* Campo FUNCT */
     FUNSLL      = 6'h00,
@@ -81,7 +80,6 @@ parameter
     FUNSLLV     = 6'h04,
     FUNSRLV     = 6'b000110,
     FUNSRAV     = 6'b000111,
-`ifdef FPU 
     /*Abaixo FUNCT de operacoes em ponto flutuante*/
     FUNADDS     = 6'h0,
     FUNSUBS     = 6'h1,
@@ -97,7 +95,7 @@ parameter
     FUNCVTSW    = 6'h20,
     FUNCVTWS    = 6'h24,
     FUNERET     = 6'h18,                // feito no semestre 2013/1 para implementar a deteccao de excecoes (COP0)
-`endif
+
 /* Campo OPCODE */
     OPCRFMT     = 6'h00,                /* Tipo-R */
     OPCJMP      = 6'h02,
@@ -145,11 +143,11 @@ parameter
     FMTMFC      = 5'h0,
     FMTMTC      = 5'h4,
     FMTERET     = 5'h10,                // feito no semestre 2013/1 para implementar a deteccao de excecoes (COP0)
-`ifdef FPU
+
 /* Bit 16 da instrucao, usado somente para BC1 da FPU*/
     FTTRUE      = 1'b1,
     FTFALSE     = 1'b0,
-`endif
+
 // feito no semestre 2013/1 para implementar a deteccao de excecoes (COP0)
     EXCODEINT   = 5'd0,
     EXCODESYS   = 5'd8,
@@ -285,7 +283,6 @@ parameter
     SLEEP           = 6'd35,
     SLEEP2          = 6'd36,
     RANDOM          = 6'd37,
-`ifdef FPU
     /*Estados da FPU*/
     FPUFR           = 6'd38,
     FPUFR2          = 6'd39,
@@ -297,8 +294,7 @@ parameter
     FPULWC1         = 6'd45,
     FPUSWC1         = 6'd46,
     FPUCOMP         = 6'd48,        //tava assim, vou manter em homenagem aos semestres anteriores
-`endif    
-	 // JOY             = 6'd38,
+    // JOY             = 6'd38,
     // JRCLR           = 6'd39;
     ERRO            = 6'd63,
 

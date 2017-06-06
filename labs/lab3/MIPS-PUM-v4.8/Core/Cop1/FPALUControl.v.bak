@@ -1,4 +1,3 @@
-`ifdef FPU
 module FPALUControl (
 	input wire [5:0] iFunct,
 	output reg [3:0] oControlSignal
@@ -37,4 +36,3 @@ begin
 end
 
 endmodule
-`endif

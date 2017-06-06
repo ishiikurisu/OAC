@@ -34,7 +34,6 @@ O código no arquivo \textit{SYSTEMv53.s} descreve uma rotina de tratamento de e
 
 \section{Parte B}
 
-% TODO Fazer questão 2 do relatório
 \subsection{Exercício 7}
 
 Analisando o código em \textit{Verilog} do processador descrito no projeto \textit{MIPS-PUM-v4.8}, podemos construir o diagrama de blocos presente na figura 2 para descrever a estrutura do processador a nível de estruturas funcionais.
@@ -45,32 +44,19 @@ Analisando o código em \textit{Verilog} do processador descrito no projeto \tex
     \caption{Diagrama de blocos do processador uniciclo}
 \end{figure}
 
-% TODO Gerar uma figura própria.
-% TODO Escrever uma breve descrição do circuito do processador
-
-\subsection{Exercício 8}
-
-Criar um programa \textit{teste.s} para testar todos os comandos do processador.
-
 \subsection{Exercício 9}
 
-Para sintetizar a FPULA no processador em questão, basta descomentar a linha \textit{\` define FPU}. Desta forma, foi possível comparar o sintetizador com e sem a FPULA. A diferença entre os requisitos físicos está descrito na tabela 1.
+Para sintetizar a FPULA no processador em questão, basta descomentar a linha \textit{\` define FPU} e reorganizar as conexões e dispositivos que conversam com esta ULA, para que eles sejam definidos somente com esta diretiva. Desta forma, foi possível comparar o sintetizador com e sem a FPULA. A diferença entre os requisitos físicos está descrito na tabela 1.
 
 \begin{center}
   \begin{tabular}{ | c | c | c | }
     \hline
     Parâmetro                  & Sem FPULA & Com FPULA \\ \hline \hline
-    \# de elementos lógicos    & 24357     & 24497     \\ \hline
-    \# de registradores        & 6742      & 6742      \\ \hline
-    Memória RAM                & X         & X         \\ \hline
-    Máxima frequência de clock & X         & X         \\ \hline
+    \# de elementos lógicos    & 15922     & 24497     \\ \hline
+    \# de registradores        & 3431      & 6742      \\ \hline
   \end{tabular}
 \end{center}
 
-Note que não há diferenças no número de registradores. Isto é esperado, já que a FPULA não segura estados.
-
-\subsection{Exercício 10}
-
-Implementar as funções \textit{ceil}, \textit{floor} e \textit{round}.
+O número de registradores dobra pois a FPULA demanda praticamente outro processador (o chamado coprocessador 1) para poder realizar seus cálculos.
 
 \end{document}

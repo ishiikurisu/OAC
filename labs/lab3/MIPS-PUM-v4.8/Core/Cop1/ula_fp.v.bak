@@ -1,4 +1,3 @@
-`ifdef FPU
 module ula_fp (
 	input iclock,
 	input [31:0] idataa,idatab,
@@ -281,4 +280,3 @@ cvt_w_s cvt_w_s1 (
 	.underflow (underflowcvt_w_s));
 
 endmodule
-`endif

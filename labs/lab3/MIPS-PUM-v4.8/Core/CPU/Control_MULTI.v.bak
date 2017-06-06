@@ -1,4 +1,4 @@
-`ifdef FPU			
+			
 module Control_MULTI (
 	iCLK, iRST, iOp, iFmt, iFt, iFunct, iV0, iSleepDone, oIRWrite, oMemtoReg,
 	oMemWrite, oMemRead, oIorD, oPCWrite, oPCWriteBEQ, oPCWriteBNE, oPCSource, oALUOp,
@@ -670,4 +670,3 @@ begin
 end
 
 endmodule
-`endif
