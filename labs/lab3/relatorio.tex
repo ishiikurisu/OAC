@@ -44,6 +44,10 @@ Analisando o código em \textit{Verilog} do processador descrito no projeto \tex
     \caption{Diagrama de blocos do processador uniciclo}
 \end{figure}
 
+\subsection{Exercício 8}
+
+O arquivo \textit{teste.s} contém uma rotina de testes para as instruções implementadas em sala de aula. Ela consiste basicamente em testar se uma operação funciona com um conjunto de dados conhecidos. Caso ela falhe, o programa cai em uma subrotina \textit{FU}, que termina o programa abruptamente.
+
 \subsection{Exercício 9}
 
 Para sintetizar a FPULA no processador em questão, basta descomentar a linha \textit{\` define FPU} e reorganizar as conexões e dispositivos que conversam com esta ULA, para que eles sejam definidos somente com esta diretiva. Desta forma, foi possível comparar o sintetizador com e sem a FPULA. A diferença entre os requisitos físicos está descrito na tabela 1.
@@ -58,5 +62,11 @@ Para sintetizar a FPULA no processador em questão, basta descomentar a linha \t
 \end{center}
 
 O número de registradores dobra pois a FPULA demanda praticamente outro processador (o chamado coprocessador 1) para poder realizar seus cálculos.
+
+\subsection{Exercício 10}
+
+Para se implementar as funções \textit{ceil}, \textit{floor} e \textit{round} no processador em questão, nao se deve fazer mudanças no caminho de dados, já que todas as unidades operacionais contidas no processador são capazes de realizar as instruções em questão. Contudo, a lógica de controle da FPULA deve ser atualizada para levar em consideração mais 3 novas instruções, cada uma com seu \textit{OPCODE} e seu \textit{FUNCT} definidos.
+
+
 
 \end{document}
