@@ -1,0 +1,2139 @@
+# Universidade de Brasilia
+# Instituto de Ciencias Exatas
+# Departamento de Ciencia da Computacao
+# Introdu��o a Sistemas Computacionais � 1/2016
+# Aluno(a): Jo�o Victor Bohrer Munhoz - Arthur da Silveira Couto - Caio Albuquerque Brand�o
+# Matricula: 16/0071101 - 16/0002575 - 16/0003636
+.eqv parede 0
+.eqv fantasma 61
+.eqv oo 99999
+.eqv pacman 62
+.eqv sizeline 40
+.eqv sizecolumn 30
+.data
+INICIO: .byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+ 0, 0, 0, 0, 0,38,38,38, 0, 0, 0, 0, 0,38,38,38,38,38, 0, 0, 0, 0,38,38,38,38,38, 0, 0, 0, 0, 0,38,38,38, 0, 0, 0, 0, 0,
+ 0,46,38,38,38,38, 0,38,38,38,38,38,38,38, 0, 0, 0,38,38,38,38,38,38, 0, 0, 0,38,38,38,38,38,38,38, 0,38,38,38,38,46, 0,
+ 0,38, 0, 0, 0,38, 0, 0, 0,38, 0, 0, 0, 0, 0, 0, 0, 0, 0,40,40, 0, 0, 0, 0, 0, 0, 0, 0, 0,38, 0, 0, 0,38, 0, 0, 0,38, 0,
+ 0,38, 0,38,38,38,38,38,38,38, 0,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38, 0,38,38,38,38,38,38,38, 0,38, 0,
+ 0,38, 0,38, 0,38, 0, 0, 0, 0, 0,38, 0, 0, 0, 0, 0, 0,38, 0, 0,38, 0, 0, 0, 0, 0, 0,38, 0, 0, 0, 0, 0,38, 0,38, 0,38, 0,
+ 0,38,38,38, 0,38,38,38,38,38, 0,38,38,38,38, 0,38,38,38, 0, 0,38,38,38, 0,38,38,38,38, 0,38,38,38,38,38, 0,38,38,38, 0,
+ 0, 0, 0,38, 0, 0, 0,38, 0,38, 0, 0,38, 0,38, 0,38, 0, 0, 0, 0, 0, 0,38, 0,38, 0,38, 0, 0,38, 0,38, 0, 0, 0,38, 0, 0, 0,
+ 0,38,38,38, 0,38,38,40, 0,38, 0,38,38, 0,38,38,38,38,38,38,38,38,38,38,38,38, 0,38,38, 0,38, 0,40,38,38, 0,38,38,38, 0,
+ 0,38, 0,38, 0,38, 0, 0, 0,38, 0,38, 0, 0,38, 0, 0, 0,38, 0, 0,38, 0, 0, 0,38, 0, 0,38, 0,38, 0, 0, 0,38, 0,38, 0,38, 0,
+ 0,38, 0,38,38,38,38,38,38,38, 0,38,38,38,40,38,38,38,38, 0, 0,38,38,38,38,40,38,38,38, 0,38,38,38,38,38,38,38, 0,38, 0,
+ 0,38, 0, 0, 0, 0, 0, 0, 0,38, 0, 0, 0, 0,38, 0,38, 0, 0, 0, 0, 0, 0,38, 0,38, 0, 0, 0, 0,38, 0, 0, 0, 0, 0, 0, 0,38, 0,
+ 0,38,38,38,38,38,38,38, 0,38,38,38,38,38,38, 0,38,38,38,38,38,38,38,38, 0,38,38,38,38,38,38, 0,38,38,38,38,38,38,38, 0,
+ 0,38, 0, 0, 0, 0, 0,38, 0, 0, 0, 0, 0, 0,38, 0,38, 0, 0,46,46, 0, 0,38, 0,38, 0, 0, 0, 0, 0, 0,38, 0, 0, 0, 0, 0,38, 0,
+ 0,38,38,38,38,40, 0,38,38,38,38,38,38,38,38,38,38, 0,46,46,46,46, 0,38,38,38,38,38,38,38,38,38,38, 0,40,38,38,38,38, 0,
+ 0,38,38,38,38,40, 0,38,38,38,38,38,38,38,38,38,38, 0,46,46,46,46, 0,38,38,38,38,38,38,38,38,38,38, 0,40,38,38,38,38, 0,
+ 0,38, 0, 0, 0, 0, 0,38, 0, 0, 0, 0, 0, 0,38, 0,38, 0, 0, 0, 0, 0, 0,38, 0,38, 0, 0, 0, 0, 0, 0,38, 0, 0, 0, 0, 0,38, 0,
+ 0,38,38,38,38,38,38,38, 0,38,38,38,38,38,38, 0,38,38,38,38,38,38,38,38, 0,38,38,38,38,38,38, 0,38,38,38,38,38,38,38, 0,
+ 0,38, 0, 0, 0, 0, 0, 0, 0,38, 0, 0, 0, 0,38, 0,38, 0, 0, 0, 0, 0, 0,38, 0,38, 0, 0, 0, 0,38, 0, 0, 0, 0, 0, 0, 0,38, 0,
+ 0,38, 0,38,38,38,38,38,38,38, 0,38,38,38,40,38,38,38,38, 0, 0,38,38,38,38,40,38,38,38, 0,38,38,38,38,38,38,38, 0,38, 0,
+ 0,38, 0,38, 0,38, 0, 0, 0,38, 0,38, 0, 0,38, 0, 0, 0,38, 0, 0,38, 0, 0, 0,38, 0, 0,38, 0,38, 0, 0, 0,38, 0,38, 0,38, 0,
+ 0,38,38,38, 0,38,38,40, 0,38, 0,38,38, 0,38,38,38,38,38,38,38,38,38,38,38,38, 0,38,38, 0,38, 0,40,38,38, 0,38,38,38, 0,
+ 0, 0, 0,38, 0, 0, 0,38, 0,38, 0, 0,38, 0,38, 0,38, 0, 0, 0, 0, 0, 0,38, 0,38, 0,38, 0, 0,38, 0,38, 0, 0, 0,38, 0, 0, 0,
+ 0,38,38,38, 0,38,38,38,38,38, 0,38,38,38,38, 0,38,38,38, 0, 0,38,38,38, 0,38,38,38,38, 0,38,38,38,38,38, 0,38,38,38, 0,
+ 0,38, 0,38, 0,38, 0, 0, 0, 0, 0,38, 0, 0, 0, 0, 0, 0,38, 0, 0,38, 0, 0, 0, 0, 0, 0,38, 0, 0, 0, 0, 0,38, 0,38, 0,38, 0,
+ 0,38, 0,38,38,38,38,38,38,38, 0,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38, 0,38,38,38,38,38,38,38, 0,38, 0,
+ 0,38, 0, 0, 0,38, 0, 0, 0,38, 0, 0, 0, 0, 0, 0, 0, 0, 0,40,40, 0, 0, 0, 0, 0, 0, 0, 0, 0,38, 0, 0, 0,38, 0, 0, 0,38, 0,
+ 0,46,38,38,38,38, 0,38,38,38,38,38,38,38, 0, 0, 0,38,38,38,38,38,38, 0, 0, 0,38,38,38,38,38,38,38, 0,38,38,38,38,46, 0,
+ 0, 0, 0, 0, 0,38,38,38, 0, 0, 0, 0, 0,38,38,38,38,38, 0, 0, 0, 0,38,38,38,38,38, 0, 0, 0, 0, 0,38,38,38, 0, 0, 0, 0, 0,
+ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+ AUX: .byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+ 0, 0, 0, 0, 0,38,38,38, 0, 0, 0, 0, 0,38,38,38,38,38, 0, 0, 0, 0,38,38,38,38,38, 0, 0, 0, 0, 0,38,38,38, 0, 0, 0, 0, 0,
+ 0,46,38,38,38,38, 0,38,38,38,38,38,38,38, 0, 0, 0,38,38,38,38,38,38, 0, 0, 0,38,38,38,38,38,38,38, 0,38,38,38,38,46, 0,
+ 0,38, 0, 0, 0,38, 0, 0, 0,38, 0, 0, 0, 0, 0, 0, 0, 0, 0,40,40, 0, 0, 0, 0, 0, 0, 0, 0, 0,38, 0, 0, 0,38, 0, 0, 0,38, 0,
+ 0,38, 0,38,38,38,38,38,38,38, 0,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38, 0,38,38,38,38,38,38,38, 0,38, 0,
+ 0,38, 0,38, 0,38, 0, 0, 0, 0, 0,38, 0, 0, 0, 0, 0, 0,38, 0, 0,38, 0, 0, 0, 0, 0, 0,38, 0, 0, 0, 0, 0,38, 0,38, 0,38, 0,
+ 0,38,38,38, 0,38,38,38,38,38, 0,38,38,38,38, 0,38,38,38, 0, 0,38,38,38, 0,38,38,38,38, 0,38,38,38,38,38, 0,38,38,38, 0,
+ 0, 0, 0,38, 0, 0, 0,38, 0,38, 0, 0,38, 0,38, 0,38, 0, 0, 0, 0, 0, 0,38, 0,38, 0,38, 0, 0,38, 0,38, 0, 0, 0,38, 0, 0, 0,
+ 0,38,38,38, 0,38,38,40, 0,38, 0,38,38, 0,38,38,38,38,38,38,38,38,38,38,38,38, 0,38,38, 0,38, 0,40,38,38, 0,38,38,38, 0,
+ 0,38, 0,38, 0,38, 0, 0, 0,38, 0,38, 0, 0,38, 0, 0, 0,38, 0, 0,38, 0, 0, 0,38, 0, 0,38, 0,38, 0, 0, 0,38, 0,38, 0,38, 0,
+ 0,38, 0,38,38,38,38,38,38,38, 0,38,38,38,40,38,38,38,38, 0, 0,38,38,38,38,40,38,38,38, 0,38,38,38,38,38,38,38, 0,38, 0,
+ 0,38, 0, 0, 0, 0, 0, 0, 0,38, 0, 0, 0, 0,38, 0,38, 0, 0, 0, 0, 0, 0,38, 0,38, 0, 0, 0, 0,38, 0, 0, 0, 0, 0, 0, 0,38, 0,
+ 0,38,38,38,38,38,38,38, 0,38,38,38,38,38,38, 0,38,38,38,38,38,38,38,38, 0,38,38,38,38,38,38, 0,38,38,38,38,38,38,38, 0,
+ 0,38, 0, 0, 0, 0, 0,38, 0, 0, 0, 0, 0, 0,38, 0,38, 0, 0,46,46, 0, 0,38, 0,38, 0, 0, 0, 0, 0, 0,38, 0, 0, 0, 0, 0,38, 0,
+ 0,38,38,38,38,40, 0,38,38,38,38,38,38,38,38,38,38, 0,46,46,46,46, 0,38,38,38,38,38,38,38,38,38,38, 0,40,38,38,38,38, 0,
+ 0,38,38,38,38,40, 0,38,38,38,38,38,38,38,38,38,38, 0,46,46,46,46, 0,38,38,38,38,38,38,38,38,38,38, 0,40,38,38,38,38, 0,
+ 0,38, 0, 0, 0, 0, 0,38, 0, 0, 0, 0, 0, 0,38, 0,38, 0, 0, 0, 0, 0, 0,38, 0,38, 0, 0, 0, 0, 0, 0,38, 0, 0, 0, 0, 0,38, 0,
+ 0,38,38,38,38,38,38,38, 0,38,38,38,38,38,38, 0,38,38,38,38,38,38,38,38, 0,38,38,38,38,38,38, 0,38,38,38,38,38,38,38, 0,
+ 0,38, 0, 0, 0, 0, 0, 0, 0,38, 0, 0, 0, 0,38, 0,38, 0, 0, 0, 0, 0, 0,38, 0,38, 0, 0, 0, 0,38, 0, 0, 0, 0, 0, 0, 0,38, 0,
+ 0,38, 0,38,38,38,38,38,38,38, 0,38,38,38,40,38,38,38,38, 0, 0,38,38,38,38,40,38,38,38, 0,38,38,38,38,38,38,38, 0,38, 0,
+ 0,38, 0,38, 0,38, 0, 0, 0,38, 0,38, 0, 0,38, 0, 0, 0,38, 0, 0,38, 0, 0, 0,38, 0, 0,38, 0,38, 0, 0, 0,38, 0,38, 0,38, 0,
+ 0,38,38,38, 0,38,38,40, 0,38, 0,38,38, 0,38,38,38,38,38,38,38,38,38,38,38,38, 0,38,38, 0,38, 0,40,38,38, 0,38,38,38, 0,
+ 0, 0, 0,38, 0, 0, 0,38, 0,38, 0, 0,38, 0,38, 0,38, 0, 0, 0, 0, 0, 0,38, 0,38, 0,38, 0, 0,38, 0,38, 0, 0, 0,38, 0, 0, 0,
+ 0,38,38,38, 0,38,38,38,38,38, 0,38,38,38,38, 0,38,38,38, 0, 0,38,38,38, 0,38,38,38,38, 0,38,38,38,38,38, 0,38,38,38, 0,
+ 0,38, 0,38, 0,38, 0, 0, 0, 0, 0,38, 0, 0, 0, 0, 0, 0,38, 0, 0,38, 0, 0, 0, 0, 0, 0,38, 0, 0, 0, 0, 0,38, 0,38, 0,38, 0,
+ 0,38, 0,38,38,38,38,38,38,38, 0,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38, 0,38,38,38,38,38,38,38, 0,38, 0,
+ 0,38, 0, 0, 0,38, 0, 0, 0,38, 0, 0, 0, 0, 0, 0, 0, 0, 0,40,40, 0, 0, 0, 0, 0, 0, 0, 0, 0,38, 0, 0, 0,38, 0, 0, 0,38, 0,
+ 0,46,38,38,38,38, 0,38,38,38,38,38,38,38, 0, 0, 0,38,38,38,38,38,38, 0, 0, 0,38,38,38,38,38,38,38, 0,38,38,38,38,46, 0,
+ 0, 0, 0, 0, 0,38,38,38, 0, 0, 0, 0, 0,38,38,38,38,38, 0, 0, 0, 0,38,38,38,38,38, 0, 0, 0, 0, 0,38,38,38, 0, 0, 0, 0, 0,
+ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+ 
+GHOSTAUX: .word oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,
+oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,
+oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,
+oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,
+oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,
+oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,
+oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,
+oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,
+oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,
+oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,
+oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,
+oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,
+oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,
+oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,
+oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,
+oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,
+oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,
+oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,
+oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,
+oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,
+oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,
+oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,
+oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,
+oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,
+oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,
+oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,
+oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,
+oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,
+oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,
+oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo,oo
+
+ PACADRESS: .word 0,0,0,0
+ 
+ GHOSTADRESS: .word 0,0,0,0
+ 
+ SCORE: .word 0,0,0,0
+ 
+ HP: .byte 3,3,3,3
+ 
+ MOUTHOPEN: .byte 0,0,0,0
+ 
+ GHOSTOVER: .byte 46,46,46,46
+ 
+ PACBUFFERMOVES: .byte 0,0,0,0
+ 
+ PACMOVES: .byte 0,0,0,0
+ 
+ BUFFTIME: .byte 0,0,0,0
+ 
+ ISDEAD: .byte 0,0,0,0
+ 
+ PACCOLOR: .byte 0x3f,0x7c,0xc7,0xf8
+ 
+ GHOSTCOLOR: .byte 0x07,0xa0,0x67,0xe4
+ 
+ PACAMOUNT: .byte 1
+ 
+ GHOSTAMOUNT: .byte 4
+ 
+ BUFFTURN: .byte 0
+ .text
+ 
+ 
+ la $t0, 0xff000000
+ li $t2, 0
+ LOOPYBLACK:
+ sw $0,0($t0)
+ addi $t0,$t0,4
+ addi $t2,$t2,1
+ bne $t2,19200,LOOPYBLACK
+ la $a1, 0xff000000
+ li $a2,0xff
+ jal PRINT_PACMAN_RIGHT
+ li $v0,5
+ syscall
+ la $t0,PACAMOUNT
+ sb $v0,0($t0)
+ addi $a1,$a1,8
+ jal PRINT_GHOST
+ li $v0,5
+ syscall
+ la $t0,GHOSTAMOUNT
+ sb $v0,0($t0)
+ j END_G
+# Leitura do teclado e echo na tela
+#la $t1,0xFF100000
+#li $t0,2
+#sw $t0,0($t1)   # Habilita interrup��o do teclado
+ #li $v0, 30    #system time
+ #syscall       # operate
+ #add $t0, $a1, $zero    #
+ #add $a1, $a0, $zero    #randswap
+ #add $a0, $t0, $zero    #
+ #li $v0, 40       #set seed
+ #syscall     #operate
+ REINC:    #restarts the game and sets the variables
+ la $t1,ISDEAD
+ sw $0,0($t1)
+ la $t1,BUFFTIME
+ sw $0,0($t1)
+ la $t1,GHOSTOVER
+ la $t0,0x2e2e2e2e
+ sw $t0,0($t1)
+ la $t1,PACAMOUNT  #
+ lb $s2,0($t1)     #
+ la $t1,GHOSTAMOUNT#
+ lb $s3,0($t1)     #
+ li $s0,0          #
+ li $s1,0          #
+ li $t0,0      #PACMOVE 0 is receiving argument 'd'
+ la $t1,PACMOVES #
+ sb $t0,0($t1)   #
+ sb $t0,2($t1)   #
+ sb $t0,1($t1)   #
+ sb $t0,3($t1)   #
+ la $t0, INICIO   #t0 is table top
+ la $a1, 0xff000000  #a1 is screen top
+ li $t3,62              #
+ la $t4,HP
+ lb $t4,0($t4)
+ beqz $t4,PAC1DEADSTART
+ addi $t1, $t0, 81	#PACADRESS 0 is snake 0
+ la $t2,PACADRESS       #
+ sw $t1,0($t2)          #
+ sb $t3,0($t1)          #
+ PAC1DEADSTART:
+ la $t4,HP
+ lb $t4,1($t4)
+ beqz $t4,PAC2DEADSTART
+ blt $s2,2,PACNUMDONE   #
+ addi $t1, $t0, 118      #
+ sw $t1,4($t2)          #
+ sb $t3,0($t1)          #
+ PAC2DEADSTART:
+ la $t4,HP
+ lb $t4,2($t4)
+ beqz $t4,PAC3DEADSTART
+ blt $s2,3,PACNUMDONE   #
+ addi $t1, $t0, 1081	#PACADRESS 1 is snake 1
+ sw $t1,8($t2)          #
+ sb $t3,0($t1)          #
+ PAC3DEADSTART:
+ la $t4,HP
+ lb $t4,3($t4)
+ beqz $t4,PAC4DEADSTART
+ blt $s2,4,PACNUMDONE   #
+ addi $t1, $t0, 1118	#PACADRESS 3 is snake 3
+ sw $t1,12($t2)         #
+ sb $t3,0($t1)          #
+ PAC4DEADSTART:
+ PACNUMDONE:
+ 
+ 
+ blt $s3,1,GHOSTNUMDONE   #
+ li $t3,61              #
+ addi $t1, $t0, 578	#GHOSTADRESS 0 is GHOST 0
+ la $t2,GHOSTADRESS       #
+ sw $t1,0($t2)          #
+ sb $t3,0($t1)          #
+ blt $s3,2,GHOSTNUMDONE   #
+ addi $t1, $t0, 581      #
+ sw $t1,4($t2)          #
+ sb $t3,0($t1)          #
+ blt $s3,3,GHOSTNUMDONE   #
+ addi $t1, $t0, 618	#PACADRESS 1 is snake 1
+ sw $t1,8($t2)          #
+ sb $t3,0($t1)          #
+ blt $s3,4,GHOSTNUMDONE   #
+ addi $t1, $t0, 621	#PACADRESS 3 is snake 3
+ sw $t1,12($t2)         #
+ sb $t3,0($t1)          #
+ GHOSTNUMDONE:
+ addi $s5,$zero,572     #s5 is amount of fooding
+ li $t2, 1200   #t2 is 1200 aka tabletop amount
+ 
+ PUTAPUTALOOP:  #print tela
+ addi $t4, $zero, 40   #amount of lines in t4
+ LOOP:         #does a line
+ lb $a0, 0($t0)    #loads byte to print
+ addi $sp,$sp,-4    #
+ sw $t4,0($sp)      #
+ bne $a0,46,NOTGRASS   #if is not a grass check what is
+ jal PRINTGROUND    #prints a grass and leaves
+ j GOON             #
+ NOTGRASS:          #
+ bne $a0,0,NOTWALL#checks if is wall and if is prints and leaves
+ jal PRINTWALL    #
+ j GOON           #
+ NOTWALL:         #
+ bne $a0,62,NOTHEAD    #checks if is head and prints
+ jal PRINTGROUND       #
+ la $t3,PACCOLOR
+ add $t3,$t3,$s0
+ lbu $a2,0($t3)
+ addi $s0,$s0,1
+ jal PRINT_PACMAN_RIGHT#
+ j GOON                #
+ NOTHEAD:              #
+ 
+ bne $a0,61,NOTGHOST    #checks if is head and prints
+ jal PRINTGROUND       #
+ la $t3,GHOSTCOLOR
+ add $t3,$t3,$s1
+ lbu $a2,0($t3)
+ addi $s1,$s1,1
+ jal PRINT_GHOST#
+ j GOON                #
+ NOTGHOST:              #
+ 
+ bne $a0,38,NOTCOIN#checks if is coin and prints
+ jal PRINTGROUND   #
+ jal PRINTCOIN     #
+ j GOON            #
+ NOTCOIN:          #
+ bne $a0,40,NOTBUFF#checks if is coin and prints
+ jal PRINTGROUND   #
+ jal PRINTBUFF     #
+ j GOON            #
+ NOTBUFF:          #
+ jal PRINTGROUND#
+ GOON:          #
+ addi $t0, $t0, 1   #gets next tabletop adress
+ addi $a1, $a1, 8   #gets next screen adress
+ addi $t2, $t2, -1  #one less tile to print
+ lw $t4,0($sp)      #
+ addi $sp,$sp,4     #
+ addi $t4, $t4, -1  #one less tile to print in line
+ bne $t4, 0, LOOP  #does a loop
+ addi $a1, $a1, 2240 #next line
+ bne $t2, 0, PUTAPUTALOOP #loops next line
+ 
+ li $a0,0
+ la $t0,PACCOLOR
+ add $t0,$t0,$a0
+ lbu $t8,0($t0)
+ la $a1 0xff000000 #a1 is screen
+ la $t0 HP     #
+ lb $t0,0($t0) #loads healthpoint in t0
+ la $t1,ISDEAD
+ bnez $t0,HEARTS
+ li $t2,1
+ sb $t2,0($t1)
+ j PULAHEART1
+ HEARTS:          #prints HP amount of hearts and then the score
+ jal PRINTHEART   #
+ addi $a1,$a1,10  #
+ addi $t0,$t0,-1  #
+ bne $t0,0,HEARTS #
+ PULAHEART1:
+ jal PRINTSCORE   #
+ blt $s2,2,PULAHEART4
+ li $a0,1
+ la $t0,PACCOLOR
+ add $t0,$t0,$a0
+ lbu $t8,0($t0)
+ la $a1 0xff000000 #a1 is screen
+ addi $a1,$a1,292
+ la $t0 HP     #
+ lb $t0,1($t0) #loads healthpoint in t0
+ la $t1,ISDEAD
+ bnez $t0,HEARTS2
+ li $t2,1
+ sb $t2,1($t1)
+ j PULAHEART2
+ HEARTS2:          #prints HP amount of hearts and then the score
+ jal PRINTHEART   #
+ addi $a1,$a1,10  #
+ addi $t0,$t0,-1  #
+ bne $t0,0,HEARTS2 #
+ PULAHEART2:
+ jal PRINTSCORE   #
+ blt $s2,3,PULAHEART4
+ li $a0,2
+ la $t0,PACCOLOR
+ add $t0,$t0,$a0
+ lbu $t8,0($t0)
+ la $a1 0xff000000 #a1 is screen
+ addi $a1,$a1,74240
+ la $t0 HP     #
+ lb $t0,2($t0) #loads healthpoint in t0
+ la $t1,ISDEAD
+ bnez $t0,HEARTS3
+ li $t2,1
+ sb $t2,2($t1)
+ j PULAHEART3
+ HEARTS3:          #prints HP amount of hearts and then the score
+ jal PRINTHEART   #
+ addi $a1,$a1,10  #
+ addi $t0,$t0,-1  #
+ bne $t0,0,HEARTS3 #
+ PULAHEART3:
+ jal PRINTSCORE   #
+ blt $s2,4,PULAHEART4
+ li $a0,3
+ la $t0,PACCOLOR
+ add $t0,$t0,$a0
+ lbu $t8,0($t0)
+ la $a1 0xff000000 #a1 is screen
+ addi $a1,$a1,74532
+ la $t0 HP     #
+ lb $t0,3($t0) #loads healthpoint in t0
+ la $t1,ISDEAD
+ bnez $t0,HEARTS4
+ li $t2,1
+ sb $t2,3($t1)
+ j PULAHEART4
+ HEARTS4:          #prints HP amount of hearts and then the score
+ jal PRINTHEART   #
+ addi $a1,$a1,10  #
+ addi $t0,$t0,-1  #
+ bne $t0,0,HEARTS4 #
+ PULAHEART4:
+ jal PRINTSCORE   #
+ 
+ j JOGO
+ 
+ DOBEEP:
+ li $v0,31
+ li $a0,70
+ li $a1,500
+ li $a2,4
+ li $a3,120
+ syscall    #sound eff
+ jr $ra
+ 
+ CHECKIFPACMOVES:
+ la $t0,BUFFTURN
+ lb $t0,0($t0)
+ beqz $t0,NOTBUFFTURN
+ la $t0,BUFFTIME
+ add $t0,$t0,$a0
+ lb $t0,0($t0)
+ beqz $t0,JUMPPAC
+ NOTBUFFTURN:
+ la $t0,HP
+ add $t0,$t0,$a0
+ lb $t0,0($t0)
+ beqz $t0,JUMPPAC
+ la $t0,ISDEAD
+ add $t0,$t0,$a0
+ lb $t0,0($t0)
+ bne $t0,$0,JUMPPAC
+ li $v0,0
+ jr $ra
+ JUMPPAC:
+ li $v0,1
+ jr $ra
+ 
+ CHECKISDEAD:
+ la $t0,ISDEAD
+ lb $t1,0($t0)
+ lb $t2,1($t0)
+ add $t1,$t1,$t2
+ lb $t2,2($t0)
+ lb $t3,3($t0)
+ add $t2,$t2,$t3
+ add $t1,$t1,$t2
+ beq $t1,$s2,END
+ jr $ra
+ 
+ JOGO:
+ jal DOBEEP
+ jal WAITBIGTIME
+ jal DOBEEP
+ jal WAITBIGTIME
+ jal DOBEEP
+ jal WAITBIGTIME
+ li $v0,31
+ li $a0,80
+ li $a1,1000
+ syscall
+ la $a0,0xFF100000   #set defaul d
+ li $a1,0
+ sw $a1,4($a0)
+ LOOP_JOGO:
+ beqz $s5,END_G
+ jal CHECKISDEAD
+ jal SPENDBUFF
+ jal WAITTIME
+ jal ECHO       #get input and checks
+ 
+ li $a0,0
+ jal CHECKIFPACMOVES
+ bnez $v0,JUMPPAC1
+ jal EXECPACMAN
+ JUMPPAC1:
+ blt $s2,2,JUMPPAC4
+ li $a0,1
+ jal CHECKIFPACMOVES
+ bnez $v0,JUMPPAC2
+ jal EXECPACMAN
+ JUMPPAC2:
+ blt $s2,3,JUMPPAC4
+ li $a0,2
+ jal CHECKIFPACMOVES
+ bnez $v0,JUMPPAC3
+ jal EXECPACMAN
+ JUMPPAC3:
+ blt $s2,4,JUMPPAC4
+ li $a0,3
+ jal CHECKIFPACMOVES
+ bnez $v0,JUMPPAC4
+ jal EXECPACMAN
+ JUMPPAC4:
+ la $t1,BUFFTURN
+ lb $t0,0($t1)
+ sb $0,0($t1)
+ beqz $t0,NOTABUFFTURNEND
+ blt $s3,1,LOOP_JOGO
+ li $a0,0
+ jal GETGHOSTMOVE
+ blt $s3,2,LOOP_JOGO
+ li $a0,1
+ jal GETGHOSTMOVE
+ blt $s3,3,LOOP_JOGO
+ li $a0,2
+ jal GETGHOSTMOVE
+ blt $s3,4,LOOP_JOGO
+ li $a0,3
+ jal GETGHOSTMOVE
+ j LOOP_JOGO
+ NOTABUFFTURNEND:
+ li $t0,1
+ sb $t0,0($t1)
+ jal MAKESOUND
+ j GHOSTTURNS
+ #a0 is pacman to move
+GHOSTTURNS:
+ blt $s3,1,LOOP_JOGO
+ li $a0,0
+ jal GETGHOSTMOVE
+ jal EXECGHOST
+ JUMPGHOST1:
+ blt $s3,2,LOOP_JOGO
+ li $a0,1
+ jal GETGHOSTMOVE
+ jal EXECGHOST
+ JUMPGHOST2:
+ blt $s3,3,LOOP_JOGO
+ li $a0,2
+ jal GETGHOSTMOVE
+ jal EXECGHOST
+ JUMPGHOST3:
+ blt $s3,4,LOOP_JOGO
+ li $a0,3
+ jal GETGHOSTMOVE
+ jal EXECGHOST
+ JUMPGHOST4:
+ j LOOP_JOGO
+ #a0 is pacman to move
+ 
+ EXECPACMAN:
+ addi $sp,$sp,-4
+ sw $ra,0($sp)
+ 
+ la $t0,BUFFTIME
+ add $t0,$t0,$a0
+ lb $a2,0($t0)
+ beq $a2,$0,NORMALPACCOLOR
+ li $a2,0x00d4
+ j JUMPPACCOLOR
+ 
+ NORMALPACCOLOR:
+ la $t0,PACCOLOR
+ add $t0,$t0,$a0
+ lbu $a2,0($t0)
+ JUMPPACCOLOR:
+ la $t0,PACBUFFERMOVES
+ add $t0,$t0,$a0
+ lb $t0,0($t0)
+ 
+ beq $t0, 65, C_A_BUFF
+ beq $t0, 97, C_A_BUFF
+ 
+ beq $t0, 83, C_S_BUFF
+ beq $t0, 115, C_S_BUFF
+ 
+ beq $t0, 68, C_D_BUFF
+ beq $t0, 100, C_D_BUFF	
+ 
+ beq $t0, 87, C_W_BUFF
+ beq $t0, 119, C_W_BUFF
+ DONEBUFFERMOVES:
+ 
+ la $t0,PACMOVES
+ add $t0,$t0,$a0
+ lb $t0,0($t0)
+ 
+ beq $t0, 65, C_A
+ beq $t0, 97, C_A
+ 
+ beq $t0, 83, C_S
+ beq $t0, 115, C_S
+ 
+ beq $t0, 68, C_D
+ beq $t0, 100, C_D	
+ 
+ beq $t0, 87, C_W
+ beq $t0, 119, C_W
+ 
+ CPACMANRETURN:
+ lw $ra,0($sp)
+ addi $sp,$sp,4
+ jr $ra
+ 
+ C_IN_PAC:
+ la $t1,PACADRESS
+ sll $t0,$a0,2
+ add $t1,$t1,$t0
+ lw $t1,0($t1)
+ add $t0, $t1, $zero
+ jr $ra
+ 
+ C_A:
+ jal C_IN_PAC
+ addi $a1,$t0,-1
+ lb $t0, -1($t0)
+ jal C_OUT_PAC
+ j PACMAN_MOVE_LEFT
+ 
+ C_A_BUFF:
+ jal C_IN_PAC
+ addi $a1,$t0,-1
+ lb $t0, -1($t0)
+ jal C_OUT_PAC_BUFF
+ j DONEBUFFERMOVES
+ 
+ C_S:
+ jal C_IN_PAC
+ addi $a1,$t0,40
+ lb $t0, 40($t0)
+ jal C_OUT_PAC
+ j PACMAN_MOVE_DOWN
+ 
+ C_S_BUFF:
+ jal C_IN_PAC
+ addi $a1,$t0,40
+ lb $t0, 40($t0)
+ jal C_OUT_PAC_BUFF
+ j DONEBUFFERMOVES
+ 
+ C_D:
+ jal C_IN_PAC
+ addi $a1,$t0,1
+ lb $t0, 1($t0)
+ jal C_OUT_PAC
+ j PACMAN_MOVE_RIGHT
+ 
+ C_D_BUFF:
+ jal C_IN_PAC
+ addi $a1,$t0,1
+ lb $t0, 1($t0)
+ jal C_OUT_PAC_BUFF
+ j DONEBUFFERMOVES
+ 
+ C_W:
+ jal C_IN_PAC
+ addi $a1,$t0,-40
+ lb $t0, -40($t0)
+ jal C_OUT_PAC
+ j PACMAN_MOVE_UP
+ 
+ C_W_BUFF:
+ jal C_IN_PAC
+ addi $a1,$t0,-40
+ lb $t0, -40($t0)
+ jal C_OUT_PAC_BUFF
+ j DONEBUFFERMOVES
+ 
+ C_OUT_PAC:
+ beqz $t0,CPACMANRETURN
+ la $t1,BUFFTIME
+ add $t1,$t1,$a0
+ lb $t2,0($t1)
+ bne $t2,0,JUMPUNBUFFPROC
+ beq $t0, 62, CPACMANRETURN
+ beq $t0, 61, CPACMANRETURN
+ j JUMPBUFFPROC
+ JUMPUNBUFFPROC:
+ beq $t0, 62, ATETHING
+ beq $t0, 61, ATETHING
+ j JUMPBUFFPROC
+ ATETHING:
+ addi $sp,$sp,-4
+ sw $ra,0($sp)
+ la $t2,SCORE
+ sll $t1,$a0,2
+ add $t2,$t2,$t1
+ lw $t1,0($t2)
+ addi $t1,$t1,99
+ sw $t1,0($t2)
+ beq $t0,61,SELFDEFENSEPAC
+ CANIBALPAC:
+ jal KILLPAC
+ li $v0,46
+ j PACATETHING
+ SELFDEFENSEPAC:
+ jal KILLGHOST
+ PACATETHING:
+ jal SCORETABLE
+ jal INCSCORE   #found coin
+ move $t0,$v0
+ lw $ra,0($sp)
+ addi $sp,$sp,4
+ JUMPBUFFPROC:
+ addi $sp,$sp,-4
+ sw $ra,0($sp)
+ la $t1,BUFFTIME
+ add $t1,$t1,$a0
+ lb $t2,0($t1)
+ bne $t0,40,DONTGETBUFFUNDER
+ addi $t2,$t2,50
+ sb $t2,0($t1)
+ DONTGETBUFFUNDER:
+ bne $t0,38,C_OUT_PACMAN_RETURN
+ jal SCORETABLE
+ jal INCSCORE   #found coin
+ addi $s5,$s5,-1
+ C_OUT_PACMAN_RETURN:
+ lw $ra,0($sp)
+ addi $sp,$sp,4
+ jr $ra
+ 
+ C_OUT_PAC_BUFF:
+ beqz $t0,DONTSWAPMOVEBUFFER
+ la $t0,PACBUFFERMOVES
+ add $t0,$t0,$a0
+ lb $t0,0($t0)
+ la $t1,PACMOVES
+ add $t1,$t1,$a0
+ sb $t0,0($t1)
+ DONTSWAPMOVEBUFFER:
+ jr $ra
+ 
+ PACMAN_MOVE_IN:
+ addi $sp,$sp,-4
+ sw $ra,0($sp)
+ la $t1,PACADRESS
+ sll $t0,$a0,2
+ add $t1,$t1,$t0
+ lw $t1,0($t1)
+ li $t0, 46
+ sb $t0, 0($t1)
+ la $t8,INICIO
+ sub $t9, $t1, $t8
+ div $t9, $t9, 40
+ mfhi $t8
+ sll $t9,$t9,6
+ sll $t7,$t9,1
+ sll $t6,$t7,1
+ add $t7,$t7,$t6
+ sub $t9,$t7,$t9
+ add $t9, $t9, $t8
+ sll $t9, $t9, 3
+ la $t8,0xff000000
+ add $a1, $t8, $t9
+ jal PRINTGROUND
+ la $t0,PACADRESS
+ sll $t1,$a0,2
+ add $t0,$t0,$t1
+ lw $t1,0($t0)
+ lw $ra,0($sp)
+ addi $sp,$sp,4
+ jr $ra
+ 
+ PACMAN_MOVE_MID:
+ addi $sp,$sp,-4
+ sw $ra,0($sp)
+ la $t8,BUFFTIME
+ add $t8,$t8,$a0
+ lb $t8,0($t8)
+ li $t0, 62
+ beq $t8,0,PACNOTIMORTAL
+ li $t0, 0
+ PACNOTIMORTAL:
+ sb $t0, 0($t1)
+ la $t8,0xff000000
+ add $a1, $t8, $t9
+ jal PRINTGROUND
+ la $t7,MOUTHOPEN
+ add $t7,$t7,$a0
+ lb $t7,0($t7)
+ lw $ra,0($sp)
+ addi $ra,$ra,8
+ sw $ra,0($sp)
+ beq $t7,$zero,MOUTH_NOT_OPEN
+ lw $ra,0($sp)
+ addi $ra,$ra,-8
+ addi $sp,$sp,4
+ jr $ra
+ 
+ PACMAN_MOVE_OUT:
+ addi $sp,$sp,-4
+ sw $ra,0($sp)
+ li $t8,0
+ la $t7,MOUTHOPEN
+ add $t7,$t7,$a0
+ sb $t8,0($t7)
+ j MOUTH_PRINTED
+ MOUTH_NOT_OPEN:
+ jal PRINT_PACMAN_FULL
+ li $t8,1
+ la $t7,MOUTHOPEN
+ add $t7,$t7,$a0
+ sb $t8,0($t7)
+ MOUTH_PRINTED:
+ lw $ra,0($sp)
+ addi $sp,$sp,4
+ jr $ra
+                               
+ PACMAN_MOVE_LEFT:
+ jal PACMAN_MOVE_IN
+ addi $t1, $t1, -1
+ sw $t1,0($t0)
+ addi $t9, $t9, -8
+ jal PACMAN_MOVE_MID
+ jal PRINT_PACMAN_LEFT
+ jal PACMAN_MOVE_OUT
+ j CPACMANRETURN
+ 
+ PACMAN_MOVE_DOWN:
+ jal PACMAN_MOVE_IN
+ addi $t1, $t1, 40
+ sw $t1,0($t0)
+ addi $t9, $t9, 2560
+ jal PACMAN_MOVE_MID
+ jal PRINT_PACMAN_DOWN
+ jal PACMAN_MOVE_OUT
+ j CPACMANRETURN
+ 
+ PACMAN_MOVE_RIGHT:
+ jal PACMAN_MOVE_IN
+ addi $t1, $t1, 1
+ sw $t1,0($t0)
+ addi $t9, $t9, 8
+ jal PACMAN_MOVE_MID
+ jal PRINT_PACMAN_RIGHT
+ jal PACMAN_MOVE_OUT
+ j CPACMANRETURN
+ 
+ PACMAN_MOVE_UP:
+ jal PACMAN_MOVE_IN
+ addi $t1, $t1, -40
+ sw $t1,0($t0)
+ addi $t9, $t9, -2560
+ jal PACMAN_MOVE_MID
+ jal PRINT_PACMAN_UP
+ jal PACMAN_MOVE_OUT
+ j CPACMANRETURN
+ 
+ SPENDBUFF:
+ li $t0,0
+ la $t1,BUFFTIME
+ lb $t2,0($t1)
+ beq $t2,0,PAC1NOBUFF
+ addi $t2,$t2,-1
+ sb $t2,0($t1)
+ PAC1NOBUFF:
+ lb $t2,1($t1)
+ beq $t2,0,PAC2NOBUFF
+ addi $t2,$t2,-1
+ sb $t2,1($t1)
+ PAC2NOBUFF:
+ lb $t2,2($t1)
+ beq $t2,0,PAC3NOBUFF
+ addi $t2,$t2,-1
+ sb $t2,2($t1)
+ PAC3NOBUFF:
+ lb $t2,3($t1)
+ beq $t2,0,PAC4NOBUFF
+ addi $t2,$t2,-1
+ sb $t2,3($t1)
+ PAC4NOBUFF:
+ jr $ra
+ 
+ KILLGHOST:
+ li $t0,0
+ la $t1,GHOSTADRESS
+ KILLLOOP_G:
+ lw $t2,0($t1)
+ bne $t2,$a1,DOKILLLOOP_G
+ la $t3,GHOSTOVER
+ add $t3,$t3,$t0
+ lb $v0,0($t3)
+ li $t4,46
+ sb $t4,0($t3)
+ la $t2,INICIO
+ bne $t0,3,GHOST_DIE_NOT3
+ addi $t2, $t2, 621
+ GHOST_DIE_NOT3:
+ bne $t0,2,GHOST_DIE_NOT2
+ addi $t2, $t2, 618
+ GHOST_DIE_NOT2:
+ bne $t0,1,GHOST_DIE_NOT1
+ addi $t2, $t2, 581
+ GHOST_DIE_NOT1:
+ bne $t0,0,GOT_G_SA
+ addi $t2, $t2, 578
+ GOT_G_SA:
+ sw $t2,0($t1)
+ jr $ra
+ DOKILLLOOP_G:
+ addi $t0,$t0,1
+ addi $t1,$t1,4
+ j KILLLOOP_G
+ 
+#EXEGHOST
+EXECGHOST:
+ addi $sp,$sp,-4
+ sw $ra,0($sp)
+ 
+ la $t0,GHOSTCOLOR
+ add $t0,$t0,$a0
+ lbu $a2,0($t0)
+ 
+ beq $v0, 65, C_A_G
+ beq $v0, 97, C_A_G
+  
+ beq $v0, 83, C_S_G
+ beq $v0, 115, C_S_G
+ 
+ beq $v0, 68, C_D_G
+ beq $v0, 100, C_D_G	
+  
+ beq $v0, 87, C_W_G
+ beq $v0, 119, C_W_G
+ 
+ CGHOSTRETURN:
+ lw $ra,0($sp)
+ addi $sp,$sp,4
+ jr $ra
+ 
+ C_G_IN:
+ la $t1,GHOSTADRESS
+ sll $t0,$a0,2
+ add $t1,$t1,$t0
+ lw $t1,0($t1)
+ add $t0, $zero, $t1
+ jr $ra
+ 
+ C_A_G:
+ jal C_G_IN
+ addi $a1,$t0,-1
+ lb $t0, -1($t0)
+ j C_G_OUT
+ 
+ C_S_G:
+ jal C_G_IN
+ addi $a1,$t0,40
+ lb $t0, 40($t0)
+ j C_G_OUT
+ 
+ C_D_G:
+ jal C_G_IN
+ addi $a1,$t0,1
+ lb $t0, 1($t0)
+ j C_G_OUT
+ 
+ C_W_G:
+ jal C_G_IN
+ addi $a1,$t0,-40
+ lb $t0, -40($t0)
+ j C_G_OUT
+  
+ C_G_OUT:
+ beq $t0, 0, CGHOSTRETURN
+ bne $t0, 62, EXECUTA_GHOST
+ jal KILLPAC
+ j EXECUTA_GHOST
+  
+ EXECUTA_GHOST:
+ beq $v0, 65, GHOST_MOVE_LEFT
+ beq $v0, 97, GHOST_MOVE_LEFT
+  
+ beq $v0, 83, GHOST_MOVE_DOWN
+ beq $v0, 115, GHOST_MOVE_DOWN
+ 
+ beq $v0, 68, GHOST_MOVE_RIGHT
+ beq $v0, 100, GHOST_MOVE_RIGHT
+ 
+ beq $v0, 87, GHOST_MOVE_UP
+ beq $v0, 119, GHOST_MOVE_UP
+ 
+ GHOST_MOVE_IN:
+ addi $sp,$sp,-4
+ sw $ra,0($sp)
+ la $t1,GHOSTADRESS
+ sll $t0,$a0,2
+ add $t1,$t1,$t0
+ lw $t1,0($t1)
+ la $t0,GHOSTOVER
+ add $t0,$t0,$a0
+ lb $t0,0($t0)
+ sb $t0, 0($t1)
+ la $t8,INICIO
+ sub $t9, $t1, $t8
+ div $t9, $t9, 40
+ mfhi $t8
+ sll $t9,$t9,6
+ sll $t7,$t9,1
+ sll $t6,$t7,1
+ add $t7,$t7,$t6
+ sub $t9,$t7,$t9
+ add $t9, $t9, $t8
+ sll $t9, $t9, 3
+ la $t8,0xff000000
+ add $a1, $t8, $t9
+ jal PRINTGROUND
+ bne $t0,38,LEFTNOCOIN
+ jal PRINTCOIN
+ LEFTNOCOIN:
+ bne $t0,40,LEFTNOBUFF
+ jal PRINTBUFF
+ LEFTNOBUFF:
+ la $t0,GHOSTADRESS
+ sll $t1,$a0,2
+ add $t0,$t0,$t1
+ lw $t1,0($t0)
+ lw $ra,0($sp)
+ addi $sp,$sp,4
+ jr $ra
+ 
+ GHOST_MOVE_LEFT:
+ jal GHOST_MOVE_IN
+ addi $t1, $t1, -1
+ sw $t1,0($t0)
+ addi $t9, $t9, -8
+ j GHOST_MOVE_OUT
+ 
+ GHOST_MOVE_DOWN:
+ jal GHOST_MOVE_IN
+ addi $t1, $t1, 40
+ sw $t1,0($t0)
+ addi $t9, $t9, 2560
+ j GHOST_MOVE_OUT
+ 
+ GHOST_MOVE_RIGHT:
+ jal GHOST_MOVE_IN
+ addi $t1, $t1, 1
+ sw $t1,0($t0)
+ addi $t9, $t9, 8
+ j GHOST_MOVE_OUT
+ 
+ GHOST_MOVE_UP:
+ jal GHOST_MOVE_IN
+ addi $t1, $t1, -40
+ sw $t1,0($t0)
+ addi $t9, $t9, -2560
+ j GHOST_MOVE_OUT
+ 
+ GHOST_MOVE_OUT:
+ la $t0,GHOSTOVER
+ add $t0,$t0,$a0
+ lb $t8,0($t1)
+ bne $t8,62,GHOSTATENOTPAC
+ li $t8,46
+ GHOSTATENOTPAC:
+ sb $t8,0($t0)
+ li $t0, 61
+ sb $t0, 0($t1)
+ la $t8,0xff000000
+ add $a1, $t8, $t9
+ jal PRINTGROUND
+ jal PRINT_GHOST
+ j CGHOSTRETURN
+ 
+#pactranslate
+ GETGHOSTMOVE:
+ addi $sp,$sp,-4
+ sw $fp,0($sp)
+
+ li $t0,1200
+ la $t1,GHOSTAUX
+ li $s1,1
+ li $k1,fantasma
+ li $s7,oo
+ li $s0,pacman
+ li $s6,parede
+SETAUXOO:
+ sw $s7,0($t1)
+ addi $t1,$t1,4
+ addi $t0,$t0,-1
+ bne $t0,$0,SETAUXOO
+ 
+ la $t0,GHOSTADRESS
+ sll $t1,$a0,2
+ add $t1,$t1,$t0
+ lw $t0,0($t1)
+ la $t1,INICIO
+ sub $t2,$t0,$t1
+ sll $t2,$t2,2
+ la $t1,GHOSTAUX
+ add $t1,$t1,$t2
+ 
+ sw $zero,0($t1)
+ 
+ li $t4,0
+ li $t6,0
+ 
+ move $fp,$sp
+ move $t5,$fp
+ 
+ addi $sp,$sp,-8
+ sw $t0,0($sp)
+ sw $t1,4($sp)
+ 
+ LOOPIACHECK:
+ addi $fp,$fp,-8
+ lw $t0,0($fp)
+ lw $t1,4($fp)
+ lb $t2,0($t0)
+ lw $t3,0($t1)
+ addi $t7,$t3,1
+ 
+ CHECKDIREITA:
+ addi $t0,$t0,1
+ addi $t1,$t1,4
+ lb $t2,0($t0)
+ lw $t3,0($t1)
+ bne $t3,$s7,DIREITANOTSET
+ beq $t2,$s6,DIREITANOTSET
+ beq $t2,$k1,DIREITANOTSET
+ beq $t6,$s1,DIREITAPACFOUND
+ move $t4,$t7
+ DIREITAPACFOUND:
+ sw $t7,0($t1)
+ addi $sp,$sp,-8
+ sw $t0,0($sp)
+ sw $t1,4($sp)
+ bne $t2,$s0,DIREITANOTAPACMAN
+ li $t6,1
+ move $t8,$t1
+ DIREITANOTAPACMAN:
+ DIREITANOTSET:
+ addi $t0,$t0,-1
+ addi $t1,$t1,-4
+ 
+ CHECKESQUERDA:
+ addi $t0,$t0,-1
+ addi $t1,$t1,-4
+ lb $t2,0($t0)
+ lw $t3,0($t1)
+ bne $t3,$s7,ESQUERDANOTSET
+ beq $t2,$s6,ESQUERDANOTSET
+ beq $t2,$k1,ESQUERDANOTSET
+ beq $t6,$s1,ESQUERDAPACFOUND
+ move $t4,$t7
+ ESQUERDAPACFOUND:
+ sw $t7,0($t1)
+ addi $sp,$sp,-8
+ sw $t0,0($sp)
+ sw $t1,4($sp)
+ bne $t2,$s0,ESQUERDANOTAPACMAN
+ li $t6,1
+ move $t8,$t1
+ ESQUERDANOTAPACMAN:
+ ESQUERDANOTSET:
+ addi $t0,$t0,1
+ addi $t1,$t1,4
+ 
+ CHECKCIMA:
+ addi $t0,$t0,-40
+ addi $t1,$t1,-160
+ lb $t2,0($t0)
+ lw $t3,0($t1)
+ bne $t3,$s7,CIMANOTSET
+ beq $t2,$s6,CIMANOTSET
+ beq $t2,$k1,CIMANOTSET
+ beq $t6,$s1,CIMAPACFOUND
+ move $t4,$t7
+ CIMAPACFOUND:
+ sw $t7,0($t1)
+ addi $sp,$sp,-8
+ sw $t0,0($sp)
+ sw $t1,4($sp)
+ bne $t2,$s0,CIMANOTAPACMAN
+ li $t6,1
+ move $t8,$t1
+ CIMANOTAPACMAN:
+ CIMANOTSET:
+ addi $t0,$t0,40
+ addi $t1,$t1,160
+ 
+ CHECKBAIXO:
+ addi $t0,$t0,40
+ addi $t1,$t1,160
+ lb $t2,0($t0)
+ lw $t3,0($t1)
+ bne $t3,$s7,BAIXONOTSET
+ beq $t2,$s6,BAIXONOTSET
+ beq $t2,$k1,BAIXONOTSET
+ beq $t6,$s1,BAIXOPACFOUND
+ move $t4,$t7
+ BAIXOPACFOUND:
+ sw $t7,0($t1)
+ addi $sp,$sp,-8
+ sw $t0,0($sp)
+ sw $t1,4($sp)
+ bne $t2,$s0,BAIXONOTAPACMAN
+ li $t6,1
+ move $t8,$t1
+ BAIXONOTAPACMAN:
+ BAIXONOTSET:
+ addi $t0,$t0,-40
+ addi $t1,$t1,-160
+ 
+ beq $fp,$sp,LOOPIADONE
+ beqz $t6,LOOPIACHECK
+ lw $t1,-4($fp)
+ lw $t3,0($t1)
+ beq $t3,$t4,LOOPIACHECK
+ LOOPIADONE:
+ move $sp,$t5
+ 
+ move $t1,$t8
+ li $v0,0
+ beqz $t6,GOTMOVE
+ MOVELOOP:
+ lw $t3,0($t1)
+ beqz $t3,GOTMOVE
+ 
+ addi $t0,$t1,4
+ lw $t2,0($t0)
+ addi $t2,$t2,1
+ bne $t3,$t2,IAMOVENOTDIREITA
+ addi $t1,$t1,4
+ li $v0,97
+ j MOVELOOP
+ IAMOVENOTDIREITA:
+ addi $t0,$t1,-4
+ lw $t2,0($t0)
+ addi $t2,$t2,1
+ bne $t3,$t2,IAMOVENOTESQUERDA
+ addi $t1,$t1,-4
+ li $v0,100
+ j MOVELOOP
+ IAMOVENOTESQUERDA:
+ addi $t0,$t1,160
+ lw $t2,0($t0)
+ addi $t2,$t2,1
+ bne $t3,$t2,IAMOVENOTBAIXO
+ addi $t1,$t1,160
+ li $v0,119
+ j MOVELOOP
+ IAMOVENOTBAIXO:
+ addi $t0,$t1,-160
+ lw $t2,0($t0)
+ addi $t2,$t2,1
+ bne $t3,$t2,IAMOVENOTCIMA
+ addi $t1,$t1,-160
+ li $v0,115
+ j MOVELOOP
+ IAMOVENOTCIMA:
+ GOTMOVE:
+ lw $fp,0($sp)
+ addi $sp,$sp,4
+ jr $ra
+
+#PACTRANSLATE
+
+ KILLPAC:
+ li $t0,0
+ la $t1,PACADRESS
+ KILLLOOP:
+ lw $t2,0($t1)
+ bne $t2,$a1,DOKILLLOOP
+ li $t2,0
+ sw $t2,0($t1)
+ la $t1,HP
+ add $t1,$t1,$t0
+ lb $t2,0($t1)
+ addi $t2,$t2,-1
+ sb $t2,0($t1)
+ la $t1,ISDEAD
+ add $t1,$t1,$t0
+ li $t2,1
+ sb $t2,0($t1)
+ jr $ra
+ DOKILLLOOP:
+ addi $t0,$t0,1
+ addi $t1,$t1,4
+ j KILLLOOP
+ 
+ MAKESOUND:
+ li $v0,31
+ li $a0,50
+ li $a1,250
+ li $a2,120
+ li $a3,100
+ syscall
+ jr $ra
+ 
+ PRINTGROUND:
+ li $t8,0x8a8a8989
+ li $t7,0x81818080
+ sw $t8,0($a1)
+ sw $t7,4($a1)
+ sw $t8,320($a1)
+ sw $t7,324($a1)
+ sw $t8,640($a1)
+ sw $t7,644($a1)
+ sw $t8,960($a1)
+ sw $t7,964($a1)
+ sw $t8,1280($a1)
+ sw $t7,1284($a1)
+ sw $t8,1600($a1)
+ sw $t7,1604($a1)
+ sw $t8,1920($a1)
+ sw $t7,1924($a1)
+ sw $t8,2240($a1)
+ sw $t7,2244($a1)
+ jr $ra
+ 
+ PRINT_PACMAN_RIGHT:
+ sll $t9,$a2,8
+ or $t9,$t9,$a2
+ sll $t8,$t9,16
+ or $t8,$t8,$t9
+ sh $t8,2($a1)
+ sh $t8,4($a1)
+ sb $t8,321($a1)
+ sh $t8,322($a1)
+ sh $t8,324($a1)
+ sw $t8,640($a1)
+ sb $t8,644($a1)
+ sw $t8,960($a1)
+ sw $t8,1280($a1)
+ sw $t8,1600($a1)
+ sb $t8,1604($a1)
+ sb $t8,1921($a1)
+ sh $t8,1922($a1)
+ sh $t8,1924($a1)
+ sh $t8,2242($a1)
+ sh $t8,2244($a1)
+ jr $ra
+ 
+ PRINT_PACMAN_LEFT:
+ sll $t9,$a2,8
+ or $t9,$t9,$a2
+ sll $t8,$t9,16
+ or $t8,$t8,$t9
+ sh $t8,2($a1)
+ sh $t8,4($a1)
+ sh $t8,322($a1)
+ sh $t8,324($a1)
+ sb $t8,326($a1)
+ sb $t8,643($a1)
+ sw $t8,644($a1)
+ sw $t8,964($a1)
+ sw $t8,1284($a1)
+ sb $t8,1603($a1)
+ sw $t8,1604($a1)
+ sh $t8,1922($a1)
+ sh $t8,1924($a1)
+ sb $t8,1926($a1)
+ sh $t8,2242($a1)
+ sh $t8,2244($a1)
+ jr $ra
+ 
+ PRINT_PACMAN_UP:
+ sll $t9,$a2,8
+ or $t9,$t9,$a2
+ sll $t8,$t9,16
+ or $t8,$t8,$t9
+ sh $t8,640($a1)
+ sh $t8,646($a1)
+ sh $t8,960($a1)
+ sb $t8,962($a1)
+ sb $t8,965($a1)
+ sh $t8,966($a1)
+ sw $t8,1280($a1)
+ sw $t8,1284($a1)
+ sw $t8,1600($a1)
+ sw $t8,1604($a1)
+ sb $t8,1921($a1)
+ sh $t8,1922($a1)
+ sh $t8,1924($a1)
+ sb $t8,1926($a1)
+ sh $t8,2242($a1)
+ sh $t8,2244($a1)
+ jr $ra
+ 
+ PRINT_PACMAN_DOWN:
+ sll $t9,$a2,8
+ or $t9,$t9,$a2
+ sll $t8,$t9,16
+ or $t8,$t8,$t9
+ sh $t8,2($a1)
+ sh $t8,4($a1)
+ sb $t8,321($a1)
+ sh $t8,322($a1)
+ sh $t8,324($a1)
+ sb $t8,326($a1)
+ sw $t8,640($a1)
+ sw $t8,644($a1)
+ sw $t8,960($a1)
+ sw $t8,964($a1)
+ sh $t8,1280($a1)
+ sb $t8,1282($a1)
+ sb $t8,1285($a1)
+ sh $t8,1286($a1)
+ sh $t8,1600($a1)
+ sh $t8,1606($a1)
+ jr $ra
+ 
+ PRINT_PACMAN_FULL:
+ sll $t9,$a2,8
+ or $t9,$t9,$a2
+ sll $t8,$t9,16
+ or $t8,$t8,$t9
+ sh $t8,2($a1)
+ sh $t8,4($a1)
+ sb $t8,321($a1)
+ sh $t8,322($a1)
+ sh $t8,324($a1)
+ sb $t8,326($a1)
+ sw $t8,640($a1)
+ sw $t8,644($a1)
+ sw $t8,960($a1)
+ sw $t8,964($a1)
+ sw $t8,1280($a1)
+ sw $t8,1284($a1)
+ sw $t8,1600($a1)
+ sw $t8,1604($a1)
+ sb $t8,1921($a1)
+ sh $t8,1922($a1)
+ sh $t8,1924($a1)
+ sb $t8,1926($a1)
+ sh $t8,2242($a1)
+ sh $t8,2244($a1)
+ jr $ra
+ 
+ PRINT_GHOST:
+ sll $t7,$a2,8
+ or $t7,$t7,$a2
+ sll $t8,$t7,16
+ or $t8,$t8,$t7
+ li $t9,255
+ sh $t8,2($a1)
+ sh $t8,4($a1)
+ sb $t8,321($a1)
+ sh $t8,322($a1)
+ sh $t8,324($a1)
+ sb $t8,326($a1)
+ sb $t8,640($a1)
+ sb $t9,641($a1)
+ sb $0,642($a1)
+ sb $t8,643($a1)
+ sb $t8,644($a1)
+ sb $t9,645($a1)
+ sb $0,646($a1)
+ sb $t8,647($a1)
+ sb $t8,960($a1)
+ sb $0,961($a1)
+ sb $0,962($a1)
+ sb $t8,963($a1)
+ sb $t8,964($a1)
+ sb $0,965($a1)
+ sb $0,966($a1)
+ sb $t8,967($a1)
+ sw $t8,1280($a1)
+ sw $t8,1284($a1)
+ sw $t8,1600($a1)
+ sw $t8,1604($a1)
+ sw $t8,1920($a1)
+ sw $t8,1924($a1)
+ sw $t8,2240($a1)
+ sw $t8,2244($a1)
+ jr $ra
+ 
+ PRINTCOIN:
+ li $t8,0x7f7f
+ sb $t8,643($a1)
+ sb $t8,644($a1)
+ sh $t8,962($a1)
+ sh $t8,964($a1)
+ sh $t8,1282($a1)
+ sh $t8,1284($a1)
+ sb $t8,1603($a1)
+ sb $t8,1604($a1)
+ jr $ra
+ 
+ PRINTBUFF:
+ li $t8,0x7777
+ li $t7,0x0505
+ sh $t8,2($a1)
+ sh $t8,4($a1)
+ sb $t8,321($a1)
+ sh $t8,322($a1)
+ sh $t8,324($a1)
+ sb $t8,326($a1)
+ sb $t8,641($a1)
+ sh $t7,642($a1)
+ sh $t7,644($a1)
+ sb $t8,646($a1)
+ sb $t8,961($a1)
+ sh $t7,962($a1)
+ sh $t7,964($a1)
+ sb $t8,966($a1)
+ sb $t8,1281($a1)
+ sh $t7,1282($a1)
+ sh $t7,1284($a1)
+ sb $t8,1286($a1)
+ sb $t8,1601($a1)
+ sh $t7,1602($a1)
+ sh $t7,1604($a1)
+ sb $t8,1606($a1)
+ sb $t8,1921($a1)
+ sh $t8,1922($a1)
+ sh $t8,1924($a1)
+ sb $t8,1926($a1)
+ sh $t8,2242($a1)
+ sh $t8,2244($a1)
+ jr $ra
+ 
+ PRINTWALL:
+ li $t8,0x02020202
+ li $t7,0x04040404
+ li $t6,0x0b0b0b0b
+ li $t5,0x16161616
+ li $t4,0
+ sw $t8,0($a1)
+ sw $t7,4($a1)
+ sw $t6,320($a1)
+ sw $t7,324($a1)
+ sw $t6,640($a1)
+ sw $t5,644($a1)
+ sw $t7,960($a1)
+ sw $t5,964($a1)
+ sw $t7,1280($a1)
+ sw $t8,1284($a1)
+ sw $t5,1600($a1)
+ sw $t8,1604($a1)
+ sw $t5,1920($a1)
+ sw $t6,1924($a1)
+ sw $t8,2240($a1)
+ sw $t6,2244($a1)
+ jr $ra
+ 
+ PRINTCHAR:
+ addi $sp,$sp,-12
+ sw $t0,0($sp)
+ sw $t1,4($sp)
+ sw $ra,8($sp)
+ jal PRINTWALL
+ lw $t1,4($sp)
+ bne $t1,0,FN0
+ jal PRINT0
+ j FGO
+ FN0:
+ bne $t1,1,FN1
+ jal PRINT1
+ j FGO
+ FN1:
+ bne $t1,2,FN2
+ jal PRINT2
+ j FGO
+ FN2:
+ bne $t1,3,FN3
+ jal PRINT3
+ j FGO
+ FN3:
+ bne $t1,4,FN4
+ jal PRINT4
+ j FGO
+ FN4:
+ bne $t1,5,FN5
+ jal PRINT5
+ j FGO
+ FN5:
+ bne $t1,6,FN6
+ jal PRINT6
+ j FGO
+ FN6:
+ bne $t1,7,FN7
+ jal PRINT7
+ j FGO
+ FN7:
+ bne $t1,8,FN8
+ jal PRINT8
+ j FGO
+ FN8:
+ bne $t1,9,FN9
+ jal PRINT9
+ j FGO
+ FN9:
+ FGO:
+ lw $t0,0($sp)
+ lw $t1,4($sp)
+ lw $ra,8($sp)
+ addi $sp,$sp,12
+ jr $ra
+ 
+ PRINT9:
+ li $t4,0xffff
+ sh $t4,2($a1)
+ sh $t4,4($a1)
+ sb $t4,321($a1)
+ sb $t4,322($a1)
+ sb $t4,325($a1)
+ sb $t4,326($a1)
+ sb $t4,641($a1)
+ sb $t4,646($a1)
+ sb $t4,961($a1)
+ sb $t4,965($a1)
+ sb $t4,966($a1)
+ sh $t4,1282($a1)
+ sh $t4,1284($a1)
+ sb $t4,1286($a1)
+ sb $t4,1606($a1)
+ sb $t4,1925($a1)
+ sb $t4,1926($a1)
+ sh $t4,2242($a1)
+ sh $t4,2244($a1)
+ jr $ra
+ 
+ PRINT8:
+ li $t4,0xffff
+ sh $t4,2($a1)
+ sh $t4,4($a1)
+ sb $t4,321($a1)
+ sb $t4,322($a1)
+ sb $t4,325($a1)
+ sb $t4,326($a1)
+ sb $t4,641($a1)
+ sb $t4,642($a1)
+ sb $t4,645($a1)
+ sb $t4,646($a1)
+ sh $t4,962($a1)
+ sh $t4,964($a1)
+ sb $t4,1281($a1)
+ sb $t4,1282($a1)
+ sb $t4,1285($a1)
+ sb $t4,1286($a1)
+ sb $t4,1601($a1)
+ sb $t4,1606($a1)
+ sb $t4,1921($a1)
+ sb $t4,1922($a1)
+ sb $t4,1925($a1)
+ sb $t4,1926($a1)
+ sh $t4,2242($a1)
+ sh $t4,2244($a1)
+ jr $ra
+ 
+ PRINT7:
+ li $t4,0xffff
+ sb $t4,321($a1)
+ sh $t4,322($a1)
+ sh $t4,324($a1)
+ sb $t4,326($a1)
+ sb $t4,646($a1)
+ sb $t4,965($a1)
+ sb $t4,966($a1)
+ sh $t4,1284($a1)
+ sb $t4,1603($a1)
+ sb $t4,1604($a1)
+ sh $t4,1922($a1)
+ sb $t4,2241($a1)
+ sb $t4,2242($a1)
+ jr $ra
+ 
+ PRINT6:
+ li $t4,0xffff
+ sh $t4,2($a1)
+ sh $t4,4($a1)
+ sb $t4,321($a1)
+ sb $t4,322($a1)
+ sb $t4,641($a1)
+ sb $t4,961($a1)
+ sh $t4,962($a1)
+ sh $t4,964($a1)
+ sb $t4,1281($a1)
+ sb $t4,1282($a1)
+ sb $t4,1285($a1)
+ sb $t4,1286($a1)
+ sb $t4,1601($a1)
+ sb $t4,1606($a1)
+ sb $t4,1921($a1)
+ sb $t4,1922($a1)
+ sb $t4,1925($a1)
+ sb $t4,1926($a1)
+ sh $t4,2242($a1)
+ sh $t4,2244($a1)
+ jr $ra
+ 
+ PRINT5:
+ li $t4,0xffff
+ sb $t4,321($a1)
+ sh $t4,322($a1)
+ sh $t4,324($a1)
+ sb $t4,641($a1)
+ sb $t4,961($a1)
+ sh $t4,962($a1)
+ sb $t4,964($a1)
+ sh $t4,1284($a1)
+ sb $t4,1605($a1)
+ sh $t4,1924($a1)
+ sb $t4,2241($a1)
+ sh $t4,2242($a1)
+ sb $t4,2244($a1)
+ jr $ra
+ 
+ PRINT4:
+ li $t4,0xffff
+ sh $t4,324($a1)
+ sb $t4,643($a1)
+ sh $t4,644($a1)
+ sh $t4,962($a1)
+ sb $t4,965($a1)
+ sb $t4,1281($a1)
+ sb $t4,1282($a1)
+ sb $t4,1285($a1)
+ sb $t4,1601($a1)
+ sh $t4,1602($a1)
+ sh $t4,1604($a1)
+ sb $t4,1606($a1)
+ sb $t4,1925($a1)
+ sb $t4,2245($a1)
+ jr $ra
+ 
+ PRINT3:
+ li $t4,0xffff
+ sb $t4,3($a1)
+ sh $t4,4($a1)
+ sb $t4,325($a1)
+ sb $t4,326($a1)
+ sb $t4,646($a1)
+ sb $t4,965($a1)
+ sb $t4,966($a1)
+ sb $t4,1283($a1)
+ sh $t4,1284($a1)
+ sb $t4,1605($a1)
+ sb $t4,1606($a1)
+ sb $t4,1926($a1)
+ sb $t4,2243($a1)
+ sh $t4,2244($a1)
+ sb $t4,2246($a1)
+ jr $ra
+ 
+ PRINT2:
+ li $t4,0xffff
+ sh $t4,2($a1)
+ sh $t4,4($a1)
+ sb $t4,321($a1)
+ sb $t4,322($a1)
+ sb $t4,325($a1)
+ sb $t4,326($a1)
+ sb $t4,641($a1)
+ sb $t4,646($a1)
+ sb $t4,965($a1)
+ sb $t4,966($a1)
+ sh $t4,1284($a1)
+ sb $t4,1603($a1)
+ sb $t4,1604($a1)
+ sh $t4,1922($a1)
+ sb $t4,2241($a1)
+ sh $t4,2242($a1)
+ sh $t4,2244($a1)
+ sb $t4,2246($a1)
+ jr $ra
+ 
+ 
+ PRINT1:
+ li $t4,0xffff
+ sb $t4,3($a1)
+ sh $t4,4($a1)
+ sh $t4,322($a1)
+ sh $t4,324($a1)
+ sh $t4,644($a1)
+ sh $t4,964($a1)
+ sh $t4,1284($a1)
+ sh $t4,1604($a1)
+ sh $t4,1924($a1)
+ sb $t4,2243($a1)
+ sh $t4,2244($a1)
+ sb $t4,2246($a1)
+ jr $ra
+ 
+ PRINT0:
+ li $t4,0xffff
+ sh $t4,2($a1)
+ sh $t4,4($a1)
+ sb $t4,321($a1)
+ sb $t4,322($a1)
+ sb $t4,325($a1)
+ sb $t4,326($a1)
+ sb $t4,641($a1)
+ sb $t4,646($a1)
+ sb $t4,961($a1)
+ sb $t4,966($a1)
+ sb $t4,1281($a1)
+ sb $t4,1286($a1)
+ sb $t4,1601($a1)
+ sb $t4,1606($a1)
+ sb $t4,1921($a1)
+ sb $t4,1922($a1)
+ sb $t4,1925($a1)
+ sb $t4,1926($a1)
+ sh $t4,2242($a1)
+ sh $t4,2244($a1)
+ jr $ra
+ 
+ PRINTHEART:
+ ori $t7,$t8,0x92
+ sb $t8,1($a1)
+ sb $t8,2($a1)
+ sb $t8,5($a1)
+ sb $t8,6($a1)
+ sb $t8,320($a1)
+ sb $t7,321($a1)
+ sb $t7,322($a1)
+ sb $t8,323($a1)
+ sb $t8,324($a1)
+ sb $t8,325($a1)
+ sb $t8,326($a1)
+ sb $t8,327($a1)
+ sb $t8,640($a1)
+ sb $t7,641($a1)
+ sb $t7,642($a1)
+ sb $t8,643($a1)
+ sb $t8,644($a1)
+ sb $t8,645($a1)
+ sb $t8,646($a1)
+ sb $t8,647($a1)
+ sb $t8,960($a1)
+ sb $t8,961($a1)
+ sb $t8,962($a1)
+ sb $t8,963($a1)
+ sb $t8,964($a1)
+ sb $t8,965($a1)
+ sb $t8,966($a1)
+ sb $t8,967($a1)
+ sb $t8,1280($a1)
+ sb $t8,1281($a1)
+ sb $t8,1282($a1)
+ sb $t8,1283($a1)
+ sb $t8,1284($a1)
+ sb $t8,1285($a1)
+ sb $t8,1286($a1)
+ sb $t8,1287($a1)
+ sb $t8,1601($a1)
+ sb $t8,1602($a1)
+ sb $t8,1603($a1)
+ sb $t8,1604($a1)
+ sb $t8,1605($a1)
+ sb $t8,1606($a1)
+ sb $t8,1922($a1)
+ sb $t8,1923($a1)
+ sb $t8,1924($a1)
+ sb $t8,1925($a1)
+ sb $t8,2243($a1)
+ sb $t8,2244($a1)
+ jr $ra
+ 
+ WAITTIME:
+ addi $sp,$sp,-4
+ sw $ra,0($sp)
+ li $a0,5000
+ WAITLOOP:
+ jal ECHO
+ addi $a0,$a0,-1
+ bne $a0,$0,WAITLOOP
+ lw $ra,0($sp)
+ addi $sp,$sp,4
+ jr $ra
+ 
+ WAITBIGTIME:
+ addi $sp,$sp,-4
+ sw $ra,0($sp)
+ li $a0,15000
+ WAITBIGLOOP:
+ jal ECHO
+ addi $a0,$a0,-1
+ bne $a0,$0,WAITBIGLOOP
+ lw $ra,0($sp)
+ addi $sp,$sp,4
+ jr $ra
+ 
+ INCSCORE:
+ addi $sp,$sp,-32
+ sw $t0,0($sp)
+ sw $t1,4($sp)
+ sw $t2,8($sp)
+ sw $t3,12($sp)
+ sw $t4,16($sp)
+ sw $t5,20($sp)
+ sw $a1,24($sp)
+ sw $ra,28($sp)
+ la $t0,SCORE
+ sll $t1,$a0,2
+ add $t0,$t0,$t1
+ lw $t1,0($t0)
+ addi $t1,$t1,1
+ div $t1,$t1,99999
+ mfhi $t2
+ sw $t2,0($t0)
+ div $t2,$t2,10
+ mfhi $t1
+ lw $a1,24($sp)
+ addi $a1,$a1,80
+ jal PRINTCHAR
+ div $t2,$t2,10
+ mfhi $t1
+ lw $a1,24($sp)
+ addi $a1,$a1,72
+ jal PRINTCHAR
+ div $t2,$t2,10
+ mfhi $t1
+ lw $a1,24($sp)
+ addi $a1,$a1,64
+ jal PRINTCHAR
+ div $t2,$t2,10
+ mfhi $t1
+ lw $a1,24($sp)
+ addi $a1,$a1,56
+ jal PRINTCHAR
+ div $t2,$t2,10
+ mfhi $t1
+ lw $a1,24($sp)
+ addi $a1,$a1,48
+ jal PRINTCHAR
+ lw $t0,0($sp)
+ lw $t1,4($sp)
+ lw $t2,8($sp)
+ lw $t3,12($sp)
+ lw $t4,16($sp)
+ lw $t5,20($sp)
+ lw $a1,24($sp)
+ lw $ra,28($sp)
+ addi $sp,$sp,32
+ jr $ra
+ 
+ SCORETABLE:
+ addi $sp,$sp,-12
+ sw $t0,0($sp)
+ sw $t1,4($sp)
+ sw $ra,8($sp)
+ bne $a0,0,SCORENOTPAC1
+ li $a1,0xff000000
+ SCORENOTPAC1:
+ bne $a0,1,SCORENOTPAC2
+ li $a1,0xff000000
+ addi $a1,$a1,184
+ SCORENOTPAC2:
+ bne $a0,2,SCORENOTPAC3
+ li $a1,0xff000000
+ addi $a1,$a1,74240
+ SCORENOTPAC3:
+ bne $a0,3,SCORENOTPAC4
+ li $a1,0xff000000
+ addi $a1,$a1,184
+ addi $a1,$a1,74240
+ SCORENOTPAC4:
+ lw $t0,0($sp)
+ lw $t1,4($sp)
+ lw $ra,8($sp)
+ addi $sp,$sp,12
+ jr $ra
+ 
+ PRINTSCORE:
+ addi $sp,$sp,-12
+ sw $t0,0($sp)
+ sw $t1,4($sp)
+ sw $ra,8($sp)
+ la $t0,SCORE
+ sll $t1,$a0,2
+ add $t0,$t0,$t1
+ lw $t1,0($t0)
+ addi $t1,$t1,-1
+ sw $t1,0($t0)
+ jal SCORETABLE
+ jal INCSCORE
+ lw $t0,0($sp)
+ lw $t1,4($sp)
+ lw $ra,8($sp)
+ addi $sp,$sp,12
+ jr $ra
+
+
+
+ END_G:
+ li $v0,31
+ li $a0,100
+ li $a1,200
+ li $a2,64
+ li $a3,120
+ syscall
+ jal WAITTIME
+ syscall
+ jal WAITTIME
+ li $a0,110
+ syscall
+ jal WAITTIME
+ li $a0,120
+ syscall
+ jal WAITTIME
+ li $a1,2000
+ syscall
+ j TRACKDONE
+ END:
+ li $v0,31
+ li $a0,70
+ li $a1,200
+ li $a2,51
+ li $a3,120
+ syscall
+ jal WAITTIME
+ li $a0,66
+ syscall
+ jal WAITTIME
+ li $a0,62
+ syscall
+ jal WAITTIME
+ li $a0,58
+ syscall
+ jal WAITTIME
+ li $a0,55
+ li $a1,2000
+ syscall
+ TRACKDONE:
+ jal WAITBIGTIME
+ jal WAITBIGTIME
+ la $t0, INICIO
+ la $t1, AUX
+ li $t2, 0
+ LOOPYLOOP:
+ lw $t3,0($t1)
+ sw $t3,0($t0)
+ addi $t0,$t0,4
+ addi $t1,$t1,4
+ addi $t2,$t2,4
+ bne $t2,1200,LOOPYLOOP
+ la $t9,HP
+ lb $t8,0($t9)
+ blt $s2,2,HEALTHSUMDONE
+ lb $t7,1($t9)
+ add $t8,$t8,$t7
+ blt $s2,3,HEALTHSUMDONE
+ lb $t7,2($t9)
+ add $t8,$t8,$t7
+ blt $s2,4,HEALTHSUMDONE
+ lb $t7,3($t9)
+ add $t8,$t8,$t7
+ HEALTHSUMDONE:
+bne $t8,0,REINC
+li $v0, 10
+syscall
+
+ECHO:
+	la $t1,0xFF100000
+	lw $t0,0($t1)
+	andi $t0,$t0,0x0001		# Le bit de Controle Teclado
+   	beq $t0,$zero,PULA
+   	lw $t2,4($t1)  # Tecla lida
+   	la $t3,PACBUFFERMOVES
+   	beq $t2,119,VNIW
+   	beq $t2,100,VNID
+   	beq $t2,97,VNIA
+   	beq $t2,115,VNIS
+   	beq $t2,105,VNII
+   	beq $t2,106,VNIJ
+   	beq $t2,107,VNIK
+   	beq $t2,108,VNIL
+   	beq $t2,102,VNIF
+   	beq $t2,120,VNIX
+   	beq $t2,99,VNIC
+   	beq $t2,118,VNIV
+   	beq $t2,104,VNIH
+   	beq $t2,98,VNIB
+   	beq $t2,110,VNIN
+   	beq $t2,109,VNIM
+   	beq $t2,65,VNIA
+   	beq $t2,68,VNID
+   	beq $t2,83,VNIS
+   	beq $t2,87,VNIW
+   	beq $t2,73,VNII
+   	beq $t2,74,VNIJ
+   	beq $t2,75,VNIK
+   	beq $t2,76,VNIL
+   	beq $t2,70,VNIF
+   	beq $t2,88,VNIX
+   	beq $t2,67,VNIC
+   	beq $t2,86,VNIV
+   	beq $t2,72,VNIH
+   	beq $t2,66,VNIB
+   	beq $t2,78,VNIN
+   	beq $t2,77,VNIM
+   	j PULA
+   	VNIW:
+	add $t1,$t2,$zero
+	sb $t1,0($t3)
+	j PULA
+   	VNIS:
+	add $t1,$t2,$zero
+	sb $t1,0($t3)
+	j PULA
+   	VNID:
+	add $t1,$t2,$zero
+	sb $t1,0($t3)
+	j PULA
+   	VNIA:
+	add $t1,$t2,$zero
+	sb $t1,0($t3)
+	j PULA
+	VNII:
+	add $t1,$t2,$zero
+	li $t1,87
+	sb $t1,1($t3)
+	j PULA
+	VNIJ:
+	add $t1,$t2,$zero
+	li $t1,65
+	sb $t1,1($t3)
+	j PULA
+	VNIK:
+	add $t1,$t2,$zero
+	li $t1,83
+	sb $t1,1($t3)
+	j PULA
+	VNIL:
+	add $t1,$t2,$zero
+	li $t1,68
+	sb $t1,1($t3)
+	j PULA
+	VNIF:
+	add $t1,$t2,$zero
+	li $t1,87
+	sb $t1,2($t3)
+	j PULA
+	VNIX:
+	add $t1,$t2,$zero
+	li $t1,65
+	sb $t1,2($t3)
+	j PULA
+	VNIC:
+	add $t1,$t2,$zero
+	li $t1,83
+	sb $t1,2($t3)
+	j PULA
+	VNIV:
+	add $t1,$t2,$zero
+	li $t1,68
+	sb $t1,2($t3)
+	j PULA
+	VNIH:
+	add $t1,$t2,$zero
+	li $t1,87
+	sb $t1,3($t3)
+	j PULA
+	VNIB:
+	add $t1,$t2,$zero
+	li $t1,65
+	sb $t1,3($t3)
+	j PULA
+	VNIN:
+	add $t1,$t2,$zero
+	li $t1,83
+	sb $t1,3($t3)
+	j PULA
+	VNIM:
+	add $t1,$t2,$zero
+	li $t1,68
+	sb $t1,3($t3)
+	j PULA
+PULA:	jr $ra
