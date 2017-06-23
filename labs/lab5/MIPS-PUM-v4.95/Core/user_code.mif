@@ -1,0 +1,26 @@
+DEPTH = 2048;
+WIDTH = 32;
+ADDRESS_RADIX = HEX;
+DATA_RADIX = HEX;
+CONTENT
+BEGIN
+
+00000000 : 34080001;  % 6: INICIO:	ori $t0,$zero,1		 %
+00000001 : 01084020;  % 7: 	add $t0,$t0,$t0		# hazard de dado $t0 %
+00000002 : 2108ffff;  % 8: 	add $t0,$t0,-1		# hazard de dado $t0 %
+00000003 : 1100000a;  % 9: 	beq $t0,$zero,ERRO	# hazard de dado $t0 e controle %
+00000004 : 3c011001;  % 10: 	la $t1,NUM		# hazard de dado $at %
+00000005 : 34290000;  % 10:  %
+00000006 : 8d280000;  % 11: 	lw $t0,0($t1)		# hazard de dado $t1 %
+00000007 : 01084020;  % 12: 	add $t0,$t0,$t0		# hazard de dado $t0 %
+00000008 : ad280004;  % 13: 	sw $t0,4($t1)		# hazard de dado $t0 %
+00000009 : 8d280004;  % 14: 	lw $t0,4($t1)		# hazard de dado ??? %
+0000000a : 2001000a;  % 15: 	bne $t0,0xA,ERRO	# hazard de dado $at e controle %
+0000000b : 14280002;  % 15:  %
+0000000c : 3c08cccc;  % 16: 	lui $t0,0xCCCC %
+0000000d : 0810000d;  % 17: FIM: 	j FIM			# hazard de controle %
+0000000e : 3c08eeee;  % 18: ERRO:	lui $t0,0xEEEE %
+0000000f : 0810000f;  % 19: FIM1:	j FIM1			# hazard de controle %
+00000010 : 3c080000;  % 20: 	lui $t0,0x0000	 %
+
+END;

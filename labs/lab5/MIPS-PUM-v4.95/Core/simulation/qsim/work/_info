@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\lamar\Dropbox\kiko\Disciplinas\UnB\OAC\2017-1\MIPS-PUM-v4.85\MIPS-PUM-v4.9\Core\simulation\qsim
+vTopDE
+Z1 IYU]h:BIPUX=o:Ghk_`bXO1
+Z2 V;19A4]5eW=6T?36WQiTd>0
+Z3 dC:\Users\lamar\Dropbox\kiko\Disciplinas\UnB\OAC\2017-1\MIPS-PUM-v4.85\MIPS-PUM-v4.9\Core\simulation\qsim
+Z4 w1497219429
+Z5 8TopDE-FastCompilation.vo
+Z6 FTopDE-FastCompilation.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 !s90 -work|work|TopDE-FastCompilation.vo|
+Z9 o-work work -O0
+Z10 n@top@d@e
+!i10b 1
+Z11 !s100 0XgFUI=6IIKM>eF9=JWBO0
+!s85 0
+Z12 !s108 1497219468.454000
+Z13 !s107 TopDE-FastCompilation.vo|
+!s101 -O0
+vTopDE_vlg_check_tst
+!i10b 1
+Z14 !s100 I5JabT@nQ556QK4mdJ>AO3
+Z15 I;92@[9oe9o`PckP2Pb2=90
+Z16 V06b_I@nYFQm[RKX]<5P<>2
+R3
+Z17 w1497219411
+Z18 8TopDE-FastCompilation.vt
+Z19 FTopDE-FastCompilation.vt
+L0 95
+R7
+r1
+!s85 0
+31
+Z20 !s108 1497219476.635000
+Z21 !s107 TopDE-FastCompilation.vt|
+Z22 !s90 -work|work|TopDE-FastCompilation.vt|
+!s101 -O0
+R9
+Z23 n@top@d@e_vlg_check_tst
+vTopDE_vlg_sample_tst
+!i10b 1
+Z24 !s100 CA[FlS2ezGe>XbVgoib:m3
+Z25 IT:CnjRg@GQhI=UW6>gHzm0
+Z26 VSYZ@DKBee>HcigXKC6^M;3
+R3
+R17
+R18
+R19
+L0 29
+R7
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R9
+Z27 n@top@d@e_vlg_sample_tst
+vTopDE_vlg_vec_tst
+!i10b 1
+!s100 mVW;AIJo89^XEHi8e_7@J2
+IEWTUE5[jlmBY<]1V6NIY:0
+Z28 VNfGkOnT;?Q;i@KZ3WiTY`3
+R3
+R17
+R18
+R19
+Z29 L0 10289
+R7
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R9
+Z30 n@top@d@e_vlg_vec_tst
