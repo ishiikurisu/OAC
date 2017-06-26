@@ -18,7 +18,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "06/11/2017 19:16:49"
+// Generated on "06/26/2017 10:33:17"
                                                                         
 // Verilog Self-Checking Test Bench (with test vectors) for design :    TopDE
 // 
@@ -771,6 +771,18 @@ end
 
 
 
+// expected AUD_DACLRCK
+initial
+begin
+	AUD_DACLRCK_expected = 1'bX;
+end 
+
+// expected OCLK
+initial
+begin
+	OCLK_expected = 1'bX;
+end 
+
 // expected OCLK100
 initial
 begin
@@ -782,811 +794,40 @@ initial
 begin
 	OCLK200_expected = 1'bX;
 end 
-
-// expected OCLK
+// expected OControlState[ 6 ]
 initial
 begin
-	OCLK_expected = 1'bX;
+	OControlState_expected[6] = 1'bX;
 end 
-// expected oLEDG[ 8 ]
+// expected OControlState[ 5 ]
 initial
 begin
-	oLEDG_expected[8] = 1'bX;
+	OControlState_expected[5] = 1'bX;
 end 
-// expected oLEDG[ 7 ]
+// expected OControlState[ 4 ]
 initial
 begin
-	oLEDG_expected[7] = 1'bX;
+	OControlState_expected[4] = 1'bX;
 end 
-// expected oLEDG[ 6 ]
+// expected OControlState[ 3 ]
 initial
 begin
-	oLEDG_expected[6] = 1'bX;
+	OControlState_expected[3] = 1'bX;
 end 
-// expected oLEDG[ 5 ]
+// expected OControlState[ 2 ]
 initial
 begin
-	oLEDG_expected[5] = 1'bX;
+	OControlState_expected[2] = 1'bX;
 end 
-// expected oLEDG[ 4 ]
+// expected OControlState[ 1 ]
 initial
 begin
-	oLEDG_expected[4] = 1'bX;
+	OControlState_expected[1] = 1'bX;
 end 
-// expected oLEDG[ 3 ]
+// expected OControlState[ 0 ]
 initial
 begin
-	oLEDG_expected[3] = 1'bX;
-end 
-// expected oLEDG[ 2 ]
-initial
-begin
-	oLEDG_expected[2] = 1'bX;
-end 
-// expected oLEDG[ 1 ]
-initial
-begin
-	oLEDG_expected[1] = 1'bX;
-end 
-// expected oLEDG[ 0 ]
-initial
-begin
-	oLEDG_expected[0] = 1'bX;
-end 
-// expected oLEDR[ 17 ]
-initial
-begin
-	oLEDR_expected[17] = 1'bX;
-end 
-// expected oLEDR[ 16 ]
-initial
-begin
-	oLEDR_expected[16] = 1'bX;
-end 
-// expected oLEDR[ 15 ]
-initial
-begin
-	oLEDR_expected[15] = 1'bX;
-end 
-// expected oLEDR[ 14 ]
-initial
-begin
-	oLEDR_expected[14] = 1'bX;
-end 
-// expected oLEDR[ 13 ]
-initial
-begin
-	oLEDR_expected[13] = 1'bX;
-end 
-// expected oLEDR[ 12 ]
-initial
-begin
-	oLEDR_expected[12] = 1'bX;
-end 
-// expected oLEDR[ 11 ]
-initial
-begin
-	oLEDR_expected[11] = 1'bX;
-end 
-// expected oLEDR[ 10 ]
-initial
-begin
-	oLEDR_expected[10] = 1'bX;
-end 
-// expected oLEDR[ 9 ]
-initial
-begin
-	oLEDR_expected[9] = 1'bX;
-end 
-// expected oLEDR[ 8 ]
-initial
-begin
-	oLEDR_expected[8] = 1'bX;
-end 
-// expected oLEDR[ 7 ]
-initial
-begin
-	oLEDR_expected[7] = 1'bX;
-end 
-// expected oLEDR[ 6 ]
-initial
-begin
-	oLEDR_expected[6] = 1'bX;
-end 
-// expected oLEDR[ 5 ]
-initial
-begin
-	oLEDR_expected[5] = 1'bX;
-end 
-// expected oLEDR[ 4 ]
-initial
-begin
-	oLEDR_expected[4] = 1'bX;
-end 
-// expected oLEDR[ 3 ]
-initial
-begin
-	oLEDR_expected[3] = 1'bX;
-end 
-// expected oLEDR[ 2 ]
-initial
-begin
-	oLEDR_expected[2] = 1'bX;
-end 
-// expected oLEDR[ 1 ]
-initial
-begin
-	oLEDR_expected[1] = 1'bX;
-end 
-// expected oLEDR[ 0 ]
-initial
-begin
-	oLEDR_expected[0] = 1'bX;
-end 
-// expected OwPC[ 31 ]
-initial
-begin
-	OwPC_expected[31] = 1'bX;
-end 
-// expected OwPC[ 30 ]
-initial
-begin
-	OwPC_expected[30] = 1'bX;
-end 
-// expected OwPC[ 29 ]
-initial
-begin
-	OwPC_expected[29] = 1'bX;
-end 
-// expected OwPC[ 28 ]
-initial
-begin
-	OwPC_expected[28] = 1'bX;
-end 
-// expected OwPC[ 27 ]
-initial
-begin
-	OwPC_expected[27] = 1'bX;
-end 
-// expected OwPC[ 26 ]
-initial
-begin
-	OwPC_expected[26] = 1'bX;
-end 
-// expected OwPC[ 25 ]
-initial
-begin
-	OwPC_expected[25] = 1'bX;
-end 
-// expected OwPC[ 24 ]
-initial
-begin
-	OwPC_expected[24] = 1'bX;
-end 
-// expected OwPC[ 23 ]
-initial
-begin
-	OwPC_expected[23] = 1'bX;
-end 
-// expected OwPC[ 22 ]
-initial
-begin
-	OwPC_expected[22] = 1'bX;
-end 
-// expected OwPC[ 21 ]
-initial
-begin
-	OwPC_expected[21] = 1'bX;
-end 
-// expected OwPC[ 20 ]
-initial
-begin
-	OwPC_expected[20] = 1'bX;
-end 
-// expected OwPC[ 19 ]
-initial
-begin
-	OwPC_expected[19] = 1'bX;
-end 
-// expected OwPC[ 18 ]
-initial
-begin
-	OwPC_expected[18] = 1'bX;
-end 
-// expected OwPC[ 17 ]
-initial
-begin
-	OwPC_expected[17] = 1'bX;
-end 
-// expected OwPC[ 16 ]
-initial
-begin
-	OwPC_expected[16] = 1'bX;
-end 
-// expected OwPC[ 15 ]
-initial
-begin
-	OwPC_expected[15] = 1'bX;
-end 
-// expected OwPC[ 14 ]
-initial
-begin
-	OwPC_expected[14] = 1'bX;
-end 
-// expected OwPC[ 13 ]
-initial
-begin
-	OwPC_expected[13] = 1'bX;
-end 
-// expected OwPC[ 12 ]
-initial
-begin
-	OwPC_expected[12] = 1'bX;
-end 
-// expected OwPC[ 11 ]
-initial
-begin
-	OwPC_expected[11] = 1'bX;
-end 
-// expected OwPC[ 10 ]
-initial
-begin
-	OwPC_expected[10] = 1'bX;
-end 
-// expected OwPC[ 9 ]
-initial
-begin
-	OwPC_expected[9] = 1'bX;
-end 
-// expected OwPC[ 8 ]
-initial
-begin
-	OwPC_expected[8] = 1'bX;
-end 
-// expected OwPC[ 7 ]
-initial
-begin
-	OwPC_expected[7] = 1'bX;
-end 
-// expected OwPC[ 6 ]
-initial
-begin
-	OwPC_expected[6] = 1'bX;
-end 
-// expected OwPC[ 5 ]
-initial
-begin
-	OwPC_expected[5] = 1'bX;
-end 
-// expected OwPC[ 4 ]
-initial
-begin
-	OwPC_expected[4] = 1'bX;
-end 
-// expected OwPC[ 3 ]
-initial
-begin
-	OwPC_expected[3] = 1'bX;
-end 
-// expected OwPC[ 2 ]
-initial
-begin
-	OwPC_expected[2] = 1'bX;
-end 
-// expected OwPC[ 1 ]
-initial
-begin
-	OwPC_expected[1] = 1'bX;
-end 
-// expected OwPC[ 0 ]
-initial
-begin
-	OwPC_expected[0] = 1'bX;
-end 
-// expected OwInstr[ 31 ]
-initial
-begin
-	OwInstr_expected[31] = 1'bX;
-end 
-// expected OwInstr[ 30 ]
-initial
-begin
-	OwInstr_expected[30] = 1'bX;
-end 
-// expected OwInstr[ 29 ]
-initial
-begin
-	OwInstr_expected[29] = 1'bX;
-end 
-// expected OwInstr[ 28 ]
-initial
-begin
-	OwInstr_expected[28] = 1'bX;
-end 
-// expected OwInstr[ 27 ]
-initial
-begin
-	OwInstr_expected[27] = 1'bX;
-end 
-// expected OwInstr[ 26 ]
-initial
-begin
-	OwInstr_expected[26] = 1'bX;
-end 
-// expected OwInstr[ 25 ]
-initial
-begin
-	OwInstr_expected[25] = 1'bX;
-end 
-// expected OwInstr[ 24 ]
-initial
-begin
-	OwInstr_expected[24] = 1'bX;
-end 
-// expected OwInstr[ 23 ]
-initial
-begin
-	OwInstr_expected[23] = 1'bX;
-end 
-// expected OwInstr[ 22 ]
-initial
-begin
-	OwInstr_expected[22] = 1'bX;
-end 
-// expected OwInstr[ 21 ]
-initial
-begin
-	OwInstr_expected[21] = 1'bX;
-end 
-// expected OwInstr[ 20 ]
-initial
-begin
-	OwInstr_expected[20] = 1'bX;
-end 
-// expected OwInstr[ 19 ]
-initial
-begin
-	OwInstr_expected[19] = 1'bX;
-end 
-// expected OwInstr[ 18 ]
-initial
-begin
-	OwInstr_expected[18] = 1'bX;
-end 
-// expected OwInstr[ 17 ]
-initial
-begin
-	OwInstr_expected[17] = 1'bX;
-end 
-// expected OwInstr[ 16 ]
-initial
-begin
-	OwInstr_expected[16] = 1'bX;
-end 
-// expected OwInstr[ 15 ]
-initial
-begin
-	OwInstr_expected[15] = 1'bX;
-end 
-// expected OwInstr[ 14 ]
-initial
-begin
-	OwInstr_expected[14] = 1'bX;
-end 
-// expected OwInstr[ 13 ]
-initial
-begin
-	OwInstr_expected[13] = 1'bX;
-end 
-// expected OwInstr[ 12 ]
-initial
-begin
-	OwInstr_expected[12] = 1'bX;
-end 
-// expected OwInstr[ 11 ]
-initial
-begin
-	OwInstr_expected[11] = 1'bX;
-end 
-// expected OwInstr[ 10 ]
-initial
-begin
-	OwInstr_expected[10] = 1'bX;
-end 
-// expected OwInstr[ 9 ]
-initial
-begin
-	OwInstr_expected[9] = 1'bX;
-end 
-// expected OwInstr[ 8 ]
-initial
-begin
-	OwInstr_expected[8] = 1'bX;
-end 
-// expected OwInstr[ 7 ]
-initial
-begin
-	OwInstr_expected[7] = 1'bX;
-end 
-// expected OwInstr[ 6 ]
-initial
-begin
-	OwInstr_expected[6] = 1'bX;
-end 
-// expected OwInstr[ 5 ]
-initial
-begin
-	OwInstr_expected[5] = 1'bX;
-end 
-// expected OwInstr[ 4 ]
-initial
-begin
-	OwInstr_expected[4] = 1'bX;
-end 
-// expected OwInstr[ 3 ]
-initial
-begin
-	OwInstr_expected[3] = 1'bX;
-end 
-// expected OwInstr[ 2 ]
-initial
-begin
-	OwInstr_expected[2] = 1'bX;
-end 
-// expected OwInstr[ 1 ]
-initial
-begin
-	OwInstr_expected[1] = 1'bX;
-end 
-// expected OwInstr[ 0 ]
-initial
-begin
-	OwInstr_expected[0] = 1'bX;
-end 
-// expected OwRegDispSelect[ 4 ]
-initial
-begin
-	OwRegDispSelect_expected[4] = 1'bX;
-end 
-// expected OwRegDispSelect[ 3 ]
-initial
-begin
-	OwRegDispSelect_expected[3] = 1'bX;
-end 
-// expected OwRegDispSelect[ 2 ]
-initial
-begin
-	OwRegDispSelect_expected[2] = 1'bX;
-end 
-// expected OwRegDispSelect[ 1 ]
-initial
-begin
-	OwRegDispSelect_expected[1] = 1'bX;
-end 
-// expected OwRegDispSelect[ 0 ]
-initial
-begin
-	OwRegDispSelect_expected[0] = 1'bX;
-end 
-// expected OwRegDisp[ 31 ]
-initial
-begin
-	OwRegDisp_expected[31] = 1'bX;
-end 
-// expected OwRegDisp[ 30 ]
-initial
-begin
-	OwRegDisp_expected[30] = 1'bX;
-end 
-// expected OwRegDisp[ 29 ]
-initial
-begin
-	OwRegDisp_expected[29] = 1'bX;
-end 
-// expected OwRegDisp[ 28 ]
-initial
-begin
-	OwRegDisp_expected[28] = 1'bX;
-end 
-// expected OwRegDisp[ 27 ]
-initial
-begin
-	OwRegDisp_expected[27] = 1'bX;
-end 
-// expected OwRegDisp[ 26 ]
-initial
-begin
-	OwRegDisp_expected[26] = 1'bX;
-end 
-// expected OwRegDisp[ 25 ]
-initial
-begin
-	OwRegDisp_expected[25] = 1'bX;
-end 
-// expected OwRegDisp[ 24 ]
-initial
-begin
-	OwRegDisp_expected[24] = 1'bX;
-end 
-// expected OwRegDisp[ 23 ]
-initial
-begin
-	OwRegDisp_expected[23] = 1'bX;
-end 
-// expected OwRegDisp[ 22 ]
-initial
-begin
-	OwRegDisp_expected[22] = 1'bX;
-end 
-// expected OwRegDisp[ 21 ]
-initial
-begin
-	OwRegDisp_expected[21] = 1'bX;
-end 
-// expected OwRegDisp[ 20 ]
-initial
-begin
-	OwRegDisp_expected[20] = 1'bX;
-end 
-// expected OwRegDisp[ 19 ]
-initial
-begin
-	OwRegDisp_expected[19] = 1'bX;
-end 
-// expected OwRegDisp[ 18 ]
-initial
-begin
-	OwRegDisp_expected[18] = 1'bX;
-end 
-// expected OwRegDisp[ 17 ]
-initial
-begin
-	OwRegDisp_expected[17] = 1'bX;
-end 
-// expected OwRegDisp[ 16 ]
-initial
-begin
-	OwRegDisp_expected[16] = 1'bX;
-end 
-// expected OwRegDisp[ 15 ]
-initial
-begin
-	OwRegDisp_expected[15] = 1'bX;
-end 
-// expected OwRegDisp[ 14 ]
-initial
-begin
-	OwRegDisp_expected[14] = 1'bX;
-end 
-// expected OwRegDisp[ 13 ]
-initial
-begin
-	OwRegDisp_expected[13] = 1'bX;
-end 
-// expected OwRegDisp[ 12 ]
-initial
-begin
-	OwRegDisp_expected[12] = 1'bX;
-end 
-// expected OwRegDisp[ 11 ]
-initial
-begin
-	OwRegDisp_expected[11] = 1'bX;
-end 
-// expected OwRegDisp[ 10 ]
-initial
-begin
-	OwRegDisp_expected[10] = 1'bX;
-end 
-// expected OwRegDisp[ 9 ]
-initial
-begin
-	OwRegDisp_expected[9] = 1'bX;
-end 
-// expected OwRegDisp[ 8 ]
-initial
-begin
-	OwRegDisp_expected[8] = 1'bX;
-end 
-// expected OwRegDisp[ 7 ]
-initial
-begin
-	OwRegDisp_expected[7] = 1'bX;
-end 
-// expected OwRegDisp[ 6 ]
-initial
-begin
-	OwRegDisp_expected[6] = 1'bX;
-end 
-// expected OwRegDisp[ 5 ]
-initial
-begin
-	OwRegDisp_expected[5] = 1'bX;
-end 
-// expected OwRegDisp[ 4 ]
-initial
-begin
-	OwRegDisp_expected[4] = 1'bX;
-end 
-// expected OwRegDisp[ 3 ]
-initial
-begin
-	OwRegDisp_expected[3] = 1'bX;
-end 
-// expected OwRegDisp[ 2 ]
-initial
-begin
-	OwRegDisp_expected[2] = 1'bX;
-end 
-// expected OwRegDisp[ 1 ]
-initial
-begin
-	OwRegDisp_expected[1] = 1'bX;
-end 
-// expected OwRegDisp[ 0 ]
-initial
-begin
-	OwRegDisp_expected[0] = 1'bX;
-end 
-// expected OwRegDispFPU[ 31 ]
-initial
-begin
-	OwRegDispFPU_expected[31] = 1'bX;
-end 
-// expected OwRegDispFPU[ 30 ]
-initial
-begin
-	OwRegDispFPU_expected[30] = 1'bX;
-end 
-// expected OwRegDispFPU[ 29 ]
-initial
-begin
-	OwRegDispFPU_expected[29] = 1'bX;
-end 
-// expected OwRegDispFPU[ 28 ]
-initial
-begin
-	OwRegDispFPU_expected[28] = 1'bX;
-end 
-// expected OwRegDispFPU[ 27 ]
-initial
-begin
-	OwRegDispFPU_expected[27] = 1'bX;
-end 
-// expected OwRegDispFPU[ 26 ]
-initial
-begin
-	OwRegDispFPU_expected[26] = 1'bX;
-end 
-// expected OwRegDispFPU[ 25 ]
-initial
-begin
-	OwRegDispFPU_expected[25] = 1'bX;
-end 
-// expected OwRegDispFPU[ 24 ]
-initial
-begin
-	OwRegDispFPU_expected[24] = 1'bX;
-end 
-// expected OwRegDispFPU[ 23 ]
-initial
-begin
-	OwRegDispFPU_expected[23] = 1'bX;
-end 
-// expected OwRegDispFPU[ 22 ]
-initial
-begin
-	OwRegDispFPU_expected[22] = 1'bX;
-end 
-// expected OwRegDispFPU[ 21 ]
-initial
-begin
-	OwRegDispFPU_expected[21] = 1'bX;
-end 
-// expected OwRegDispFPU[ 20 ]
-initial
-begin
-	OwRegDispFPU_expected[20] = 1'bX;
-end 
-// expected OwRegDispFPU[ 19 ]
-initial
-begin
-	OwRegDispFPU_expected[19] = 1'bX;
-end 
-// expected OwRegDispFPU[ 18 ]
-initial
-begin
-	OwRegDispFPU_expected[18] = 1'bX;
-end 
-// expected OwRegDispFPU[ 17 ]
-initial
-begin
-	OwRegDispFPU_expected[17] = 1'bX;
-end 
-// expected OwRegDispFPU[ 16 ]
-initial
-begin
-	OwRegDispFPU_expected[16] = 1'bX;
-end 
-// expected OwRegDispFPU[ 15 ]
-initial
-begin
-	OwRegDispFPU_expected[15] = 1'bX;
-end 
-// expected OwRegDispFPU[ 14 ]
-initial
-begin
-	OwRegDispFPU_expected[14] = 1'bX;
-end 
-// expected OwRegDispFPU[ 13 ]
-initial
-begin
-	OwRegDispFPU_expected[13] = 1'bX;
-end 
-// expected OwRegDispFPU[ 12 ]
-initial
-begin
-	OwRegDispFPU_expected[12] = 1'bX;
-end 
-// expected OwRegDispFPU[ 11 ]
-initial
-begin
-	OwRegDispFPU_expected[11] = 1'bX;
-end 
-// expected OwRegDispFPU[ 10 ]
-initial
-begin
-	OwRegDispFPU_expected[10] = 1'bX;
-end 
-// expected OwRegDispFPU[ 9 ]
-initial
-begin
-	OwRegDispFPU_expected[9] = 1'bX;
-end 
-// expected OwRegDispFPU[ 8 ]
-initial
-begin
-	OwRegDispFPU_expected[8] = 1'bX;
-end 
-// expected OwRegDispFPU[ 7 ]
-initial
-begin
-	OwRegDispFPU_expected[7] = 1'bX;
-end 
-// expected OwRegDispFPU[ 6 ]
-initial
-begin
-	OwRegDispFPU_expected[6] = 1'bX;
-end 
-// expected OwRegDispFPU[ 5 ]
-initial
-begin
-	OwRegDispFPU_expected[5] = 1'bX;
-end 
-// expected OwRegDispFPU[ 4 ]
-initial
-begin
-	OwRegDispFPU_expected[4] = 1'bX;
-end 
-// expected OwRegDispFPU[ 3 ]
-initial
-begin
-	OwRegDispFPU_expected[3] = 1'bX;
-end 
-// expected OwRegDispFPU[ 2 ]
-initial
-begin
-	OwRegDispFPU_expected[2] = 1'bX;
-end 
-// expected OwRegDispFPU[ 1 ]
-initial
-begin
-	OwRegDispFPU_expected[1] = 1'bX;
-end 
-// expected OwRegDispFPU[ 0 ]
-initial
-begin
-	OwRegDispFPU_expected[0] = 1'bX;
+	OControlState_expected[0] = 1'bX;
 end 
 // expected ODAddress[ 31 ]
 initial
@@ -1748,17 +989,25 @@ initial
 begin
 	ODAddress_expected[0] = 1'bX;
 end 
-
-// expected ODReadEnable
+// expected ODByteEnable[ 3 ]
 initial
 begin
-	ODReadEnable_expected = 1'bX;
+	ODByteEnable_expected[3] = 1'bX;
 end 
-
-// expected ODWriteEnable
+// expected ODByteEnable[ 2 ]
 initial
 begin
-	ODWriteEnable_expected = 1'bX;
+	ODByteEnable_expected[2] = 1'bX;
+end 
+// expected ODByteEnable[ 1 ]
+initial
+begin
+	ODByteEnable_expected[1] = 1'bX;
+end 
+// expected ODByteEnable[ 0 ]
+initial
+begin
+	ODByteEnable_expected[0] = 1'bX;
 end 
 // expected ODReadData[ 31 ]
 initial
@@ -1920,6 +1169,12 @@ initial
 begin
 	ODReadData_expected[0] = 1'bX;
 end 
+
+// expected ODReadEnable
+initial
+begin
+	ODReadEnable_expected = 1'bX;
+end 
 // expected ODWriteData[ 31 ]
 initial
 begin
@@ -2080,100 +1335,11 @@ initial
 begin
 	ODWriteData_expected[0] = 1'bX;
 end 
-// expected ODByteEnable[ 3 ]
+
+// expected ODWriteEnable
 initial
 begin
-	ODByteEnable_expected[3] = 1'bX;
-end 
-// expected ODByteEnable[ 2 ]
-initial
-begin
-	ODByteEnable_expected[2] = 1'bX;
-end 
-// expected ODByteEnable[ 1 ]
-initial
-begin
-	ODByteEnable_expected[1] = 1'bX;
-end 
-// expected ODByteEnable[ 0 ]
-initial
-begin
-	ODByteEnable_expected[0] = 1'bX;
-end 
-// expected OflagBank[ 7 ]
-initial
-begin
-	OflagBank_expected[7] = 1'bX;
-end 
-// expected OflagBank[ 6 ]
-initial
-begin
-	OflagBank_expected[6] = 1'bX;
-end 
-// expected OflagBank[ 5 ]
-initial
-begin
-	OflagBank_expected[5] = 1'bX;
-end 
-// expected OflagBank[ 4 ]
-initial
-begin
-	OflagBank_expected[4] = 1'bX;
-end 
-// expected OflagBank[ 3 ]
-initial
-begin
-	OflagBank_expected[3] = 1'bX;
-end 
-// expected OflagBank[ 2 ]
-initial
-begin
-	OflagBank_expected[2] = 1'bX;
-end 
-// expected OflagBank[ 1 ]
-initial
-begin
-	OflagBank_expected[1] = 1'bX;
-end 
-// expected OflagBank[ 0 ]
-initial
-begin
-	OflagBank_expected[0] = 1'bX;
-end 
-// expected OControlState[ 6 ]
-initial
-begin
-	OControlState_expected[6] = 1'bX;
-end 
-// expected OControlState[ 5 ]
-initial
-begin
-	OControlState_expected[5] = 1'bX;
-end 
-// expected OControlState[ 4 ]
-initial
-begin
-	OControlState_expected[4] = 1'bX;
-end 
-// expected OControlState[ 3 ]
-initial
-begin
-	OControlState_expected[3] = 1'bX;
-end 
-// expected OControlState[ 2 ]
-initial
-begin
-	OControlState_expected[2] = 1'bX;
-end 
-// expected OControlState[ 1 ]
-initial
-begin
-	OControlState_expected[1] = 1'bX;
-end 
-// expected OControlState[ 0 ]
-initial
-begin
-	OControlState_expected[0] = 1'bX;
+	ODWriteEnable_expected = 1'bX;
 end 
 // expected OIAddress[ 31 ]
 initial
@@ -2495,17 +1661,710 @@ initial
 begin
 	OIReadData_expected[0] = 1'bX;
 end 
-
-// expected oSD_CLK
+// expected OflagBank[ 7 ]
 initial
 begin
-	oSD_CLK_expected = 1'bX;
+	OflagBank_expected[7] = 1'bX;
 end 
-
-// expected AUD_DACLRCK
+// expected OflagBank[ 6 ]
 initial
 begin
-	AUD_DACLRCK_expected = 1'bX;
+	OflagBank_expected[6] = 1'bX;
+end 
+// expected OflagBank[ 5 ]
+initial
+begin
+	OflagBank_expected[5] = 1'bX;
+end 
+// expected OflagBank[ 4 ]
+initial
+begin
+	OflagBank_expected[4] = 1'bX;
+end 
+// expected OflagBank[ 3 ]
+initial
+begin
+	OflagBank_expected[3] = 1'bX;
+end 
+// expected OflagBank[ 2 ]
+initial
+begin
+	OflagBank_expected[2] = 1'bX;
+end 
+// expected OflagBank[ 1 ]
+initial
+begin
+	OflagBank_expected[1] = 1'bX;
+end 
+// expected OflagBank[ 0 ]
+initial
+begin
+	OflagBank_expected[0] = 1'bX;
+end 
+// expected OwInstr[ 31 ]
+initial
+begin
+	OwInstr_expected[31] = 1'bX;
+end 
+// expected OwInstr[ 30 ]
+initial
+begin
+	OwInstr_expected[30] = 1'bX;
+end 
+// expected OwInstr[ 29 ]
+initial
+begin
+	OwInstr_expected[29] = 1'bX;
+end 
+// expected OwInstr[ 28 ]
+initial
+begin
+	OwInstr_expected[28] = 1'bX;
+end 
+// expected OwInstr[ 27 ]
+initial
+begin
+	OwInstr_expected[27] = 1'bX;
+end 
+// expected OwInstr[ 26 ]
+initial
+begin
+	OwInstr_expected[26] = 1'bX;
+end 
+// expected OwInstr[ 25 ]
+initial
+begin
+	OwInstr_expected[25] = 1'bX;
+end 
+// expected OwInstr[ 24 ]
+initial
+begin
+	OwInstr_expected[24] = 1'bX;
+end 
+// expected OwInstr[ 23 ]
+initial
+begin
+	OwInstr_expected[23] = 1'bX;
+end 
+// expected OwInstr[ 22 ]
+initial
+begin
+	OwInstr_expected[22] = 1'bX;
+end 
+// expected OwInstr[ 21 ]
+initial
+begin
+	OwInstr_expected[21] = 1'bX;
+end 
+// expected OwInstr[ 20 ]
+initial
+begin
+	OwInstr_expected[20] = 1'bX;
+end 
+// expected OwInstr[ 19 ]
+initial
+begin
+	OwInstr_expected[19] = 1'bX;
+end 
+// expected OwInstr[ 18 ]
+initial
+begin
+	OwInstr_expected[18] = 1'bX;
+end 
+// expected OwInstr[ 17 ]
+initial
+begin
+	OwInstr_expected[17] = 1'bX;
+end 
+// expected OwInstr[ 16 ]
+initial
+begin
+	OwInstr_expected[16] = 1'bX;
+end 
+// expected OwInstr[ 15 ]
+initial
+begin
+	OwInstr_expected[15] = 1'bX;
+end 
+// expected OwInstr[ 14 ]
+initial
+begin
+	OwInstr_expected[14] = 1'bX;
+end 
+// expected OwInstr[ 13 ]
+initial
+begin
+	OwInstr_expected[13] = 1'bX;
+end 
+// expected OwInstr[ 12 ]
+initial
+begin
+	OwInstr_expected[12] = 1'bX;
+end 
+// expected OwInstr[ 11 ]
+initial
+begin
+	OwInstr_expected[11] = 1'bX;
+end 
+// expected OwInstr[ 10 ]
+initial
+begin
+	OwInstr_expected[10] = 1'bX;
+end 
+// expected OwInstr[ 9 ]
+initial
+begin
+	OwInstr_expected[9] = 1'bX;
+end 
+// expected OwInstr[ 8 ]
+initial
+begin
+	OwInstr_expected[8] = 1'bX;
+end 
+// expected OwInstr[ 7 ]
+initial
+begin
+	OwInstr_expected[7] = 1'bX;
+end 
+// expected OwInstr[ 6 ]
+initial
+begin
+	OwInstr_expected[6] = 1'bX;
+end 
+// expected OwInstr[ 5 ]
+initial
+begin
+	OwInstr_expected[5] = 1'bX;
+end 
+// expected OwInstr[ 4 ]
+initial
+begin
+	OwInstr_expected[4] = 1'bX;
+end 
+// expected OwInstr[ 3 ]
+initial
+begin
+	OwInstr_expected[3] = 1'bX;
+end 
+// expected OwInstr[ 2 ]
+initial
+begin
+	OwInstr_expected[2] = 1'bX;
+end 
+// expected OwInstr[ 1 ]
+initial
+begin
+	OwInstr_expected[1] = 1'bX;
+end 
+// expected OwInstr[ 0 ]
+initial
+begin
+	OwInstr_expected[0] = 1'bX;
+end 
+// expected OwPC[ 31 ]
+initial
+begin
+	OwPC_expected[31] = 1'bX;
+end 
+// expected OwPC[ 30 ]
+initial
+begin
+	OwPC_expected[30] = 1'bX;
+end 
+// expected OwPC[ 29 ]
+initial
+begin
+	OwPC_expected[29] = 1'bX;
+end 
+// expected OwPC[ 28 ]
+initial
+begin
+	OwPC_expected[28] = 1'bX;
+end 
+// expected OwPC[ 27 ]
+initial
+begin
+	OwPC_expected[27] = 1'bX;
+end 
+// expected OwPC[ 26 ]
+initial
+begin
+	OwPC_expected[26] = 1'bX;
+end 
+// expected OwPC[ 25 ]
+initial
+begin
+	OwPC_expected[25] = 1'bX;
+end 
+// expected OwPC[ 24 ]
+initial
+begin
+	OwPC_expected[24] = 1'bX;
+end 
+// expected OwPC[ 23 ]
+initial
+begin
+	OwPC_expected[23] = 1'bX;
+end 
+// expected OwPC[ 22 ]
+initial
+begin
+	OwPC_expected[22] = 1'bX;
+end 
+// expected OwPC[ 21 ]
+initial
+begin
+	OwPC_expected[21] = 1'bX;
+end 
+// expected OwPC[ 20 ]
+initial
+begin
+	OwPC_expected[20] = 1'bX;
+end 
+// expected OwPC[ 19 ]
+initial
+begin
+	OwPC_expected[19] = 1'bX;
+end 
+// expected OwPC[ 18 ]
+initial
+begin
+	OwPC_expected[18] = 1'bX;
+end 
+// expected OwPC[ 17 ]
+initial
+begin
+	OwPC_expected[17] = 1'bX;
+end 
+// expected OwPC[ 16 ]
+initial
+begin
+	OwPC_expected[16] = 1'bX;
+end 
+// expected OwPC[ 15 ]
+initial
+begin
+	OwPC_expected[15] = 1'bX;
+end 
+// expected OwPC[ 14 ]
+initial
+begin
+	OwPC_expected[14] = 1'bX;
+end 
+// expected OwPC[ 13 ]
+initial
+begin
+	OwPC_expected[13] = 1'bX;
+end 
+// expected OwPC[ 12 ]
+initial
+begin
+	OwPC_expected[12] = 1'bX;
+end 
+// expected OwPC[ 11 ]
+initial
+begin
+	OwPC_expected[11] = 1'bX;
+end 
+// expected OwPC[ 10 ]
+initial
+begin
+	OwPC_expected[10] = 1'bX;
+end 
+// expected OwPC[ 9 ]
+initial
+begin
+	OwPC_expected[9] = 1'bX;
+end 
+// expected OwPC[ 8 ]
+initial
+begin
+	OwPC_expected[8] = 1'bX;
+end 
+// expected OwPC[ 7 ]
+initial
+begin
+	OwPC_expected[7] = 1'bX;
+end 
+// expected OwPC[ 6 ]
+initial
+begin
+	OwPC_expected[6] = 1'bX;
+end 
+// expected OwPC[ 5 ]
+initial
+begin
+	OwPC_expected[5] = 1'bX;
+end 
+// expected OwPC[ 4 ]
+initial
+begin
+	OwPC_expected[4] = 1'bX;
+end 
+// expected OwPC[ 3 ]
+initial
+begin
+	OwPC_expected[3] = 1'bX;
+end 
+// expected OwPC[ 2 ]
+initial
+begin
+	OwPC_expected[2] = 1'bX;
+end 
+// expected OwPC[ 1 ]
+initial
+begin
+	OwPC_expected[1] = 1'bX;
+end 
+// expected OwPC[ 0 ]
+initial
+begin
+	OwPC_expected[0] = 1'bX;
+end 
+// expected OwRegDisp[ 31 ]
+initial
+begin
+	OwRegDisp_expected[31] = 1'bX;
+end 
+// expected OwRegDisp[ 30 ]
+initial
+begin
+	OwRegDisp_expected[30] = 1'bX;
+end 
+// expected OwRegDisp[ 29 ]
+initial
+begin
+	OwRegDisp_expected[29] = 1'bX;
+end 
+// expected OwRegDisp[ 28 ]
+initial
+begin
+	OwRegDisp_expected[28] = 1'bX;
+end 
+// expected OwRegDisp[ 27 ]
+initial
+begin
+	OwRegDisp_expected[27] = 1'bX;
+end 
+// expected OwRegDisp[ 26 ]
+initial
+begin
+	OwRegDisp_expected[26] = 1'bX;
+end 
+// expected OwRegDisp[ 25 ]
+initial
+begin
+	OwRegDisp_expected[25] = 1'bX;
+end 
+// expected OwRegDisp[ 24 ]
+initial
+begin
+	OwRegDisp_expected[24] = 1'bX;
+end 
+// expected OwRegDisp[ 23 ]
+initial
+begin
+	OwRegDisp_expected[23] = 1'bX;
+end 
+// expected OwRegDisp[ 22 ]
+initial
+begin
+	OwRegDisp_expected[22] = 1'bX;
+end 
+// expected OwRegDisp[ 21 ]
+initial
+begin
+	OwRegDisp_expected[21] = 1'bX;
+end 
+// expected OwRegDisp[ 20 ]
+initial
+begin
+	OwRegDisp_expected[20] = 1'bX;
+end 
+// expected OwRegDisp[ 19 ]
+initial
+begin
+	OwRegDisp_expected[19] = 1'bX;
+end 
+// expected OwRegDisp[ 18 ]
+initial
+begin
+	OwRegDisp_expected[18] = 1'bX;
+end 
+// expected OwRegDisp[ 17 ]
+initial
+begin
+	OwRegDisp_expected[17] = 1'bX;
+end 
+// expected OwRegDisp[ 16 ]
+initial
+begin
+	OwRegDisp_expected[16] = 1'bX;
+end 
+// expected OwRegDisp[ 15 ]
+initial
+begin
+	OwRegDisp_expected[15] = 1'bX;
+end 
+// expected OwRegDisp[ 14 ]
+initial
+begin
+	OwRegDisp_expected[14] = 1'bX;
+end 
+// expected OwRegDisp[ 13 ]
+initial
+begin
+	OwRegDisp_expected[13] = 1'bX;
+end 
+// expected OwRegDisp[ 12 ]
+initial
+begin
+	OwRegDisp_expected[12] = 1'bX;
+end 
+// expected OwRegDisp[ 11 ]
+initial
+begin
+	OwRegDisp_expected[11] = 1'bX;
+end 
+// expected OwRegDisp[ 10 ]
+initial
+begin
+	OwRegDisp_expected[10] = 1'bX;
+end 
+// expected OwRegDisp[ 9 ]
+initial
+begin
+	OwRegDisp_expected[9] = 1'bX;
+end 
+// expected OwRegDisp[ 8 ]
+initial
+begin
+	OwRegDisp_expected[8] = 1'bX;
+end 
+// expected OwRegDisp[ 7 ]
+initial
+begin
+	OwRegDisp_expected[7] = 1'bX;
+end 
+// expected OwRegDisp[ 6 ]
+initial
+begin
+	OwRegDisp_expected[6] = 1'bX;
+end 
+// expected OwRegDisp[ 5 ]
+initial
+begin
+	OwRegDisp_expected[5] = 1'bX;
+end 
+// expected OwRegDisp[ 4 ]
+initial
+begin
+	OwRegDisp_expected[4] = 1'bX;
+end 
+// expected OwRegDisp[ 3 ]
+initial
+begin
+	OwRegDisp_expected[3] = 1'bX;
+end 
+// expected OwRegDisp[ 2 ]
+initial
+begin
+	OwRegDisp_expected[2] = 1'bX;
+end 
+// expected OwRegDisp[ 1 ]
+initial
+begin
+	OwRegDisp_expected[1] = 1'bX;
+end 
+// expected OwRegDisp[ 0 ]
+initial
+begin
+	OwRegDisp_expected[0] = 1'bX;
+end 
+// expected OwRegDispFPU[ 31 ]
+initial
+begin
+	OwRegDispFPU_expected[31] = 1'bX;
+end 
+// expected OwRegDispFPU[ 30 ]
+initial
+begin
+	OwRegDispFPU_expected[30] = 1'bX;
+end 
+// expected OwRegDispFPU[ 29 ]
+initial
+begin
+	OwRegDispFPU_expected[29] = 1'bX;
+end 
+// expected OwRegDispFPU[ 28 ]
+initial
+begin
+	OwRegDispFPU_expected[28] = 1'bX;
+end 
+// expected OwRegDispFPU[ 27 ]
+initial
+begin
+	OwRegDispFPU_expected[27] = 1'bX;
+end 
+// expected OwRegDispFPU[ 26 ]
+initial
+begin
+	OwRegDispFPU_expected[26] = 1'bX;
+end 
+// expected OwRegDispFPU[ 25 ]
+initial
+begin
+	OwRegDispFPU_expected[25] = 1'bX;
+end 
+// expected OwRegDispFPU[ 24 ]
+initial
+begin
+	OwRegDispFPU_expected[24] = 1'bX;
+end 
+// expected OwRegDispFPU[ 23 ]
+initial
+begin
+	OwRegDispFPU_expected[23] = 1'bX;
+end 
+// expected OwRegDispFPU[ 22 ]
+initial
+begin
+	OwRegDispFPU_expected[22] = 1'bX;
+end 
+// expected OwRegDispFPU[ 21 ]
+initial
+begin
+	OwRegDispFPU_expected[21] = 1'bX;
+end 
+// expected OwRegDispFPU[ 20 ]
+initial
+begin
+	OwRegDispFPU_expected[20] = 1'bX;
+end 
+// expected OwRegDispFPU[ 19 ]
+initial
+begin
+	OwRegDispFPU_expected[19] = 1'bX;
+end 
+// expected OwRegDispFPU[ 18 ]
+initial
+begin
+	OwRegDispFPU_expected[18] = 1'bX;
+end 
+// expected OwRegDispFPU[ 17 ]
+initial
+begin
+	OwRegDispFPU_expected[17] = 1'bX;
+end 
+// expected OwRegDispFPU[ 16 ]
+initial
+begin
+	OwRegDispFPU_expected[16] = 1'bX;
+end 
+// expected OwRegDispFPU[ 15 ]
+initial
+begin
+	OwRegDispFPU_expected[15] = 1'bX;
+end 
+// expected OwRegDispFPU[ 14 ]
+initial
+begin
+	OwRegDispFPU_expected[14] = 1'bX;
+end 
+// expected OwRegDispFPU[ 13 ]
+initial
+begin
+	OwRegDispFPU_expected[13] = 1'bX;
+end 
+// expected OwRegDispFPU[ 12 ]
+initial
+begin
+	OwRegDispFPU_expected[12] = 1'bX;
+end 
+// expected OwRegDispFPU[ 11 ]
+initial
+begin
+	OwRegDispFPU_expected[11] = 1'bX;
+end 
+// expected OwRegDispFPU[ 10 ]
+initial
+begin
+	OwRegDispFPU_expected[10] = 1'bX;
+end 
+// expected OwRegDispFPU[ 9 ]
+initial
+begin
+	OwRegDispFPU_expected[9] = 1'bX;
+end 
+// expected OwRegDispFPU[ 8 ]
+initial
+begin
+	OwRegDispFPU_expected[8] = 1'bX;
+end 
+// expected OwRegDispFPU[ 7 ]
+initial
+begin
+	OwRegDispFPU_expected[7] = 1'bX;
+end 
+// expected OwRegDispFPU[ 6 ]
+initial
+begin
+	OwRegDispFPU_expected[6] = 1'bX;
+end 
+// expected OwRegDispFPU[ 5 ]
+initial
+begin
+	OwRegDispFPU_expected[5] = 1'bX;
+end 
+// expected OwRegDispFPU[ 4 ]
+initial
+begin
+	OwRegDispFPU_expected[4] = 1'bX;
+end 
+// expected OwRegDispFPU[ 3 ]
+initial
+begin
+	OwRegDispFPU_expected[3] = 1'bX;
+end 
+// expected OwRegDispFPU[ 2 ]
+initial
+begin
+	OwRegDispFPU_expected[2] = 1'bX;
+end 
+// expected OwRegDispFPU[ 1 ]
+initial
+begin
+	OwRegDispFPU_expected[1] = 1'bX;
+end 
+// expected OwRegDispFPU[ 0 ]
+initial
+begin
+	OwRegDispFPU_expected[0] = 1'bX;
+end 
+// expected OwRegDispSelect[ 4 ]
+initial
+begin
+	OwRegDispSelect_expected[4] = 1'bX;
+end 
+// expected OwRegDispSelect[ 3 ]
+initial
+begin
+	OwRegDispSelect_expected[3] = 1'bX;
+end 
+// expected OwRegDispSelect[ 2 ]
+initial
+begin
+	OwRegDispSelect_expected[2] = 1'bX;
+end 
+// expected OwRegDispSelect[ 1 ]
+initial
+begin
+	OwRegDispSelect_expected[1] = 1'bX;
+end 
+// expected OwRegDispSelect[ 0 ]
+initial
+begin
+	OwRegDispSelect_expected[0] = 1'bX;
 end 
 
 // expected oAUD_DACDAT
@@ -2889,6 +2748,147 @@ initial
 begin
 	oLCD_RW_expected = 1'bX;
 end 
+// expected oLEDG[ 8 ]
+initial
+begin
+	oLEDG_expected[8] = 1'bX;
+end 
+// expected oLEDG[ 7 ]
+initial
+begin
+	oLEDG_expected[7] = 1'bX;
+end 
+// expected oLEDG[ 6 ]
+initial
+begin
+	oLEDG_expected[6] = 1'bX;
+end 
+// expected oLEDG[ 5 ]
+initial
+begin
+	oLEDG_expected[5] = 1'bX;
+end 
+// expected oLEDG[ 4 ]
+initial
+begin
+	oLEDG_expected[4] = 1'bX;
+end 
+// expected oLEDG[ 3 ]
+initial
+begin
+	oLEDG_expected[3] = 1'bX;
+end 
+// expected oLEDG[ 2 ]
+initial
+begin
+	oLEDG_expected[2] = 1'bX;
+end 
+// expected oLEDG[ 1 ]
+initial
+begin
+	oLEDG_expected[1] = 1'bX;
+end 
+// expected oLEDG[ 0 ]
+initial
+begin
+	oLEDG_expected[0] = 1'bX;
+end 
+// expected oLEDR[ 17 ]
+initial
+begin
+	oLEDR_expected[17] = 1'bX;
+end 
+// expected oLEDR[ 16 ]
+initial
+begin
+	oLEDR_expected[16] = 1'bX;
+end 
+// expected oLEDR[ 15 ]
+initial
+begin
+	oLEDR_expected[15] = 1'bX;
+end 
+// expected oLEDR[ 14 ]
+initial
+begin
+	oLEDR_expected[14] = 1'bX;
+end 
+// expected oLEDR[ 13 ]
+initial
+begin
+	oLEDR_expected[13] = 1'bX;
+end 
+// expected oLEDR[ 12 ]
+initial
+begin
+	oLEDR_expected[12] = 1'bX;
+end 
+// expected oLEDR[ 11 ]
+initial
+begin
+	oLEDR_expected[11] = 1'bX;
+end 
+// expected oLEDR[ 10 ]
+initial
+begin
+	oLEDR_expected[10] = 1'bX;
+end 
+// expected oLEDR[ 9 ]
+initial
+begin
+	oLEDR_expected[9] = 1'bX;
+end 
+// expected oLEDR[ 8 ]
+initial
+begin
+	oLEDR_expected[8] = 1'bX;
+end 
+// expected oLEDR[ 7 ]
+initial
+begin
+	oLEDR_expected[7] = 1'bX;
+end 
+// expected oLEDR[ 6 ]
+initial
+begin
+	oLEDR_expected[6] = 1'bX;
+end 
+// expected oLEDR[ 5 ]
+initial
+begin
+	oLEDR_expected[5] = 1'bX;
+end 
+// expected oLEDR[ 4 ]
+initial
+begin
+	oLEDR_expected[4] = 1'bX;
+end 
+// expected oLEDR[ 3 ]
+initial
+begin
+	oLEDR_expected[3] = 1'bX;
+end 
+// expected oLEDR[ 2 ]
+initial
+begin
+	oLEDR_expected[2] = 1'bX;
+end 
+// expected oLEDR[ 1 ]
+initial
+begin
+	oLEDR_expected[1] = 1'bX;
+end 
+// expected oLEDR[ 0 ]
+initial
+begin
+	oLEDR_expected[0] = 1'bX;
+end 
+
+// expected oSD_CLK
+initial
+begin
+	oSD_CLK_expected = 1'bX;
+end 
 // expected oSRAM_A[ 18 ]
 initial
 begin
@@ -3082,106 +3082,6 @@ initial
 begin
 	oUART_TXD_expected = 1'bX;
 end 
-// expected oVGA_R[ 9 ]
-initial
-begin
-	oVGA_R_expected[9] = 1'bX;
-end 
-// expected oVGA_R[ 8 ]
-initial
-begin
-	oVGA_R_expected[8] = 1'bX;
-end 
-// expected oVGA_R[ 7 ]
-initial
-begin
-	oVGA_R_expected[7] = 1'bX;
-end 
-// expected oVGA_R[ 6 ]
-initial
-begin
-	oVGA_R_expected[6] = 1'bX;
-end 
-// expected oVGA_R[ 5 ]
-initial
-begin
-	oVGA_R_expected[5] = 1'bX;
-end 
-// expected oVGA_R[ 4 ]
-initial
-begin
-	oVGA_R_expected[4] = 1'bX;
-end 
-// expected oVGA_R[ 3 ]
-initial
-begin
-	oVGA_R_expected[3] = 1'bX;
-end 
-// expected oVGA_R[ 2 ]
-initial
-begin
-	oVGA_R_expected[2] = 1'bX;
-end 
-// expected oVGA_R[ 1 ]
-initial
-begin
-	oVGA_R_expected[1] = 1'bX;
-end 
-// expected oVGA_R[ 0 ]
-initial
-begin
-	oVGA_R_expected[0] = 1'bX;
-end 
-// expected oVGA_G[ 9 ]
-initial
-begin
-	oVGA_G_expected[9] = 1'bX;
-end 
-// expected oVGA_G[ 8 ]
-initial
-begin
-	oVGA_G_expected[8] = 1'bX;
-end 
-// expected oVGA_G[ 7 ]
-initial
-begin
-	oVGA_G_expected[7] = 1'bX;
-end 
-// expected oVGA_G[ 6 ]
-initial
-begin
-	oVGA_G_expected[6] = 1'bX;
-end 
-// expected oVGA_G[ 5 ]
-initial
-begin
-	oVGA_G_expected[5] = 1'bX;
-end 
-// expected oVGA_G[ 4 ]
-initial
-begin
-	oVGA_G_expected[4] = 1'bX;
-end 
-// expected oVGA_G[ 3 ]
-initial
-begin
-	oVGA_G_expected[3] = 1'bX;
-end 
-// expected oVGA_G[ 2 ]
-initial
-begin
-	oVGA_G_expected[2] = 1'bX;
-end 
-// expected oVGA_G[ 1 ]
-initial
-begin
-	oVGA_G_expected[1] = 1'bX;
-end 
-// expected oVGA_G[ 0 ]
-initial
-begin
-	oVGA_G_expected[0] = 1'bX;
-end 
 // expected oVGA_B[ 9 ]
 initial
 begin
@@ -3244,11 +3144,111 @@ initial
 begin
 	oVGA_CLOCK_expected = 1'bX;
 end 
+// expected oVGA_G[ 9 ]
+initial
+begin
+	oVGA_G_expected[9] = 1'bX;
+end 
+// expected oVGA_G[ 8 ]
+initial
+begin
+	oVGA_G_expected[8] = 1'bX;
+end 
+// expected oVGA_G[ 7 ]
+initial
+begin
+	oVGA_G_expected[7] = 1'bX;
+end 
+// expected oVGA_G[ 6 ]
+initial
+begin
+	oVGA_G_expected[6] = 1'bX;
+end 
+// expected oVGA_G[ 5 ]
+initial
+begin
+	oVGA_G_expected[5] = 1'bX;
+end 
+// expected oVGA_G[ 4 ]
+initial
+begin
+	oVGA_G_expected[4] = 1'bX;
+end 
+// expected oVGA_G[ 3 ]
+initial
+begin
+	oVGA_G_expected[3] = 1'bX;
+end 
+// expected oVGA_G[ 2 ]
+initial
+begin
+	oVGA_G_expected[2] = 1'bX;
+end 
+// expected oVGA_G[ 1 ]
+initial
+begin
+	oVGA_G_expected[1] = 1'bX;
+end 
+// expected oVGA_G[ 0 ]
+initial
+begin
+	oVGA_G_expected[0] = 1'bX;
+end 
 
 // expected oVGA_HS
 initial
 begin
 	oVGA_HS_expected = 1'bX;
+end 
+// expected oVGA_R[ 9 ]
+initial
+begin
+	oVGA_R_expected[9] = 1'bX;
+end 
+// expected oVGA_R[ 8 ]
+initial
+begin
+	oVGA_R_expected[8] = 1'bX;
+end 
+// expected oVGA_R[ 7 ]
+initial
+begin
+	oVGA_R_expected[7] = 1'bX;
+end 
+// expected oVGA_R[ 6 ]
+initial
+begin
+	oVGA_R_expected[6] = 1'bX;
+end 
+// expected oVGA_R[ 5 ]
+initial
+begin
+	oVGA_R_expected[5] = 1'bX;
+end 
+// expected oVGA_R[ 4 ]
+initial
+begin
+	oVGA_R_expected[4] = 1'bX;
+end 
+// expected oVGA_R[ 3 ]
+initial
+begin
+	oVGA_R_expected[3] = 1'bX;
+end 
+// expected oVGA_R[ 2 ]
+initial
+begin
+	oVGA_R_expected[2] = 1'bX;
+end 
+// expected oVGA_R[ 1 ]
+initial
+begin
+	oVGA_R_expected[1] = 1'bX;
+end 
+// expected oVGA_R[ 0 ]
+initial
+begin
+	oVGA_R_expected[0] = 1'bX;
 end 
 
 // expected oVGA_SYNC_N
@@ -10277,7 +10277,7 @@ initial
 
 begin 
 $timeformat(-12,3," ps",6);
-#20000000;
+#1000000;
 if (nummismatches > 0)
 	$display ("%d mismatched vectors : Simulation failed !",nummismatches);
 else
@@ -10498,214 +10498,22 @@ TopDE i1 (
 	.oVGA_VS(oVGA_VS)
 );
 
-// iCLK_28
-initial
-begin
-	repeat(560)
-	begin
-		iCLK_28 = 1'b0;
-		iCLK_28 = #17857 1'b1;
-		# 17857;
-	end
-	iCLK_28 = 1'b0;
-end 
-
-// iCLK_50
-always
-begin
-	iCLK_50 = 1'b0;
-	iCLK_50 = #10000 1'b1;
-	#10000;
-end 
-
-// iCLK_50_2
-always
-begin
-	iCLK_50_2 = 1'b0;
-	iCLK_50_2 = #10000 1'b1;
-	#10000;
-end 
-
-// iCLK_50_4
-always
-begin
-	iCLK_50_4 = 1'b0;
-	iCLK_50_4 = #10000 1'b1;
-	#10000;
-end 
-// iKEY[ 3 ]
-initial
-begin
-	iKEY[3] = 1'b1;
-end 
-// iKEY[ 2 ]
-initial
-begin
-	iKEY[2] = 1'b1;
-	iKEY[2] = #20000 1'b0;
-	iKEY[2] = #170000 1'b1;
-end 
-// iKEY[ 1 ]
-initial
-begin
-	iKEY[1] = 1'b1;
-	iKEY[1] = #20000 1'b0;
-	iKEY[1] = #170000 1'b1;
-end 
-// iKEY[ 0 ]
-initial
-begin
-	iKEY[0] = 1'b1;
-end 
-// iSW[ 17 ]
-initial
-begin
-	iSW[17] = 1'b0;
-end 
-// iSW[ 16 ]
-initial
-begin
-	iSW[16] = 1'b1;
-end 
-// iSW[ 15 ]
-initial
-begin
-	iSW[15] = 1'b0;
-end 
-// iSW[ 14 ]
-initial
-begin
-	iSW[14] = 1'b0;
-end 
-// iSW[ 13 ]
-initial
-begin
-	iSW[13] = 1'b0;
-end 
-// iSW[ 12 ]
-initial
-begin
-	iSW[12] = 1'b0;
-end 
-// iSW[ 11 ]
-initial
-begin
-	iSW[11] = 1'b0;
-end 
-// iSW[ 10 ]
-initial
-begin
-	iSW[10] = 1'b0;
-end 
-// iSW[ 9 ]
-initial
-begin
-	iSW[9] = 1'b0;
-end 
-// iSW[ 8 ]
-initial
-begin
-	iSW[8] = 1'b0;
-end 
-// iSW[ 7 ]
-initial
-begin
-	iSW[7] = 1'b0;
-end 
-// iSW[ 6 ]
-initial
-begin
-	iSW[6] = 1'b0;
-end 
-// iSW[ 5 ]
-initial
-begin
-	iSW[5] = 1'b0;
-end 
-// iSW[ 4 ]
-initial
-begin
-	iSW[4] = 1'b0;
-end 
-// iSW[ 3 ]
-initial
-begin
-	iSW[3] = 1'b1;
-end 
-// iSW[ 2 ]
-initial
-begin
-	iSW[2] = 1'b0;
-end 
-// iSW[ 1 ]
-initial
-begin
-	iSW[1] = 1'b0;
-end 
-// iSW[ 0 ]
-initial
-begin
-	iSW[0] = 1'b0;
-end 
-
-// PS2_KBCLK
-initial
-begin
-	treg_PS2_KBCLK = 1'b0;
-end 
-
-// PS2_KBDAT
-initial
-begin
-	treg_PS2_KBDAT = 1'b0;
-end 
-
-// SD_CMD
-initial
-begin
-	treg_SD_CMD = 1'b0;
-end 
-
-// SD_DAT
-initial
-begin
-	treg_SD_DAT = 1'b0;
-end 
-
-// SD_DAT3
-initial
-begin
-	treg_SD_DAT3 = 1'b0;
-end 
-
-// iAUD_ADCDAT
-initial
-begin
-	iAUD_ADCDAT = 1'b0;
-end 
-
 // AUD_ADCLRCK
 initial
 begin
-	treg_AUD_ADCLRCK = 1'b0;
+	treg_AUD_ADCLRCK = 1'bZ;
 end 
 
 // AUD_BCLK
 initial
 begin
-	treg_AUD_BCLK = 1'b0;
+	treg_AUD_BCLK = 1'bZ;
 end 
 
 // I2C_SDAT
 initial
 begin
-	treg_I2C_SDAT = 1'b0;
-end 
-
-// iIRDA_RXD
-initial
-begin
-	iIRDA_RXD = 1'b0;
+	treg_I2C_SDAT = 1'bZ;
 end 
 // LCD_D[ 7 ]
 initial
@@ -10746,6 +10554,36 @@ end
 initial
 begin
 	treg_LCD_D[0] = 1'bZ;
+end 
+
+// PS2_KBCLK
+initial
+begin
+	treg_PS2_KBCLK = 1'bZ;
+end 
+
+// PS2_KBDAT
+initial
+begin
+	treg_PS2_KBDAT = 1'bZ;
+end 
+
+// SD_CMD
+initial
+begin
+	treg_SD_CMD = 1'bZ;
+end 
+
+// SD_DAT
+initial
+begin
+	treg_SD_DAT = 1'bZ;
+end 
+
+// SD_DAT3
+initial
+begin
+	treg_SD_DAT3 = 1'bZ;
 end 
 // SRAM_DQ[ 31 ]
 initial
@@ -10906,6 +10744,152 @@ end
 initial
 begin
 	treg_SRAM_DQ[0] = 1'bZ;
+end 
+
+// iAUD_ADCDAT
+initial
+begin
+	iAUD_ADCDAT = 1'b0;
+end 
+
+// iCLK_28
+initial
+begin
+	iCLK_28 = 1'b0;
+end 
+
+// iCLK_50
+initial
+begin
+	iCLK_50 = 1'b0;
+end 
+
+// iCLK_50_2
+initial
+begin
+	iCLK_50_2 = 1'b0;
+end 
+
+// iCLK_50_4
+initial
+begin
+	iCLK_50_4 = 1'b0;
+end 
+
+// iIRDA_RXD
+initial
+begin
+	iIRDA_RXD = 1'b0;
+end 
+// iKEY[ 3 ]
+initial
+begin
+	iKEY[3] = 1'b0;
+end 
+// iKEY[ 2 ]
+initial
+begin
+	iKEY[2] = 1'b0;
+end 
+// iKEY[ 1 ]
+initial
+begin
+	iKEY[1] = 1'b0;
+end 
+// iKEY[ 0 ]
+initial
+begin
+	iKEY[0] = 1'b0;
+end 
+// iSW[ 17 ]
+initial
+begin
+	iSW[17] = 1'b0;
+end 
+// iSW[ 16 ]
+initial
+begin
+	iSW[16] = 1'b0;
+end 
+// iSW[ 15 ]
+initial
+begin
+	iSW[15] = 1'b0;
+end 
+// iSW[ 14 ]
+initial
+begin
+	iSW[14] = 1'b0;
+end 
+// iSW[ 13 ]
+initial
+begin
+	iSW[13] = 1'b0;
+end 
+// iSW[ 12 ]
+initial
+begin
+	iSW[12] = 1'b0;
+end 
+// iSW[ 11 ]
+initial
+begin
+	iSW[11] = 1'b0;
+end 
+// iSW[ 10 ]
+initial
+begin
+	iSW[10] = 1'b0;
+end 
+// iSW[ 9 ]
+initial
+begin
+	iSW[9] = 1'b0;
+end 
+// iSW[ 8 ]
+initial
+begin
+	iSW[8] = 1'b0;
+end 
+// iSW[ 7 ]
+initial
+begin
+	iSW[7] = 1'b0;
+end 
+// iSW[ 6 ]
+initial
+begin
+	iSW[6] = 1'b0;
+end 
+// iSW[ 5 ]
+initial
+begin
+	iSW[5] = 1'b0;
+end 
+// iSW[ 4 ]
+initial
+begin
+	iSW[4] = 1'b0;
+end 
+// iSW[ 3 ]
+initial
+begin
+	iSW[3] = 1'b0;
+end 
+// iSW[ 2 ]
+initial
+begin
+	iSW[2] = 1'b0;
+end 
+// iSW[ 1 ]
+initial
+begin
+	iSW[1] = 1'b0;
+end 
+// iSW[ 0 ]
+initial
+begin
+	iSW[0] = 1'b0;
 end 
 
 // iUART_RTS

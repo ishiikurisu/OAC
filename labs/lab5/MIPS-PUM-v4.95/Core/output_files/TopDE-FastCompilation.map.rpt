@@ -1,5 +1,5 @@
 Analysis & Synthesis report for TopDE-FastCompilation
-Fri Jun 23 10:26:52 2017
+Mon Jun 26 10:19:06 2017
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -147,13 +147,13 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Jun 23 10:26:51 2017      ;
+; Analysis & Synthesis Status        ; Successful - Mon Jun 26 10:19:05 2017      ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; TopDE-FastCompilation                      ;
 ; Top-level Entity Name              ; TopDE                                      ;
 ; Family                             ; Cyclone II                                 ;
-; Total logic elements               ; 17,448                                     ;
-;     Total combinational functions  ; 15,745                                     ;
+; Total logic elements               ; 17,451                                     ;
+;     Total combinational functions  ; 15,748                                     ;
 ;     Dedicated logic registers      ; 4,006                                      ;
 ; Total registers                    ; 4006                                       ;
 ; Total pins                         ; 568                                        ;
@@ -382,7 +382,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; db/altsyncram_clg2.tdf                ; yes             ; Auto-Generated Megafunction            ; C:/Users/cris/Documents/work/unb/OAC/labs/lab5/MIPS-PUM-v4.95/Core/db/altsyncram_clg2.tdf                ;         ;
 ; system_code.mif                       ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/cris/Documents/work/unb/OAC/labs/lab5/MIPS-PUM-v4.95/Core/system_code.mif                       ;         ;
 ; db/altsyncram_4id2.tdf                ; yes             ; Auto-Generated Megafunction            ; C:/Users/cris/Documents/work/unb/OAC/labs/lab5/MIPS-PUM-v4.95/Core/db/altsyncram_4id2.tdf                ;         ;
-; ../VGA/gba.mif                        ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/cris/Documents/work/unb/OAC/labs/lab5/MIPS-PUM-v4.95/Core/VGA/gba.mif                           ;         ;
+; vga/gba.mif                           ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/cris/Documents/work/unb/OAC/labs/lab5/MIPS-PUM-v4.95/Core/vga/gba.mif                           ;         ;
 ; db/decode_6oa.tdf                     ; yes             ; Auto-Generated Megafunction            ; C:/Users/cris/Documents/work/unb/OAC/labs/lab5/MIPS-PUM-v4.95/Core/db/decode_6oa.tdf                     ;         ;
 ; db/mux_3kb.tdf                        ; yes             ; Auto-Generated Megafunction            ; C:/Users/cris/Documents/work/unb/OAC/labs/lab5/MIPS-PUM-v4.95/Core/db/mux_3kb.tdf                        ;         ;
 ; db/altsyncram_0oc1.tdf                ; yes             ; Auto-Generated Megafunction            ; C:/Users/cris/Documents/work/unb/OAC/labs/lab5/MIPS-PUM-v4.95/Core/db/altsyncram_0oc1.tdf                ;         ;
@@ -453,16 +453,16 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+---------------------------+
 ; Resource                                    ; Usage                     ;
 +---------------------------------------------+---------------------------+
-; Estimated Total logic elements              ; 17,448                    ;
+; Estimated Total logic elements              ; 17,451                    ;
 ;                                             ;                           ;
-; Total combinational functions               ; 15745                     ;
+; Total combinational functions               ; 15748                     ;
 ; Logic element usage by number of LUT inputs ;                           ;
-;     -- 4 input functions                    ; 8672                      ;
-;     -- 3 input functions                    ; 5228                      ;
-;     -- <=2 input functions                  ; 1845                      ;
+;     -- 4 input functions                    ; 8670                      ;
+;     -- 3 input functions                    ; 5232                      ;
+;     -- <=2 input functions                  ; 1846                      ;
 ;                                             ;                           ;
 ; Logic elements by mode                      ;                           ;
-;     -- normal mode                          ; 11787                     ;
+;     -- normal mode                          ; 11790                     ;
 ;     -- arithmetic mode                      ; 3958                      ;
 ;                                             ;                           ;
 ; Total registers                             ; 4006                      ;
@@ -477,7 +477,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;                                             ;                           ;
 ; Maximum fan-out node                        ; CLOCK_Interface:CLKI0|CLK ;
 ; Maximum fan-out                             ; 1527                      ;
-; Total fan-out                               ; 78023                     ;
+; Total fan-out                               ; 78029                     ;
 ; Average fan-out                             ; 3.74                      ;
 +---------------------------------------------+---------------------------+
 
@@ -487,7 +487,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                                             ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                       ; Library Name ;
 +------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |TopDE                                                                 ; 15745 (94)        ; 4006 (0)     ; 853691      ; 34           ; 4       ; 15        ; 568  ; 0            ; |TopDE                                                                                                                                                                                                                                    ;              ;
+; |TopDE                                                                 ; 15748 (94)        ; 4006 (0)     ; 853691      ; 34           ; 4       ; 15        ; 568  ; 0            ; |TopDE                                                                                                                                                                                                                                    ;              ;
 ;    |AudioCODEC_Interface:Audio0|                                       ; 482 (197)         ; 250 (106)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopDE|AudioCODEC_Interface:Audio0                                                                                                                                                                                                        ;              ;
 ;       |AudioVideo_PLL:av_pll|                                          ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopDE|AudioCODEC_Interface:Audio0|AudioVideo_PLL:av_pll                                                                                                                                                                                  ;              ;
 ;          |altpll:altpll_component|                                     ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopDE|AudioCODEC_Interface:Audio0|AudioVideo_PLL:av_pll|altpll:altpll_component                                                                                                                                                          ;              ;
@@ -679,8 +679,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;             |altpll:altpll_component|                                  ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopDE|VGA_Interface:VGA0|VgaAdapter:VGA0|VgaPll:xx|altpll:altpll_component                                                                                                                                                               ;              ;
 ;    |lfsr_interface:lfsr|                                               ; 6 (5)             ; 32 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopDE|lfsr_interface:lfsr                                                                                                                                                                                                                ;              ;
 ;       |lfsr_word:lfsr|                                                 ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopDE|lfsr_interface:lfsr|lfsr_word:lfsr                                                                                                                                                                                                 ;              ;
-;    |sld_hub:auto_hub|                                                  ; 241 (1)           ; 143 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopDE|sld_hub:auto_hub                                                                                                                                                                                                                   ;              ;
-;       |sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|                   ; 240 (199)         ; 143 (114)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopDE|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst                                                                                                                                                                      ;              ;
+;    |sld_hub:auto_hub|                                                  ; 244 (1)           ; 143 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopDE|sld_hub:auto_hub                                                                                                                                                                                                                   ;              ;
+;       |sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|                   ; 243 (202)         ; 143 (114)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopDE|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst                                                                                                                                                                      ;              ;
 ;          |sld_rom_sr:hub_info_reg|                                     ; 24 (24)           ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopDE|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg                                                                                                                                              ;              ;
 ;          |sld_shadow_jsm:shadow_jsm|                                   ; 17 (17)           ; 19 (19)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopDE|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_shadow_jsm:shadow_jsm                                                                                                                                            ;              ;
 +------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
@@ -1438,7 +1438,7 @@ Encoding Type:  One-Hot
 ; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |TopDE|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|shadow_irf_reg[3][4]                                                                                                                         ;
 ; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |TopDE|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|shadow_irf_reg[4][0]                                                                                                                         ;
 ; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |TopDE|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|shadow_irf_reg[5][3]                                                                                                                         ;
-; 34:1               ; 4 bits    ; 88 LEs        ; 56 LEs               ; 32 LEs                 ; Yes        ; |TopDE|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|design_hash_reg[1]                                                                                                                           ;
+; 34:1               ; 4 bits    ; 88 LEs        ; 60 LEs               ; 28 LEs                 ; Yes        ; |TopDE|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|design_hash_reg[1]                                                                                                                           ;
 ; 52:1               ; 4 bits    ; 136 LEs       ; 48 LEs               ; 88 LEs                 ; Yes        ; |TopDE|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg|WORD_SR[1]                                                                                                           ;
 ; 14:1               ; 6 bits    ; 54 LEs        ; 24 LEs               ; 30 LEs                 ; Yes        ; |TopDE|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|irsr_reg[0]                                                                                                                                  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -4504,7 +4504,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------+--------------+
 ; Partition Name   ; Elapsed Time ;
 +------------------+--------------+
-; Top              ; 00:01:41     ;
+; Top              ; 00:01:24     ;
 ; sld_hub:auto_hub ; 00:00:01     ;
 +------------------+--------------+
 
@@ -4515,7 +4515,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Fri Jun 23 10:24:35 2017
+    Info: Processing started: Mon Jun 26 10:17:05 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off TopDE-FastCompilation -c TopDE-FastCompilation
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file topde.v
@@ -4885,8 +4885,6 @@ Info (12128): Elaborating entity "altsyncram_cvk1" for hierarchy "DataMemory_Int
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_5eg2.tdf
     Info (12023): Found entity 1: altsyncram_5eg2
 Info (12128): Elaborating entity "altsyncram_5eg2" for hierarchy "DataMemory_Interface:MEMDATA|UserDataBlock:MB0|altsyncram:altsyncram_component|altsyncram_cvk1:auto_generated|altsyncram_5eg2:altsyncram1"
-Warning (113028): 2044 out of 2048 addresses are uninitialized. The Quartus II software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported.
-    Warning (113027): Addresses ranging from 4 to 2047 are not initialized
 Info (12128): Elaborating entity "sld_mod_ram_rom" for hierarchy "DataMemory_Interface:MEMDATA|UserDataBlock:MB0|altsyncram:altsyncram_component|altsyncram_cvk1:auto_generated|sld_mod_ram_rom:mgl_prim2"
 Info (12130): Elaborated megafunction instantiation "DataMemory_Interface:MEMDATA|UserDataBlock:MB0|altsyncram:altsyncram_component|altsyncram_cvk1:auto_generated|sld_mod_ram_rom:mgl_prim2"
 Info (12133): Instantiated megafunction "DataMemory_Interface:MEMDATA|UserDataBlock:MB0|altsyncram:altsyncram_component|altsyncram_cvk1:auto_generated|sld_mod_ram_rom:mgl_prim2" with the following parameter:
@@ -4959,8 +4957,6 @@ Info (12128): Elaborating entity "altsyncram_ird1" for hierarchy "CodeMemory_Int
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_o1d2.tdf
     Info (12023): Found entity 1: altsyncram_o1d2
 Info (12128): Elaborating entity "altsyncram_o1d2" for hierarchy "CodeMemory_Interface:MEMCODE|BootBlock:BB0|altsyncram:altsyncram_component|altsyncram_ird1:auto_generated|altsyncram_o1d2:altsyncram1"
-Warning (113028): 59 out of 128 addresses are uninitialized. The Quartus II software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported.
-    Warning (113027): Addresses ranging from 69 to 127 are not initialized
 Info (12128): Elaborating entity "sld_mod_ram_rom" for hierarchy "CodeMemory_Interface:MEMCODE|BootBlock:BB0|altsyncram:altsyncram_component|altsyncram_ird1:auto_generated|sld_mod_ram_rom:mgl_prim2"
 Info (12130): Elaborated megafunction instantiation "CodeMemory_Interface:MEMCODE|BootBlock:BB0|altsyncram:altsyncram_component|altsyncram_ird1:auto_generated|sld_mod_ram_rom:mgl_prim2"
 Info (12133): Instantiated megafunction "CodeMemory_Interface:MEMCODE|BootBlock:BB0|altsyncram:altsyncram_component|altsyncram_ird1:auto_generated|sld_mod_ram_rom:mgl_prim2" with the following parameter:
@@ -4997,8 +4993,9 @@ Info (12128): Elaborating entity "altsyncram_bvk1" for hierarchy "CodeMemory_Int
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_6eg2.tdf
     Info (12023): Found entity 1: altsyncram_6eg2
 Info (12128): Elaborating entity "altsyncram_6eg2" for hierarchy "CodeMemory_Interface:MEMCODE|UserCodeBlock:MB0|altsyncram:altsyncram_component|altsyncram_bvk1:auto_generated|altsyncram_6eg2:altsyncram1"
-Warning (113028): 2031 out of 2048 addresses are uninitialized. The Quartus II software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported.
-    Warning (113027): Addresses ranging from 17 to 2047 are not initialized
+Warning (113028): 4081 out of 4096 addresses are uninitialized. The Quartus II software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported.
+    Warning (113027): Addresses ranging from 15 to 4095 are not initialized
+Critical Warning (127004): Memory depth (2048) in the design file differs from memory depth (4096) in the Memory Initialization File "C:/Users/cris/Documents/work/unb/OAC/labs/lab5/MIPS-PUM-v4.95/Core/user_code.mif" -- truncated remaining initial content value to fit RAM
 Info (12128): Elaborating entity "sld_mod_ram_rom" for hierarchy "CodeMemory_Interface:MEMCODE|UserCodeBlock:MB0|altsyncram:altsyncram_component|altsyncram_bvk1:auto_generated|sld_mod_ram_rom:mgl_prim2"
 Info (12130): Elaborated megafunction instantiation "CodeMemory_Interface:MEMCODE|UserCodeBlock:MB0|altsyncram:altsyncram_component|altsyncram_bvk1:auto_generated|sld_mod_ram_rom:mgl_prim2"
 Info (12133): Instantiated megafunction "CodeMemory_Interface:MEMCODE|UserCodeBlock:MB0|altsyncram:altsyncram_component|altsyncram_bvk1:auto_generated|sld_mod_ram_rom:mgl_prim2" with the following parameter:
@@ -5035,8 +5032,8 @@ Info (12128): Elaborating entity "altsyncram_37l1" for hierarchy "CodeMemory_Int
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_clg2.tdf
     Info (12023): Found entity 1: altsyncram_clg2
 Info (12128): Elaborating entity "altsyncram_clg2" for hierarchy "CodeMemory_Interface:MEMCODE|SysCodeBlock:MB1|altsyncram:altsyncram_component|altsyncram_37l1:auto_generated|altsyncram_clg2:altsyncram1"
-Warning (113028): 294 out of 2048 addresses are uninitialized. The Quartus II software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported.
-    Warning (113027): Addresses ranging from 1754 to 2047 are not initialized
+Warning (113028): 319 out of 2048 addresses are uninitialized. The Quartus II software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported.
+    Warning (113027): Addresses ranging from 1729 to 2047 are not initialized
 Info (12128): Elaborating entity "sld_mod_ram_rom" for hierarchy "CodeMemory_Interface:MEMCODE|SysCodeBlock:MB1|altsyncram:altsyncram_component|altsyncram_37l1:auto_generated|sld_mod_ram_rom:mgl_prim2"
 Info (12130): Elaborated megafunction instantiation "CodeMemory_Interface:MEMCODE|SysCodeBlock:MB1|altsyncram:altsyncram_component|altsyncram_37l1:auto_generated|sld_mod_ram_rom:mgl_prim2"
 Info (12133): Instantiated megafunction "CodeMemory_Interface:MEMCODE|SysCodeBlock:MB1|altsyncram:altsyncram_component|altsyncram_37l1:auto_generated|sld_mod_ram_rom:mgl_prim2" with the following parameter:
@@ -5796,19 +5793,19 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
 Warning (21074): Design contains 2 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "iCLK_28"
     Warning (15610): No output dependent on input pin "iUART_RTS"
-Info (21057): Implemented 18700 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 18703 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 33 input pins
     Info (21059): Implemented 491 output pins
     Info (21060): Implemented 48 bidirectional pins
-    Info (21061): Implemented 17584 logic cells
+    Info (21061): Implemented 17587 logic cells
     Info (21064): Implemented 506 RAM segments
     Info (21065): Implemented 3 PLLs
     Info (21062): Implemented 34 DSP elements
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 232 warnings
-    Info: Peak virtual memory: 620 megabytes
-    Info: Processing ended: Fri Jun 23 10:26:52 2017
-    Info: Elapsed time: 00:02:17
-    Info: Total CPU time (on all processors): 00:01:49
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 229 warnings
+    Info: Peak virtual memory: 657 megabytes
+    Info: Processing ended: Mon Jun 26 10:19:06 2017
+    Info: Elapsed time: 00:02:01
+    Info: Total CPU time (on all processors): 00:01:36
 
 
 +------------------------------------------+

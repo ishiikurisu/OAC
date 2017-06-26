@@ -14,8 +14,8 @@ INICIO:	ori $t0,$zero,1
 	lw $t0,4($t1)		# hazard de dado ???
 	bne $t0,0xA,ERRO	# hazard de dado $at e controle
 	lui $t0,0xCCCC
-FIM: 	j FIM			# hazard de controle
+#FIM: 	j FIM			# hazard de controle
 ERRO:	lui $t0,0xEEEE
-FIM1:	j FIM1			# hazard de controle
+#FIM1:	j FIM1			# hazard de controle
 	lui $t0,0x0000	
 
