@@ -1,5 +1,5 @@
 Flow report for TopDE-FastCompilation
-Mon Jun 26 11:05:04 2017
+Mon Jun 26 20:40:21 2017
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -40,7 +40,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Flow Summary                                                                    ;
 +------------------------------------+--------------------------------------------+
-; Flow Status                        ; Successful - Mon Jun 26 11:05:04 2017      ;
+; Flow Status                        ; Successful - Mon Jun 26 20:40:21 2017      ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; TopDE-FastCompilation                      ;
 ; Top-level Entity Name              ; TopDE                                      ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+-----------------------+
 ; Option            ; Setting               ;
 +-------------------+-----------------------+
-; Start date & time ; 06/26/2017 10:56:37   ;
+; Start date & time ; 06/26/2017 20:30:11   ;
 ; Main task         ; Compilation           ;
 ; Revision Name     ; TopDE-FastCompilation ;
 +-------------------+-----------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------------------------------------------------------------------------+-----------------------+-------------+----------------+
 ; Assignment Name                     ; Value                                                                                                   ; Default Value         ; Entity Name ; Section Id     ;
 +-------------------------------------+---------------------------------------------------------------------------------------------------------+-----------------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 102021913922901.149848539605428                                                                         ; --                    ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 102021913922901.149851980804992                                                                         ; --                    ; --          ; --             ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                                                                                     ; --                    ; --          ; eda_simulation ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                                                                                             ; --                    ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)                                                                               ; <None>                ; --          ; --             ;
@@ -150,14 +150,14 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:01:26     ; 1.0                     ; 664 MB              ; 00:01:23                           ;
-; Fitter                    ; 00:04:41     ; 1.0                     ; 987 MB              ; 00:04:41                           ;
-; Assembler                 ; 00:00:06     ; 1.0                     ; 499 MB              ; 00:00:06                           ;
-; TimeQuest Timing Analyzer ; 00:00:12     ; 1.0                     ; 664 MB              ; 00:00:11                           ;
-; EDA Netlist Writer        ; 00:00:14     ; 1.0                     ; 591 MB              ; 00:00:13                           ;
-; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 523 MB              ; 00:00:02                           ;
-; EDA Netlist Writer        ; 00:00:14     ; 1.0                     ; 607 MB              ; 00:00:13                           ;
-; Total                     ; 00:06:55     ; --                      ; --                  ; 00:06:49                           ;
+; Analysis & Synthesis      ; 00:01:58     ; 1.0                     ; 671 MB              ; 00:01:48                           ;
+; Fitter                    ; 00:05:52     ; 1.0                     ; 986 MB              ; 00:05:45                           ;
+; Assembler                 ; 00:00:07     ; 1.0                     ; 496 MB              ; 00:00:07                           ;
+; TimeQuest Timing Analyzer ; 00:00:13     ; 1.0                     ; 667 MB              ; 00:00:12                           ;
+; EDA Netlist Writer        ; 00:00:15     ; 1.0                     ; 591 MB              ; 00:00:15                           ;
+; EDA Netlist Writer        ; 00:00:03     ; 1.0                     ; 523 MB              ; 00:00:02                           ;
+; EDA Netlist Writer        ; 00:00:22     ; 1.0                     ; 607 MB              ; 00:00:21                           ;
+; Total                     ; 00:08:50     ; --                      ; --                  ; 00:08:30                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
