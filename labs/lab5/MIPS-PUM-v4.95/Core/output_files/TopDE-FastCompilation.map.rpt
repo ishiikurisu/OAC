@@ -1,5 +1,5 @@
 Analysis & Synthesis report for TopDE-FastCompilation
-Mon Jun 26 20:32:15 2017
+Tue Jun 27 22:07:27 2017
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -147,13 +147,13 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Jun 26 20:32:14 2017      ;
+; Analysis & Synthesis Status        ; Successful - Tue Jun 27 22:07:27 2017      ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; TopDE-FastCompilation                      ;
 ; Top-level Entity Name              ; TopDE                                      ;
 ; Family                             ; Cyclone II                                 ;
-; Total logic elements               ; 17,451                                     ;
-;     Total combinational functions  ; 15,748                                     ;
+; Total logic elements               ; 17,449                                     ;
+;     Total combinational functions  ; 15,746                                     ;
 ;     Dedicated logic registers      ; 4,006                                      ;
 ; Total registers                    ; 4006                                       ;
 ; Total pins                         ; 568                                        ;
@@ -453,16 +453,16 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+---------------------------+
 ; Resource                                    ; Usage                     ;
 +---------------------------------------------+---------------------------+
-; Estimated Total logic elements              ; 17,451                    ;
+; Estimated Total logic elements              ; 17,449                    ;
 ;                                             ;                           ;
-; Total combinational functions               ; 15748                     ;
+; Total combinational functions               ; 15746                     ;
 ; Logic element usage by number of LUT inputs ;                           ;
-;     -- 4 input functions                    ; 8672                      ;
-;     -- 3 input functions                    ; 5231                      ;
-;     -- <=2 input functions                  ; 1845                      ;
+;     -- 4 input functions                    ; 8670                      ;
+;     -- 3 input functions                    ; 5230                      ;
+;     -- <=2 input functions                  ; 1846                      ;
 ;                                             ;                           ;
 ; Logic elements by mode                      ;                           ;
-;     -- normal mode                          ; 11790                     ;
+;     -- normal mode                          ; 11788                     ;
 ;     -- arithmetic mode                      ; 3958                      ;
 ;                                             ;                           ;
 ; Total registers                             ; 4006                      ;
@@ -477,7 +477,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;                                             ;                           ;
 ; Maximum fan-out node                        ; CLOCK_Interface:CLKI0|CLK ;
 ; Maximum fan-out                             ; 1527                      ;
-; Total fan-out                               ; 78032                     ;
+; Total fan-out                               ; 78023                     ;
 ; Average fan-out                             ; 3.74                      ;
 +---------------------------------------------+---------------------------+
 
@@ -487,7 +487,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                                             ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                       ; Library Name ;
 +------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |TopDE                                                                 ; 15748 (94)        ; 4006 (0)     ; 853691      ; 34           ; 4       ; 15        ; 568  ; 0            ; |TopDE                                                                                                                                                                                                                                    ;              ;
+; |TopDE                                                                 ; 15746 (94)        ; 4006 (0)     ; 853691      ; 34           ; 4       ; 15        ; 568  ; 0            ; |TopDE                                                                                                                                                                                                                                    ;              ;
 ;    |AudioCODEC_Interface:Audio0|                                       ; 482 (197)         ; 250 (106)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopDE|AudioCODEC_Interface:Audio0                                                                                                                                                                                                        ;              ;
 ;       |AudioVideo_PLL:av_pll|                                          ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopDE|AudioCODEC_Interface:Audio0|AudioVideo_PLL:av_pll                                                                                                                                                                                  ;              ;
 ;          |altpll:altpll_component|                                     ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopDE|AudioCODEC_Interface:Audio0|AudioVideo_PLL:av_pll|altpll:altpll_component                                                                                                                                                          ;              ;
@@ -679,8 +679,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;             |altpll:altpll_component|                                  ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopDE|VGA_Interface:VGA0|VgaAdapter:VGA0|VgaPll:xx|altpll:altpll_component                                                                                                                                                               ;              ;
 ;    |lfsr_interface:lfsr|                                               ; 6 (5)             ; 32 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopDE|lfsr_interface:lfsr                                                                                                                                                                                                                ;              ;
 ;       |lfsr_word:lfsr|                                                 ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopDE|lfsr_interface:lfsr|lfsr_word:lfsr                                                                                                                                                                                                 ;              ;
-;    |sld_hub:auto_hub|                                                  ; 244 (1)           ; 143 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopDE|sld_hub:auto_hub                                                                                                                                                                                                                   ;              ;
-;       |sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|                   ; 243 (202)         ; 143 (114)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopDE|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst                                                                                                                                                                      ;              ;
+;    |sld_hub:auto_hub|                                                  ; 242 (1)           ; 143 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopDE|sld_hub:auto_hub                                                                                                                                                                                                                   ;              ;
+;       |sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|                   ; 241 (200)         ; 143 (114)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopDE|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst                                                                                                                                                                      ;              ;
 ;          |sld_rom_sr:hub_info_reg|                                     ; 24 (24)           ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopDE|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg                                                                                                                                              ;              ;
 ;          |sld_shadow_jsm:shadow_jsm|                                   ; 17 (17)           ; 19 (19)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopDE|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_shadow_jsm:shadow_jsm                                                                                                                                            ;              ;
 +------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
@@ -1425,6 +1425,22 @@ Encoding Type:  One-Hot
 ; 34:1               ; 2 bits    ; 44 LEs        ; 32 LEs               ; 12 LEs                 ; No         ; |TopDE|CPU:CPU0|Datapath_PIPEM:Processor|ALU:ALUunit|Mux28                                                                                                                                                        ;
 ; 38:1               ; 2 bits    ; 50 LEs        ; 34 LEs               ; 16 LEs                 ; No         ; |TopDE|CPU:CPU0|Datapath_PIPEM:Processor|ALU:ALUunit|Mux2                                                                                                                                                         ;
 ; 264:1              ; 4 bits    ; 704 LEs       ; 688 LEs              ; 16 LEs                 ; No         ; |TopDE|VGA_Interface:VGA0|VgaAdapter:VGA0|RegDisplay:RegDisp0|Mux3                                                                                                                                                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |TopDE|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|hub_minor_ver_reg[2]                                                                                                                         ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |TopDE|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|mixer_addr_reg[4]                                                                                                                            ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |TopDE|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|irf_reg[1][4]                                                                                                                                ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |TopDE|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|irf_reg[2][3]                                                                                                                                ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |TopDE|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|irf_reg[3][5]                                                                                                                                ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |TopDE|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|irf_reg[4][1]                                                                                                                                ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |TopDE|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|irf_reg[5][1]                                                                                                                                ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 6 LEs                ; 12 LEs                 ; Yes        ; |TopDE|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg|word_counter[3]                                                                                                      ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |TopDE|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|shadow_irf_reg[1][1]                                                                                                                         ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |TopDE|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|shadow_irf_reg[2][1]                                                                                                                         ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |TopDE|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|shadow_irf_reg[3][4]                                                                                                                         ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |TopDE|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|shadow_irf_reg[4][0]                                                                                                                         ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |TopDE|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|shadow_irf_reg[5][3]                                                                                                                         ;
+; 34:1               ; 4 bits    ; 88 LEs        ; 56 LEs               ; 32 LEs                 ; Yes        ; |TopDE|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|design_hash_reg[1]                                                                                                                           ;
+; 52:1               ; 4 bits    ; 136 LEs       ; 48 LEs               ; 88 LEs                 ; Yes        ; |TopDE|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg|WORD_SR[1]                                                                                                           ;
+; 14:1               ; 6 bits    ; 54 LEs        ; 24 LEs               ; 30 LEs                 ; Yes        ; |TopDE|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|irsr_reg[0]                                                                                                                                  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -4483,13 +4499,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------------+-------+-------+------------+---------------------------------------------------------------------------------------------------------------+
 
 
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:01:36     ;
-+----------------+--------------+
++---------------------------------+
+; Elapsed Time Per Partition      ;
++------------------+--------------+
+; Partition Name   ; Elapsed Time ;
++------------------+--------------+
+; Top              ; 00:01:16     ;
+; sld_hub:auto_hub ; 00:00:00     ;
++------------------+--------------+
 
 
 +-------------------------------+
@@ -4498,7 +4515,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Mon Jun 26 20:30:07 2017
+    Info: Processing started: Tue Jun 27 22:05:49 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off TopDE-FastCompilation -c TopDE-FastCompilation
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file topde.v
@@ -5761,25 +5778,29 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "OControlState[5]" is stuck at VCC
     Warning (13410): Pin "OControlState[6]" is stuck at GND
 Info (17049): 38 registers lost all their fanouts during netlist optimizations.
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "sld_hub:auto_hub|receive[0][0]" is stuck at GND
 Info (144001): Generated suppressed messages file C:/Users/cris/Documents/work/unb/OAC/labs/lab5/MIPS-PUM-v4.95/Core/output_files/TopDE-FastCompilation.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 3 node(s), including 0 DDIO, 3 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 2 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "iCLK_28"
     Warning (15610): No output dependent on input pin "iUART_RTS"
-Info (21057): Implemented 18703 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 18701 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 33 input pins
     Info (21059): Implemented 491 output pins
     Info (21060): Implemented 48 bidirectional pins
-    Info (21061): Implemented 17587 logic cells
+    Info (21061): Implemented 17585 logic cells
     Info (21064): Implemented 506 RAM segments
     Info (21065): Implemented 3 PLLs
     Info (21062): Implemented 34 DSP elements
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 222 warnings
-    Info: Peak virtual memory: 671 megabytes
-    Info: Processing ended: Mon Jun 26 20:32:15 2017
-    Info: Elapsed time: 00:02:08
-    Info: Total CPU time (on all processors): 00:01:56
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 224 warnings
+    Info: Peak virtual memory: 673 megabytes
+    Info: Processing ended: Tue Jun 27 22:07:27 2017
+    Info: Elapsed time: 00:01:38
+    Info: Total CPU time (on all processors): 00:01:31
 
 
 +------------------------------------------+

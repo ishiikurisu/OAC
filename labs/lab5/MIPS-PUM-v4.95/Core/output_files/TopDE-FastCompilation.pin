@@ -69,13 +69,13 @@ CHIP  "TopDE-FastCompilation"  ASSIGNED TO AN: EP2C70F896C6
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
 -------------------------------------------------------------------------------------------------------------
 GND                          : A2        : gnd    :                   :         :           :                
-OwInstr[10]                  : A3        : output : 3.3-V LVTTL       :         : 3         : N              
+OIReadData[24]               : A3        : output : 3.3-V LVTTL       :         : 3         : N              
 VCCIO3                       : A4        : power  :                   : 3.3V    : 3         :                
-OwInstr[11]                  : A5        : output : 3.3-V LVTTL       :         : 3         : N              
-OwInstr[14]                  : A6        : output : 3.3-V LVTTL       :         : 3         : N              
-OIAddress[18]                : A7        : output : 3.3-V LVTTL       :         : 3         : N              
-OwPC[7]                      : A8        : output : 3.3-V LVTTL       :         : 3         : N              
-OIAddress[10]                : A9        : output : 3.3-V LVTTL       :         : 3         : N              
+OIReadData[19]               : A5        : output : 3.3-V LVTTL       :         : 3         : N              
+OwInstr[5]                   : A6        : output : 3.3-V LVTTL       :         : 3         : N              
+OwRegDisp[5]                 : A7        : output : 3.3-V LVTTL       :         : 3         : N              
+OwPC[11]                     : A8        : output : 3.3-V LVTTL       :         : 3         : N              
+OwPC[20]                     : A9        : output : 3.3-V LVTTL       :         : 3         : N              
 oVGA_G[0]                    : A10       : output : 3.3-V LVTTL       :         : 3         : Y              
 oVGA_G[2]                    : A11       : output : 3.3-V LVTTL       :         : 3         : Y              
 oVGA_G[5]                    : A12       : output : 3.3-V LVTTL       :         : 3         : Y              
@@ -86,26 +86,26 @@ VCCIO4                       : A16       : power  :                   : 3.3V    
 oVGA_B[2]                    : A17       : output : 3.3-V LVTTL       :         : 4         : Y              
 GND                          : A18       : gnd    :                   :         :           :                
 oVGA_B[7]                    : A19       : output : 3.3-V LVTTL       :         : 4         : Y              
-OIReadData[19]               : A20       : output : 3.3-V LVTTL       :         : 4         : N              
-OwInstr[1]                   : A21       : output : 3.3-V LVTTL       :         : 4         : N              
-OIReadData[6]                : A22       : output : 3.3-V LVTTL       :         : 4         : N              
-OwInstr[4]                   : A23       : output : 3.3-V LVTTL       :         : 4         : N              
-OIReadData[12]               : A24       : output : 3.3-V LVTTL       :         : 4         : N              
-OIReadData[15]               : A25       : output : 3.3-V LVTTL       :         : 4         : N              
-OwInstr[20]                  : A26       : output : 3.3-V LVTTL       :         : 4         : N              
+ODReadData[9]                : A20       : output : 3.3-V LVTTL       :         : 4         : N              
+ODReadData[5]                : A21       : output : 3.3-V LVTTL       :         : 4         : N              
+ODReadData[25]               : A22       : output : 3.3-V LVTTL       :         : 4         : N              
+ODReadData[0]                : A23       : output : 3.3-V LVTTL       :         : 4         : N              
+ODByteEnable[2]              : A24       : output : 3.3-V LVTTL       :         : 4         : N              
+OwInstr[2]                   : A25       : output : 3.3-V LVTTL       :         : 4         : N              
+OwInstr[26]                  : A26       : output : 3.3-V LVTTL       :         : 4         : N              
 VCCIO4                       : A27       : power  :                   : 3.3V    : 4         :                
-OControlState[6]             : A28       : output : 3.3-V LVTTL       :         : 4         : N              
+OwRegDispFPU[13]             : A28       : output : 3.3-V LVTTL       :         : 4         : N              
 GND                          : A29       : gnd    :                   :         :           :                
-OwRegDisp[23]                : AA1       : output : 3.3-V LVTTL       :         : 1         : N              
-OwRegDisp[26]                : AA2       : output : 3.3-V LVTTL       :         : 1         : N              
-ODReadData[17]               : AA3       : output : 3.3-V LVTTL       :         : 1         : N              
-ODAddress[31]                : AA4       : output : 3.3-V LVTTL       :         : 1         : N              
-OwPC[24]                     : AA5       : output : 3.3-V LVTTL       :         : 1         : N              
-OIAddress[24]                : AA6       : output : 3.3-V LVTTL       :         : 1         : N              
-ODWriteData[31]              : AA7       : output : 3.3-V LVTTL       :         : 1         : N              
-ODWriteData[20]              : AA8       : output : 3.3-V LVTTL       :         : 1         : N              
-ODAddress[15]                : AA9       : output : 3.3-V LVTTL       :         : 1         : N              
-OwRegDispFPU[2]              : AA10      : output : 3.3-V LVTTL       :         : 1         : N              
+OwPC[19]                     : AA1       : output : 3.3-V LVTTL       :         : 1         : N              
+OIAddress[19]                : AA2       : output : 3.3-V LVTTL       :         : 1         : N              
+OIAddress[22]                : AA3       : output : 3.3-V LVTTL       :         : 1         : N              
+OIAddress[15]                : AA4       : output : 3.3-V LVTTL       :         : 1         : N              
+OwPC[1]                      : AA5       : output : 3.3-V LVTTL       :         : 1         : N              
+OIReadData[6]                : AA6       : output : 3.3-V LVTTL       :         : 1         : N              
+GND*                         : AA7       :        :                   :         : 1         :                
+ODWriteData[27]              : AA8       : output : 3.3-V LVTTL       :         : 1         : N              
+GND*                         : AA9       :        :                   :         : 1         :                
+OwRegDispFPU[23]             : AA10      : output : 3.3-V LVTTL       :         : 1         : N              
 GND                          : AA11      : gnd    :                   :         :           :                
 GND                          : AA12      : gnd    :                   :         :           :                
 VCCINT                       : AA13      : power  :                   : 1.2V    :           :                
@@ -120,19 +120,19 @@ GND_PLL4                     : AA21      : gnd    :                   :         
 GND_PLL4                     : AA22      : gnd    :                   :         :           :                
 iSW[0]                       : AA23      : input  : 3.3-V LVTTL       :         : 6         : Y              
 oLEDG[7]                     : AA24      : output : 3.3-V LVTTL       :         : 6         : Y              
-ODByteEnable[2]              : AA25      : output : 3.3-V LVTTL       :         : 6         : N              
-ODReadData[26]               : AA26      : output : 3.3-V LVTTL       :         : 6         : N              
+GND*                         : AA25      :        :                   :         : 6         :                
+GND*                         : AA26      :        :                   :         : 6         :                
 oLEDG[6]                     : AA27      : output : 3.3-V LVTTL       :         : 6         : Y              
-ODReadData[31]               : AA28      : output : 3.3-V LVTTL       :         : 6         : N              
-ODReadData[11]               : AA29      : output : 3.3-V LVTTL       :         : 6         : N              
-ODReadData[27]               : AA30      : output : 3.3-V LVTTL       :         : 6         : N              
-ODReadData[6]                : AB1       : output : 3.3-V LVTTL       :         : 1         : N              
-ODReadData[15]               : AB2       : output : 3.3-V LVTTL       :         : 1         : N              
+GND*                         : AA28      :        :                   :         : 6         :                
+ODWriteData[30]              : AA29      : output : 3.3-V LVTTL       :         : 6         : N              
+GND*                         : AA30      :        :                   :         : 6         :                
+OwPC[22]                     : AB1       : output : 3.3-V LVTTL       :         : 1         : N              
+OwPC[15]                     : AB2       : output : 3.3-V LVTTL       :         : 1         : N              
 VCCIO1                       : AB3       : power  :                   : 3.3V    : 1         :                
 GND                          : AB4       : gnd    :                   :         :           :                
-OwRegDispFPU[9]              : AB5       : output : 3.3-V LVTTL       :         : 1         : N              
-ODWriteData[19]              : AB6       : output : 3.3-V LVTTL       :         : 1         : N              
-GND*                         : AB7       :        :                   :         : 1         :                
+ODAddress[7]                 : AB5       : output : 3.3-V LVTTL       :         : 1         : N              
+OwRegDisp[16]                : AB6       : output : 3.3-V LVTTL       :         : 1         : N              
+OflagBank[2]                 : AB7       : output : 3.3-V LVTTL       :         : 1         : N              
 GND_PLL1                     : AB8       : gnd    :                   :         :           :                
 VCCD_PLL1                    : AB9       : power  :                   : 1.2V    :           :                
 GND                          : AB10      : gnd    :                   :         :           :                
@@ -148,21 +148,21 @@ oHEX2_D[5]                   : AB19      : output : 3.3-V LVTTL       :         
 VCCIO7                       : AB20      : power  :                   : 3.3V    : 7         :                
 GND                          : AB21      : gnd    :                   :         :           :                
 VCCD_PLL4                    : AB22      : power  :                   : 1.2V    :           :                
-OwRegDispFPU[11]             : AB23      : output : 3.3-V LVTTL       :         : 6         : N              
+GND*                         : AB23      :        :                   :         : 6         :                
 OwRegDispFPU[1]              : AB24      : output : 3.3-V LVTTL       :         : 6         : N              
 iSW[2]                       : AB25      : input  : 3.3-V LVTTL       :         : 6         : Y              
 iSW[1]                       : AB26      : input  : 3.3-V LVTTL       :         : 6         : Y              
 GND                          : AB27      : gnd    :                   :         :           :                
 VCCIO6                       : AB28      : power  :                   : 3.3V    : 6         :                
-ODReadData[10]               : AB29      : output : 3.3-V LVTTL       :         : 6         : N              
-ODReadData[25]               : AB30      : output : 3.3-V LVTTL       :         : 6         : N              
-ODReadData[7]                : AC1       : output : 3.3-V LVTTL       :         : 1         : N              
-OIAddress[25]                : AC2       : output : 3.3-V LVTTL       :         : 1         : N              
-OIAddress[22]                : AC3       : output : 3.3-V LVTTL       :         : 1         : N              
-ODReadData[14]               : AC4       : output : 3.3-V LVTTL       :         : 1         : N              
-GND*                         : AC5       :        :                   :         : 1         :                
-ODAddress[19]                : AC6       : output : 3.3-V LVTTL       :         : 1         : N              
-OControlState[4]             : AC7       : output : 3.3-V LVTTL       :         : 1         : N              
+OflagBank[1]                 : AB29      : output : 3.3-V LVTTL       :         : 6         : N              
+ODAddress[17]                : AB30      : output : 3.3-V LVTTL       :         : 6         : N              
+OwPC[0]                      : AC1       : output : 3.3-V LVTTL       :         : 1         : N              
+OIReadData[12]               : AC2       : output : 3.3-V LVTTL       :         : 1         : N              
+OwInstr[6]                   : AC3       : output : 3.3-V LVTTL       :         : 1         : N              
+OwInstr[12]                  : AC4       : output : 3.3-V LVTTL       :         : 1         : N              
+OwRegDispFPU[2]              : AC5       : output : 3.3-V LVTTL       :         : 1         : N              
+ODAddress[20]                : AC6       : output : 3.3-V LVTTL       :         : 1         : N              
+GND*                         : AC7       :        :                   :         : 1         :                
 GND_PLL1                     : AC8       : gnd    :                   :         :           :                
 VCCA_PLL1                    : AC9       : power  :                   : 1.2V    :           :                
 GNDA_PLL1                    : AC10      : gnd    :                   :         :           :                
@@ -180,17 +180,17 @@ oSRAM_BE_N[0]                : AC21      : output : 3.3-V LVTTL       :         
 VCCA_PLL4                    : AC22      : power  :                   : 1.2V    :           :                
 iSW[6]                       : AC23      : input  : 3.3-V LVTTL       :         : 6         : Y              
 iSW[5]                       : AC24      : input  : 3.3-V LVTTL       :         : 6         : Y              
-ODByteEnable[1]              : AC25      : output : 3.3-V LVTTL       :         : 6         : N              
+OwRegDispFPU[11]             : AC25      : output : 3.3-V LVTTL       :         : 6         : N              
 iSW[4]                       : AC26      : input  : 3.3-V LVTTL       :         : 6         : Y              
 iSW[3]                       : AC27      : input  : 3.3-V LVTTL       :         : 6         : Y              
-ODReadData[1]                : AC28      : output : 3.3-V LVTTL       :         : 6         : N              
-ODReadData[5]                : AC29      : output : 3.3-V LVTTL       :         : 6         : N              
-ODReadData[2]                : AC30      : output : 3.3-V LVTTL       :         : 6         : N              
-ODReadData[0]                : AD1       : output : 3.3-V LVTTL       :         : 1         : N              
-OwPC[22]                     : AD2       : output : 3.3-V LVTTL       :         : 1         : N              
-OwPC[31]                     : AD3       : output : 3.3-V LVTTL       :         : 1         : N              
-OIAddress[31]                : AD4       : output : 3.3-V LVTTL       :         : 1         : N              
-GND*                         : AD5       :        :                   :         : 1         :                
+OwRegDispFPU[3]              : AC28      : output : 3.3-V LVTTL       :         : 6         : N              
+OControlState[1]             : AC29      : output : 3.3-V LVTTL       :         : 6         : N              
+OwRegDispFPU[20]             : AC30      : output : 3.3-V LVTTL       :         : 6         : N              
+OwInstr[11]                  : AD1       : output : 3.3-V LVTTL       :         : 1         : N              
+OIReadData[11]               : AD2       : output : 3.3-V LVTTL       :         : 1         : N              
+OIAddress[1]                 : AD3       : output : 3.3-V LVTTL       :         : 1         : N              
+OwInstr[31]                  : AD4       : output : 3.3-V LVTTL       :         : 1         : N              
+ODAddress[19]                : AD5       : output : 3.3-V LVTTL       :         : 1         : N              
 OCLK100                      : AD6       : output : 3.3-V LVTTL       :         : 1         : N              
 oSRAM_CLK                    : AD7       : output : 3.3-V LVTTL       :         : 1         : Y              
 oLEDR[16]                    : AD8       : output : 3.3-V LVTTL       :         : 8         : Y              
@@ -204,22 +204,22 @@ iCLK_50                      : AD15      : input  : 3.3-V LVTTL       :         
 oSRAM_ADV_N                  : AD16      : output : 3.3-V LVTTL       :         : 7         : Y              
 oHEX1_D[6]                   : AD17      : output : 3.3-V LVTTL       :         : 7         : Y              
 oSRAM_OE_N                   : AD18      : output : 3.3-V LVTTL       :         : 7         : Y              
-ODWriteData[8]               : AD19      : output : 3.3-V LVTTL       :         : 7         : N              
+ODWriteData[14]              : AD19      : output : 3.3-V LVTTL       :         : 7         : N              
 oSRAM_BE_N[2]                : AD20      : output : 3.3-V LVTTL       :         : 7         : Y              
-ODByteEnable[0]              : AD21      : output : 3.3-V LVTTL       :         : 7         : N              
+ODWriteData[6]               : AD21      : output : 3.3-V LVTTL       :         : 7         : N              
 oSRAM_CE3_N                  : AD22      : output : 3.3-V LVTTL       :         : 7         : Y              
 GNDA_PLL4                    : AD23      : gnd    :                   :         :           :                
 iSW[8]                       : AD24      : input  : 3.3-V LVTTL       :         : 6         : Y              
 iSW[7]                       : AD25      : input  : 3.3-V LVTTL       :         : 6         : Y              
 GND*                         : AD26      :        :                   :         : 6         :                
-ODWriteData[27]              : AD27      : output : 3.3-V LVTTL       :         : 6         : N              
-ODAddress[18]                : AD28      : output : 3.3-V LVTTL       :         : 6         : N              
-ODReadData[20]               : AD29      : output : 3.3-V LVTTL       :         : 6         : N              
-ODReadData[22]               : AD30      : output : 3.3-V LVTTL       :         : 6         : N              
-OwRegDispFPU[0]              : AE1       : output : 3.3-V LVTTL       :         : 1         : N              
-OwRegDispFPU[28]             : AE2       : output : 3.3-V LVTTL       :         : 1         : N              
-OwRegDispFPU[4]              : AE3       : output : 3.3-V LVTTL       :         : 1         : N              
-ODAddress[7]                 : AE4       : output : 3.3-V LVTTL       :         : 1         : N              
+GND*                         : AD27      :        :                   :         : 6         :                
+GND*                         : AD28      :        :                   :         : 6         :                
+ODByteEnable[1]              : AD29      : output : 3.3-V LVTTL       :         : 6         : N              
+OControlState[3]             : AD30      : output : 3.3-V LVTTL       :         : 6         : N              
+OIAddress[26]                : AE1       : output : 3.3-V LVTTL       :         : 1         : N              
+OwPC[31]                     : AE2       : output : 3.3-V LVTTL       :         : 1         : N              
+GND*                         : AE3       :        :                   :         : 1         :                
+OwRegDispFPU[9]              : AE4       : output : 3.3-V LVTTL       :         : 1         : N              
 VCCIO1                       : AE5       : power  :                   : 3.3V    : 1         :                
 GND                          : AE6       : gnd    :                   :         :           :                
 oHEX2_D[0]                   : AE7       : output : 3.3-V LVTTL       :         : 8         : Y              
@@ -235,20 +235,20 @@ oHEX1_D[1]                   : AE16      : output : 3.3-V LVTTL       :         
 oHEX1_D[4]                   : AE17      : output : 3.3-V LVTTL       :         : 7         : Y              
 GND                          : AE18      : gnd    :                   :         :           :                
 oHEX2_D[6]                   : AE19      : output : 3.3-V LVTTL       :         : 7         : Y              
-ODAddress[5]                 : AE20      : output : 3.3-V LVTTL       :         : 7         : N              
+ODAddress[2]                 : AE20      : output : 3.3-V LVTTL       :         : 7         : N              
 VCCIO7                       : AE21      : power  :                   : 3.3V    : 7         :                
 GND                          : AE22      : gnd    :                   :         :           :                
-ODWriteData[24]              : AE23      : output : 3.3-V LVTTL       :         : 7         : N              
-ODWriteData[17]              : AE24      : output : 3.3-V LVTTL       :         : 7         : N              
+ODWriteData[21]              : AE23      : output : 3.3-V LVTTL       :         : 7         : N              
+ODWriteData[19]              : AE24      : output : 3.3-V LVTTL       :         : 7         : N              
 GND                          : AE25      : gnd    :                   :         :           :                
 VCCIO6                       : AE26      : power  :                   : 3.3V    : 6         :                
 iSW[9]                       : AE27      : input  : 3.3-V LVTTL       :         : 6         : Y              
 GND*                         : AE28      :        :                   :         : 6         :                
-ODReadData[19]               : AE29      : output : 3.3-V LVTTL       :         : 6         : N              
-ODReadData[21]               : AE30      : output : 3.3-V LVTTL       :         : 6         : N              
+OwRegDispFPU[25]             : AE29      : output : 3.3-V LVTTL       :         : 6         : N              
+OwRegDispFPU[19]             : AE30      : output : 3.3-V LVTTL       :         : 6         : N              
 GND*                         : AF1       :        :                   :         : 1         :                
 GND*                         : AF2       :        :                   :         : 1         :                
-GND*                         : AF3       :        :                   :         : 1         :                
+ODWriteData[18]              : AF3       : output : 3.3-V LVTTL       :         : 1         : N              
 GND*                         : AF4       :        :                   :         : 1         :                
 GND                          : AF5       : gnd    :                   :         :           :                
 VCCIO8                       : AF6       : power  :                   : 3.3V    : 8         :                
@@ -266,26 +266,26 @@ oHEX1_D[5]                   : AF17      : output : 3.3-V LVTTL       :         
 oSRAM_WE_N                   : AF18      : output : 3.3-V LVTTL       :         : 7         : Y              
 VCCIO7                       : AF19      : power  :                   : 3.3V    : 7         :                
 oSRAM_A[15]                  : AF20      : output : 3.3-V LVTTL       :         : 7         : Y              
-ODAddress[13]                : AF21      : output : 3.3-V LVTTL       :         : 7         : N              
+ODAddress[5]                 : AF21      : output : 3.3-V LVTTL       :         : 7         : N              
 ODAddress[4]                 : AF22      : output : 3.3-V LVTTL       :         : 7         : N              
 ODWriteData[26]              : AF23      : output : 3.3-V LVTTL       :         : 7         : N              
-ODWriteData[14]              : AF24      : output : 3.3-V LVTTL       :         : 7         : N              
+ODWriteData[9]               : AF24      : output : 3.3-V LVTTL       :         : 7         : N              
 VCCIO7                       : AF25      : power  :                   : 3.3V    : 7         :                
 GND                          : AF26      : gnd    :                   :         :           :                
-ODWriteData[25]              : AF27      : output : 3.3-V LVTTL       :         : 6         : N              
-ODWriteData[16]              : AF28      : output : 3.3-V LVTTL       :         : 6         : N              
-GND*                         : AF29      :        :                   :         : 6         :                
-ODAddress[17]                : AF30      : output : 3.3-V LVTTL       :         : 6         : N              
+OwRegDispFPU[15]             : AF27      : output : 3.3-V LVTTL       :         : 6         : N              
+OwRegDispFPU[8]              : AF28      : output : 3.3-V LVTTL       :         : 6         : N              
+OControlState[6]             : AF29      : output : 3.3-V LVTTL       :         : 6         : N              
+ODByteEnable[0]              : AF30      : output : 3.3-V LVTTL       :         : 6         : N              
 VCCIO1                       : AG1       : power  :                   : 3.3V    : 1         :                
-ODAddress[20]                : AG2       : output : 3.3-V LVTTL       :         : 1         : N              
-OControlState[2]             : AG3       : output : 3.3-V LVTTL       :         : 1         : N              
+OflagBank[5]                 : AG2       : output : 3.3-V LVTTL       :         : 1         : N              
+OControlState[4]             : AG3       : output : 3.3-V LVTTL       :         : 1         : N              
 oHEX2_D[3]                   : AG4       : output : 3.3-V LVTTL       :         : 8         : Y              
 oSRAM_A[5]                   : AG5       : output : 3.3-V LVTTL       :         : 8         : Y              
 oSRAM_A[4]                   : AG6       : output : 3.3-V LVTTL       :         : 8         : Y              
 oSRAM_A[3]                   : AG7       : output : 3.3-V LVTTL       :         : 8         : Y              
 oSRAM_A[0]                   : AG8       : output : 3.3-V LVTTL       :         : 8         : Y              
-ODWriteData[3]               : AG9       : output : 3.3-V LVTTL       :         : 8         : N              
-ODWriteEnable                : AG10      : output : 3.3-V LVTTL       :         : 8         : N              
+ODWriteData[5]               : AG9       : output : 3.3-V LVTTL       :         : 8         : N              
+ODAddress[15]                : AG10      : output : 3.3-V LVTTL       :         : 8         : N              
 GND                          : AG11      : gnd    :                   :         :           :                
 oSRAM_A[7]                   : AG12      : output : 3.3-V LVTTL       :         : 8         : Y              
 oHEX1_D[0]                   : AG13      : output : 3.3-V LVTTL       :         : 8         : Y              
@@ -297,17 +297,17 @@ oSRAM_GW_N                   : AG18      : output : 3.3-V LVTTL       :         
 oSRAM_CE2                    : AG19      : output : 3.3-V LVTTL       :         : 7         : Y              
 oSRAM_A[16]                  : AG20      : output : 3.3-V LVTTL       :         : 7         : Y              
 GND                          : AG21      : gnd    :                   :         :           :                
-ODAddress[9]                 : AG22      : output : 3.3-V LVTTL       :         : 7         : N              
+ODAddress[6]                 : AG22      : output : 3.3-V LVTTL       :         : 7         : N              
 ODAddress[11]                : AG23      : output : 3.3-V LVTTL       :         : 7         : N              
-ODWriteData[6]               : AG24      : output : 3.3-V LVTTL       :         : 7         : N              
-ODWriteData[10]              : AG25      : output : 3.3-V LVTTL       :         : 7         : N              
-ODWriteData[9]               : AG26      : output : 3.3-V LVTTL       :         : 7         : N              
-ODWriteData[11]              : AG27      : output : 3.3-V LVTTL       :         : 7         : N              
-ODByteEnable[3]              : AG28      : output : 3.3-V LVTTL       :         : 6         : N              
-OwRegDispFPU[8]              : AG29      : output : 3.3-V LVTTL       :         : 6         : N              
+ODAddress[13]                : AG24      : output : 3.3-V LVTTL       :         : 7         : N              
+ODWriteData[0]               : AG25      : output : 3.3-V LVTTL       :         : 7         : N              
+ODWriteData[11]              : AG26      : output : 3.3-V LVTTL       :         : 7         : N              
+ODWriteData[20]              : AG27      : output : 3.3-V LVTTL       :         : 7         : N              
+ODWriteData[25]              : AG28      : output : 3.3-V LVTTL       :         : 6         : N              
+OwRegDispFPU[6]              : AG29      : output : 3.3-V LVTTL       :         : 6         : N              
 VCCIO6                       : AG30      : power  :                   : 3.3V    : 6         :                
-OwRegDispFPU[12]             : AH1       : output : 3.3-V LVTTL       :         : 1         : N              
-ODWriteData[29]              : AH2       : output : 3.3-V LVTTL       :         : 1         : N              
+ODAddress[14]                : AH1       : output : 3.3-V LVTTL       :         : 1         : N              
+OwRegDispFPU[5]              : AH2       : output : 3.3-V LVTTL       :         : 1         : N              
 oLEDR[8]                     : AH3       : output : 3.3-V LVTTL       :         : 8         : Y              
 oLEDR[5]                     : AH4       : output : 3.3-V LVTTL       :         : 8         : Y              
 oHEX2_D[2]                   : AH5       : output : 3.3-V LVTTL       :         : 8         : Y              
@@ -327,15 +327,15 @@ SRAM_DQ[12]                  : AH18      : bidir  : 3.3-V LVTTL       :         
 oSRAM_CE1_N                  : AH19      : output : 3.3-V LVTTL       :         : 7         : Y              
 oSRAM_BE_N[3]                : AH20      : output : 3.3-V LVTTL       :         : 7         : Y              
 VCCIO7                       : AH21      : power  :                   : 3.3V    : 7         :                
-ODAddress[3]                 : AH22      : output : 3.3-V LVTTL       :         : 7         : N              
+ODAddress[9]                 : AH22      : output : 3.3-V LVTTL       :         : 7         : N              
 VCCIO7                       : AH23      : power  :                   : 3.3V    : 7         :                
-ODWriteData[4]               : AH24      : output : 3.3-V LVTTL       :         : 7         : N              
+ODWriteData[2]               : AH24      : output : 3.3-V LVTTL       :         : 7         : N              
 GND                          : AH25      : gnd    :                   :         :           :                
-ODWriteData[7]               : AH26      : output : 3.3-V LVTTL       :         : 7         : N              
-ODWriteData[15]              : AH27      : output : 3.3-V LVTTL       :         : 7         : N              
-GND*                         : AH28      :        :                   :         : 6         :                
-GND*                         : AH29      :        :                   :         : 6         :                
-ODWriteData[30]              : AH30      : output : 3.3-V LVTTL       :         : 6         : N              
+ODWriteData[4]               : AH26      : output : 3.3-V LVTTL       :         : 7         : N              
+ODWriteData[12]              : AH27      : output : 3.3-V LVTTL       :         : 7         : N              
+OwRegDispFPU[30]             : AH28      : output : 3.3-V LVTTL       :         : 6         : N              
+ODWriteData[29]              : AH29      : output : 3.3-V LVTTL       :         : 6         : N              
+GND*                         : AH30      :        :                   :         : 6         :                
 GND                          : AJ1       : gnd    :                   :         :           :                
 oLEDR[7]                     : AJ2       : output : 3.3-V LVTTL       :         : 8         : Y              
 oLEDR[6]                     : AJ3       : output : 3.3-V LVTTL       :         : 8         : Y              
@@ -344,7 +344,7 @@ oLEDR[2]                     : AJ5       : output : 3.3-V LVTTL       :         
 oLEDR[0]                     : AJ6       : output : 3.3-V LVTTL       :         : 8         : Y              
 oLEDR[17]                    : AJ7       : output : 3.3-V LVTTL       :         : 8         : Y              
 SRAM_DQ[30]                  : AJ8       : bidir  : 3.3-V LVTTL       :         : 8         : Y              
-ODAddress[14]                : AJ9       : output : 3.3-V LVTTL       :         : 8         : N              
+ODReadEnable                 : AJ9       : output : 3.3-V LVTTL       :         : 8         : N              
 SRAM_DQ[1]                   : AJ10      : bidir  : 3.3-V LVTTL       :         : 8         : Y              
 SRAM_DQ[3]                   : AJ11      : bidir  : 3.3-V LVTTL       :         : 8         : Y              
 SRAM_DQ[6]                   : AJ12      : bidir  : 3.3-V LVTTL       :         : 8         : Y              
@@ -358,22 +358,22 @@ SRAM_DQ[14]                  : AJ19      : bidir  : 3.3-V LVTTL       :         
 SRAM_DQ[16]                  : AJ20      : bidir  : 3.3-V LVTTL       :         : 7         : Y              
 SRAM_DQ[18]                  : AJ21      : bidir  : 3.3-V LVTTL       :         : 7         : Y              
 SRAM_DQ[20]                  : AJ22      : bidir  : 3.3-V LVTTL       :         : 7         : Y              
-ODAddress[16]                : AJ23      : output : 3.3-V LVTTL       :         : 7         : N              
-ODAddress[8]                 : AJ24      : output : 3.3-V LVTTL       :         : 7         : N              
+ODWriteData[3]               : AJ23      : output : 3.3-V LVTTL       :         : 7         : N              
+ODAddress[3]                 : AJ24      : output : 3.3-V LVTTL       :         : 7         : N              
 ODAddress[12]                : AJ25      : output : 3.3-V LVTTL       :         : 7         : N              
-ODWriteData[2]               : AJ26      : output : 3.3-V LVTTL       :         : 7         : N              
-ODWriteData[12]              : AJ27      : output : 3.3-V LVTTL       :         : 7         : N              
-ODWriteData[23]              : AJ28      : output : 3.3-V LVTTL       :         : 7         : N              
-OwRegDispFPU[25]             : AJ29      : output : 3.3-V LVTTL       :         : 6         : N              
+ODWriteData[1]               : AJ26      : output : 3.3-V LVTTL       :         : 7         : N              
+ODWriteData[15]              : AJ27      : output : 3.3-V LVTTL       :         : 7         : N              
+ODWriteData[13]              : AJ28      : output : 3.3-V LVTTL       :         : 7         : N              
+OflagBank[0]                 : AJ29      : output : 3.3-V LVTTL       :         : 6         : N              
 GND                          : AJ30      : gnd    :                   :         :           :                
 GND                          : AK2       : gnd    :                   :         :           :                
 oLEDR[4]                     : AK3       : output : 3.3-V LVTTL       :         : 8         : Y              
 VCCIO8                       : AK4       : power  :                   : 3.3V    : 8         :                
 oLEDR[1]                     : AK5       : output : 3.3-V LVTTL       :         : 8         : Y              
-ODAddress[2]                 : AK6       : output : 3.3-V LVTTL       :         : 8         : N              
+ODWriteData[7]               : AK6       : output : 3.3-V LVTTL       :         : 8         : N              
 SRAM_DQ[29]                  : AK7       : bidir  : 3.3-V LVTTL       :         : 8         : Y              
 SRAM_DQ[31]                  : AK8       : bidir  : 3.3-V LVTTL       :         : 8         : Y              
-ODWriteData[5]               : AK9       : output : 3.3-V LVTTL       :         : 8         : N              
+ODAddress[16]                : AK9       : output : 3.3-V LVTTL       :         : 8         : N              
 SRAM_DQ[2]                   : AK10      : bidir  : 3.3-V LVTTL       :         : 8         : Y              
 SRAM_DQ[4]                   : AK11      : bidir  : 3.3-V LVTTL       :         : 8         : Y              
 SRAM_DQ[28]                  : AK12      : bidir  : 3.3-V LVTTL       :         : 8         : Y              
@@ -384,26 +384,26 @@ VCCIO7                       : AK16      : power  :                   : 3.3V    
 SRAM_DQ[8]                   : AK17      : bidir  : 3.3-V LVTTL       :         : 7         : Y              
 GND                          : AK18      : gnd    :                   :         :           :                
 SRAM_DQ[13]                  : AK19      : bidir  : 3.3-V LVTTL       :         : 7         : Y              
-ODWriteData[0]               : AK20      : output : 3.3-V LVTTL       :         : 7         : N              
+ODWriteEnable                : AK20      : output : 3.3-V LVTTL       :         : 7         : N              
 SRAM_DQ[17]                  : AK21      : bidir  : 3.3-V LVTTL       :         : 7         : Y              
 SRAM_DQ[19]                  : AK22      : bidir  : 3.3-V LVTTL       :         : 7         : Y              
 SRAM_DQ[15]                  : AK23      : bidir  : 3.3-V LVTTL       :         : 7         : Y              
-ODWriteData[18]              : AK24      : output : 3.3-V LVTTL       :         : 7         : N              
-ODAddress[6]                 : AK25      : output : 3.3-V LVTTL       :         : 7         : N              
+ODWriteData[8]               : AK24      : output : 3.3-V LVTTL       :         : 7         : N              
+ODAddress[8]                 : AK25      : output : 3.3-V LVTTL       :         : 7         : N              
 ODAddress[10]                : AK26      : output : 3.3-V LVTTL       :         : 7         : N              
 VCCIO7                       : AK27      : power  :                   : 3.3V    : 7         :                
-ODWriteData[13]              : AK28      : output : 3.3-V LVTTL       :         : 7         : N              
+ODWriteData[10]              : AK28      : output : 3.3-V LVTTL       :         : 7         : N              
 GND                          : AK29      : gnd    :                   :         :           :                
 GND                          : B1        : gnd    :                   :         :           :                
 LCD_D[7]                     : B2        : bidir  : 3.3-V LVTTL       :         : 2         : Y              
-OIAddress[29]                : B3        : output : 3.3-V LVTTL       :         : 3         : N              
-OIAddress[30]                : B4        : output : 3.3-V LVTTL       :         : 3         : N              
-OIReadData[11]               : B5        : output : 3.3-V LVTTL       :         : 3         : N              
-OIReadData[14]               : B6        : output : 3.3-V LVTTL       :         : 3         : N              
-OwPC[18]                     : B7        : output : 3.3-V LVTTL       :         : 3         : N              
-OIAddress[7]                 : B8        : output : 3.3-V LVTTL       :         : 3         : N              
-OIAddress[2]                 : B9        : output : 3.3-V LVTTL       :         : 3         : N              
-OwPC[6]                      : B10       : output : 3.3-V LVTTL       :         : 3         : N              
+OwInstr[21]                  : B3        : output : 3.3-V LVTTL       :         : 3         : N              
+OIReadData[18]               : B4        : output : 3.3-V LVTTL       :         : 3         : N              
+OwInstr[19]                  : B5        : output : 3.3-V LVTTL       :         : 3         : N              
+OIReadData[22]               : B6        : output : 3.3-V LVTTL       :         : 3         : N              
+OwRegDisp[20]                : B7        : output : 3.3-V LVTTL       :         : 3         : N              
+OIAddress[11]                : B8        : output : 3.3-V LVTTL       :         : 3         : N              
+OIAddress[20]                : B9        : output : 3.3-V LVTTL       :         : 3         : N              
+OwRegDisp[0]                 : B10       : output : 3.3-V LVTTL       :         : 3         : N              
 oVGA_G[1]                    : B11       : output : 3.3-V LVTTL       :         : 3         : Y              
 oVGA_G[4]                    : B12       : output : 3.3-V LVTTL       :         : 3         : Y              
 oVGA_G[7]                    : B13       : output : 3.3-V LVTTL       :         : 3         : Y              
@@ -413,75 +413,75 @@ oVGA_B[0]                    : B16       : output : 3.3-V LVTTL       :         
 oVGA_B[3]                    : B17       : output : 3.3-V LVTTL       :         : 4         : Y              
 oVGA_B[5]                    : B18       : output : 3.3-V LVTTL       :         : 4         : Y              
 oVGA_B[6]                    : B19       : output : 3.3-V LVTTL       :         : 4         : Y              
-OwInstr[19]                  : B20       : output : 3.3-V LVTTL       :         : 4         : N              
-OIReadData[1]                : B21       : output : 3.3-V LVTTL       :         : 4         : N              
-OwInstr[6]                   : B22       : output : 3.3-V LVTTL       :         : 4         : N              
-OwInstr[12]                  : B23       : output : 3.3-V LVTTL       :         : 4         : N              
-OwInstr[18]                  : B24       : output : 3.3-V LVTTL       :         : 4         : N              
-OwInstr[15]                  : B25       : output : 3.3-V LVTTL       :         : 4         : N              
-OIReadData[20]               : B26       : output : 3.3-V LVTTL       :         : 4         : N              
-GND*                         : B27       :        :                   :         : 4         :                
+ODReadData[12]               : B20       : output : 3.3-V LVTTL       :         : 4         : N              
+ODWriteData[17]              : B21       : output : 3.3-V LVTTL       :         : 4         : N              
+ODReadData[4]                : B22       : output : 3.3-V LVTTL       :         : 4         : N              
+ODReadData[20]               : B23       : output : 3.3-V LVTTL       :         : 4         : N              
+OIReadData[2]                : B24       : output : 3.3-V LVTTL       :         : 4         : N              
+ODWriteData[31]              : B25       : output : 3.3-V LVTTL       :         : 4         : N              
+OwInstr[13]                  : B26       : output : 3.3-V LVTTL       :         : 4         : N              
+OflagBank[6]                 : B27       : output : 3.3-V LVTTL       :         : 4         : N              
 GND*                         : B28       :        :                   :         : 4         :                
-OwRegDispFPU[16]             : B29       : output : 3.3-V LVTTL       :         : 4         : N              
+OwRegDispFPU[18]             : B29       : output : 3.3-V LVTTL       :         : 4         : N              
 GND                          : B30       : gnd    :                   :         :           :                
 LCD_D[4]                     : C1        : bidir  : 3.3-V LVTTL       :         : 2         : Y              
 LCD_D[5]                     : C2        : bidir  : 3.3-V LVTTL       :         : 2         : Y              
 LCD_D[6]                     : C3        : bidir  : 3.3-V LVTTL       :         : 2         : Y              
-OwInstr[3]                   : C4        : output : 3.3-V LVTTL       :         : 3         : N              
-OwPC[28]                     : C5        : output : 3.3-V LVTTL       :         : 3         : N              
+OIReadData[27]               : C4        : output : 3.3-V LVTTL       :         : 3         : N              
+OwInstr[1]                   : C5        : output : 3.3-V LVTTL       :         : 3         : N              
 GND                          : C6        : gnd    :                   :         :           :                
-OIReadData[3]                : C7        : output : 3.3-V LVTTL       :         : 3         : N              
+OwRegDisp[2]                 : C7        : output : 3.3-V LVTTL       :         : 3         : N              
 VCCIO3                       : C8        : power  :                   : 3.3V    : 3         :                
-OwRegDisp[16]                : C9        : output : 3.3-V LVTTL       :         : 3         : N              
-OwPC[3]                      : C10       : output : 3.3-V LVTTL       :         : 3         : N              
+OwPC[7]                      : C9        : output : 3.3-V LVTTL       :         : 3         : N              
+OwRegDisp[8]                 : C10       : output : 3.3-V LVTTL       :         : 3         : N              
 VCCIO3                       : C11       : power  :                   : 3.3V    : 3         :                
 oVGA_G[3]                    : C12       : output : 3.3-V LVTTL       :         : 3         : Y              
 oVGA_G[6]                    : C13       : output : 3.3-V LVTTL       :         : 3         : Y              
-OIReadData[23]               : C14       : output : 3.3-V LVTTL       :         : 3         : N              
+OwPC[10]                     : C14       : output : 3.3-V LVTTL       :         : 3         : N              
 oVGA_BLANK_N                 : C15       : output : 3.3-V LVTTL       :         : 3         : Y              
 oVGA_B[1]                    : C16       : output : 3.3-V LVTTL       :         : 4         : Y              
-OwInstr[0]                   : C17       : output : 3.3-V LVTTL       :         : 4         : N              
+ODReadData[3]                : C17       : output : 3.3-V LVTTL       :         : 4         : N              
 oVGA_B[4]                    : C18       : output : 3.3-V LVTTL       :         : 4         : Y              
 oVGA_B[8]                    : C19       : output : 3.3-V LVTTL       :         : 4         : Y              
 VCCIO4                       : C20       : power  :                   : 3.3V    : 4         :                
-OIReadData[4]                : C21       : output : 3.3-V LVTTL       :         : 4         : N              
-OwInstr[21]                  : C22       : output : 3.3-V LVTTL       :         : 4         : N              
+ODWriteData[23]              : C21       : output : 3.3-V LVTTL       :         : 4         : N              
+ODByteEnable[3]              : C22       : output : 3.3-V LVTTL       :         : 4         : N              
 VCCIO4                       : C23       : power  :                   : 3.3V    : 4         :                
-OIReadData[18]               : C24       : output : 3.3-V LVTTL       :         : 4         : N              
+ODReadData[22]               : C24       : output : 3.3-V LVTTL       :         : 4         : N              
 GND                          : C25       : gnd    :                   :         :           :                
-GND*                         : C26       :        :                   :         : 4         :                
+OIReadData[26]               : C26       : output : 3.3-V LVTTL       :         : 4         : N              
 GND*                         : C27       :        :                   :         : 4         :                
-OwRegDispFPU[22]             : C28       : output : 3.3-V LVTTL       :         : 4         : N              
-GND*                         : C29       :        :                   :         : 5         :                
+OwRegDispFPU[0]              : C28       : output : 3.3-V LVTTL       :         : 4         : N              
+OCLK200                      : C29       : output : 3.3-V LVTTL       :         : 5         : N              
 GND*                         : C30       :        :                   :         : 5         :                
 VCCIO2                       : D1        : power  :                   : 3.3V    : 2         :                
 LCD_D[2]                     : D2        : bidir  : 3.3-V LVTTL       :         : 2         : Y              
 LCD_D[3]                     : D3        : bidir  : 3.3-V LVTTL       :         : 2         : Y              
-GND*                         : D4        :        :                   :         : 3         :                
-OwRegDispFPU[23]             : D5        : output : 3.3-V LVTTL       :         : 3         : N              
-OIReadData[5]                : D6        : output : 3.3-V LVTTL       :         : 3         : N              
-OwInstr[5]                   : D7        : output : 3.3-V LVTTL       :         : 3         : N              
-OwRegDisp[24]                : D8        : output : 3.3-V LVTTL       :         : 3         : N              
-OwPC[12]                     : D9        : output : 3.3-V LVTTL       :         : 3         : N              
-OwRegDisp[28]                : D10       : output : 3.3-V LVTTL       :         : 3         : N              
+OwInstr[28]                  : D4        : output : 3.3-V LVTTL       :         : 3         : N              
+OIReadData[28]               : D5        : output : 3.3-V LVTTL       :         : 3         : N              
+OwInstr[22]                  : D6        : output : 3.3-V LVTTL       :         : 3         : N              
+OIReadData[5]                : D7        : output : 3.3-V LVTTL       :         : 3         : N              
+OwPC[5]                      : D8        : output : 3.3-V LVTTL       :         : 3         : N              
+OIAddress[7]                 : D9        : output : 3.3-V LVTTL       :         : 3         : N              
+OwRegDisp[6]                 : D10       : output : 3.3-V LVTTL       :         : 3         : N              
 GND                          : D11       : gnd    :                   :         :           :                
-OwInstr[28]                  : D12       : output : 3.3-V LVTTL       :         : 3         : N              
-OIAddress[8]                 : D13       : output : 3.3-V LVTTL       :         : 3         : N              
+OIAddress[6]                 : D12       : output : 3.3-V LVTTL       :         : 3         : N              
+OwPC[9]                      : D13       : output : 3.3-V LVTTL       :         : 3         : N              
 oTD1_RESET_N                 : D14       : output : 3.3-V LVTTL       :         : 3         : Y              
-OwPC[16]                     : D15       : output : 3.3-V LVTTL       :         : 3         : N              
+ODAddress[31]                : D15       : output : 3.3-V LVTTL       :         : 3         : N              
 iCLK_50_2                    : D16       : input  : 3.3-V LVTTL       :         : 4         : Y              
 oAUD_XCK                     : D17       : output : 3.3-V LVTTL       :         : 4         : Y              
-ODWriteData[1]               : D18       : output : 3.3-V LVTTL       :         : 4         : N              
+ODWriteData[28]              : D18       : output : 3.3-V LVTTL       :         : 4         : N              
 oVGA_B[9]                    : D19       : output : 3.3-V LVTTL       :         : 4         : Y              
 GND                          : D20       : gnd    :                   :         :           :                
 iUART_RXD                    : D21       : input  : 3.3-V LVTTL       :         : 4         : Y              
 oVGA_R[3]                    : D22       : output : 3.3-V LVTTL       :         : 4         : Y              
 oVGA_R[0]                    : D23       : output : 3.3-V LVTTL       :         : 4         : Y              
 oVGA_CLOCK                   : D24       : output : 3.3-V LVTTL       :         : 4         : Y              
-GND*                         : D25       :        :                   :         : 4         :                
-OwRegDispFPU[19]             : D26       : output : 3.3-V LVTTL       :         : 4         : N              
-OwRegDispFPU[6]              : D27       : output : 3.3-V LVTTL       :         : 4         : N              
-OControlState[0]             : D28       : output : 3.3-V LVTTL       :         : 5         : N              
+ODWriteData[16]              : D25       : output : 3.3-V LVTTL       :         : 4         : N              
+OwRegDispFPU[22]             : D26       : output : 3.3-V LVTTL       :         : 4         : N              
+OwRegDispFPU[27]             : D27       : output : 3.3-V LVTTL       :         : 4         : N              
+GND*                         : D28       :        :                   :         : 5         :                
 OflagBank[3]                 : D29       : output : 3.3-V LVTTL       :         : 5         : N              
 VCCIO5                       : D30       : power  :                   : 3.3V    : 5         :                
 LCD_D[0]                     : E1        : bidir  : 3.3-V LVTTL       :         : 2         : Y              
@@ -490,15 +490,15 @@ LCD_D[1]                     : E3        : bidir  : 3.3-V LVTTL       :         
 oHEX6_D[6]                   : E4        : output : 3.3-V LVTTL       :         : 2         : Y              
 GND                          : E5        : gnd    :                   :         :           :                
 VCCIO3                       : E6        : power  :                   : 3.3V    : 3         :                
-OwRegDispFPU[10]             : E7        : output : 3.3-V LVTTL       :         : 3         : N              
-OIReadData[10]               : E8        : output : 3.3-V LVTTL       :         : 3         : N              
-OIAddress[5]                 : E9        : output : 3.3-V LVTTL       :         : 3         : N              
-OwPC[5]                      : E10       : output : 3.3-V LVTTL       :         : 3         : N              
-OwPC[4]                      : E11       : output : 3.3-V LVTTL       :         : 3         : N              
-OwPC[2]                      : E12       : output : 3.3-V LVTTL       :         : 3         : N              
-OwInstr[24]                  : E13       : output : 3.3-V LVTTL       :         : 3         : N              
-OIAddress[11]                : E14       : output : 3.3-V LVTTL       :         : 3         : N              
-OIAddress[16]                : E15       : output : 3.3-V LVTTL       :         : 3         : N              
+OIReadData[9]                : E7        : output : 3.3-V LVTTL       :         : 3         : N              
+OIReadData[21]               : E8        : output : 3.3-V LVTTL       :         : 3         : N              
+OIReadData[30]               : E9        : output : 3.3-V LVTTL       :         : 3         : N              
+OIAddress[5]                 : E10       : output : 3.3-V LVTTL       :         : 3         : N              
+OwPC[12]                     : E11       : output : 3.3-V LVTTL       :         : 3         : N              
+OIAddress[3]                 : E12       : output : 3.3-V LVTTL       :         : 3         : N              
+OwPC[4]                      : E13       : output : 3.3-V LVTTL       :         : 3         : N              
+OIAddress[8]                 : E14       : output : 3.3-V LVTTL       :         : 3         : N              
+ODAddress[1]                 : E15       : output : 3.3-V LVTTL       :         : 3         : N              
 iCLK_28                      : E16       : input  : 3.3-V LVTTL       :         : 4         : Y              
 AUD_BCLK                     : E17       : bidir  : 3.3-V LVTTL       :         : 4         : Y              
 VCCIO4                       : E18       : power  :                   : 3.3V    : 4         :                
@@ -510,26 +510,26 @@ oVGA_R[1]                    : E23       : output : 3.3-V LVTTL       :         
 PS2_KBDAT                    : E24       : bidir  : 3.3-V LVTTL       :         : 4         : Y              
 VCCIO4                       : E25       : power  :                   : 3.3V    : 4         :                
 GND                          : E26       : gnd    :                   :         :           :                
-GND*                         : E27       :        :                   :         : 5         :                
-OControlState[1]             : E28       : output : 3.3-V LVTTL       :         : 5         : N              
-OwRegDispFPU[31]             : E29       : output : 3.3-V LVTTL       :         : 5         : N              
-OwRegDispFPU[29]             : E30       : output : 3.3-V LVTTL       :         : 5         : N              
+OwRegDispFPU[31]             : E27       : output : 3.3-V LVTTL       :         : 5         : N              
+GND*                         : E28       :        :                   :         : 5         :                
+OflagBank[4]                 : E29       : output : 3.3-V LVTTL       :         : 5         : N              
+GND*                         : E30       :        :                   :         : 5         :                
 oLCD_ON                      : F1        : output : 3.3-V LVTTL       :         : 2         : Y              
 oLCD_RS                      : F2        : output : 3.3-V LVTTL       :         : 2         : Y              
 oLCD_RW                      : F3        : output : 3.3-V LVTTL       :         : 2         : Y              
 oHEX6_D[5]                   : F4        : output : 3.3-V LVTTL       :         : 2         : Y              
 VCCIO2                       : F5        : power  :                   : 3.3V    : 2         :                
 GND                          : F6        : gnd    :                   :         :           :                
-OwInstr[2]                   : F7        : output : 3.3-V LVTTL       :         : 3         : N              
-OwPC[29]                     : F8        : output : 3.3-V LVTTL       :         : 3         : N              
+OwInstr[9]                   : F7        : output : 3.3-V LVTTL       :         : 3         : N              
+OwInstr[24]                  : F8        : output : 3.3-V LVTTL       :         : 3         : N              
 GND                          : F9        : gnd    :                   :         :           :                
 VCCIO3                       : F10       : power  :                   : 3.3V    : 3         :                
-OIAddress[4]                 : F11       : output : 3.3-V LVTTL       :         : 3         : N              
-OIAddress[12]                : F12       : output : 3.3-V LVTTL       :         : 3         : N              
-OwPC[10]                     : F13       : output : 3.3-V LVTTL       :         : 3         : N              
+OIAddress[12]                : F11       : output : 3.3-V LVTTL       :         : 3         : N              
+OwPC[3]                      : F12       : output : 3.3-V LVTTL       :         : 3         : N              
+OIAddress[4]                 : F13       : output : 3.3-V LVTTL       :         : 3         : N              
 GND                          : F14       : gnd    :                   :         :           :                
 VCCIO3                       : F15       : power  :                   : 3.3V    : 3         :                
-ODAddress[1]                 : F16       : output : 3.3-V LVTTL       :         : 4         : N              
+ODAddress[28]                : F16       : output : 3.3-V LVTTL       :         : 4         : N              
 GND                          : F17       : gnd    :                   :         :           :                
 oAUD_DACDAT                  : F18       : output : 3.3-V LVTTL       :         : 4         : Y              
 AUD_ADCLRCK                  : F19       : bidir  : 3.3-V LVTTL       :         : 4         : Y              
@@ -540,56 +540,56 @@ iUART_RTS                    : F23       : input  : 3.3-V LVTTL       :         
 PS2_KBCLK                    : F24       : bidir  : 3.3-V LVTTL       :         : 4         : Y              
 GND                          : F25       : gnd    :                   :         :           :                
 VCCIO5                       : F26       : power  :                   : 3.3V    : 5         :                
-OflagBank[4]                 : F27       : output : 3.3-V LVTTL       :         : 5         : N              
-OwRegDispFPU[30]             : F28       : output : 3.3-V LVTTL       :         : 5         : N              
-OflagBank[5]                 : F29       : output : 3.3-V LVTTL       :         : 5         : N              
+GND*                         : F27       :        :                   :         : 5         :                
+GND*                         : F28       :        :                   :         : 5         :                
+OIReadData[0]                : F29       : output : 3.3-V LVTTL       :         : 5         : N              
 OwRegDispFPU[24]             : F30       : output : 3.3-V LVTTL       :         : 5         : N              
 oHEX7_D[6]                   : G1        : output : 3.3-V LVTTL       :         : 2         : Y              
 oHEX7_DP                     : G2        : output : 3.3-V LVTTL       :         : 2         : Y              
 oLCD_BLON                    : G3        : output : 3.3-V LVTTL       :         : 2         : Y              
 oHEX6_D[4]                   : G4        : output : 3.3-V LVTTL       :         : 2         : Y              
-OwInstr[17]                  : G5        : output : 3.3-V LVTTL       :         : 2         : N              
-OIReadData[17]               : G6        : output : 3.3-V LVTTL       :         : 2         : N              
+OwRegDispFPU[12]             : G5        : output : 3.3-V LVTTL       :         : 2         : N              
+GND*                         : G6        :        :                   :         : 2         :                
 ~ASDO~ / RESERVED_INPUT_WITH_WEAK_PULLUP : G7        : input  : 3.3-V LVTTL       :         : 2         : N              
 GNDA_PLL3                    : G8        : gnd    :                   :         :           :                
-OIAddress[28]                : G9        : output : 3.3-V LVTTL       :         : 3         : N              
-OIReadData[2]                : G10       : output : 3.3-V LVTTL       :         : 3         : N              
-OwRegDisp[8]                 : G11       : output : 3.3-V LVTTL       :         : 3         : N              
-OIAddress[9]                 : G12       : output : 3.3-V LVTTL       :         : 3         : N              
-OIReadData[28]               : G13       : output : 3.3-V LVTTL       :         : 3         : N              
-OIAddress[6]                 : G14       : output : 3.3-V LVTTL       :         : 3         : N              
+OIReadData[1]                : G9        : output : 3.3-V LVTTL       :         : 3         : N              
+OwInstr[18]                  : G10       : output : 3.3-V LVTTL       :         : 3         : N              
+OwInstr[30]                  : G11       : output : 3.3-V LVTTL       :         : 3         : N              
+OwRegDisp[3]                 : G12       : output : 3.3-V LVTTL       :         : 3         : N              
+OwPC[6]                      : G13       : output : 3.3-V LVTTL       :         : 3         : N              
+OIAddress[2]                 : G14       : output : 3.3-V LVTTL       :         : 3         : N              
 GND+                         : G15       :        :                   :         : 3         :                
-OIReadData[0]                : G16       : output : 3.3-V LVTTL       :         : 4         : N              
-ODReadEnable                 : G17       : output : 3.3-V LVTTL       :         : 4         : N              
+ODReadData[17]               : G16       : output : 3.3-V LVTTL       :         : 4         : N              
+ODReadData[1]                : G17       : output : 3.3-V LVTTL       :         : 4         : N              
 AUD_DACLRCK                  : G18       : output : 3.3-V LVTTL       :         : 4         : Y              
-OIReadData[21]               : G19       : output : 3.3-V LVTTL       :         : 4         : N              
+ODWriteData[22]              : G19       : output : 3.3-V LVTTL       :         : 4         : N              
 oVGA_R[9]                    : G20       : output : 3.3-V LVTTL       :         : 4         : Y              
 oVGA_R[5]                    : G21       : output : 3.3-V LVTTL       :         : 4         : Y              
 oUART_CTS                    : G22       : output : 3.3-V LVTTL       :         : 4         : Y              
 GNDA_PLL2                    : G23       : gnd    :                   :         :           :                
-OwRegDispFPU[27]             : G24       : output : 3.3-V LVTTL       :         : 5         : N              
-OwRegDispFPU[21]             : G25       : output : 3.3-V LVTTL       :         : 5         : N              
-OwRegDispFPU[20]             : G26       : output : 3.3-V LVTTL       :         : 5         : N              
-GND*                         : G27       :        :                   :         : 5         :                
-OControlState[3]             : G28       : output : 3.3-V LVTTL       :         : 5         : N              
-GND*                         : G29       :        :                   :         : 5         :                
-GND*                         : G30       :        :                   :         : 5         :                
+OwRegDispFPU[16]             : G24       : output : 3.3-V LVTTL       :         : 5         : N              
+GND*                         : G25       :        :                   :         : 5         :                
+OwRegDispFPU[7]              : G26       : output : 3.3-V LVTTL       :         : 5         : N              
+OwRegDispFPU[29]             : G27       : output : 3.3-V LVTTL       :         : 5         : N              
+GND*                         : G28       :        :                   :         : 5         :                
+OwInstr[0]                   : G29       : output : 3.3-V LVTTL       :         : 5         : N              
+OIReadData[29]               : G30       : output : 3.3-V LVTTL       :         : 5         : N              
 oHEX7_D[3]                   : H1        : output : 3.3-V LVTTL       :         : 2         : Y              
 oHEX7_D[4]                   : H2        : output : 3.3-V LVTTL       :         : 2         : Y              
 oHEX7_D[5]                   : H3        : output : 3.3-V LVTTL       :         : 2         : Y              
 oHEX6_D[1]                   : H4        : output : 3.3-V LVTTL       :         : 2         : Y              
-GND*                         : H5        :        :                   :         : 2         :                
+OwRegDisp[15]                : H5        : output : 3.3-V LVTTL       :         : 2         : N              
 oHEX6_D[0]                   : H6        : output : 3.3-V LVTTL       :         : 2         : Y              
 oHEX6_D[2]                   : H7        : output : 3.3-V LVTTL       :         : 2         : Y              
 oHEX6_D[3]                   : H8        : output : 3.3-V LVTTL       :         : 2         : Y              
 VCCA_PLL3                    : H9        : power  :                   : 1.2V    :           :                
-OwPC[30]                     : H10       : output : 3.3-V LVTTL       :         : 3         : N              
-OwRegDisp[4]                 : H11       : output : 3.3-V LVTTL       :         : 3         : N              
-OwPC[9]                      : H12       : output : 3.3-V LVTTL       :         : 3         : N              
-OwPC[8]                      : H13       : output : 3.3-V LVTTL       :         : 3         : N              
-OwPC[11]                     : H14       : output : 3.3-V LVTTL       :         : 3         : N              
+OwInstr[27]                  : H10       : output : 3.3-V LVTTL       :         : 3         : N              
+OIAddress[10]                : H11       : output : 3.3-V LVTTL       :         : 3         : N              
+OwRegDisp[1]                 : H12       : output : 3.3-V LVTTL       :         : 3         : N              
+OIAddress[9]                 : H13       : output : 3.3-V LVTTL       :         : 3         : N              
+OwPC[8]                      : H14       : output : 3.3-V LVTTL       :         : 3         : N              
 GND+                         : H15       :        :                   :         : 3         :                
-OwInstr[23]                  : H16       : output : 3.3-V LVTTL       :         : 4         : N              
+ODAddress[26]                : H16       : output : 3.3-V LVTTL       :         : 4         : N              
 ODAddress[0]                 : H17       : output : 3.3-V LVTTL       :         : 4         : N              
 I2C_SDAT                     : H18       : bidir  : 3.3-V LVTTL       :         : 4         : Y              
 oVGA_VS                      : H19       : output : 3.3-V LVTTL       :         : 4         : Y              
@@ -597,26 +597,26 @@ oVGA_R[6]                    : H20       : output : 3.3-V LVTTL       :         
 oVGA_R[4]                    : H21       : output : 3.3-V LVTTL       :         : 4         : Y              
 VCCA_PLL2                    : H22       : power  :                   : 1.2V    :           :                
 GND*                         : H23       :        :                   :         : 5         :                
-OwRegDispFPU[13]             : H24       : output : 3.3-V LVTTL       :         : 5         : N              
+GND*                         : H24       :        :                   :         : 5         :                
 GND*                         : H25       :        :                   :         : 5         :                
-OwRegDispFPU[18]             : H26       : output : 3.3-V LVTTL       :         : 5         : N              
-GND*                         : H27       :        :                   :         : 5         :                
+GND*                         : H26       :        :                   :         : 5         :                
+OwRegDispFPU[14]             : H27       : output : 3.3-V LVTTL       :         : 5         : N              
 GND*                         : H28       :        :                   :         : 5         :                
-OwInstr[22]                  : H29       : output : 3.3-V LVTTL       :         : 5         : N              
-OCLK200                      : H30       : output : 3.3-V LVTTL       :         : 5         : N              
+OIReadData[14]               : H29       : output : 3.3-V LVTTL       :         : 5         : N              
+OwInstr[4]                   : H30       : output : 3.3-V LVTTL       :         : 5         : N              
 oHEX7_D[1]                   : J1        : output : 3.3-V LVTTL       :         : 2         : Y              
 oHEX7_D[2]                   : J2        : output : 3.3-V LVTTL       :         : 2         : Y              
 VCCIO2                       : J3        : power  :                   : 3.3V    : 2         :                
 GND                          : J4        : gnd    :                   :         :           :                
-OwPC[19]                     : J5        : output : 3.3-V LVTTL       :         : 2         : N              
-OIAddress[26]                : J6        : output : 3.3-V LVTTL       :         : 2         : N              
-OwPC[26]                     : J7        : output : 3.3-V LVTTL       :         : 2         : N              
+OwPC[13]                     : J5        : output : 3.3-V LVTTL       :         : 2         : N              
+OIReadData[20]               : J6        : output : 3.3-V LVTTL       :         : 2         : N              
+OwInstr[20]                  : J7        : output : 3.3-V LVTTL       :         : 2         : N              
 GND_PLL3                     : J8        : gnd    :                   :         :           :                
 VCCD_PLL3                    : J9        : power  :                   : 1.2V    :           :                
 GND                          : J10       : gnd    :                   :         :           :                
 VCCIO3                       : J11       : power  :                   : 3.3V    : 3         :                
-OIAddress[3]                 : J12       : output : 3.3-V LVTTL       :         : 3         : N              
-OIReadData[24]               : J13       : output : 3.3-V LVTTL       :         : 3         : N              
+OwRegDisp[11]                : J12       : output : 3.3-V LVTTL       :         : 3         : N              
+OwPC[2]                      : J13       : output : 3.3-V LVTTL       :         : 3         : N              
 GND                          : J14       : gnd    :                   :         :           :                
 VCCIO3                       : J15       : power  :                   : 3.3V    : 3         :                
 VCCIO4                       : J16       : power  :                   : 3.3V    : 4         :                
@@ -627,21 +627,21 @@ VCCIO4                       : J20       : power  :                   : 3.3V    
 GND                          : J21       : gnd    :                   :         :           :                
 VCCD_PLL2                    : J22       : power  :                   : 1.2V    :           :                
 VCCIO5                       : J23       : power  :                   : 3.3V    : 5         :                
-OflagBank[1]                 : J24       : output : 3.3-V LVTTL       :         : 5         : N              
+OControlState[0]             : J24       : output : 3.3-V LVTTL       :         : 5         : N              
 OflagBank[7]                 : J25       : output : 3.3-V LVTTL       :         : 5         : N              
-GND*                         : J26       :        :                   :         : 5         :                
+OwInstr[29]                  : J26       : output : 3.3-V LVTTL       :         : 5         : N              
 GND                          : J27       : gnd    :                   :         :           :                
 VCCIO5                       : J28       : power  :                   : 3.3V    : 5         :                
-OwInstr[7]                   : J29       : output : 3.3-V LVTTL       :         : 5         : N              
-OwInstr[25]                  : J30       : output : 3.3-V LVTTL       :         : 5         : N              
+OwPC[24]                     : J29       : output : 3.3-V LVTTL       :         : 5         : N              
+OIAddress[16]                : J30       : output : 3.3-V LVTTL       :         : 5         : N              
 oHEX5_D[4]                   : K1        : output : 3.3-V LVTTL       :         : 2         : Y              
 oHEX6_DP                     : K2        : output : 3.3-V LVTTL       :         : 2         : Y              
 oHEX7_D[0]                   : K3        : output : 3.3-V LVTTL       :         : 2         : Y              
 oHEX5_D[5]                   : K4        : output : 3.3-V LVTTL       :         : 2         : Y              
 oHEX5_D[6]                   : K5        : output : 3.3-V LVTTL       :         : 2         : Y              
 oHEX5_DP                     : K6        : output : 3.3-V LVTTL       :         : 2         : Y              
-OIAddress[19]                : K7        : output : 3.3-V LVTTL       :         : 2         : N              
-OwRegDispSelect[4]           : K8        : output : 3.3-V LVTTL       :         : 2         : N              
+OwRegDispSelect[4]           : K7        : output : 3.3-V LVTTL       :         : 2         : N              
+OIAddress[13]                : K8        : output : 3.3-V LVTTL       :         : 2         : N              
 ~nCSO~ / RESERVED_INPUT_WITH_WEAK_PULLUP : K9        : input  : 3.3-V LVTTL       :         : 2         : N              
 GND_PLL3                     : K10       : gnd    :                   :         :           :                
 GND                          : K11       : gnd    :                   :         :           :                
@@ -656,14 +656,14 @@ GND                          : K19       : gnd    :                   :         
 GND                          : K20       : gnd    :                   :         :           :                
 GND_PLL2                     : K21       : gnd    :                   :         :           :                
 GND_PLL2                     : K22       : gnd    :                   :         :           :                
-GND*                         : K23       :        :                   :         : 5         :                
-GND*                         : K24       :        :                   :         : 5         :                
+OwInstr[16]                  : K23       : output : 3.3-V LVTTL       :         : 5         : N              
+OIReadData[13]               : K24       : output : 3.3-V LVTTL       :         : 5         : N              
 OControlState[5]             : K25       : output : 3.3-V LVTTL       :         : 5         : N              
-OwInstr[9]                   : K26       : output : 3.3-V LVTTL       :         : 5         : N              
-OwInstr[8]                   : K27       : output : 3.3-V LVTTL       :         : 5         : N              
-OIReadData[8]                : K28       : output : 3.3-V LVTTL       :         : 5         : N              
-OwInstr[13]                  : K29       : output : 3.3-V LVTTL       :         : 5         : N              
-OIReadData[13]               : K30       : output : 3.3-V LVTTL       :         : 5         : N              
+OwInstr[17]                  : K26       : output : 3.3-V LVTTL       :         : 5         : N              
+OIReadData[3]                : K27       : output : 3.3-V LVTTL       :         : 5         : N              
+OwInstr[3]                   : K28       : output : 3.3-V LVTTL       :         : 5         : N              
+OwInstr[10]                  : K29       : output : 3.3-V LVTTL       :         : 5         : N              
+OIReadData[10]               : K30       : output : 3.3-V LVTTL       :         : 5         : N              
 oHEX5_D[1]                   : L1        : output : 3.3-V LVTTL       :         : 2         : Y              
 oHEX5_D[2]                   : L2        : output : 3.3-V LVTTL       :         : 2         : Y              
 oHEX5_D[3]                   : L3        : output : 3.3-V LVTTL       :         : 2         : Y              
@@ -672,8 +672,8 @@ iSW[14]                      : L5        : input  : 3.3-V LVTTL       :         
 oHEX4_DP                     : L6        : output : 3.3-V LVTTL       :         : 2         : Y              
 iSW[16]                      : L7        : input  : 3.3-V LVTTL       :         : 2         : Y              
 iSW[17]                      : L8        : input  : 3.3-V LVTTL       :         : 2         : Y              
-OwRegDisp[19]                : L9        : output : 3.3-V LVTTL       :         : 2         : N              
-OwRegDisp[25]                : L10       : output : 3.3-V LVTTL       :         : 2         : N              
+OIAddress[14]                : L9        : output : 3.3-V LVTTL       :         : 2         : N              
+OwPC[14]                     : L10       : output : 3.3-V LVTTL       :         : 2         : N              
 VCCIO2                       : L11       : power  :                   : 3.3V    : 2         :                
 GND                          : L12       : gnd    :                   :         :           :                
 VCCINT                       : L13       : power  :                   : 1.2V    :           :                
@@ -684,26 +684,26 @@ VCCINT                       : L17       : power  :                   : 1.2V    
 VCCINT                       : L18       : power  :                   : 1.2V    :           :                
 VCCINT                       : L19       : power  :                   : 1.2V    :           :                
 VCCIO5                       : L20       : power  :                   : 3.3V    : 5         :                
-OIReadData[9]                : L21       : output : 3.3-V LVTTL       :         : 5         : N              
-OIReadData[22]               : L22       : output : 3.3-V LVTTL       :         : 5         : N              
+OIReadData[17]               : L21       : output : 3.3-V LVTTL       :         : 5         : N              
+OwInstr[14]                  : L22       : output : 3.3-V LVTTL       :         : 5         : N              
 GND                          : L23       : gnd    :                   :         :           :                
-GND*                         : L24       :        :                   :         : 5         :                
-GND*                         : L25       :        :                   :         : 5         :                
-OwInstr[30]                  : L26       : output : 3.3-V LVTTL       :         : 5         : N              
-OIReadData[16]               : L27       : output : 3.3-V LVTTL       :         : 5         : N              
-OwInstr[16]                  : L28       : output : 3.3-V LVTTL       :         : 5         : N              
-OwInstr[31]                  : L29       : output : 3.3-V LVTTL       :         : 5         : N              
-OIReadData[31]               : L30       : output : 3.3-V LVTTL       :         : 5         : N              
+OIReadData[16]               : L24       : output : 3.3-V LVTTL       :         : 5         : N              
+OIReadData[4]                : L25       : output : 3.3-V LVTTL       :         : 5         : N              
+OwInstr[25]                  : L26       : output : 3.3-V LVTTL       :         : 5         : N              
+OwPC[17]                     : L27       : output : 3.3-V LVTTL       :         : 5         : N              
+OIAddress[21]                : L28       : output : 3.3-V LVTTL       :         : 5         : N              
+ODReadData[2]                : L29       : output : 3.3-V LVTTL       :         : 5         : N              
+OIAddress[23]                : L30       : output : 3.3-V LVTTL       :         : 5         : N              
 oHEX4_D[5]                   : M1        : output : 3.3-V LVTTL       :         : 2         : Y              
 oHEX4_D[6]                   : M2        : output : 3.3-V LVTTL       :         : 2         : Y              
 oHEX5_D[0]                   : M3        : output : 3.3-V LVTTL       :         : 2         : Y              
 oHEX3_DP                     : M4        : output : 3.3-V LVTTL       :         : 2         : Y              
-OwRegDisp[2]                 : M5        : output : 3.3-V LVTTL       :         : 2         : N              
+OwRegDisp[12]                : M5        : output : 3.3-V LVTTL       :         : 2         : N              
 oHEX3_D[6]                   : M6        : output : 3.3-V LVTTL       :         : 2         : Y              
 oHEX3_D[5]                   : M7        : output : 3.3-V LVTTL       :         : 2         : Y              
 oHEX3_D[4]                   : M8        : output : 3.3-V LVTTL       :         : 2         : Y              
 OwRegDisp[27]                : M9        : output : 3.3-V LVTTL       :         : 2         : N              
-OwRegDisp[29]                : M10       : output : 3.3-V LVTTL       :         : 2         : N              
+OwRegDisp[10]                : M10       : output : 3.3-V LVTTL       :         : 2         : N              
 GND                          : M11       : gnd    :                   :         :           :                
 VCCINT                       : M12       : power  :                   : 1.2V    :           :                
 VCCINT                       : M13       : power  :                   : 1.2V    :           :                
@@ -714,25 +714,25 @@ VCCINT                       : M17       : power  :                   : 1.2V    
 VCCINT                       : M18       : power  :                   : 1.2V    :           :                
 VCCINT                       : M19       : power  :                   : 1.2V    :           :                
 GND                          : M20       : gnd    :                   :         :           :                
-OwInstr[27]                  : M21       : output : 3.3-V LVTTL       :         : 5         : N              
-OwInstr[29]                  : M22       : output : 3.3-V LVTTL       :         : 5         : N              
-OIReadData[27]               : M23       : output : 3.3-V LVTTL       :         : 5         : N              
-OIReadData[30]               : M24       : output : 3.3-V LVTTL       :         : 5         : N              
-OflagBank[2]                 : M25       : output : 3.3-V LVTTL       :         : 5         : N              
-OIReadData[7]                : M26       : output : 3.3-V LVTTL       :         : 5         : N              
-OIReadData[25]               : M27       : output : 3.3-V LVTTL       :         : 5         : N              
-OwRegDispFPU[26]             : M28       : output : 3.3-V LVTTL       :         : 5         : N              
-OIAddress[13]                : M29       : output : 3.3-V LVTTL       :         : 5         : N              
-OwRegDispFPU[17]             : M30       : output : 3.3-V LVTTL       :         : 5         : N              
+OwInstr[8]                   : M21       : output : 3.3-V LVTTL       :         : 5         : N              
+OIReadData[15]               : M22       : output : 3.3-V LVTTL       :         : 5         : N              
+OwInstr[15]                  : M23       : output : 3.3-V LVTTL       :         : 5         : N              
+OIAddress[29]                : M24       : output : 3.3-V LVTTL       :         : 5         : N              
+OIReadData[25]               : M25       : output : 3.3-V LVTTL       :         : 5         : N              
+OIAddress[24]                : M26       : output : 3.3-V LVTTL       :         : 5         : N              
+OwPC[29]                     : M27       : output : 3.3-V LVTTL       :         : 5         : N              
+OwPC[23]                     : M28       : output : 3.3-V LVTTL       :         : 5         : N              
+ODReadData[13]               : M29       : output : 3.3-V LVTTL       :         : 5         : N              
+ODReadData[28]               : M30       : output : 3.3-V LVTTL       :         : 5         : N              
 GND                          : N1        : gnd    :                   :         :           :                
 oHEX4_D[3]                   : N2        : output : 3.3-V LVTTL       :         : 2         : Y              
 oHEX4_D[4]                   : N3        : output : 3.3-V LVTTL       :         : 2         : Y              
-OwRegDisp[31]                : N4        : output : 3.3-V LVTTL       :         : 2         : N              
+OwRegDisp[21]                : N4        : output : 3.3-V LVTTL       :         : 2         : N              
 VCCIO2                       : N5        : power  :                   : 3.3V    : 2         :                
 GND                          : N6        : gnd    :                   :         :           :                
 oHEX3_D[3]                   : N7        : output : 3.3-V LVTTL       :         : 2         : Y              
-OwRegDisp[21]                : N8        : output : 3.3-V LVTTL       :         : 2         : N              
-OwRegDisp[15]                : N9        : output : 3.3-V LVTTL       :         : 2         : N              
+OwRegDisp[14]                : N8        : output : 3.3-V LVTTL       :         : 2         : N              
+OwRegDisp[23]                : N9        : output : 3.3-V LVTTL       :         : 2         : N              
 oHEX3_D[2]                   : N10       : output : 3.3-V LVTTL       :         : 2         : Y              
 VCCINT                       : N11       : power  :                   : 1.2V    :           :                
 VCCINT                       : N12       : power  :                   : 1.2V    :           :                
@@ -744,15 +744,15 @@ GND                          : N17       : gnd    :                   :         
 GND                          : N18       : gnd    :                   :         :           :                
 VCCINT                       : N19       : power  :                   : 1.2V    :           :                
 VCCINT                       : N20       : power  :                   : 1.2V    :           :                
-OIReadData[26]               : N21       : output : 3.3-V LVTTL       :         : 5         : N              
-OwInstr[26]                  : N22       : output : 3.3-V LVTTL       :         : 5         : N              
-OIReadData[29]               : N23       : output : 3.3-V LVTTL       :         : 5         : N              
-GND*                         : N24       :        :                   :         : 5         :                
-GND*                         : N25       :        :                   :         : 5         :                
+OwPC[21]                     : N21       : output : 3.3-V LVTTL       :         : 5         : N              
+OIAddress[27]                : N22       : output : 3.3-V LVTTL       :         : 5         : N              
+OIReadData[8]                : N23       : output : 3.3-V LVTTL       :         : 5         : N              
+ODReadData[6]                : N24       : output : 3.3-V LVTTL       :         : 5         : N              
+ODReadData[29]               : N25       : output : 3.3-V LVTTL       :         : 5         : N              
 GND                          : N26       : gnd    :                   :         :           :                
 VCCIO5                       : N27       : power  :                   : 3.3V    : 5         :                
-OIAddress[15]                : N28       : output : 3.3-V LVTTL       :         : 5         : N              
-GND*                         : N29       :        :                   :         : 5         :                
+ODReadData[11]               : N28       : output : 3.3-V LVTTL       :         : 5         : N              
+OwPC[16]                     : N29       : output : 3.3-V LVTTL       :         : 5         : N              
 GND                          : N30       : gnd    :                   :         :           :                
 oHEX4_D[0]                   : P1        : output : 3.3-V LVTTL       :         : 2         : Y              
 oHEX4_D[1]                   : P2        : output : 3.3-V LVTTL       :         : 2         : Y              
@@ -760,9 +760,9 @@ oHEX4_D[2]                   : P3        : output : 3.3-V LVTTL       :         
 oHEX3_D[1]                   : P4        : output : 3.3-V LVTTL       :         : 2         : Y              
 altera_reserved_tck          : P5        : input  : 3.3-V LVTTL       :         : 2         : N              
 oHEX3_D[0]                   : P6        : output : 3.3-V LVTTL       :         : 2         : Y              
-OwRegDisp[12]                : P7        : output : 3.3-V LVTTL       :         : 2         : N              
+OwRegDisp[9]                 : P7        : output : 3.3-V LVTTL       :         : 2         : N              
 altera_reserved_tdi          : P8        : input  : 3.3-V LVTTL       :         : 2         : N              
-OwRegDisp[11]                : P9        : output : 3.3-V LVTTL       :         : 2         : N              
+OwRegDisp[25]                : P9        : output : 3.3-V LVTTL       :         : 2         : N              
 GND                          : P10       : gnd    :                   :         :           :                
 VCCINT                       : P11       : power  :                   : 1.2V    :           :                
 VCCINT                       : P12       : power  :                   : 1.2V    :           :                
@@ -775,15 +775,15 @@ GND                          : P18       : gnd    :                   :         
 VCCINT                       : P19       : power  :                   : 1.2V    :           :                
 VCCINT                       : P20       : power  :                   : 1.2V    :           :                
 GND                          : P21       : gnd    :                   :         :           :                
-OwPC[15]                     : P22       : output : 3.3-V LVTTL       :         : 5         : N              
-OwRegDispFPU[3]              : P23       : output : 3.3-V LVTTL       :         : 5         : N              
-OwRegDispFPU[7]              : P24       : output : 3.3-V LVTTL       :         : 5         : N              
-OwPC[13]                     : P25       : output : 3.3-V LVTTL       :         : 5         : N              
-OIAddress[17]                : P26       : output : 3.3-V LVTTL       :         : 5         : N              
-OwPC[17]                     : P27       : output : 3.3-V LVTTL       :         : 5         : N              
-OwRegDispFPU[15]             : P28       : output : 3.3-V LVTTL       :         : 5         : N              
-GND*                         : P29       :        :                   :         : 5         :                
-OwPC[20]                     : P30       : output : 3.3-V LVTTL       :         : 5         : N              
+OwPC[27]                     : P22       : output : 3.3-V LVTTL       :         : 5         : N              
+ODReadData[16]               : P23       : output : 3.3-V LVTTL       :         : 5         : N              
+ODReadData[10]               : P24       : output : 3.3-V LVTTL       :         : 5         : N              
+ODReadData[24]               : P25       : output : 3.3-V LVTTL       :         : 5         : N              
+ODReadData[8]                : P26       : output : 3.3-V LVTTL       :         : 5         : N              
+ODReadData[18]               : P27       : output : 3.3-V LVTTL       :         : 5         : N              
+OIAddress[17]                : P28       : output : 3.3-V LVTTL       :         : 5         : N              
+ODReadData[7]                : P29       : output : 3.3-V LVTTL       :         : 5         : N              
+ODReadData[15]               : P30       : output : 3.3-V LVTTL       :         : 5         : N              
 VCCIO2                       : R1        : power  :                   : 3.3V    : 2         :                
 GND+                         : R2        :        :                   :         : 2         :                
 iCLK_50_4                    : R3        : input  : 3.3-V LVTTL       :         : 2         : Y              
@@ -805,23 +805,23 @@ GND                          : R18       : gnd    :                   :         
 VCCINT                       : R19       : power  :                   : 1.2V    :           :                
 GND                          : R20       : gnd    :                   :         :           :                
 VCCIO5                       : R21       : power  :                   : 3.3V    : 5         :                
-OIAddress[14]                : R22       : output : 3.3-V LVTTL       :         : 5         : N              
-OwPC[14]                     : R23       : output : 3.3-V LVTTL       :         : 5         : N              
-OwRegDispFPU[14]             : R24       : output : 3.3-V LVTTL       :         : 5         : N              
-OIAddress[20]                : R25       : output : 3.3-V LVTTL       :         : 5         : N              
-OwPC[27]                     : R26       : output : 3.3-V LVTTL       :         : 5         : N              
-OflagBank[0]                 : R27       : output : 3.3-V LVTTL       :         : 5         : N              
+ODReadData[23]               : R22       : output : 3.3-V LVTTL       :         : 5         : N              
+ODReadData[31]               : R23       : output : 3.3-V LVTTL       :         : 5         : N              
+ODReadData[26]               : R24       : output : 3.3-V LVTTL       :         : 5         : N              
+ODReadData[14]               : R25       : output : 3.3-V LVTTL       :         : 5         : N              
+ODReadData[21]               : R26       : output : 3.3-V LVTTL       :         : 5         : N              
+ODReadData[27]               : R27       : output : 3.3-V LVTTL       :         : 5         : N              
 GND+                         : R28       :        :                   :         : 5         :                
 GND+                         : R29       :        :                   :         : 5         :                
 VCCIO5                       : R30       : power  :                   : 3.3V    : 5         :                
 VCCIO1                       : T1        : power  :                   : 3.3V    : 1         :                
 GND+                         : T2        :        :                   :         : 1         :                
 GND+                         : T3        :        :                   :         : 1         :                
-OwRegDisp[9]                 : T4        : output : 3.3-V LVTTL       :         : 1         : N              
-OwRegDisp[6]                 : T5        : output : 3.3-V LVTTL       :         : 1         : N              
-OwRegDisp[3]                 : T6        : output : 3.3-V LVTTL       :         : 1         : N              
-OwRegDisp[18]                : T7        : output : 3.3-V LVTTL       :         : 1         : N              
-OwRegDisp[17]                : T8        : output : 3.3-V LVTTL       :         : 1         : N              
+OwRegDisp[18]                : T4        : output : 3.3-V LVTTL       :         : 1         : N              
+ODAddress[29]                : T5        : output : 3.3-V LVTTL       :         : 1         : N              
+OwRegDisp[7]                 : T6        : output : 3.3-V LVTTL       :         : 1         : N              
+OwRegDisp[17]                : T7        : output : 3.3-V LVTTL       :         : 1         : N              
+OwRegDispSelect[0]           : T8        : output : 3.3-V LVTTL       :         : 1         : N              
 iSW[13]                      : T9        : input  : 3.3-V LVTTL       :         : 1         : Y              
 VCCIO1                       : T10       : power  :                   : 3.3V    : 1         :                
 GND                          : T11       : gnd    :                   :         :           :                
@@ -835,23 +835,23 @@ GND                          : T18       : gnd    :                   :         
 VCCINT                       : T19       : power  :                   : 1.2V    :           :                
 GND                          : T20       : gnd    :                   :         :           :                
 VCCIO6                       : T21       : power  :                   : 3.3V    : 6         :                
-OIAddress[27]                : T22       : output : 3.3-V LVTTL       :         : 5         : N              
-OIAddress[0]                 : T23       : output : 3.3-V LVTTL       :         : 5         : N              
+ODReadData[30]               : T22       : output : 3.3-V LVTTL       :         : 5         : N              
+ODReadData[19]               : T23       : output : 3.3-V LVTTL       :         : 5         : N              
 GND+                         : T24       :        :                   :         : 6         :                
 GND+                         : T25       :        :                   :         : 6         :                
 oSD_CLK                      : T26       : output : 3.3-V LVTTL       :         : 6         : Y              
-OflagBank[6]                 : T27       : output : 3.3-V LVTTL       :         : 6         : N              
+ODAddress[25]                : T27       : output : 3.3-V LVTTL       :         : 6         : N              
 iKEY[1]                      : T28       : input  : 3.3-V LVTTL       :         : 6         : Y              
 iKEY[0]                      : T29       : input  : 3.3-V LVTTL       :         : 6         : Y              
 VCCIO6                       : T30       : power  :                   : 3.3V    : 6         :                
-OwRegDisp[10]                : U1        : output : 3.3-V LVTTL       :         : 1         : N              
-OwRegDisp[22]                : U2        : output : 3.3-V LVTTL       :         : 1         : N              
-OwRegDisp[20]                : U3        : output : 3.3-V LVTTL       :         : 1         : N              
-OwRegDisp[5]                 : U4        : output : 3.3-V LVTTL       :         : 1         : N              
-OwRegDisp[7]                 : U5        : output : 3.3-V LVTTL       :         : 1         : N              
-OwRegDisp[13]                : U6        : output : 3.3-V LVTTL       :         : 1         : N              
-ODAddress[29]                : U7        : output : 3.3-V LVTTL       :         : 1         : N              
-OwRegDisp[1]                 : U8        : output : 3.3-V LVTTL       :         : 1         : N              
+OwRegDispSelect[3]           : U1        : output : 3.3-V LVTTL       :         : 1         : N              
+OwRegDispSelect[2]           : U2        : output : 3.3-V LVTTL       :         : 1         : N              
+OwRegDisp[30]                : U3        : output : 3.3-V LVTTL       :         : 1         : N              
+OwRegDisp[31]                : U4        : output : 3.3-V LVTTL       :         : 1         : N              
+OwRegDispSelect[1]           : U5        : output : 3.3-V LVTTL       :         : 1         : N              
+ODAddress[27]                : U6        : output : 3.3-V LVTTL       :         : 1         : N              
+OwRegDisp[28]                : U7        : output : 3.3-V LVTTL       :         : 1         : N              
+ODAddress[21]                : U8        : output : 3.3-V LVTTL       :         : 1         : N              
 iSW[12]                      : U9        : input  : 3.3-V LVTTL       :         : 1         : Y              
 GND                          : U10       : gnd    :                   :         :           :                
 VCCINT                       : U11       : power  :                   : 1.2V    :           :                
@@ -866,23 +866,23 @@ VCCINT                       : U19       : power  :                   : 1.2V    
 VCCINT                       : U20       : power  :                   : 1.2V    :           :                
 GND                          : U21       : gnd    :                   :         :           :                
 MSEL0                        : U22       :        :                   :         : 6         :                
-ODAddress[26]                : U23       : output : 3.3-V LVTTL       :         : 6         : N              
-ODAddress[21]                : U24       : output : 3.3-V LVTTL       :         : 6         : N              
-ODWriteData[28]              : U25       : output : 3.3-V LVTTL       :         : 6         : N              
+ODAddress[24]                : U23       : output : 3.3-V LVTTL       :         : 6         : N              
+GND*                         : U24       :        :                   :         : 6         :                
+ODAddress[23]                : U25       : output : 3.3-V LVTTL       :         : 6         : N              
 nSTATUS                      : U26       :        :                   :         : 6         :                
 CONF_DONE                    : U27       :        :                   :         : 6         :                
 MSEL1                        : U28       :        :                   :         : 6         :                
 iKEY[3]                      : U29       : input  : 3.3-V LVTTL       :         : 6         : Y              
 iKEY[2]                      : U30       : input  : 3.3-V LVTTL       :         : 6         : Y              
 GND                          : V1        : gnd    :                   :         :           :                
-OwRegDispSelect[0]           : V2        : output : 3.3-V LVTTL       :         : 1         : N              
-OwRegDispSelect[1]           : V3        : output : 3.3-V LVTTL       :         : 1         : N              
-ODAddress[30]                : V4        : output : 3.3-V LVTTL       :         : 1         : N              
+ODAddress[30]                : V2        : output : 3.3-V LVTTL       :         : 1         : N              
+OwRegDisp[26]                : V3        : output : 3.3-V LVTTL       :         : 1         : N              
+OwRegDisp[29]                : V4        : output : 3.3-V LVTTL       :         : 1         : N              
 VCCIO1                       : V5        : power  :                   : 3.3V    : 1         :                
 GND                          : V6        : gnd    :                   :         :           :                
-OwPC[21]                     : V7        : output : 3.3-V LVTTL       :         : 1         : N              
-OIAddress[21]                : V8        : output : 3.3-V LVTTL       :         : 1         : N              
-OwRegDisp[0]                 : V9        : output : 3.3-V LVTTL       :         : 1         : N              
+OIAddress[25]                : V7        : output : 3.3-V LVTTL       :         : 1         : N              
+OwRegDisp[13]                : V8        : output : 3.3-V LVTTL       :         : 1         : N              
+OwPC[25]                     : V9        : output : 3.3-V LVTTL       :         : 1         : N              
 iSW[11]                      : V10       : input  : 3.3-V LVTTL       :         : 1         : Y              
 VCCINT                       : V11       : power  :                   : 1.2V    :           :                
 VCCINT                       : V12       : power  :                   : 1.2V    :           :                
@@ -894,26 +894,26 @@ GND                          : V17       : gnd    :                   :         
 GND                          : V18       : gnd    :                   :         :           :                
 VCCINT                       : V19       : power  :                   : 1.2V    :           :                
 VCCINT                       : V20       : power  :                   : 1.2V    :           :                
-ODReadData[23]               : V21       : output : 3.3-V LVTTL       :         : 6         : N              
-ODReadData[3]                : V22       : output : 3.3-V LVTTL       :         : 6         : N              
-ODAddress[23]                : V23       : output : 3.3-V LVTTL       :         : 6         : N              
-ODReadData[28]               : V24       : output : 3.3-V LVTTL       :         : 6         : N              
+GND*                         : V21       :        :                   :         : 6         :                
+ODAddress[18]                : V22       : output : 3.3-V LVTTL       :         : 6         : N              
+OwRegDispFPU[21]             : V23       : output : 3.3-V LVTTL       :         : 6         : N              
+OwRegDispFPU[10]             : V24       : output : 3.3-V LVTTL       :         : 6         : N              
 GND                          : V25       : gnd    :                   :         :           :                
 VCCIO6                       : V26       : power  :                   : 3.3V    : 6         :                
-ODAddress[22]                : V27       : output : 3.3-V LVTTL       :         : 6         : N              
-ODAddress[25]                : V28       : output : 3.3-V LVTTL       :         : 6         : N              
-OCLK                         : V29       : output : 3.3-V LVTTL       :         : 6         : N              
+OwRegDispFPU[28]             : V27       : output : 3.3-V LVTTL       :         : 6         : N              
+GND*                         : V28       :        :                   :         : 6         :                
+OwRegDispFPU[17]             : V29       : output : 3.3-V LVTTL       :         : 6         : N              
 GND                          : V30       : gnd    :                   :         :           :                
-OwRegDispSelect[3]           : W1        : output : 3.3-V LVTTL       :         : 1         : N              
-OwRegDispSelect[2]           : W2        : output : 3.3-V LVTTL       :         : 1         : N              
-OwRegDisp[14]                : W3        : output : 3.3-V LVTTL       :         : 1         : N              
-ODAddress[27]                : W4        : output : 3.3-V LVTTL       :         : 1         : N              
+ODAddress[22]                : W1        : output : 3.3-V LVTTL       :         : 1         : N              
+OwRegDisp[4]                 : W2        : output : 3.3-V LVTTL       :         : 1         : N              
+OwRegDisp[22]                : W3        : output : 3.3-V LVTTL       :         : 1         : N              
+OwRegDisp[24]                : W4        : output : 3.3-V LVTTL       :         : 1         : N              
 iSW[10]                      : W5        : input  : 3.3-V LVTTL       :         : 1         : Y              
-OIAddress[23]                : W6        : output : 3.3-V LVTTL       :         : 1         : N              
-ODReadData[18]               : W7        : output : 3.3-V LVTTL       :         : 1         : N              
-OwPC[23]                     : W8        : output : 3.3-V LVTTL       :         : 1         : N              
-ODReadData[8]                : W9        : output : 3.3-V LVTTL       :         : 1         : N              
-ODReadData[24]               : W10       : output : 3.3-V LVTTL       :         : 1         : N              
+OwInstr[23]                  : W6        : output : 3.3-V LVTTL       :         : 1         : N              
+OwRegDisp[19]                : W7        : output : 3.3-V LVTTL       :         : 1         : N              
+OIAddress[28]                : W8        : output : 3.3-V LVTTL       :         : 1         : N              
+OIReadData[23]               : W9        : output : 3.3-V LVTTL       :         : 1         : N              
+OwPC[28]                     : W10       : output : 3.3-V LVTTL       :         : 1         : N              
 GND                          : W11       : gnd    :                   :         :           :                
 VCCINT                       : W12       : power  :                   : 1.2V    :           :                
 VCCINT                       : W13       : power  :                   : 1.2V    :           :                
@@ -927,23 +927,23 @@ GND                          : W20       : gnd    :                   :         
 oIRDA_TXD                    : W21       : output : 3.3-V LVTTL       :         : 6         : Y              
 iIRDA_RXD                    : W22       : input  : 3.3-V LVTTL       :         : 6         : Y              
 oLEDG[2]                     : W23       : output : 3.3-V LVTTL       :         : 6         : Y              
-ODReadData[30]               : W24       : output : 3.3-V LVTTL       :         : 6         : N              
+GND*                         : W24       :        :                   :         : 6         :                
 oLEDG[1]                     : W25       : output : 3.3-V LVTTL       :         : 6         : Y              
-ODReadData[12]               : W26       : output : 3.3-V LVTTL       :         : 6         : N              
+GND*                         : W26       :        :                   :         : 6         :                
 oLEDG[0]                     : W27       : output : 3.3-V LVTTL       :         : 6         : Y              
 SD_CMD                       : W28       : bidir  : 3.3-V LVTTL       :         : 6         : Y              
 SD_DAT                       : W29       : bidir  : 3.3-V LVTTL       :         : 6         : Y              
-ODAddress[28]                : W30       : output : 3.3-V LVTTL       :         : 6         : N              
-OwPC[1]                      : Y1        : output : 3.3-V LVTTL       :         : 1         : N              
-OIAddress[1]                 : Y2        : output : 3.3-V LVTTL       :         : 1         : N              
-ODAddress[24]                : Y3        : output : 3.3-V LVTTL       :         : 1         : N              
-OwRegDisp[30]                : Y4        : output : 3.3-V LVTTL       :         : 1         : N              
-OwPC[25]                     : Y5        : output : 3.3-V LVTTL       :         : 1         : N              
-ODWriteData[21]              : Y6        : output : 3.3-V LVTTL       :         : 1         : N              
-ODWriteData[22]              : Y7        : output : 3.3-V LVTTL       :         : 1         : N              
-OwRegDispFPU[5]              : Y8        : output : 3.3-V LVTTL       :         : 1         : N              
-GND*                         : Y9        :        :                   :         : 1         :                
-GND*                         : Y10       :        :                   :         : 1         :                
+ODWriteData[24]              : W30       : output : 3.3-V LVTTL       :         : 6         : N              
+OwPC[30]                     : Y1        : output : 3.3-V LVTTL       :         : 1         : N              
+OwPC[18]                     : Y2        : output : 3.3-V LVTTL       :         : 1         : N              
+OIAddress[18]                : Y3        : output : 3.3-V LVTTL       :         : 1         : N              
+OIAddress[30]                : Y4        : output : 3.3-V LVTTL       :         : 1         : N              
+OIAddress[0]                 : Y5        : output : 3.3-V LVTTL       :         : 1         : N              
+OIReadData[31]               : Y6        : output : 3.3-V LVTTL       :         : 1         : N              
+OIAddress[31]                : Y7        : output : 3.3-V LVTTL       :         : 1         : N              
+OwPC[26]                     : Y8        : output : 3.3-V LVTTL       :         : 1         : N              
+OwInstr[7]                   : Y9        : output : 3.3-V LVTTL       :         : 1         : N              
+OIReadData[7]                : Y10       : output : 3.3-V LVTTL       :         : 1         : N              
 VCCIO1                       : Y11       : power  :                   : 3.3V    : 1         :                
 VCCINT                       : Y12       : power  :                   : 1.2V    :           :                
 VCCINT                       : Y13       : power  :                   : 1.2V    :           :                
@@ -954,13 +954,13 @@ VCCINT                       : Y17       : power  :                   : 1.2V    
 VCCINT                       : Y18       : power  :                   : 1.2V    :           :                
 GND                          : Y19       : gnd    :                   :         :           :                
 VCCIO6                       : Y20       : power  :                   : 3.3V    : 6         :                
-ODReadData[4]                : Y21       : output : 3.3-V LVTTL       :         : 6         : N              
-ODReadData[29]               : Y22       : output : 3.3-V LVTTL       :         : 6         : N              
+OwRegDispFPU[4]              : Y21       : output : 3.3-V LVTTL       :         : 6         : N              
+GND*                         : Y22       :        :                   :         : 6         :                
 oLEDG[5]                     : Y23       : output : 3.3-V LVTTL       :         : 6         : Y              
 oLEDG[4]                     : Y24       : output : 3.3-V LVTTL       :         : 6         : Y              
-ODReadData[16]               : Y25       : output : 3.3-V LVTTL       :         : 6         : N              
-ODReadData[13]               : Y26       : output : 3.3-V LVTTL       :         : 6         : N              
+OwRegDispFPU[26]             : Y25       : output : 3.3-V LVTTL       :         : 6         : N              
+OCLK                         : Y26       : output : 3.3-V LVTTL       :         : 6         : N              
 oLEDG[3]                     : Y27       : output : 3.3-V LVTTL       :         : 6         : Y              
-ODReadData[9]                : Y28       : output : 3.3-V LVTTL       :         : 6         : N              
-OwPC[0]                      : Y29       : output : 3.3-V LVTTL       :         : 6         : N              
+OControlState[2]             : Y28       : output : 3.3-V LVTTL       :         : 6         : N              
+GND*                         : Y29       :        :                   :         : 6         :                
 SD_DAT3                      : Y30       : bidir  : 3.3-V LVTTL       :         : 6         : Y              
