@@ -23,7 +23,7 @@ Foi projetada e implementada uma versão do jogo Pac Man Battle Royale inteirame
 
 \section{Introdução}
  O jogo Pac-Man foi criado em 1980 por Toru Iwatani em parceria com a Namco. Extremamente simples e popular, o jogo consiste em controlar o personagem titular, Pac-man, a caricata bola amarela antropomorfisada, em uma arena-labirinto onde ele deve fugir de fantasmas enquanto coleta pontos e procura por power ups.
- 
+
  \begin{figure}[h!]
     \centering
     \includegraphics[width=0.4\textwidth]{pakku.png}
@@ -43,7 +43,7 @@ O objetivo principal do processador é um implementar a organização \textit{pi
 
 \section{Metodologia}
 
-O jogo foi inteiramente programado em assembly MIPS, sendo posteriormente otimizado para um processador \textit{pipeline} que rodaria na placa \textit{Altera DE-II Cyclone}. 
+O jogo foi inteiramente programado em assembly MIPS, sendo posteriormente otimizado para um processador \textit{pipeline} que rodaria na placa \textit{Altera DE-II Cyclone}.
 
 A idea principal da implementação do jogo segue uma arquitetura de software \textit{Model-View-Controller}. Basicamente, temos um \textit{loop} principal que sempre checa por entradas e atualiza a tela do jogo. Novas entradas do usuário causam efeitos colaterais que levam o jogo a novos estados. No caso, temos 2 grandes estados principais: o menu principal, que serve para configurar o jogo; e o jogo em si, em que os jogadores podem andar pelo labirinto ao lado dos fantasmas controlados por uma inteligência artificial simples.
 
@@ -67,7 +67,7 @@ O pipeline em questão tem 5 estágios:
     \item Escrita nos registradores
 \end{itemize}
 
-Como as instruções são executadas em paralelo, podemos ter problemas do gênero \textit{race condition} entre as instruções, isto é, uma instrução depender do resultado de uma instrução que ainda não foi completa. Para tanto, podemos adaptar o programa para que isto não aconteça ou adaptar o \textit{hardware} para detectar quando que isso ocorre e colocar \textit{locks} (comumente chamadas de "bolhas") no pipeline, isto é, fazer com que as instruções que dependam de algum dado esperem pelo fim da execução da instrução. 
+Como as instruções são executadas em paralelo, podemos ter problemas do gênero \textit{race condition} entre as instruções, isto é, uma instrução depender do resultado de uma instrução que ainda não foi completa. Para tanto, podemos adaptar o programa para que isto não aconteça ou adaptar o \textit{hardware} para detectar quando que isso ocorre e colocar \textit{locks} (comumente chamadas de "bolhas") no pipeline, isto é, fazer com que as instruções que dependam de algum dado esperem pelo fim da execução da instrução.
 
 \subsection{Apresentação e Menu}
 
@@ -100,12 +100,6 @@ Após a seleção dos parâmetros iniciais, o jogo é iniciado. O campo é uma \
 
 
 
-\begin{figure*}[h!]
-    \centering
-    \includegraphics[width=0.65\textwidth]{JOGO1.png}
-    \caption{O campo de jogo. Dimensões: 40x30}
-\end{figure*}
-
 O movimento se dá por entradas simples ($W$, $A$, $S$ e $D$) fornecidas pelos controladores de cada jogador. Essas entradas determinam a posição que o personagem tentará adentrar no próximo ciclo de jogo: $W$ o moveria para cima, $A$ para a esquerda, $S$ para baixo e $D$ para a direita. O movimento é bem sucedido se não houver colisão com um obstáculo, um fantasma ou outro jogador.
 
 Obstáculos foram definidos na criação da arena e definem um espaço obstruído para transposição normal. Um movimento que adentraria território proibido é detectado e cancelado, mantendo o Pac-Man em seu caminho original.
@@ -125,7 +119,7 @@ No decorrer da partida, os \textit{players} terão de admnistrar mais dois recur
 
 \subsection{Inimigos e AI}
 
-Os fantasmas são os inimigos controlados pelo computador. Eles perseguem e cercam os jogadores, com o objetivo de os destruírem (removendo uma vida) caso os alcancem. 
+Os fantasmas são os inimigos controlados pelo computador. Eles perseguem e cercam os jogadores, com o objetivo de os destruírem (removendo uma vida) caso os alcancem.
 
 A movimentação dos fantasmas é determinada por uma inteligência artificial baseada no algoritmo de Dijkstra. O algoritmo de \textit{Pathfinding} é baseado no cálculo da menor distância a ser percorrida por cada fantasma para alcançar cada posição no mapa. Para cada fantasma, isso se dá pela geração recursiva de uma matriz que relaciona tiles no campo à quantidade de passos necessária para alcançá-los (associando  posições inacessíveis a $\infty$).
 
@@ -135,31 +129,35 @@ Esse procedimento é realizado de forma inteligente e unificada pelo conjunto de
 
 %Fantasmas evitam jogadores que pegaram o power up? O power Up está realmente implementado?
 
-\newpage
-
 
 \subsection{Multiplayer e Controles Infravermelho}
 
 Feito o jogo para um único jogador, implementar o modo multiplayer é apenas uma questão de expandir as possibilidades de entrada e modificar a inteligência artificial para se adaptar a perseguir vários jogadores, em geral optando por seguir o jogador mais próximo.
 
-As diferentes formas de entrada, por sua vez, foram mapeadas a diferentes controladores infravermelho. Utilizando a convenção IrDA (Infrared Data Association), foi possível associar o sinal de cada controle disponível para a equipe a uma estrutura de entrada, que posteriormente é usada para controlar um personagem jogável.
+As diferentes formas de entrada, por sua vez, foram mapeadas a diferentes controladores infravermelho. Utilizando a convenção IrDA (Infrared Data Association), foi possível associar o sinal de cada controle disponível para a equipe a uma estrutura de entrada, que posteriormente é usada para controlar um personagem jogável. A falta de controles remotos funcionais impediu o uso desta \textit{feature}.
+
+\begin{figure*}[h!]
+    \centering
+    \includegraphics[width=0.65\textwidth]{JOGO1.png}
+    \caption{O campo de jogo. Dimensões: 40x30}
+\end{figure*}
 
 %TODO: Foto dos controles infravermelhos? Seria Fera
 
 \subsection{Som e Outros Detalhes de Software}
 
-A implementação virtual do jogo conta com efeitos sonoros, que incluem um marcador de início de partida, sons de movimentação e um indicador de fim de jogo. Esses \textit{beeps} foram realizados pela chamada do procedimento syscall com os argumentos adequados a cada turno de jogo. 
+A implementação virtual do jogo conta com efeitos sonoros, que incluem um marcador de início de partida, sons de movimentação e um indicador de fim de jogo. Esses \textit{beeps} foram realizados pela chamada do procedimento \textit{syscall} com os argumentos adequados a cada turno de jogo.
 
 \subsection{Implementação na Placa Cyclone DE II}
 
 A equipe teve que analisar e criar código em linguagem de descrição de harware Verilog para tornar possível a execução do jogo no hardware da Altera. Isso incluiu, dentre outros, a implementação de novas instruções na unidade de ponto flutuante e adaptação de estruturas de entrada, saída e memória à realidade do hardware, utilizando seus mecanismos e switches com essa finalidade.
 
 Foi também necessário realizar o ajuste de endereços de memória no código, de forma a controlar corretamente os dados na tela e na entrada. Além disso, a equipe teve que se adaptar à natureza distinta do processamento na placa, que frequentemente incorria em travamentos e comportamentos não previstos no processo de criação e simulação do software. Isso levou à análise do processamento código em configurações distintas de clock e ao acompanhamento passo a passo de instruções e seus efeitos na memória.
-\section{Resultados Obtidos}
-O resultado pode ser visto nos seguintes links no youtube:
 
-$$LINK PLACEHOLDER$$
-$$ LINK PLACEHOLDER $$
+\section{Resultados Obtidos}
+
+O resultado pode ser visto no YouTube no link \url{https://youtu.be/bpwdLiR33eU}.
+
 A implementação na placa da Altera se mostrou um grande desafio. Estruturas funcionais da implementação do jogo no simulador MARS frequentemente não operavam como esperado ao passar o código pelo hardware da Cyclone II. Isso se dá, por exemplo, devido à ausência de alguma funções na ISA da placa, como mul e round, e complicações com hardware (buffers de teclado e procedimentos internos da placa). Além disso, posições de memória e parâmetros diversos diferiam nas duas aplicações.
 
 Isso impediu o bom funcionamento da música e sons do jogo, por exemplo, e dificultou o processamento de entradas e saídas.
@@ -191,7 +189,7 @@ O processador em \textit{pipeline} e o aprendizado dos conhecimentos requeridos 
     \item \url{http://pacman.com/en/pac-man-history}. Visitado em 4 de Julho de 2017.
     \item \url{https://courses.missouristate.edu/KenVollmar/mars/index.htm}. Visitado em 4 de Julho de 2017.
     \item \url{http://www.irda.org/}. Visitado em 4 de Julho de 2017.
-    
+
 \end{enumerate}
 
 \end{document}
