@@ -40,24 +40,7 @@ Para implementar a organização do processador MIPS, utilizamos a linguagem \te
 
 O objetivo principal do processador é um implementar a organização \textit{pipeline}, que se baseia na execução em paralelo de microinstruções. Nela, o processador é dividido em alguns circuitos principais (denominados  estágios) que podem executar tarefas em separado e repassar seus resultados para o estágio seguinte. Desta forma, todas as instruções da arquitetura devem ser trabalhadas para que elas sejam executadas nas etapas determinadas para o \textit{pipeline}.
 
-
-\section{Metodologia}
-
-O jogo foi inteiramente programado em assembly MIPS, sendo posteriormente otimizado para um processador \textit{pipeline} que rodaria na placa \textit{Altera DE-II Cyclone}.
-
-A idea principal da implementação do jogo segue uma arquitetura de software \textit{Model-View-Controller}. Basicamente, temos um \textit{loop} principal que sempre checa por entradas e atualiza a tela do jogo. Novas entradas do usuário causam efeitos colaterais que levam o jogo a novos estados. No caso, temos 2 grandes estados principais: o menu principal, que serve para configurar o jogo; e o jogo em si, em que os jogadores podem andar pelo labirinto ao lado dos fantasmas controlados por uma inteligência artificial simples.
-
-O processador implementado em Verilog é baseado em uma organização mínima desenvolvida em sala de aula pelo professor. Em cima dela, um processador mais completo, capaz de acessar dispositivos periféricos e operar com números em ponto flutuante, foi melhorado pelos alunos, tendo algumas modificações feitas pelo grupo para poder utilizar controles remotos e algumas operações com ponto flutuante a mais.
-
-O processador segue uma organização em \textit{pipeline} clássica, contando com inserção de bolhas quando algum hazard de memória é detectado.
-
-\begin{figure*}[h!]
-    \centering
-    \includegraphics[width=0.8\textwidth]{data_pipeline.png}
-    \caption{Ilustração do processador compilado em componentes lógicos}
-\end{figure*}
-
-O pipeline em questão tem 5 estágios:
+O pipeline clássico tem 5 estágios:
 
 \begin{itemize}
     \item Leitura da instrução
@@ -68,6 +51,23 @@ O pipeline em questão tem 5 estágios:
 \end{itemize}
 
 Como as instruções são executadas em paralelo, podemos ter problemas do gênero \textit{race condition} entre as instruções, isto é, uma instrução depender do resultado de uma instrução que ainda não foi completa. Para tanto, podemos adaptar o programa para que isto não aconteça ou adaptar o \textit{hardware} para detectar quando que isso ocorre e colocar \textit{locks} (comumente chamadas de "bolhas") no pipeline, isto é, fazer com que as instruções que dependam de algum dado esperem pelo fim da execução da instrução.
+
+
+\section{Metodologia}
+
+O jogo foi inteiramente programado em assembly MIPS, sendo posteriormente otimizado para um processador \textit{pipeline} que rodaria na placa \textit{Altera DE-II Cyclone}.
+
+A idea principal da implementação do jogo segue uma arquitetura de software \textit{Model-View-Controller}. Basicamente, temos um \textit{loop} principal que sempre checa por entradas e atualiza a tela do jogo. Novas entradas do usuário causam efeitos colaterais que levam o jogo a novos estados. No caso, temos 2 grandes estados principais: o menu principal, que serve para configurar o jogo; e o jogo em si, em que os jogadores podem andar pelo labirinto ao lado dos fantasmas controlados por uma inteligência artificial simples.
+
+O processador implementado em Verilog é baseado em uma organização mínima desenvolvida em sala de aula pelo professor. Em cima dela, um processador mais completo, capaz de acessar dispositivos periféricos e operar com números em ponto flutuante, foi melhorado pelos alunos, tendo algumas modificações feitas pelo grupo para poder utilizar controles remotos e algumas operações com ponto flutuante a mais.
+
+O processador segue uma organização em \textit{uniciclo}, onde todos os estágios executam de uma única vez por instrução a cada ciclo de clock.
+
+\begin{figure*}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{data_unicicle.png}
+    \caption{Ilustração do processador compilado em componentes lógicos}
+\end{figure*}
 
 \subsection{Apresentação e Menu}
 

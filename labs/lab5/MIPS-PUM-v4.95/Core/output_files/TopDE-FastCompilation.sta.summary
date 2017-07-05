@@ -3,28 +3,28 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow Model Setup 'CLK'
-Slack : -125.758
-TNS   : -8162.922
+Slack : -125.364
+TNS   : -68943.160
 
 Type  : Slow Model Setup 'CLKI0|PLL1|altpll_component|pll|clk[0]'
-Slack : 1.602
-TNS   : 0.000
+Slack : -16.220
+TNS   : -113.473
+
+Type  : Slow Model Setup 'iCLK_50'
+Slack : -7.176
+TNS   : -11867.729
 
 Type  : Slow Model Setup 'CLKI0|PLL1|altpll_component|pll|clk[2]'
 Slack : 4.379
 TNS   : 0.000
 
-Type  : Slow Model Setup 'iCLK_50'
-Slack : 5.390
-TNS   : 0.000
-
 Type  : Slow Model Setup 'VGA_Interface:VGA0|VgaAdapter:VGA0|VgaPll:xx|altpll:altpll_component|_clk0'
-Slack : 26.300
+Slack : 26.334
 TNS   : 0.000
 
 Type  : Slow Model Hold 'iCLK_50'
-Slack : -0.223
-TNS   : -0.223
+Slack : 0.331
+TNS   : 0.000
 
 Type  : Slow Model Hold 'CLK'
 Slack : 0.391
@@ -39,23 +39,23 @@ Slack : 0.391
 TNS   : 0.000
 
 Type  : Slow Model Hold 'CLKI0|PLL1|altpll_component|pll|clk[0]'
-Slack : 3.794
+Slack : 5.507
 TNS   : 0.000
 
 Type  : Slow Model Recovery 'VGA_Interface:VGA0|VgaAdapter:VGA0|VgaPll:xx|altpll:altpll_component|_clk0'
-Slack : 13.033
+Slack : 14.052
 TNS   : 0.000
 
 Type  : Slow Model Recovery 'iCLK_50'
-Slack : 17.473
+Slack : 16.955
 TNS   : 0.000
 
 Type  : Slow Model Removal 'iCLK_50'
-Slack : 1.697
+Slack : 2.009
 TNS   : 0.000
 
 Type  : Slow Model Removal 'VGA_Interface:VGA0|VgaAdapter:VGA0|VgaPll:xx|altpll:altpll_component|_clk0'
-Slack : 6.536
+Slack : 5.287
 TNS   : 0.000
 
 Type  : Slow Model Minimum Pulse Width 'CLKI0|PLL1|altpll_component|pll|clk[2]'
@@ -87,27 +87,27 @@ Slack : 97.778
 TNS   : 0.000
 
 Type  : Fast Model Setup 'CLK'
-Slack : -46.473
-TNS   : -2817.539
+Slack : -46.735
+TNS   : -8163.758
+
+Type  : Fast Model Setup 'CLKI0|PLL1|altpll_component|pll|clk[0]'
+Slack : -2.741
+TNS   : -19.146
 
 Type  : Fast Model Setup 'CLKI0|PLL1|altpll_component|pll|clk[2]'
 Slack : 4.665
 TNS   : 0.000
 
-Type  : Fast Model Setup 'CLKI0|PLL1|altpll_component|pll|clk[0]'
-Slack : 5.788
-TNS   : 0.000
-
 Type  : Fast Model Setup 'iCLK_50'
-Slack : 8.120
+Slack : 7.111
 TNS   : 0.000
 
 Type  : Fast Model Setup 'VGA_Interface:VGA0|VgaAdapter:VGA0|VgaPll:xx|altpll:altpll_component|_clk0'
-Slack : 33.500
+Slack : 33.422
 TNS   : 0.000
 
 Type  : Fast Model Hold 'iCLK_50'
-Slack : 0.013
+Slack : 0.172
 TNS   : 0.000
 
 Type  : Fast Model Hold 'CLK'
@@ -123,23 +123,23 @@ Slack : 0.215
 TNS   : 0.000
 
 Type  : Fast Model Hold 'CLKI0|PLL1|altpll_component|pll|clk[0]'
-Slack : 2.107
+Slack : 2.834
 TNS   : 0.000
 
 Type  : Fast Model Recovery 'VGA_Interface:VGA0|VgaAdapter:VGA0|VgaPll:xx|altpll:altpll_component|_clk0'
-Slack : 16.063
+Slack : 16.614
 TNS   : 0.000
 
 Type  : Fast Model Recovery 'iCLK_50'
-Slack : 18.702
+Slack : 18.542
 TNS   : 0.000
 
 Type  : Fast Model Removal 'iCLK_50'
-Slack : 1.072
+Slack : 1.189
 TNS   : 0.000
 
 Type  : Fast Model Removal 'VGA_Interface:VGA0|VgaAdapter:VGA0|VgaPll:xx|altpll:altpll_component|_clk0'
-Slack : 3.724
+Slack : 2.977
 TNS   : 0.000
 
 Type  : Fast Model Minimum Pulse Width 'CLKI0|PLL1|altpll_component|pll|clk[2]'

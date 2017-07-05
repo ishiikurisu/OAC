@@ -167,9 +167,9 @@ em 2016/1 na disciplina OAC
 
 Com receptor IRDA, LFSR e STOPWATCH
 *Eduardo Scartezini C. Carvalho 			14/0137084
-Camila Ferreira Thé Pontes 				15/0156120 
+Camila Ferreira Thé Pontes 				15/0156120
 Aurora Li Min de Freitas Wang 			13/0006408
-Renato Estevam Nogueira 					13/0036579 
+Renato Estevam Nogueira 					13/0036579
 em 2016/2 na disciplina OAC
 
 
@@ -645,7 +645,7 @@ STOPWATCH_Interface  stopwatch (
 lfsr_interface  lfsr (
    .iCLK_50(iCLK_50),
     //  Barramento
-    .wReadEnable(DReadEnable), 
+    .wReadEnable(DReadEnable),
     .wAddress(DAddress), .wReadData(DReadData)
 
 );
