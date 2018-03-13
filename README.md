@@ -1,6 +1,6 @@
-# Organização e Arquitetura de Computadores
+# Organizaï¿½ï¿½o e Arquitetura de Computadores
 
-Código escrito na disciplina "Organização e Arquitetura de Computadores"
+Cï¿½digo escrito na disciplina "Organizaï¿½ï¿½o e Arquitetura de Computadores"
 
 ```
 			   XXXX
@@ -54,3 +54,7 @@ Código escrito na disciplina "Organização e Arquitetura de Computadores"
 
 (>CALL PIPELINE <718> 351 5678<)10MEG!!
 ```
+
+## References
+
+- [Syscall do MIPS](https://courses.missouristate.edu/KenVollmar/mars/Help/SyscallHelp.html)
