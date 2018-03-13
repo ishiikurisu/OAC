@@ -84,3 +84,10 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+################
+# ALTERA STUFF #
+################
+
+db/
+output_files/
