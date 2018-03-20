@@ -3,4 +3,4 @@ build:
     local: true
     commands:
     - gcc main.c -o main.exe -lm -O2
-    - ./main.exe data/testeio_code.mif
+    - ./main.exe data/testeio.bin
