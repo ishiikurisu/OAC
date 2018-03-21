@@ -79,6 +79,14 @@ typedef enum {
     UNKNOWN
 } INSTRUCTION_CODE;
 
+// Enumeration for the instruction format.
+typedef enum {
+    FORMAT_R,
+    FORMAT_I,
+    FORMAT_J,
+    FORMAT_INVALID
+} INSTRUCTION_FORMAT;
+
 // Detects an instruction and assigns the result to a code, as described by the
 // `INSTRUCTION_CODE` enumeration.
 int detect_instruction(unsigned long instruction)
@@ -137,6 +145,74 @@ char* debug_instruction(unsigned long instruction)
     }
 
     return outlet;
+}
+
+// Tells which is the format of the instruction by the
+int get_format(int instruction_code)
+{
+    int format;
+
+    switch (instruction_code) {
+        case ADD:
+            format = FORMAT_R;
+            break;
+
+        case ADDIU:
+            format = FORMAT_I;
+            break;
+
+        case J:
+        case JAL:
+            format = FORMAT_J;
+            break;
+
+        default:
+            format = FORMAT_INVALID;
+    }
+
+    return format;
+}
+
+// Execute an array of instructions from a MIPS binary executable. Can read from
+// standard input and write to standard output.
+void execute(int how_many, unsigned long *instructions)
+{
+    unsigned long registers[32];
+    unsigned long instruction;
+    int name;
+    int rs, rt, rd, shamt, imm;
+    int i;
+
+    for (i = 0; i < how_many; ++i)
+    {
+        instruction = instructions[i];
+        name = detect_instruction(instruction);
+        rs = (instruction >> 21) & 0x3f;
+        rt = (instruction >> 16) & 0x3f;
+        rd = (instruction >> 11) & 0x3f;
+        shamt = (instruction >> 6) & 0x3f;
+        imm = instruction & (unsigned long) 65535;
+
+        switch (name) {
+
+
+            case ADD:
+                registers[rd] = registers[rs] + registers[rt];
+            break;
+
+            case ADDIU:
+                registers[rt] = registers[rs] + imm;
+            break;
+
+            case SYSCALL:
+                // TODO Implement me!
+            break;
+
+            case UNKNOWN:
+                printf("unknown instruction!\n");
+            break;
+        }
+    }
 }
 
 #endif /* end of include guard: MIPS_H */
