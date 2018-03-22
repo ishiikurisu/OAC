@@ -44,17 +44,17 @@ unsigned long* load_from_file(const char* input)
 
 // Loads the binary representation of the memory as described in the data file.
 // Returns an allocated array of words.
-long* load_memory(const char* input)
+unsigned char* load_memory(const char* input)
 {
     FILE* inlet = fopen(input, "rb");
-    long *outlet = NULL;
+    unsigned char *outlet = NULL;
     int limit;
     int i;
 
     limit = get_how_many_instructions(inlet);
-    outlet = (long*) malloc(sizeof(long) * 65535);
-    for (i = 0; i < 65535; outlet[i] = 0, ++i);
-    fread(outlet, sizeof(long), limit, inlet);
+    outlet = (unsigned char*) malloc(sizeof(char) * 1048575);
+    for (i = 0; i < 1048575; outlet[i] = 0, ++i);
+    fread(outlet, sizeof(char), limit, inlet);
     fclose(inlet);
 
     return outlet;
@@ -163,7 +163,7 @@ char* debug_instruction(unsigned long instruction)
 }
 
 // Simulates the `syscall` command using the current registers.
-unsigned long* syscall(long *registers)
+unsigned long* syscall(long *registers, unsigned char *memory)
 {
     long v0 = registers[2];
     long a0 = registers[4];
@@ -173,9 +173,21 @@ unsigned long* syscall(long *registers)
             printf("%ld\n", a0);
             break;
 
+        case 4:
+            while (memory[a0] != '\0') {
+                printf("%c", memory[a0]);
+                a0++;
+            }
+            break;
+
         case 5:
             scanf("%ld", &v0);
             registers[2] = v0;
+            break;
+
+        case 10:
+            free(registers);
+            registers = NULL;
             break;
 
         default:
@@ -187,9 +199,9 @@ unsigned long* syscall(long *registers)
 
 // Execute an array of instructions from a MIPS binary executable. Can read from
 // standard input and write to standard output.
-void execute(int how_many, unsigned long *instructions, long *memory)
+void execute(int how_many, unsigned long *instructions, unsigned char *memory)
 {
-    long *registers;
+    register long *registers;
     unsigned long instruction;
     INSTRUCTION_CODE name;
     int rs, rt, rd, shamt, imm;
@@ -198,7 +210,6 @@ void execute(int how_many, unsigned long *instructions, long *memory)
 
     registers = (long*) malloc(sizeof(long) * 32);
     for (i = 0; i < 32; registers[i] = 0x0, ++i);
-    memory = (long*) malloc(sizeof(long) * 65535);
 
     for (i = 0; i < how_many; ++i)
     {
@@ -224,12 +235,16 @@ void execute(int how_many, unsigned long *instructions, long *memory)
                 break;
 
             case LW:
-                sign_ext_imm = 0; // TODO Implement me!
-                registers[rt] = memory[registers[rs] + sign_ext_imm];
+                sign_ext_imm = (((imm >> 16) & 0x1)? 0xFFFFFFFF : 0x0) & imm;
+                registers[rt] = memory[registers[rs]+sign_ext_imm]
+                              | (memory[registers[rs]+sign_ext_imm+1] << 8)
+                              | (memory[registers[rs]+sign_ext_imm+2] << 16)
+                              | (memory[registers[rs]+sign_ext_imm+3] << 24);
                 break;
 
             case SYSCALL:
-                registers = syscall(registers);
+                syscall(registers, memory);
+                if (registers == NULL) return;
                 break;
 
             case UNKNOWN:
@@ -238,7 +253,9 @@ void execute(int how_many, unsigned long *instructions, long *memory)
         }
     }
 
-    free(registers);
+    if (registers != NULL) {
+        free(registers);
+    }
 }
 
 #endif /* end of include guard: MIPS_H */
