@@ -25,19 +25,36 @@ int count_instructions(const char* input)
     return limit;
 }
 
-// Loads a MIF executable file to an array of unsigned integer numbers, each
+// Loads a binary executable file to an array of unsigned integer numbers, each
 // representing an instruction. The last instruction is represented with a 0.
 unsigned long* load_from_file(const char* input)
 {
     FILE* inlet = fopen(input, "rb");
     unsigned long* outlet = NULL;
     int limit;
-    int i;
 
     limit = get_how_many_instructions(inlet);
     outlet = (unsigned long*) malloc(sizeof(long) * (limit+1));
     fread(outlet, sizeof(long), limit, inlet);
     outlet[limit] = 0;
+    fclose(inlet);
+
+    return outlet;
+}
+
+// Loads the binary representation of the memory as described in the data file.
+// Returns an allocated array of words.
+long* load_memory(const char* input)
+{
+    FILE* inlet = fopen(input, "rb");
+    long *outlet = NULL;
+    int limit;
+    int i;
+
+    limit = get_how_many_instructions(inlet);
+    outlet = (long*) malloc(sizeof(long) * 65535);
+    for (i = 0; i < 65535; outlet[i] = 0, ++i);
+    fread(outlet, sizeof(long), limit, inlet);
     fclose(inlet);
 
     return outlet;
@@ -75,6 +92,7 @@ typedef enum {
     BEQ,
     BNE,
     LI,
+    LW,
     SYSCALL,
     NOP,
     UNKNOWN
@@ -107,6 +125,7 @@ int detect_instruction(unsigned long instruction)
         break;
         case 0x8: name = ADDI; break;
         case 0x9: name = ADDIU; break;
+        case 0x23: name = LW; break;
     }
 
 
@@ -136,6 +155,7 @@ char* debug_instruction(unsigned long instruction)
         case ADDIU: sprintf(outlet, "addiu"); break;
         case NOP: sprintf(outlet, "nop"); break;
         case ADDI: sprintf(outlet, "addi"); break;
+        case LW: sprintf(outlet, "lw"); break;
         default: sprintf(outlet, "UNKNOWN");
     }
 
@@ -167,17 +187,18 @@ unsigned long* syscall(long *registers)
 
 // Execute an array of instructions from a MIPS binary executable. Can read from
 // standard input and write to standard output.
-void execute(int how_many, unsigned long *instructions)
+void execute(int how_many, unsigned long *instructions, long *memory)
 {
     long *registers;
     unsigned long instruction;
-    int name;
+    INSTRUCTION_CODE name;
     int rs, rt, rd, shamt, imm;
+    int sign_ext_imm;
     int i;
-    int j;
 
     registers = (long*) malloc(sizeof(long) * 32);
     for (i = 0; i < 32; registers[i] = 0x0, ++i);
+    memory = (long*) malloc(sizeof(long) * 65535);
 
     for (i = 0; i < how_many; ++i)
     {
@@ -200,6 +221,11 @@ void execute(int how_many, unsigned long *instructions)
 
             case ADDIU:
                 registers[rt] = registers[rs] + (unsigned long) imm;
+                break;
+
+            case LW:
+                sign_ext_imm = 0; // TODO Implement me!
+                registers[rt] = memory[registers[rs] + sign_ext_imm];
                 break;
 
             case SYSCALL:
