@@ -91,3 +91,4 @@ dkms.conf
 
 db/
 output_files/
+*.bin

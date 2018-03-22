@@ -174,18 +174,18 @@ int get_format(int instruction_code)
 }
 
 // Simulates the `syscall` command using the current registers.
-unsigned long* syscall(unsigned long *registers)
+unsigned long* syscall(long *registers)
 {
-    unsigned long v0 = registers[2];
-    unsigned long a0 = registers[4];
+    long v0 = registers[2];
+    long a0 = registers[4];
 
     switch (v0) {
         case 1:
-            printf("%lu\n", a0);
+            printf("%ld\n", a0);
             break;
 
         case 5:
-            scanf("%lu", &v0);
+            scanf("%ld", &v0);
             registers[2] = v0;
             break;
 
@@ -200,14 +200,14 @@ unsigned long* syscall(unsigned long *registers)
 // standard input and write to standard output.
 void execute(int how_many, unsigned long *instructions)
 {
-    unsigned long *registers;
+    long *registers;
     unsigned long instruction;
     int name;
     int rs, rt, rd, shamt, imm;
     int i;
     int j;
 
-    registers = (unsigned long*) malloc(sizeof(long) * 32);
+    registers = (long*) malloc(sizeof(long) * 32);
     for (i = 0; i < 32; registers[i] = 0x0, ++i);
 
     for (i = 0; i < how_many; ++i)
@@ -218,7 +218,7 @@ void execute(int how_many, unsigned long *instructions)
         rt = (instruction >> 16) & 0x1f;
         rd = (instruction >> 11) & 0x1f;
         shamt = (instruction >> 6) & 0x1f;
-        imm = instruction & (unsigned long) 65535;
+        imm = instruction & (unsigned int) 65535;
 
         switch (name) {
             case ADD:
