@@ -68,6 +68,7 @@ char* instruction_to_string(unsigned long instruction)
 // Those are the definitions of constants for instructions in MIPS.
 typedef enum {
     ADD,
+    ADDI,
     ADDIU,
     J,
     JAL,
@@ -78,14 +79,6 @@ typedef enum {
     NOP,
     UNKNOWN
 } INSTRUCTION_CODE;
-
-// Enumeration for the instruction format.
-typedef enum {
-    FORMAT_R,
-    FORMAT_I,
-    FORMAT_J,
-    FORMAT_INVALID
-} INSTRUCTION_FORMAT;
 
 // Detects an instruction and assigns the result to a code, as described by the
 // `INSTRUCTION_CODE` enumeration.
@@ -112,6 +105,7 @@ int detect_instruction(unsigned long instruction)
                 default: name = NOP;
             }
         break;
+        case 0x8: name = ADDI; break;
         case 0x9: name = ADDIU; break;
     }
 
@@ -133,7 +127,7 @@ char* debug_instruction(unsigned long instruction)
     switch (name)
     {
         case J: sprintf(outlet, "j"); break;
-        case JAL: sprintf(outlet, "j"); break;
+        case JAL: sprintf(outlet, "jal"); break;
         case BEQ: sprintf(outlet, "beq"); break;
         case BNE: sprintf(outlet, "bne"); break;
         case ADD: sprintf(outlet, "add"); break;
@@ -141,36 +135,11 @@ char* debug_instruction(unsigned long instruction)
         case SYSCALL: sprintf(outlet, "syscall"); break;
         case ADDIU: sprintf(outlet, "addiu"); break;
         case NOP: sprintf(outlet, "nop"); break;
+        case ADDI: sprintf(outlet, "addi"); break;
         default: sprintf(outlet, "UNKNOWN");
     }
 
     return outlet;
-}
-
-// Tells which is the format of the instruction by the
-int get_format(int instruction_code)
-{
-    int format;
-
-    switch (instruction_code) {
-        case ADD:
-            format = FORMAT_R;
-            break;
-
-        case ADDIU:
-            format = FORMAT_I;
-            break;
-
-        case J:
-        case JAL:
-            format = FORMAT_J;
-            break;
-
-        default:
-            format = FORMAT_INVALID;
-    }
-
-    return format;
 }
 
 // Simulates the `syscall` command using the current registers.
@@ -225,8 +194,12 @@ void execute(int how_many, unsigned long *instructions)
                 registers[rd] = registers[rs] + registers[rt];
                 break;
 
-            case ADDIU:
+            case ADDI:
                 registers[rt] = registers[rs] + imm;
+                break;
+
+            case ADDIU:
+                registers[rt] = registers[rs] + (unsigned long) imm;
                 break;
 
             case SYSCALL:
@@ -234,7 +207,7 @@ void execute(int how_many, unsigned long *instructions)
                 break;
 
             case UNKNOWN:
-                printf("unknown instruction!\n");
+                fprintf(stderr, "unknown instruction!\n");
                 break;
         }
     }

@@ -3,5 +3,5 @@ build:
     local: true
     commands:
     - gcc main.c -o main.exe -lm -O2
-    - mars a data/teste_io.asm dump .text Binary data/teste_io.bin
-    - ./main.exe data/testeio.bin
+    - mars a data/fibonacci.asm dump .text Binary data/program.bin
+    - ./main.exe data/program.bin
