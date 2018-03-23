@@ -1,9 +1,0 @@
-STOPWATCH(
-    input         iCLK_50,
-    input         Reset,
-    //  Barramento de IO
-    input         wReadEnable, wWriteEnable,
-    input  [3:0]  wByteEnable,
-    input  [31:0] wAddress, wWriteData,
-    output [31:0] wReadData
-);
