@@ -24,4 +24,19 @@ void dump_mem(uint32_t add, uint32_t size)
     }
 }
 
+// Escreve um byte na memória
+void sb(uint32_t address, int16_t kte, int8_t dado)
+{
+    mem[address/4] &= 0xFFFFFFFF & (0x00 << kte);
+    mem[address/4] |= dado << kte;
+}
+
+// lê um byte - retorna inteiro com sinal
+int32_t lb(uint32_t address, int16_t kte)
+{
+    int32_t d = (mem[address/4] >> kte) & 0xFF;
+    printf("%x", d);
+    return d;
+}
+
 #endif /* end of include guard: MIPS_H */
