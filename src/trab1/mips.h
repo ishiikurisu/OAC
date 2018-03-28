@@ -61,10 +61,26 @@ int32_t lb(uint32_t address, int16_t kte)
     return d;
 }
 
+// lê um byte - retorna inteiro sem sinal
+uint32_t lbu(uint32_t address, int16_t kte)
+{
+    uint32_t d = (mem[address/4] >> (kte*8)) & 0xFF;
+    printf("%02x", d);
+    return d;
+}
+
 // Lê uma half word - retorna um inteiro com sinal.
 int32_t lh(uint32_t address, int16_t kte)
 {
-    int32_t d = (mem[address/4] >> (kte*16)) & 0xFFFF;
+    int32_t d = (mem[address/4] >> (kte*8)) & 0xFFFF;
+    printf("%04x", d);
+    return d;
+}
+
+// Lê uma half word - retorna um inteiro sem sinal.
+uint32_t lhu(uint32_t address, int16_t kte)
+{
+    uint32_t d = (mem[address/4] >> (kte*8)) & 0xFFFF;
     printf("%04x", d);
     return d;
 }

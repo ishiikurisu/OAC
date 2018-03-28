@@ -25,9 +25,12 @@ int main(int argc, char const *argv[]) {
     printf("\n");
     lb(4,0), lb(4,1), lb(4,2), lb(4,3); // imprimir em hexa e decimal
     printf("\n");
-    // lbu(4,0), lbu(4,1), lbu(4,2) lbu(4,3) // imprimir em decimal
+    lbu(4,0), lbu(4,1), lbu(4,2), lbu(4,3); // imprimir em decimal
+    printf("\n");
     lh(8,0), lh(8,2); // imprimir em hexa e decimal
-    // lhu(8,0), lhu(8,2) // imprimir em decimal
+    printf("\n");
+    lhu(8,0), lhu(8,2); // imprimir em decimal
+    printf("\n");
     // lw(12,0), lw(16, 0), lw(20,0) // imprimir em hexa e decimal
 
     return 0;
