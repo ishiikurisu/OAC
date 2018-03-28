@@ -20,7 +20,7 @@ void dump_mem(uint32_t add, uint32_t size)
 
     for (i = add; i < limit; ++i)
     {
-        printf("mem[%d] = %x\n", i, mem[i]);
+        printf("mem[%d] = %lx\n", i, mem[i]);
     }
 }
 

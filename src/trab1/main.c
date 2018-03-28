@@ -21,9 +21,9 @@ int main(int argc, char const *argv[]) {
     printf("\n");
     printf("Lendo dados da memória:\n");
     dump_mem(0, 28);
-    lb(0,0), lb(0,1), lb(0,2) lb(0,3); // imprimir em hexa e decimal
+    lb(0,0), lb(0,1), lb(0,2), lb(0,3); // imprimir em hexa e decimal
     printf("\n");
-    lb(4,0), lb(4,1), lb(4,2) lb(4,3); // imprimir em hexa e decimal
+    lb(4,0), lb(4,1), lb(4,2), lb(4,3); // imprimir em hexa e decimal
     printf("\n");
     // lbu(4,0), lbu(4,1), lbu(4,2) lbu(4,3) // imprimir em decimal
     // lh(8,0), lh(8,2) // imprimir em hexa e decimal
