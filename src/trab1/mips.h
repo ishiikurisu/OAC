@@ -20,22 +20,30 @@ void dump_mem(uint32_t add, uint32_t size)
 
     for (i = add; i < limit; ++i)
     {
-        printf("mem[%d] = %lx\n", i, mem[i]);
+        printf("mem[%d] = %08x\n", i, mem[i]);
     }
 }
 
 // Escreve um byte na memória
 void sb(uint32_t address, int16_t kte, int8_t dado)
 {
-    mem[address/4] &= 0xFFFFFFFF & (0x00 << kte);
-    mem[address/4] |= dado << kte;
+    uint32_t mask;
+
+    switch (kte) {
+        case 0: mask = 0xFFFFFF00; break;
+        case 1: mask = 0xFFFF00FF; break;
+        case 2: mask = 0xFF00FFFF; break;
+        case 3: mask = 0x00FFFFFF; break;
+    }
+
+    mem[address/4] = (mem[address/4] & mask) | dado << (kte*8);
 }
 
 // lê um byte - retorna inteiro com sinal
 int32_t lb(uint32_t address, int16_t kte)
 {
-    int32_t d = (mem[address/4] >> kte) & 0xFF;
-    printf("%x", d);
+    int32_t d = (mem[address/4] >> (kte*8)) & 0xFF;
+    printf("%02x", d);
     return d;
 }
 
