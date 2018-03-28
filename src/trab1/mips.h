@@ -53,6 +53,12 @@ void sh(uint32_t address, int16_t kte, int16_t dado)
     mem[address/4] = (mem[address/4] & mask) | dado << (kte*8);
 }
 
+// Escreve uma word na memória
+void sw(uint32_t address, int16_t kte, int32_t dado)
+{
+    mem[address/4] = dado;
+}
+
 // lê um byte - retorna inteiro com sinal
 int32_t lb(uint32_t address, int16_t kte)
 {
@@ -82,6 +88,14 @@ uint32_t lhu(uint32_t address, int16_t kte)
 {
     uint32_t d = (mem[address/4] >> (kte*8)) & 0xFFFF;
     printf("%04x", d);
+    return d;
+}
+
+// Lê uma word - retorna um inteiro com sinal.
+int32_t lw(uint32_t address, int16_t kte)
+{
+    int32_t d = mem[address/4];
+    printf("%08x", d);
     return d;
 }
 
