@@ -3,3 +3,4 @@ build:
     local: true
     commands:
     - make
+    - pdflatex trab1.tex

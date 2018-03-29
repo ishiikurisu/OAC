@@ -1,0 +1,111 @@
+\documentclass[12pt, a4paper, twoside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[cm]{fullpage}
+\usepackage{fancyhdr}
+\usepackage{textcomp}
+\usepackage{graphicx}
+\usepackage{commath}
+\usepackage[portuguese]{babel}
+\usepackage{amssymb}
+
+\begin{document}
+
+\title{Trabalho 1 de Organização e Arquitetura de Computadores 1/2018}
+\author{Cristiano Silva Júnior: 13/0070629}
+\date{\today}
+\maketitle
+
+\section{Introdução}
+
+Este é o relato do projeto 1, onde foi pedido para implementar algumas funções
+de acesso à memória em C utilizando a mesma lógica de acesso da ISA MIPS. A
+saber, foram determinadas as seguintes funções para implementação:
+
+\begin{itemize}
+    \item $lw$, que lê uma \textit{word} (4 \textit{bytes}) da memória;
+    \item $lh$, que lê uma \textit{half word} (2 \textit{bytes}) com sinal;
+    \item $lhu$, que lê uma \textit{half word} sem sinal;
+    \item $lb$, que lê 1 \textit{byte};
+    \item $lbu$, que lê 1 \textit{byte} sem sinal;
+    \item $sw$, que escreve uma \textit{word} na memória;
+    \item $sh$, que escreve uma \textit{half word} na memória;
+    \item $sb$, que escreve um \textit{byte} na memória;
+\end{itemize}
+
+Os parâmetros das funções em C devem imitar os parâmetros das funções na
+linguagem \textit{assembly} original.
+
+Aqui, cabe esclarecer que um \textit{byte} será definido, para os fins
+deste projeto, como uma lista de tamanho 8 de variáveis booleanas
+(indivualmente chamadas de bits). Logo, uma \textit{word}, que contém 4
+\textit{bytes}, é uma lista de 32 bits. Considerando um \textit{byte} $b$ como
+sendo $$ b := \{ b_i \}^{8}_{i=1} $$, então algumas operações comumente
+definidas para variáveis booleanas podem ser extrapoladas para bytes. No caso,
+vamos trabalhar com as operações "e" e "ou", definidas respectivamente como:
+$$ a \land b := \{ a_i \land b_i \}^{8}_{i=1} $$
+$$ a \lor b := \{ a_i \lor b_i \}^{8}_{i=1} $$
+Uma nova operação a ser definida é o deslocamento (\textit{shift}), que pode
+ser escrito como sendo direcionado para a direita:
+$$ b \gg x := \{ \top \land b_{i-x} \}^{8}_{i=1} $$
+ou para a esquerda:
+$$ b \ll x := \{ \top \land b_{i+x} \}^{8}_{i=1} $$
+onde $ x \in \mathbb{N} $.
+
+Neste contexto, vamos definir que -1 representa a lista onde todos os elementos
+são $ \top $, ou seja, todos os bits são verdadeiros. Além disso, 0 representa
+
+\section{Metodologia}
+
+O principal objeto a ser manipulado neste procedimento é a memória. No caso,
+resolvi implementar a memória como um \textit{array} de \textit{words} com um
+tamanho fixo de 4096 \textit{words}. As instruções na ISA MIPS acessam a
+memória \textit{byte} a \textit{byte} [1], ou seja, cada endereço se refere a
+um byte diferente. Desta forma, para ler e escrever na memória, certas
+operações se fazem necessárias para implementar as funções.
+
+Para ler \textit{bytes} e da memória, preferi utilizar uma lógica de máscara.
+O valor lido $v$ do $k$-ésimo byte de um endereço $a$ da memória de words $M$
+será
+$$ v = \left( M \lfloor a \rfloor \gg 8k \right) \land -1 $$
+indicando que o valor lido originalmente da memória será ajustado e mascarado
+para se recuperar o \textit{byte} em questão. A mesma operação pode ser
+utilizada para \textit{half words}.
+
+Para escrever na memória, a mesma operação de leitura pode ser utilizada, mas
+agora adaptando a máscara para o deslocamento de endereço desejado e levando o
+dado a ser guardado em consideração. Neste caso, a função do valor guardado $v$
+para um dado $d$ será:
+$$ v = \left( M[a] \land P \right) \lor d \ll 8k $$
+onde $P$ é a máscara correspondente para o deslocamento necessário. Essa
+operação também pode ser utilizada para \textit{half words} porém máscaras
+próprias deverão ser utilizadas.
+
+Essas funções assumem algumas situações:
+
+\begin{itemize}
+    \item O endereço $a$ se refere a uma posição de um byte dentro da memória;
+    \item $k$ é positivo, e menor que 4 para \textit{bytes} ou par para
+    \textit{half words}. Valores fora dessa faixa sempre retornam o valor 0.
+\end{itemize}
+
+\section{Resultados}
+
+A implementação encontra-se no código fonte em anexo ao trabalho. O código é
+escrito em \textbf{ANSI C} e pode ser compilado chamando o programa $make$ em
+qualquer sistema operacional com o pacote \textbf{GCC}.
+
+\section{Conclusão}
+
+As operações realizadas no trabalho serviram para modelar matematicamente o
+acesso à memória realizada por operações da ISA MIPS. Nota-se que o
+endereçamento original, apesar de ser feito a \textit{word}, precisa respeitar
+a posição dos \textit{bytes} individuais, necessitando de atenção na construção
+do hardware necessário.
+
+\section{Referência Bibliográfica}
+
+\begin{enumerate}
+    \item "MIPS32® Architecture For Programmers". Volume II.
+\end{enumerate}
+
+\end{document}
