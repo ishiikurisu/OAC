@@ -52,8 +52,8 @@ unsigned long* load_from_memory(const char* input)
     int i;
 
     limit = get_how_many_instructions(inlet);
-    outlet = (unsigned long*) malloc(sizeof(long) * 4000);
-    for (i = 0; i < 4000; outlet[i] = 0, ++i);
+    outlet = (unsigned long*) malloc(sizeof(long) * 4235364);
+    for (i = 0; i < 4235364; outlet[i] = 0, ++i);
     fread(outlet, sizeof(long), limit, inlet);
     fclose(inlet);
 
@@ -215,10 +215,10 @@ void execute(int how_many, unsigned long *instructions, unsigned long *memory)
     {
         instruction = instructions[i];
         name = detect_instruction(instruction);
-        rs = (instruction >> 21) & 0x3f;
-        rt = (instruction >> 16) & 0x3f;
-        rd = (instruction >> 11) & 0x3f;
-        shamt = (instruction >> 6) & 0x3f;
+        rs = (instruction >> 21) & 0x1f;
+        rt = (instruction >> 16) & 0x1f;
+        rd = (instruction >> 11) & 0x1f;
+        shamt = (instruction >> 6) & 0x1f;
         imm = instruction & 0xFFFF;
 
         switch (name) {
@@ -235,7 +235,7 @@ void execute(int how_many, unsigned long *instructions, unsigned long *memory)
                 break;
 
             case LW:
-                sign_ext_imm = (((imm >> 16) & 0x1)? 0xFFFFFFFF : 0x0) & imm;
+                sign_ext_imm = (((imm >> 15) & 0x1)? 0xFFFFFFFF : 0x0) & imm;
                 registers[rt] = memory[registers[rs]+sign_ext_imm];
                 break;
 
