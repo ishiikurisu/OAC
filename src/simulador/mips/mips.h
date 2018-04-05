@@ -44,17 +44,17 @@ unsigned long* load_from_file(const char* input)
 
 // Loads the binary representation of the memory as described in the data file.
 // Returns an allocated array of words.
-unsigned char* load_memory(const char* input)
+unsigned long* load_from_memory(const char* input)
 {
     FILE* inlet = fopen(input, "rb");
-    unsigned char *outlet = NULL;
+    unsigned long *outlet = NULL;
     int limit;
     int i;
 
     limit = get_how_many_instructions(inlet);
-    outlet = (unsigned char*) malloc(sizeof(char) * 1048575);
-    for (i = 0; i < 1048575; outlet[i] = 0, ++i);
-    fread(outlet, sizeof(char), limit, inlet);
+    outlet = (unsigned long*) malloc(sizeof(long) * 4000);
+    for (i = 0; i < 4000; outlet[i] = 0, ++i);
+    fread(outlet, sizeof(long), limit, inlet);
     fclose(inlet);
 
     return outlet;
@@ -96,7 +96,7 @@ typedef enum {
     SYSCALL,
     NOP,
     UNKNOWN
-} INSTRUCTION_CODE;
+} instruction_t;
 
 // Detects an instruction and assigns the result to a code, as described by the
 // `INSTRUCTION_CODE` enumeration.
@@ -163,7 +163,7 @@ char* debug_instruction(unsigned long instruction)
 }
 
 // Simulates the `syscall` command using the current registers.
-unsigned long* syscall(long *registers, unsigned char *memory)
+unsigned long* syscall(long *registers, unsigned long *memory)
 {
     long v0 = registers[2];
     long a0 = registers[4];
@@ -199,13 +199,13 @@ unsigned long* syscall(long *registers, unsigned char *memory)
 
 // Execute an array of instructions from a MIPS binary executable. Can read from
 // standard input and write to standard output.
-void execute(int how_many, unsigned long *instructions, unsigned char *memory)
+void execute(int how_many, unsigned long *instructions, unsigned long *memory)
 {
     register long *registers;
     unsigned long instruction;
-    INSTRUCTION_CODE name;
-    int rs, rt, rd, shamt, imm;
-    int sign_ext_imm;
+    instruction_t name;
+    long rs, rt, rd, shamt, imm;
+    long sign_ext_imm;
     int i;
 
     registers = (long*) malloc(sizeof(long) * 32);
@@ -215,11 +215,11 @@ void execute(int how_many, unsigned long *instructions, unsigned char *memory)
     {
         instruction = instructions[i];
         name = detect_instruction(instruction);
-        rs = (instruction >> 21) & 0x1f;
-        rt = (instruction >> 16) & 0x1f;
-        rd = (instruction >> 11) & 0x1f;
-        shamt = (instruction >> 6) & 0x1f;
-        imm = instruction & (unsigned int) 65535;
+        rs = (instruction >> 21) & 0x3f;
+        rt = (instruction >> 16) & 0x3f;
+        rd = (instruction >> 11) & 0x3f;
+        shamt = (instruction >> 6) & 0x3f;
+        imm = instruction & 0xFFFF;
 
         switch (name) {
             case ADD:
@@ -236,10 +236,7 @@ void execute(int how_many, unsigned long *instructions, unsigned char *memory)
 
             case LW:
                 sign_ext_imm = (((imm >> 16) & 0x1)? 0xFFFFFFFF : 0x0) & imm;
-                registers[rt] = memory[registers[rs]+sign_ext_imm]
-                              | (memory[registers[rs]+sign_ext_imm+1] << 8)
-                              | (memory[registers[rs]+sign_ext_imm+2] << 16)
-                              | (memory[registers[rs]+sign_ext_imm+3] << 24);
+                registers[rt] = memory[registers[rs]+sign_ext_imm];
                 break;
 
             case SYSCALL:
@@ -248,7 +245,7 @@ void execute(int how_many, unsigned long *instructions, unsigned char *memory)
                 break;
 
             case UNKNOWN:
-                fprintf(stderr, "unknown instruction!\n");
+                fprintf(stderr, "unknown instruction! %08x\n", instruction);
                 break;
         }
     }

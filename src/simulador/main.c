@@ -6,7 +6,7 @@ int main(int argc, char const *argv[]) {
     const char *data = argv[2];
     int instruction_count = count_instructions(text);
     unsigned long* instructions = load_from_file(text);
-    unsigned char* memory = load_memory(data);
+    unsigned long* memory = load_from_memory(data);
 
     execute(instruction_count, instructions, memory);
     free(instructions);

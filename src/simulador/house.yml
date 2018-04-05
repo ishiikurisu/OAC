@@ -3,6 +3,6 @@ build:
     local: true
     commands:
     - gcc main.c -o main.exe -lm -O2
-    - mars a data/fibonacci.asm dump .text Binary data/text.bin
-    - mars a data/fibonacci.asm dump .data Binary data/data.bin
+    - mars a data/teste_io.asm dump .text Binary data/text.bin
+    - mars a data/teste_io.asm dump .data Binary data/data.bin
     - ./main.exe data/text.bin data/data.bin
