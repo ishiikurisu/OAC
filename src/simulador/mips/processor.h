@@ -65,16 +65,10 @@ void execute(processor_t* processor)
 {
     if (processor->debug) {
         switch (processor->instruction_code) {
-            case J: printf("j "); break;
-            case JAL: printf("jal "); break;
-            case BEQ: printf("beq "); break;
-            case ADD: printf("add "); break;
-            case LI: printf("li "); break;
-            case SYSCALL: printf("syscall "); break;
-            case ADDIU: printf("addiu "); break;
-            case ADDI: printf("addi "); break;
-            case LW: printf("lw "); break;
-            default: printf(".");
+            case J: printf("j\n"); break;
+            case JAL: printf("jal\n"); break;
+            case BEQ: printf("beq\n"); break;
+            case LI: printf("li\n"); break;
         }
     }
 
@@ -83,17 +77,46 @@ void execute(processor_t* processor)
         case J: break;
         case JAL: break;
         case BEQ: break;
-        case ADD: break;
-        case LI: break;
+        case ADD:
+            processor->register_bank[processor->rd] =
+                processor->register_bank[processor->rs] +
+                processor->register_bank[processor->rt];
+            if (processor->debug) {
+                printf("add %d %d %d\n",
+                       processor->register_bank[processor->rd],
+                       processor->register_bank[processor->rs],
+                       processor->register_bank[processor->rt]);
+            }
+            break;
         case SYSCALL:
             syscall(processor->register_bank, processor->data);
             if (processor->register_bank[1] == 1) { // end the program!
                 processor->off = true;
             }
             break;
-        case ADDIU: break;
-        case ADDI: break;
-        case LW: break;
+        case ADDIU:
+        case ADDI:
+            processor->register_bank[processor->rt] =
+                processor->register_bank[processor->rs] +
+                sign_ext_imm(processor->imm);
+            if (processor->debug) {
+                printf("addi %d %d %d\n",
+                        processor->register_bank[processor->rt],
+                        processor->register_bank[processor->rs],
+                        sign_ext_imm(processor->imm));
+            }
+            break;
+        case LW:
+            processor->register_bank[processor->rt] =
+                lw(processor->data,
+                   processor->register_bank[processor->rs],
+                   sign_ext_imm(processor->imm));
+            if (processor->debug) {
+                printf("lw %d %d %d\n", processor->register_bank[processor->rt],
+                                        processor->register_bank[processor->rs],
+                                        sign_ext_imm(processor->imm));
+            }
+            break;
         default: printf("");
     }
 }

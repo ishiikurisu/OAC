@@ -125,4 +125,18 @@ void syscall(uint32_t *registers, uint32_t *memory)
     }
 }
 
+// Extends the signal of an immediante number.
+uint32_t sign_ext_imm(uint32_t i)
+{
+    // BUG I think you are not working well...
+    return ((i >> 15) & 0x1)? (0xFFFF0000 | i) : (0x0 & i);
+}
+
+// Simulates the execution of a `lw` instruction. Returns a word from memory.
+uint32_t lw(uint32_t *data, uint32_t rs, uint32_t imm)
+{
+    return data[rs/4];
+}
+
+
 #endif /* end of include guard: MIPS_H */
