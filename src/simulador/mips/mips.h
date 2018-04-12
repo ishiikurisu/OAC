@@ -124,6 +124,8 @@ int detect_instruction(unsigned long instruction)
                 default: name = NOP;
             }
         break;
+        case 0x2: name = J; break;
+        case 0x4: name = BEQ; break;
         case 0x8: name = ADDI; break;
         case 0x9: name = ADDIU; break;
         case 0x23: name = LW; break;

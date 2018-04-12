@@ -12,6 +12,8 @@ typedef struct PROCESSOR_T {
     int pc;
     bool debug;
     uint32_t instruction;
+    instruction_t instruction_code;
+    int opcode, rs, rt, rd, shamt, funct, imm, addr;
 } processor_t;
 
 // Allocates a new processor in memory and returns its correspondent pointer.
@@ -45,19 +47,35 @@ void fetch(processor_t* processor)
 // Decodes the current instruction in memory.
 void decode(processor_t* processor)
 {
-    char *msg = debug_instruction(processor->instruction);
+    uint32_t i = processor->instruction;
 
-    if ((processor->debug) && (strcmp(msg, "nop")))
-    {
-        printf("%s\n", msg);
-    }
-
-    free(msg);
+    processor->opcode = i >> 26;
+    processor->rs = (i >> 21) & 0x3f;
+    processor->rt = (i >> 16) & 0x3f;
+    processor->rd = (i >> 11) & 0x3f;
+    processor->shamt = (i >> 6) & 0x3f;
+    processor->funct = i & 0x3f;
+    processor->imm = i & 0xFFFF;
+    processor->addr = i & 0x3FFFFFF;
+    processor->instruction_code = detect_instruction(processor->instruction);
 }
 
 // Executes the current instruction in the processor.
 void execute(processor_t* processor)
 {
+    switch (processor->instruction_code)
+    {
+        case J: printf("j "); break;
+        case JAL: printf("jal "); break;
+        case BEQ: printf("beq "); break;
+        case ADD: printf("add "); break;
+        case LI: printf("li "); break;
+        case SYSCALL: printf("syscall "); break;
+        case ADDIU: printf("addiu "); break;
+        case ADDI: printf("addi "); break;
+        case LW: printf("lw "); break;
+        default: printf(".");
+    }
 }
 
 // Frees the allocated processor.
