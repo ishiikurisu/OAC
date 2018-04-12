@@ -134,7 +134,7 @@ int detect_instruction(unsigned long instruction)
 }
 
 // Turns a binary instruction into a .
-char* debug_instruction(unsigned long instruction)
+char* debug_instruction(uint32_t instruction)
 {
     char* outlet;
     int name;
