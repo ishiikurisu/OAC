@@ -4,7 +4,7 @@
 #include "./mips.h"
 #include <stdbool.h>
 
-typedef struct PROCESSOR_T {
+typedef struct {
     uint32_t *text;
     uint32_t *data;
     uint32_t *register_bank;
@@ -24,11 +24,11 @@ processor_t* new_processor(uint32_t* text, uint32_t* data)
 
     processor->text = text;
     processor->data = data;
-    processor->register_bank = (uint32_t*) malloc(sizeof(uint32_t) * 32);
     processor->off = false;
     processor->pc = 0;
     processor->debug = false;
 
+    processor->register_bank = (uint32_t*) malloc(sizeof(uint32_t) * 32);
     for (i = 0; i < 32; ++i)
     {
         processor->register_bank[i] = 0;
@@ -63,18 +63,38 @@ void decode(processor_t* processor)
 // Executes the current instruction in the processor.
 void execute(processor_t* processor)
 {
+    if (processor->debug) {
+        switch (processor->instruction_code) {
+            case J: printf("j "); break;
+            case JAL: printf("jal "); break;
+            case BEQ: printf("beq "); break;
+            case ADD: printf("add "); break;
+            case LI: printf("li "); break;
+            case SYSCALL: printf("syscall "); break;
+            case ADDIU: printf("addiu "); break;
+            case ADDI: printf("addi "); break;
+            case LW: printf("lw "); break;
+            default: printf(".");
+        }
+    }
+
     switch (processor->instruction_code)
     {
-        case J: printf("j "); break;
-        case JAL: printf("jal "); break;
-        case BEQ: printf("beq "); break;
-        case ADD: printf("add "); break;
-        case LI: printf("li "); break;
-        case SYSCALL: printf("syscall "); break;
-        case ADDIU: printf("addiu "); break;
-        case ADDI: printf("addi "); break;
-        case LW: printf("lw "); break;
-        default: printf(".");
+        case J: break;
+        case JAL: break;
+        case BEQ: break;
+        case ADD: break;
+        case LI: break;
+        case SYSCALL:
+            syscall(processor->register_bank, processor->data);
+            if (processor->register_bank[1] == 1) { // end the program!
+                processor->off = true;
+            }
+            break;
+        case ADDIU: break;
+        case ADDI: break;
+        case LW: break;
+        default: printf("");
     }
 }
 
