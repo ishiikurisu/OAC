@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
 
 // Calculates how many instructions there are in a source code using its
 // file pointer.
@@ -27,15 +28,15 @@ int count_instructions(const char* input)
 
 // Loads a binary executable file to an array of unsigned integer numbers, each
 // representing an instruction. The last instruction is represented with a 0.
-unsigned long* load_from_file(const char* input)
+uint32_t* load_from_file(const char* input)
 {
     FILE* inlet = fopen(input, "rb");
-    unsigned long* outlet = NULL;
+    uint32_t* outlet = NULL;
     int limit;
 
     limit = get_how_many_instructions(inlet);
-    outlet = (unsigned long*) malloc(sizeof(long) * (limit+1));
-    fread(outlet, sizeof(long), limit, inlet);
+    outlet = (uint32_t*) malloc(sizeof(uint32_t) * (limit+1));
+    fread(outlet, sizeof(uint32_t), limit, inlet);
     outlet[limit] = 0;
     fclose(inlet);
 
@@ -44,17 +45,17 @@ unsigned long* load_from_file(const char* input)
 
 // Loads the binary representation of the memory as described in the data file.
 // Returns an allocated array of words.
-unsigned long* load_from_memory(const char* input)
+uint32_t* load_from_memory(const char* input)
 {
     FILE* inlet = fopen(input, "rb");
-    unsigned long *outlet = NULL;
+    uint32_t *outlet = NULL;
     int limit;
     int i;
 
     limit = get_how_many_instructions(inlet);
-    outlet = (unsigned long*) malloc(sizeof(long) * 4235364);
+    outlet = (uint32_t*) malloc(sizeof(long) * 4235364);
     for (i = 0; i < 4235364; outlet[i] = 0, ++i);
-    fread(outlet, sizeof(long), limit, inlet);
+    fread(outlet, sizeof(uint32_t), limit, inlet);
     fclose(inlet);
 
     return outlet;
@@ -195,64 +196,6 @@ unsigned long* syscall(long *registers, unsigned long *memory)
     }
 
     return registers;
-}
-
-// Execute an array of instructions from a MIPS binary executable. Can read from
-// standard input and write to standard output.
-void execute(int how_many, unsigned long *instructions, unsigned long *memory)
-{
-    register long *registers;
-    unsigned long instruction;
-    instruction_t name;
-    long rs, rt, rd, shamt, imm;
-    long sign_ext_imm;
-    int i;
-
-    registers = (long*) malloc(sizeof(long) * 32);
-    for (i = 0; i < 32; registers[i] = 0x0, ++i);
-
-    for (i = 0; i < how_many; ++i)
-    {
-        instruction = instructions[i];
-        name = detect_instruction(instruction);
-        rs = (instruction >> 21) & 0x1f;
-        rt = (instruction >> 16) & 0x1f;
-        rd = (instruction >> 11) & 0x1f;
-        shamt = (instruction >> 6) & 0x1f;
-        imm = instruction & 0xFFFF;
-
-        switch (name) {
-            case ADD:
-                registers[rd] = registers[rs] + registers[rt];
-                break;
-
-            case ADDI:
-                registers[rt] = registers[rs] + imm;
-                break;
-
-            case ADDIU:
-                registers[rt] = registers[rs] + (unsigned long) imm;
-                break;
-
-            case LW:
-                sign_ext_imm = (((imm >> 15) & 0x1)? 0xFFFFFFFF : 0x0) & imm;
-                registers[rt] = memory[registers[rs]+sign_ext_imm];
-                break;
-
-            case SYSCALL:
-                syscall(registers, memory);
-                if (registers == NULL) return;
-                break;
-
-            case UNKNOWN:
-                fprintf(stderr, "unknown instruction! %08x\n", instruction);
-                break;
-        }
-    }
-
-    if (registers != NULL) {
-        free(registers);
-    }
 }
 
 #endif /* end of include guard: MIPS_H */

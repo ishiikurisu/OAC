@@ -1,16 +1,20 @@
-#include <stdlib.h>
-#include "./mips/mips.h"
+#include "./mips/processor.h"
 
 int main(int argc, char const *argv[]) {
-    const char *text = argv[1];
-    const char *data = argv[2];
-    int instruction_count = count_instructions(text);
-    unsigned long* instructions = load_from_file(text);
-    unsigned long* memory = load_from_memory(data);
+    const char *textfile = argv[1];
+    const char *datafile = argv[2];
+    uint32_t *text = load_from_file(datafile);
+    uint32_t *data = load_from_memory(datafile);
+    processor_t *processor = new_processor(text, data);
 
-    execute(instruction_count, instructions, memory);
-    free(instructions);
-    free(memory);
 
+    while (!processor->off)
+    {
+        fetch(processor);
+        decode(processor);
+        execute(processor);
+    }
+
+    free_processor(processor);
     return 0;
 }
