@@ -70,22 +70,11 @@ void decode(processor_t* processor)
 /* Executes the current instruction in the processor. */
 void execute(processor_t* processor)
 {
-    if (processor->debug) {
-        switch (processor->instruction_code) {
-            case J: printf("j\n"); break;
-            case JAL: printf("jal\n"); break;
-            case BEQ: printf("beq\n"); break;
-            case LI: printf("li\n"); break;
-		  	case UNKNOWN: printf("UNKNOWN\n"); break;
-        }
-    }
-
-
     switch (processor->instruction_code)
     {
-        case J: break;
-        case JAL: break;
-        case BEQ: break;
+        case J: if (processor->debug) printf("j\n"); break;
+        case JAL: if (processor->debug) printf("jal\n"); break;
+        case BEQ: if (processor->debug) printf("beq\n"); break;
         case ADD:
             processor->register_bank[processor->rd] =
                 processor->register_bank[processor->rs] +
@@ -99,6 +88,9 @@ void execute(processor_t* processor)
             break;
         case SYSCALL:
             syscall(processor->register_bank, processor->data);
+            if (processor->debug) {
+                printf("syscall %d\n", processor->register_bank[2]);
+            }
             if (processor->register_bank[1] == 1) { /* end the program! */
                 processor->off = true;
             }
@@ -144,13 +136,8 @@ void execute(processor_t* processor)
                                                 processor->imm);
 			}
 	  		break;
-        default: pass();
+        default: if (processor->debug) printf("UNKNOWN\n");
     }
-
-	if (processor->debug) {
-	  	display_tape(processor->register_bank, 32);
-	}
-
 }
 
 /* Frees the allocated processor. */

@@ -16,7 +16,7 @@ int main() {
   assert(x == 0xFFFF8000);
 
   /* Testing function parameter extraction */
-  p = new_processor(NULL, NULL);
+  p = new_processor((uint32_t*) malloc(sizeof(uint32_t)), (uint32_t*) malloc(sizeof(uint32_t)));
 
   printf("add $9, $2, $0\n");
   p->instruction = 0x00404820;
@@ -50,8 +50,6 @@ int main() {
   assert(p->rt == 0x4);
   assert(p->opcode == 0xd);
   assert(p->imm == 0x24);
-
-  free_processor(p);
 
   printf("... # All tests passed!\n");
   return 0;

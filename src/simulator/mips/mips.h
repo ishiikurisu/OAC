@@ -39,8 +39,8 @@ uint32_t* load_from_file(const char* input)
     FILE* inlet = fopen(input, "rb");
     uint32_t* outlet = NULL;
 
-    outlet = (uint32_t*) malloc(sizeof(uint32_t) * 4097);
-    fread(outlet, sizeof(uint32_t), 4097, inlet);
+    outlet = (uint32_t*) malloc(sizeof(uint32_t) * 0x4000);
+    fread(outlet, sizeof(uint32_t), 0x4000, inlet);
     outlet[4096] = 0;
     fclose(inlet);
 
@@ -118,6 +118,7 @@ void syscall(uint32_t *registers, uint32_t *memory)
             break;
 
         case 4:
+            /* BUG This should print one char at a time */
             while (memory[a0] != '\0') {
                 printf("%c", memory[a0]);
                 a0++;
@@ -131,9 +132,10 @@ void syscall(uint32_t *registers, uint32_t *memory)
 
         case 10:
             registers[1] = 1;
+            break;
 
         default:
-            printf("syscall %ld not implement yet\n", v0);
+            printf("syscall %d not implement yet\n", v0);
     }
 }
 
@@ -148,7 +150,6 @@ Simulates the execution of a `lw` instruction. Returns a word from memory.
 */
 uint32_t lw(uint32_t *data, uint32_t rs, uint32_t imm)
 {
-    printf("LW %x\n", rs);
   	return data[(rs - 0x2000) / 4];
 }
 
