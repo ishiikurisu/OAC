@@ -129,7 +129,7 @@ void syscall(uint32_t *registers, uint32_t *memory)
             registers[1] = 1;
 
         default:
-            printf("syscall %l not implement yet\n", v0);
+            printf("syscall %ld not implement yet\n", v0);
     }
 }
 

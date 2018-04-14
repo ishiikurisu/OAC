@@ -5,6 +5,7 @@ int main() {
   processor_t *p;
   uint32_t x;
 
+  printf("--- # Tests\n");
   /* Testing sign extention */
   x = sign_ext_imm(0x2000);
   printf("0x00002000 =? %lx\n", x);
@@ -44,6 +45,6 @@ int main() {
 
   free_processor(p);
 
-  printf("All tests passed!\n");
+  printf("... # All tests passed!\n");
   return 0;
 }

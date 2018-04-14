@@ -16,6 +16,11 @@ typedef struct {
     int opcode, rs, rt, rd, shamt, funct, imm, addr;
 } processor_t;
 
+/* Just a procedure that does nothing... */
+void pass() {
+  return;
+}
+
 /*
 Allocates a new processor in memory and returns its correspondent pointer.
 */
@@ -71,6 +76,7 @@ void execute(processor_t* processor)
             case JAL: printf("jal\n"); break;
             case BEQ: printf("beq\n"); break;
             case LI: printf("li\n"); break;
+		  	case UNKNOWN: printf("UNKNOWN\n"); break;
         }
     }
 
@@ -119,7 +125,7 @@ void execute(processor_t* processor)
                                         sign_ext_imm(processor->imm));
             }
             break;
-        default: printf("");
+        default: pass();
     }
 }
 
