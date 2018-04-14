@@ -16,7 +16,9 @@ typedef struct {
     int opcode, rs, rt, rd, shamt, funct, imm, addr;
 } processor_t;
 
-// Allocates a new processor in memory and returns its correspondent pointer.
+/*
+Allocates a new processor in memory and returns its correspondent pointer.
+*/
 processor_t* new_processor(uint32_t* text, uint32_t* data)
 {
     processor_t* processor = (processor_t*) malloc(sizeof(processor));
@@ -37,30 +39,30 @@ processor_t* new_processor(uint32_t* text, uint32_t* data)
     return processor;
 }
 
-// Fetchs a new instruction from the instruction memory.
+/* Fetchs a new instruction from the instruction memory. */
 void fetch(processor_t* processor)
 {
     processor->instruction = processor->text[processor->pc];
     processor->pc++;
 }
 
-// Decodes the current instruction in memory.
+/* Decodes the current instruction in memory. */
 void decode(processor_t* processor)
 {
     uint32_t i = processor->instruction;
 
     processor->opcode = i >> 26;
-    processor->rs = (i >> 21) & 0x3f;
-    processor->rt = (i >> 16) & 0x3f;
-    processor->rd = (i >> 11) & 0x3f;
-    processor->shamt = (i >> 6) & 0x3f;
-    processor->funct = i & 0x3f;
+    processor->rs = (i >> 21) & 0xf;
+    processor->rt = (i >> 16) & 0xf;
+    processor->rd = (i >> 11) & 0xf;
+    processor->shamt = (i >> 6) & 0xf;
+    processor->funct = i & 0xff;
     processor->imm = i & 0xFFFF;
     processor->addr = i & 0x3FFFFFF;
     processor->instruction_code = detect_instruction(processor->instruction);
 }
 
-// Executes the current instruction in the processor.
+/* Executes the current instruction in the processor. */
 void execute(processor_t* processor)
 {
     if (processor->debug) {
@@ -90,7 +92,7 @@ void execute(processor_t* processor)
             break;
         case SYSCALL:
             syscall(processor->register_bank, processor->data);
-            if (processor->register_bank[1] == 1) { // end the program!
+            if (processor->register_bank[1] == 1) { /* end the program! */
                 processor->off = true;
             }
             break;
@@ -121,12 +123,18 @@ void execute(processor_t* processor)
     }
 }
 
-// Frees the allocated processor.
+/* Frees the allocated processor. */
 void free_processor(processor_t* processor)
 {
-    free(processor->text);
-    free(processor->data);
-    free(processor);
+    if (processor != NULL) {
+        if (processor->text != NULL) {
+            free(processor->text);
+        }
+        if (processor->data != NULL) {
+            free(processor->data);
+        }
+        free(processor);
+    }
 }
 
 #endif /* end of include guard: PROCESSOR_H */

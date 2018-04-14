@@ -2,8 +2,8 @@
 build:
     local: true
     commands:
-    - gcc main.c -o main.exe -g
-    - gcc test.c -o test.exe -g
+    - gcc main.c -o main.exe -g -ansi -Wall
+    - gcc test.c -o test.exe -g -ansi -Wall
     - mars a data/primos.asm dump .text Binary data/text.bin
     - mars a data/primos.asm dump .data Binary data/data.bin
     - ./test.exe

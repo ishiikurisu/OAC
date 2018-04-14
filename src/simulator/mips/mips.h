@@ -5,8 +5,10 @@
 #include <stdlib.h>
 #include <stdint.h>
 
-// Calculates how many instructions there are in a source code using its
-// file pointer.
+/*
+Calculates how many instructions there are in a source code using its
+file pointer.
+*/
 int get_how_many_instructions(FILE* inlet)
 {
     int limit = -1;
@@ -16,8 +18,10 @@ int get_how_many_instructions(FILE* inlet)
     return limit;
 }
 
-// Calculates how many instructions there are in a source code using its
-// file path.
+/*
+Calculates how many instructions there are in a source code using its
+file path.
+*/
 int count_instructions(const char* input)
 {
     FILE* inlet = fopen(input, "rb");
@@ -26,8 +30,10 @@ int count_instructions(const char* input)
     return limit;
 }
 
-// Loads a binary executable file to an array of unsigned integer numbers, each
-// representing an instruction. The last instruction is represented with a 0.
+/*
+Loads a binary executable file to an array of unsigned integer numbers, each
+representing an instruction. The last instruction is represented with a 0.
+*/
 uint32_t* load_from_file(const char* input)
 {
     FILE* inlet = fopen(input, "rb");
@@ -41,7 +47,7 @@ uint32_t* load_from_file(const char* input)
     return outlet;
 }
 
-// Those are the definitions of constants for instructions in MIPS.
+/* Those are the definitions of constants for instructions in MIPS. */
 typedef enum {
     ADD,
     ADDI,
@@ -57,22 +63,24 @@ typedef enum {
     UNKNOWN
 } instruction_t;
 
-// Detects an instruction and assigns the result to a code, as described by the
-// `INSTRUCTION_CODE` enumeration.
+/*
+Detects an instruction and assigns the result to a code, as described by the
+`INSTRUCTION_CODE` enumeration.
+*/
 int detect_instruction(uint32_t instruction)
 {
     int opcode;
     int funct;
     int name = UNKNOWN;
 
-    // immediate cases
+    /* immediate cases */
     if (instruction == 0xc) {
         return SYSCALL;
     } else if (instruction == 0x0) {
         return NOP;
     }
 
-    // detecting opcode
+    /* detecting opcode */
     opcode = instruction >> 26;
     funct = instruction & 0x3f;
     switch (opcode) {
@@ -93,7 +101,7 @@ int detect_instruction(uint32_t instruction)
     return name;
 }
 
-// Simulates the `syscall` command using the current registers.
+/* Simulates the `syscall` command using the current registers. */
 void syscall(uint32_t *registers, uint32_t *memory)
 {
     long v0 = registers[2];
@@ -121,17 +129,19 @@ void syscall(uint32_t *registers, uint32_t *memory)
             registers[1] = 1;
 
         default:
-            printf("syscall %d not implement yet\n", v0);
+            printf("syscall %l not implement yet\n", v0);
     }
 }
 
-// Extends the signal of an immediante number.
+/* Extends the signal of an immediante number. */
 uint32_t sign_ext_imm(uint32_t i)
 {
     return ((i >> 15) & 0x1)? (0xFFFF0000 | i) : i;
 }
 
-// Simulates the execution of a `lw` instruction. Returns a word from memory.
+/*
+Simulates the execution of a `lw` instruction. Returns a word from memory.
+*/
 uint32_t lw(uint32_t *data, uint32_t rs, uint32_t imm)
 {
     return data[rs/4];
