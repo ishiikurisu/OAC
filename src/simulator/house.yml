@@ -3,6 +3,8 @@ build:
     local: true
     commands:
     - gcc main.c -o main.exe -g
+    - gcc test.c -o test.exe -g
     - mars a data/primos.asm dump .text Binary data/text.bin
     - mars a data/primos.asm dump .data Binary data/data.bin
+    - ./test.exe
     - ./main.exe data/text.bin data/data.bin
