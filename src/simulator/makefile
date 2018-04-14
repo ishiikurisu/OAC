@@ -4,9 +4,9 @@ default: main
 
 .PHONY: main
 main: main.exe
-	echo "--- # Simulating MIPS"
-	./main.exe data/text.bin data/data.bin
-	echo "..."
+	@echo "--- # Simulating MIPS"
+	@./main.exe data/text.bin data/data.bin
+	@echo "..."
 
 .PHONY: main.c tdd
 main.exe: main.c

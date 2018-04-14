@@ -63,7 +63,7 @@ void decode(processor_t* processor)
     processor->shamt = (i >> 6) & 0xf;
     processor->funct = i & 0xff;
     processor->imm = i & 0x0000FFFF;
-    processor->addr = i & 0x3FFFFFF;
+    processor->addr = (i & 0x3FFFFFF) << 2;
     processor->instruction_code = detect_instruction(processor->instruction);
 }
 
@@ -72,9 +72,24 @@ void execute(processor_t* processor)
 {
     switch (processor->instruction_code)
     {
-        case J: if (processor->debug) printf("j\n"); break;
-        case JAL: if (processor->debug) printf("jal\n"); break;
-        case BEQ: if (processor->debug) printf("beq\n"); break;
+        case J:
+            processor->pc = processor->addr/4;
+            if (processor->debug) {
+                printf("j %x\n", processor->pc);
+            }
+            break;
+        case BEQ:
+            if (processor->register_bank[processor->rs] ==
+                processor->register_bank[processor->rt]) {
+                processor->pc += processor->imm;
+            }
+            if (processor->debug) {
+                printf("beq (%x = %x)? %x \n",
+                       processor->register_bank[processor->rs],
+                       processor->register_bank[processor->rt],
+                       processor->pc);
+            }
+            break;
         case ADD:
             processor->register_bank[processor->rd] =
                 processor->register_bank[processor->rs] +
@@ -109,7 +124,6 @@ void execute(processor_t* processor)
             }
             break;
         case LW:
-
             processor->register_bank[processor->rt] =
                 lw(processor->data,
                    processor->register_bank[processor->rs],

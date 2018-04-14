@@ -16,7 +16,7 @@ int main() {
   assert(x == 0xFFFF8000);
 
   /* Testing function parameter extraction */
-  p = new_processor((uint32_t*) malloc(sizeof(uint32_t)), (uint32_t*) malloc(sizeof(uint32_t)));
+  p = new_processor(NULL, NULL);
 
   printf("add $9, $2, $0\n");
   p->instruction = 0x00404820;
@@ -50,6 +50,21 @@ int main() {
   assert(p->rt == 0x4);
   assert(p->opcode == 0xd);
   assert(p->imm == 0x24);
+
+  printf("j 0x18\n");
+  p->instruction = 0x08000006;
+  decode(p);
+  printf("  addr %lx\n", p->addr);
+  assert(p->opcode == 0x2);
+  assert(p->addr == 0x18);
+
+  printf("beq $9 $0 0x9\n");
+  p->instruction = 0x11200009;
+  decode(p);
+  assert(p->rs == 0x9);
+  assert(p->rt == 0x0);
+  assert(p->opcode == 0x4);
+  assert(p->imm == 0x9);
 
   printf("... # All tests passed!\n");
   return 0;
