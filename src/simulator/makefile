@@ -4,7 +4,9 @@ default: main
 
 .PHONY: main
 main: main.exe data/text.bin data/data.bin
+	echo "--- # Simulating MIPS"
 	./main.exe data/text.bin data/data.bin
+	echo "..."
 
 .PHONY: main.c tdd
 main.exe: tdd main.c
@@ -14,8 +16,10 @@ tdd:
 	gcc test.c -o test.exe -g -ansi -Wall
 	./test.exe
 
-data/text.bin:
+data/text.bin: $(TARGET)
 	mars a $(TARGET) dump .text Binary data/text.bin
 
-data/data.bin:
-	mars a $(TARGET) dump .text Binary data/data.bin
+data/data.bin: $(TARGET)
+	mars a $(TARGET) dump .data Binary data/data.bin
+
+.PHONY: $(TARGET)

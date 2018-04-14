@@ -13,7 +13,7 @@ typedef struct {
     bool debug;
     uint32_t instruction;
     instruction_t instruction_code;
-    int opcode, rs, rt, rd, shamt, funct, imm, addr;
+    uint32_t opcode, rs, rt, rd, shamt, funct, imm, addr;
 } processor_t;
 
 /* Just a procedure that does nothing... */
@@ -38,7 +38,7 @@ processor_t* new_processor(uint32_t* text, uint32_t* data)
     processor->register_bank = (uint32_t*) malloc(sizeof(uint32_t) * 32);
     for (i = 0; i < 32; ++i)
     {
-        processor->register_bank[i] = 0;
+        processor->register_bank[i] = 0x0;
     }
 
     return processor;
@@ -62,7 +62,7 @@ void decode(processor_t* processor)
     processor->rd = (i >> 11) & 0xf;
     processor->shamt = (i >> 6) & 0xf;
     processor->funct = i & 0xff;
-    processor->imm = i & 0xFFFF;
+    processor->imm = i & 0x0000FFFF;
     processor->addr = i & 0x3FFFFFF;
     processor->instruction_code = detect_instruction(processor->instruction);
 }
@@ -90,7 +90,7 @@ void execute(processor_t* processor)
                 processor->register_bank[processor->rs] +
                 processor->register_bank[processor->rt];
             if (processor->debug) {
-                printf("add %d %d %d\n",
+                printf("add %d = %d + %d\n",
                        processor->register_bank[processor->rd],
                        processor->register_bank[processor->rs],
                        processor->register_bank[processor->rt]);
@@ -108,7 +108,7 @@ void execute(processor_t* processor)
                 processor->register_bank[processor->rs] +
                 sign_ext_imm(processor->imm);
             if (processor->debug) {
-                printf("addi %d %d %d\n",
+                printf("addi %d = %d + %d\n",
                         processor->register_bank[processor->rt],
                         processor->register_bank[processor->rs],
                         sign_ext_imm(processor->imm));
@@ -120,11 +120,28 @@ void execute(processor_t* processor)
                    processor->register_bank[processor->rs],
                    sign_ext_imm(processor->imm));
             if (processor->debug) {
-                printf("lw %d %d %d\n", processor->register_bank[processor->rt],
-                                        processor->register_bank[processor->rs],
-                                        sign_ext_imm(processor->imm));
+                printf("lw $%x <- M[%x + %x] => %x\n",
+					   processor->rt,
+                       processor->register_bank[processor->rs],
+                       sign_ext_imm(processor->imm),
+					   processor->data[processor->register_bank[processor->rs]]);
             }
-            break;
+         	break;
+	  	case LUI:
+			processor->register_bank[processor->rt] = processor->imm << 16;
+	  		if (processor->debug) {
+			  	printf("lui $%x <- %lx\n", processor->rt, processor->imm << 16);
+			}
+	  		break;
+	  	case ORI:
+	  		processor->register_bank[processor->rt] =
+			  	processor->register_bank[processor->rs] | processor->imm;
+	  		if (processor->debug) {
+			  	printf("ori $%x <- $%x | %x\n", processor->rt,
+                                                processor->rs,
+                                                processor->imm);
+			}
+	  		break;
         default: pass();
     }
 }

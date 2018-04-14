@@ -43,6 +43,14 @@ int main() {
   assert(p->opcode == 0x23);
   assert(sign_ext_imm(p->imm) == 0x0);
 
+  printf("ori $4, $1, 0x24\n");
+  p->instruction = 0x34240024;
+  decode(p);
+  assert(p->rs == 0x1);
+  assert(p->rt == 0x4);
+  assert(p->opcode == 0xd);
+  assert(p->imm == 0x24);
+
   free_processor(p);
 
   printf("... # All tests passed!\n");

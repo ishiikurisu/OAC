@@ -60,6 +60,8 @@ typedef enum {
     LW,
     SYSCALL,
     NOP,
+  	LUI,
+  	ORI,
     UNKNOWN
 } instruction_t;
 
@@ -94,6 +96,8 @@ int detect_instruction(uint32_t instruction)
         case 0x4: name = BEQ; break;
         case 0x8: name = ADDI; break;
         case 0x9: name = ADDIU; break;
+	  	case 0xD: name = ORI; break;
+	  	case 0xF: name = LUI; break;
         case 0x23: name = LW; break;
     }
 
