@@ -10,16 +10,16 @@ main: main.exe data/text.bin data/data.bin
 
 .PHONY: main.c tdd
 main.exe: tdd main.c
-	gcc main.c -o main.exe -g -ansi -Wall
+	gcc main.c -o main.exe -ansi -Wall
 
 tdd:
-	gcc test.c -o test.exe -g -ansi -Wall
+	gcc test.c -o test.exe -ansi -Wall
 	./test.exe
 
 data/text.bin: $(TARGET)
-	mars a $(TARGET) dump .text Binary data/text.bin
+	mars a $(TARGET) mc CompactTextAtZero dump .text Binary data/text.bin
 
 data/data.bin: $(TARGET)
-	mars a $(TARGET) dump .data Binary data/data.bin
+	mars a $(TARGET) mc CompactTextAtZero dump .data Binary data/data.bin
 
 .PHONY: $(TARGET)

@@ -148,8 +148,20 @@ Simulates the execution of a `lw` instruction. Returns a word from memory.
 */
 uint32_t lw(uint32_t *data, uint32_t rs, uint32_t imm)
 {
-    return data[rs/4];
+    printf("LW %x\n", rs);
+  	return data[(rs - 0x2000) / 4];
 }
 
+/*
+Displays a piece of memory tape.
+*/
+void display_tape(uint32_t *tape, uint32_t how_much)
+{
+	uint32_t i;
+
+  	for (i = 0; i < how_much; ++i) {
+	  	printf("%x. %lx\n", i, tape[i]);
+	}
+}
 
 #endif /* end of include guard: MIPS_H */

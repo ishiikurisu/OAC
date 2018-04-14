@@ -80,6 +80,7 @@ void execute(processor_t* processor)
         }
     }
 
+
     switch (processor->instruction_code)
     {
         case J: break;
@@ -90,8 +91,8 @@ void execute(processor_t* processor)
                 processor->register_bank[processor->rs] +
                 processor->register_bank[processor->rt];
             if (processor->debug) {
-                printf("add %d = %d + %d\n",
-                       processor->register_bank[processor->rd],
+                printf("add $%x = %x + %x\n",
+                       processor->rd,
                        processor->register_bank[processor->rs],
                        processor->register_bank[processor->rt]);
             }
@@ -108,23 +109,24 @@ void execute(processor_t* processor)
                 processor->register_bank[processor->rs] +
                 sign_ext_imm(processor->imm);
             if (processor->debug) {
-                printf("addi %d = %d + %d\n",
-                        processor->register_bank[processor->rt],
-                        processor->register_bank[processor->rs],
-                        sign_ext_imm(processor->imm));
+                printf("addi $%lx = $%lx + %lx => %lx\n",
+                        processor->rt,
+                        processor->rs,
+                        sign_ext_imm(processor->imm),
+					    processor->register_bank[processor->rt]);
             }
             break;
         case LW:
+
             processor->register_bank[processor->rt] =
                 lw(processor->data,
                    processor->register_bank[processor->rs],
                    sign_ext_imm(processor->imm));
             if (processor->debug) {
-                printf("lw $%x <- M[%x + %x] => %x\n",
+                printf("lw $%x <- M[$%x + %x]\n",
 					   processor->rt,
-                       processor->register_bank[processor->rs],
-                       sign_ext_imm(processor->imm),
-					   processor->data[processor->register_bank[processor->rs]]);
+                       processor->rs,
+                       sign_ext_imm(processor->imm));
             }
          	break;
 	  	case LUI:
@@ -144,6 +146,11 @@ void execute(processor_t* processor)
 	  		break;
         default: pass();
     }
+
+	if (processor->debug) {
+	  	display_tape(processor->register_bank, 32);
+	}
+
 }
 
 /* Frees the allocated processor. */
