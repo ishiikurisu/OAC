@@ -6,6 +6,18 @@
 #include <stdint.h>
 
 /*
+Displays a piece of memory tape.
+*/
+void display_tape(uint32_t *tape, uint32_t how_much)
+{
+	uint32_t i;
+
+  	for (i = 0; i < how_much; ++i) {
+	  	printf("%x. %lx\n", i, tape[i]);
+	}
+}
+
+/*
 Calculates how many instructions there are in a source code using its
 file pointer.
 */
@@ -105,6 +117,21 @@ int detect_instruction(uint32_t instruction)
     return name;
 }
 
+/* Writes the string starting at the address a0 in memory. */
+void syscall4(uint32_t* mem, uint32_t a0)
+{
+    char c = '\0';
+    int i = 0;
+
+    c = (mem[a0+(i/4)] >> (i % 4)) & 0xFF;
+    while (c != '\0')
+    {
+        printf("%c", c);
+        i++;
+        c = (mem[a0+(i/4)] >> (i % 4)) & 0xFF;
+    }
+}
+
 /* Simulates the `syscall` command using the current registers. */
 void syscall(uint32_t *registers, uint32_t *memory)
 {
@@ -114,15 +141,11 @@ void syscall(uint32_t *registers, uint32_t *memory)
     registers[1] = 0;
     switch (v0) {
         case 1:
-            printf("%ld\n", a0);
+            printf("%ld", a0);
             break;
 
         case 4:
-            /* BUG This should print one char at a time */
-            while (memory[a0] != '\0') {
-                printf("%c", memory[a0]);
-                a0++;
-            }
+            syscall4(memory, (a0-0x2000)/4);
             break;
 
         case 5:
@@ -151,18 +174,6 @@ Simulates the execution of a `lw` instruction. Returns a word from memory.
 uint32_t lw(uint32_t *data, uint32_t rs, uint32_t imm)
 {
   	return data[(rs - 0x2000) / 4];
-}
-
-/*
-Displays a piece of memory tape.
-*/
-void display_tape(uint32_t *tape, uint32_t how_much)
-{
-	uint32_t i;
-
-  	for (i = 0; i < how_much; ++i) {
-	  	printf("%x. %lx\n", i, tape[i]);
-	}
 }
 
 #endif /* end of include guard: MIPS_H */

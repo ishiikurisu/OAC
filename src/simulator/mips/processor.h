@@ -104,7 +104,9 @@ void execute(processor_t* processor)
         case SYSCALL:
             syscall(processor->register_bank, processor->data);
             if (processor->debug) {
-                printf("syscall %d\n", processor->register_bank[2]);
+                printf("syscall %d %x\n",
+                       processor->register_bank[2],
+                       processor->register_bank[4]);
             }
             if (processor->register_bank[1] == 1) { /* end the program! */
                 processor->off = true;
