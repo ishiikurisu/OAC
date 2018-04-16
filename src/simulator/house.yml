@@ -2,7 +2,10 @@
 build:
   local: true
   commands:
-  - mars a data/primos.asm mc CompactTextAtZero dump .text Binary data/text.bin
-  - mars a data/primos.asm mc CompactTextAtZero dump .data Binary data/data.bin
+  - gcc test.c -o test.exe -g -ansi -Wall
+  - ./test.exe
   - gcc main.c -o main.exe -g -ansi -Wall
+  - mars a data/teste_io.asm mc CompactTextAtZero dump .text Binary data/text.bin
+  - mars a data/teste_io.asm mc CompactTextAtZero dump .data Binary data/data.bin
   - ./main.exe data/text.bin data/data.bin
+  - rm data/*.bin

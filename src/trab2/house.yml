@@ -1,0 +1,7 @@
+---
+build:
+    local: true
+    commands:
+    - pdflatex relatorio.tex
+    - rm *.log
+    - rm *.aux

@@ -3,13 +3,13 @@ TARGET = data/primos.asm
 default: main
 
 .PHONY: main
-main: main.exe
+main: data/text.bin data/data.bin
 	@echo "--- # Simulating MIPS"
 	@./main.exe data/text.bin data/data.bin
 	@echo "..."
 
 .PHONY: main.c tdd
-main.exe: main.c
+main.exe: tdd main.c
 	gcc main.c -o main.exe -ansi -Wall -g -O2
 
 tdd:

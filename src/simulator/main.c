@@ -7,7 +7,7 @@ int main(int argc, char const *argv[]) {
     uint32_t *data = load_from_file(datafile);
     processor_t *processor = new_processor(text, data);
 
-    processor->debug = true;
+    /* processor->debug = true; */
     while (!processor->off)
     {
         fetch(processor);
