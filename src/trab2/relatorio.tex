@@ -30,14 +30,29 @@ memórias correspondentes; decodifica as instruções em variáveis; e as execut
 podendo ou não salvar dados em seu banco de registradores ou na própria
 memória.
 
+O carregamento de instruções é baseado em um registrador especial do
+processador chamado $PC$, que é responsável por guardar a posição atual do
+programa em memória. Após cada carregamento, este registrador é incrementado
+em um valor constante que indica a próxima instrução.
+
 Na linguagem MIPS, as instruções podem ser dividas em três tipos:
 
-% TODO Descrever tipos de instruções
 \begin{itemize}
-    \item Tipo R
-    \item Tipo I
-    \item Tipo J
+    \item Tipo R, que contém 6 campos codificados (\textit{opcode, rs, rt,
+    rd, shamt e funct}) e é destinado para operações em geral, principalmente
+    as de matemática.
+    \item Tipo I, que contém 4 campos (\textit{opcode, rs, rt e imediato}) e
+    é destinado para operações em geral que contém uma constante como
+    argumento.
+    \item Tipo J, que contém 2 campos (\textit{opcode e endereço}) e é
+    destinado para operações voltadas para alterar o fluxo do programa.
 \end{itemize}
+
+Os campos codificados são extraídos na etapa de decodificação, incluíndo o
+\textit{opcode}, que identifica a instrução a ser executada na etapa seguinte.
+Os campos \textit{rs, rt e rd} identificam os registradores a serem operados;
+enquanto os campos \textit{imediato e endereço}, que são constantes relevantes
+ao contexto do programa.
 
 \section{Metodologia}
 
@@ -48,7 +63,7 @@ entitade doravante denominada \textit{processador}, cujo objetivo é executar
 três procedimentos:
 
 \begin{itemize}
-    \item Carregar a próxima instrução em memória;
+    \item Carregar a próxima instrução em memória baseado no processador $PC$;
     \item Decodificar a instrução, carregando os parâmetros $RT$, $RS$, $RD$,
     $opcode$, $funct$, $shamt$ e $imm$ na memória;
     \item Executar a instrução atual baseado nos parâmetros definidos naquele
@@ -81,6 +96,8 @@ $ make
 Ela gerará os binários MIPS relevantes; executará uma rotina de testes
 unitários nas bibliotecas do processador; compilará o programa do processador;
 e o executará.
+Certifique-se que a plataforma $MARS$ está acessível pela linha de comando
+para que a compilação funcione.
 
 \section{Resultados}
 
@@ -161,7 +178,10 @@ compreendidos.
 
 \section{Conclusão}
 
-% TODO Write me!
+Com a implementação do simulador de um processador \textit{MIPS}, podemos
+aprender como funciona o procedimento básico de execução da arquitetura, que
+consiste em 3 etapas simples. Estas etapas requerem que as instruções sejam
+executadas com manipulação de registradores e acesso à memória.
 
 \section{Referência Bibliográfica}
 
