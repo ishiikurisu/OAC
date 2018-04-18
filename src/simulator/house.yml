@@ -2,9 +2,9 @@
 build:
   local: true
   commands:
-  - gcc test.c -o test.exe -g -ansi -Wall
+  - gcc test.c -o test.exe -g -ansi -Wall -O2 -lm
   - ./test.exe
-  - gcc main.c -o main.exe -g -ansi -Wall
+  - gcc main.c -o main.exe -g -ansi -Wall -O2 -lm
   - mars a data/primos.asm mc CompactTextAtZero dump .text Binary data/text.bin
   - mars a data/primos.asm mc CompactTextAtZero dump .data Binary data/data.bin
   - ./main.exe data/text.bin data/data.bin
