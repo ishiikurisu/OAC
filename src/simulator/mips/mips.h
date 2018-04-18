@@ -120,15 +120,15 @@ int detect_instruction(uint32_t instruction)
 /* Writes the string starting at the address a0 in memory. */
 void syscall4(uint32_t* mem, uint32_t a0)
 {
-    char c = '\0';
+    unsigned char c = '\0';
     int i = 0;
 
-    c = (mem[a0+(i/4)] >> (i % 4)) & 0xFF;
+    c = (mem[a0+(i/4)] >> 8*(i % 4)) & 0xFF;
     while (c != '\0')
     {
         printf("%c", c);
         i++;
-        c = (mem[a0+(i/4)] >> (i % 4)) & 0xFF;
+        c = (mem[a0+(i/4)] >> 8*(i % 4)) & 0xFF;
     }
 }
 
