@@ -26,7 +26,7 @@ Allocates a new processor in memory and returns its correspondent pointer.
 */
 processor_t* new_processor(uint32_t* text, uint32_t* data)
 {
-    processor_t* processor = (processor_t*) malloc(sizeof(processor));
+    processor_t* processor = (processor_t*) malloc(sizeof(processor_t));
     int i;
 
     processor->text = text;
