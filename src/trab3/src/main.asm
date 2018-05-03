@@ -5,6 +5,7 @@ OPERACAO: .asciiz "Escolha a operacao (+ ou *): "
 AVISO: .asciiz "Operacao invalida escolhida!"
 
 .text
+main:
 # Menu principal
 # ==============
 #
@@ -83,7 +84,6 @@ syscall
 
 # Essa operacao realiza a soma de dois numeros em ponto flutuante, sendo um
 # deles em $a0 e o outro em $a1. O resultado estará guardado em $v0.
-#
 SOMAR:
 mtc1 $a0, $f0
 mtc1 $a1, $f1
@@ -92,9 +92,8 @@ add.s $f0, $f1, $f0
 mfc1 $v0, $f0
 jr $ra
 
-# Essa operacao realiza a soma de dois numeros em ponto flutuante, sendo um
-# deles em $a0 e o outro em $a1. O resultado estará guardado em $v0.
-#
+# Essa operacao realiza a multiplicacao de dois numeros em ponto flutuante,
+# sendo um deles em $a0 e o outro em $a1. O resultado estará guardado em $v0.
 MULTIPLICAR:
 mtc1 $a0, $f0
 mtc1 $a1, $f1
