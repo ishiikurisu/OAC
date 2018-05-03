@@ -35,12 +35,12 @@ syscall
 # Decidindo procedimento
 # ======================
 #
-add $a0, $s0, $zero
-add $a1, $s1, $zero
-add $s2, $v0, $zero
-add $s3, $0, $0
+add $a0, $s0, $zero		# Primeiro numeros
+add $a1, $s1, $zero		# Segundo numero
+add $s2, $v0, $zero 	# Operacao invocada em forma de string
+add $s3, $0, $0 		# Flag para saber se ocorreu uma operacao
 
-# TODO Comparar `char` em $s2 para saber se a operecao atual eh uma soma
+# Comparando `char` em $s2 para saber se a operecao atual eh uma soma
 addi $t0, $0, 43
 bne $t0, $s2, NAO_SOME
   jal SOMAR
@@ -51,7 +51,7 @@ bne $t0, $s2, NAO_SOME
 NAO_SOME:
 nop
 
-# TODO Comparar `char` em $s2 para saber se a operecao atual eh uma multiplicao
+# Comparando `char` em $s2 para saber se a operecao atual eh uma multiplicao
 addi $t0, $0, 42
 bne $t0, $s2, NAO_MULTIPLIQUE
   jal MULTIPLICAR
@@ -62,7 +62,7 @@ bne $t0, $s2, NAO_MULTIPLIQUE
 NAO_MULTIPLIQUE:
 nop
 
-# TODO Avisar quando uma operacao invalida foi chamada
+# Avisando quando uma operacao invalida foi chamada
 bne $0, $s3, NAO_AVISE
   li $v0, 4
   la $a0, AVISO
@@ -74,7 +74,6 @@ nop
 # Saindo programa
 # ===============
 #
-SAIDA:
 li $v0, 10
 syscall
 
