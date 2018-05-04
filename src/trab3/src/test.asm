@@ -1,34 +1,45 @@
 .data
-PI: .float -3.14159 # => 0x40490fd0
+PI: .float -3.14159 # => 0xc0490fd0
+MSG_ERROS: .asciiz "Os testes falharam!\n"
 
 .text
 #
 # Testes unitários
 # ================
-#
+
+# Preparando suite de testes
+add $s7, $0, $0
+
 # Lendo um float da memória
 la $t0, PI
+lw $t0, 0($t0)
 ori $s0, $t0, 0x0
 
-# TODO Extrair sinal
+# Extraindo sinal
 ori $a0, $s0, 0
 jal GET_SIGN
-or $a0, $v0, $0
-li $v0, 1
-syscall
+li $t0, 0x1
+bne $t0, $v0, FIM
+addi $s7, $s7, 1
 
 # TODO Extrair expoente
 ori $a0, $s0, 0
 jal GET_EXP
-add $a0, $v0, $0
-li $v0, 1
-syscall
+li $t0, 0x80
+bne $t0, $v0, FIM
+addi $s7, $s7, 1
 
 # TODO Extrair mantissa
 
 # TODO Normalizar número
 
 # Terminando programa
+FIM:
+beq $s7, $0, SEM_ERROS
+  li $v0, 4
+  la $a0, MSG_ERROS
+  syscall
+SEM_ERROS:
 li $v0, 10
 syscall
 
