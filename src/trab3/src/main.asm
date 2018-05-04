@@ -116,9 +116,9 @@ ori $t3, $v0, 0
 jal GET_SIGN
 ori $t5, $v0, 0
 
-mulu $t0, $t0, $t2
+addu $t0, $t0, $t2
 sll $t0, $t0, 23
-addu $t1, $t1, $t3
+mul $t1, $t1, $t3
 beq $t4, $t5, MULTIPLICAR_SINAL_POSITIVO
 j MULTIPLICAR_SINAL_NEGATIVO
 MULTIPLICAR_SINAL_POSITIVO:
@@ -128,7 +128,7 @@ MULTIPLICAR_SINAL_NEGATIVO:
 	li $t2, 0x80000000
 
 RETORNO_MULTIPLICAR:
-or $v0, $t3, $t0
+or $v0, $t2, $t0
 or $v0, $v0, $t1
 or $ra, $t7, $0
 jr $ra
