@@ -67,17 +67,38 @@ caso, com uma máscara de 8 bits, ou $FF$ em hexadecimal).
 
 % TODO Implement 2-complement transformation
 
+% TODO Implement normalization procedure
+
 A operação de normalização de um número em ponto flutuante demonstrou ser,
 entre os procedimentos auxiliares, o mais difícil devido à diversidade de casos
 de usos diferentes a serem tratados.
 
 \section{Resultados}
 
-% TODO Write methodology
+Dois programas demonstrativos em MIPS foram escritos utilizando a plataforma
+MARS. Um deles descreve testes unitários para as sub-operações necessárias
+para se realizar os procedimentos foco deste trabalho e está escrito no arquivo
+\textit{test.asm}. O outro é o programa principal, que busca cumprir com a
+promessa de ler dois números e realizar uma operação sobre eles, escrito no
+arquivo \textit{main.asm}.
+
+Os testes unitários mostram como as operaçãoes de extração de sinal; de
+mantissa; e de expoente são diretas e curtas funcionando bem para o caso de
+exemplo $-3,14159$ (ou $C0490FD0$ em hexadecimal).
+
+Como foi entregue, o programa principal consegue ler dois números; um símbolo
+para a operação desejada; e chamar o procedimento desejado. Contudo, não foi
+possível realizar as operações ainda porque eu não sei normalizar um número.
+
+% TODO Compare results with default functions.
 
 \section{Conclusão}
 
-% TODO Write conclusion
+A partir do entendimento dos algoritmos de soma e multiplicação de números em
+notação científica, foi possível implementar em linguagem MIPS procedimentos
+capazes de substituir as funções originais. Apesar de existir um erro entre os
+resultados das implementações, vimos que ele é relativamente pequeno e não
+impede o seu uso.
 
 \section{Referência Bibliográfica}
 
