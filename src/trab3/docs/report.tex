@@ -42,7 +42,34 @@ seguindo a representação em complemento de dois [2].
 
 \section{Metodologia}
 
-% TODO Write methodology
+A partir desta seção, denominaremos números em ponto flutuante de precisão
+simples como \textit{floats} para fins de brevidade.
+
+Os procedimentos de soma e de multiplicação descritos anteriormente possuem
+algumas operações em comum, como extração dos expoentes; das mantissas;
+normalização de um número; extração do sinal; e transformação em complemento
+de 2. Neste caso, decidimos implementar essas operações primeiro antes de
+partir para um programa principal, cujo objetivo é ler dois números em ponto
+flutuante; a operação desejada; e escrever na saída padrão o resultado
+prometido.
+
+A extração do sinal de um \textit{float} é simples: basta descobrir o bit mais
+significativo do número. Isto é possível realização um \textit{shift} lógico à
+direita com 31 passos.
+
+A extração da mantissa de um \textit{float} é igualmente simples e pode ser
+feita realizando uma operação $AND$ entre número em questão e uma máscara de 22
+bits. Em hexadecimal, essa máscara será $7FFFFF$.
+
+A extração do expoente é um pouco mais complicada e requer tanto um
+\textit{shift} lógico à direita (no caso, de 23 passos) e um mascaramento (no
+caso, com uma máscara de 8 bits, ou $FF$ em hexadecimal).
+
+% TODO Implement 2-complement transformation
+
+A operação de normalização de um número em ponto flutuante demonstrou ser,
+entre os procedimentos auxiliares, o mais difícil devido à diversidade de casos
+de usos diferentes a serem tratados.
 
 \section{Resultados}
 
@@ -55,7 +82,9 @@ seguindo a representação em complemento de dois [2].
 \section{Referência Bibliográfica}
 
 \begin{enumerate}
-    \item "754-2008 - IEEE Standard for Floating-Point Arithmetic". https://ieeexplore.ieee.org/document/4610935/. Último acesso em 4 de Maio de 2018.
+    \item "754-2008 - IEEE Standard for Floating-Point Arithmetic".
+    https://ieeexplore.ieee.org/document/4610935/. Último acesso em 4 de Maio
+    de 2018.
     \item Adicionar referência a um número em complemento de 2 % TODO Add reference
 \end{enumerate}
 
