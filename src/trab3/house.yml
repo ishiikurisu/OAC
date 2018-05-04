@@ -3,4 +3,4 @@ build:
     local: true
     commands:
     - mars nc src/test.asm
-    # - mars nc src/main.asm
+    - mars nc src/main.asm

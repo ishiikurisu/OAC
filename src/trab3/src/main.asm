@@ -85,19 +85,71 @@ syscall
 # Essa operacao realiza a soma de dois numeros em ponto flutuante, sendo um
 # deles em $a0 e o outro em $a1. O resultado estará guardado em $v0.
 SOMAR:
-mtc1 $a0, $f0
-mtc1 $a1, $f1
-# TODO Implementar soma de verdade
-add.s $f0, $f1, $f0
-mfc1 $v0, $f0
+or $t7, $ra, $0
+jal GET_EXP
+or $t0, $v0, $0
+or $a0, $a1, $0
+jal GET_EXP
+or $t1, $v0, $0
+subu $t0, $t0, $t1
+# TODO Implement the following line:
+# if abs($t0) > 31 then return the bigger number else proceed with the sum.
+or $ra, $t7, $0
 jr $ra
 
 # Essa operacao realiza a multiplicacao de dois numeros em ponto flutuante,
 # sendo um deles em $a0 e o outro em $a1. O resultado estará guardado em $v0.
+# TODO Fix me!
 MULTIPLICAR:
-mtc1 $a0, $f0
-mtc1 $a1, $f1
-# TODO Implementar multiplicacao de verdade
-mul.s $f0, $f1, $f0
-mfc1 $v0, $f0
+or $t7, $ra, $0
+jal GET_EXP
+ori $t0, $v0, 0
+jal GET_MAN
+ori $t2, $v0, 0
+jal GET_SIGN
+ori $t4, $v0, 0
+ori $a0, $a1, 0
+jal GET_EXP
+ori $t1, $v0, 0
+jal GET_MAN
+ori $t3, $v0, 0
+jal GET_SIGN
+ori $t5, $v0, 0
+
+mulu $t0, $t0, $t2
+sll $t0, $t0, 23
+addu $t1, $t1, $t3
+beq $t4, $t5, MULTIPLICAR_SINAL_POSITIVO
+j MULTIPLICAR_SINAL_NEGATIVO
+MULTIPLICAR_SINAL_POSITIVO:
+	li $t2, 0x0
+	j RETORNO_MULTIPLICAR
+MULTIPLICAR_SINAL_NEGATIVO:
+	li $t2, 0x80000000
+
+RETORNO_MULTIPLICAR:
+or $v0, $t3, $t0
+or $v0, $v0, $t1
+or $ra, $t7, $0
+jr $ra
+
+# Operacoes de suporte
+# --------------------
+
+# Extrai o sinal do número em $a0 e o guarda em $v0
+GET_SIGN:
+srl $v0, $a0, 31
+jr $ra
+
+# Extrai o expoente de um número em ponto flutuante simples guardado em $a0
+# e o guarda em $v0.
+GET_EXP:
+srl $v0, $a0, 23
+andi $v0, $v0, 0xFF
+jr $ra
+
+# Extrai a mantissa de um número em ponto flutuante simples guardado em $a0
+# e o guarda em $v0.
+GET_MAN:
+andi $v0, $a0, 0x7fffff
 jr $ra
