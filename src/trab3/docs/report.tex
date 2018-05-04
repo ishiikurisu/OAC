@@ -9,15 +9,36 @@
 
 \begin{document}
 
-\title{Trabalho 3 da disciplina "Organização e Arquitetura de Computadores" 1 / 2018}
+\title{Trabalho 3 da disciplina "Organização e Arquitetura de Computadores" 1 /
+2018}
 \author{Cristiano Silva Júnior: 13/0070629}
 \date{\today}
 \maketitle
 
 \section{Introdução}
 
-% TODO Write introduction
-Esta é a introdução do problema.
+O objetivo deste trabalho é implementar algumas operações de aritmética de
+números em ponto flutuante na linguagem MIPS sem utilizar as facilidades
+fornecidas pelo coprocessador 1, especializado em números deste tipo. No caso,
+devemos implementar as operações de soma; subtração; e multiplicação utilizando
+somente operações comuns do MIPS MARS.
+
+A saber, um número em ponto flutuante é uma representação numérica padronizada
+no documento IEEE 754, e consiste de um número de 32 bits dividido como
+mostrado na figura 1.
+
+% TODO Add IEEE 754 float bit division
+
+No caso, o número representado $N$ será [1] $$ N = (-1)^S (1 + C) \cdot 2^{M-127} $$
+
+Como os números em ponto flutuante na verdade representam números em notação
+científica, as operações de soma e multiplicação devem, de fato, implementar os
+respectivos algoritmos para números neste formato, como demonstrado na figura 2.
+
+% TODO Add sum and multiplication procedures
+
+A subtração será similar a soma, já que basta inverter o sinal do número
+seguindo a representação em complemento de dois [2].
 
 \section{Metodologia}
 
@@ -30,5 +51,12 @@ Esta é a introdução do problema.
 \section{Conclusão}
 
 % TODO Write conclusion
+
+\section{Referência Bibliográfica}
+
+\begin{enumerate}
+    \item "754-2008 - IEEE Standard for Floating-Point Arithmetic". https://ieeexplore.ieee.org/document/4610935/. Último acesso em 4 de Maio de 2018.
+    \item Adicionar referência a um número em complemento de 2 % TODO Add reference
+\end{enumerate}
 
 \end{document}
