@@ -86,14 +86,26 @@ syscall
 # deles em $a0 e o outro em $a1. O resultado estará guardado em $v0.
 SOMAR:
 or $t7, $ra, $0
+
 jal GET_EXP
-or $t0, $v0, $0
-or $a0, $a1, $0
+ori $t0, $v0, 0
+jal GET_MAN
+ori $t2, $v0, 0
+jal GET_SIGN
+ori $t4, $v0, 0
+ori $a0, $a1, 0
 jal GET_EXP
-or $t1, $v0, $0
-subu $t0, $t0, $t1
-# TODO Implement the following line:
-# if abs($t0) > 31 then return the bigger number else proceed with the sum.
+ori $t1, $v0, 0
+jal GET_MAN
+ori $t3, $v0, 0
+jal GET_SIGN
+ori $t5, $v0, 0
+
+add $v0, $t2, $t3
+sll $v0, $v0, 23
+# TODO Implement normalization when exponents are different
+or $v0, $v0, $t1
+
 or $ra, $t7, $0
 jr $ra
 
@@ -102,6 +114,7 @@ jr $ra
 # TODO Fix me!
 MULTIPLICAR:
 or $t7, $ra, $0
+
 jal GET_EXP
 ori $t0, $v0, 0
 jal GET_MAN
