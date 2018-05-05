@@ -2,12 +2,15 @@
 NUMERO_1: .asciiz "Digite o primeiro numero: "
 NUMERO_2: .asciiz "Digite o segundo numero: "
 OPERACAO: .asciiz "Escolha a operacao (+ ou *): "
-AVISO: .asciiz "Operacao invalida escolhida!"
+AVISO:    .asciiz "Operacao invalida escolhida!"
 
 .text
 main:
+# Rotina principal
+# ================
+
 # Menu principal
-# ==============
+# --------------
 #
 # Escrevendo primeiro texto
 li $v0, 4
@@ -34,7 +37,7 @@ li $v0, 12
 syscall
 
 # Decidindo procedimento
-# ======================
+# ----------------------
 #
 add $a0, $s0, $zero		# Primeiro numeros
 add $a1, $s1, $zero		# Segundo numero
@@ -73,19 +76,18 @@ nop
 
 
 # Saindo programa
-# ===============
+# ---------------
 #
 li $v0, 10
 syscall
 
-# Definicoes auxiliares
+# Definicoes principais
 # =====================
-#
 
 # Essa operacao realiza a soma de dois numeros em ponto flutuante, sendo um
 # deles em $a0 e o outro em $a1. O resultado estará guardado em $v0.
 SOMAR:
-or $t7, $ra, $0
+ori $t7, $ra, 0
 
 jal GET_EXP
 ori $t0, $v0, 0
@@ -101,7 +103,7 @@ ori $t3, $v0, 0
 jal GET_SIGN
 ori $t5, $v0, 0
 
-add $v0, $t2, $t3
+addu $v0, $t2, $t3
 sll $v0, $v0, 23
 # TODO Implement normalization when exponents are different
 or $v0, $v0, $t1
@@ -129,19 +131,23 @@ ori $t3, $v0, 0
 jal GET_SIGN
 ori $t5, $v0, 0
 
-addu $t0, $t0, $t2
-sll $t0, $t0, 23
-mul $t1, $t1, $t3
-beq $t4, $t5, MULTIPLICAR_SINAL_POSITIVO
-j MULTIPLICAR_SINAL_NEGATIVO
-MULTIPLICAR_SINAL_POSITIVO:
+# Somando expoentes
+addi $t0, $t0, 127
+addi $t1, $t1, 127
+add $t0, $t0, $t1
+subi $t0, $t0, 127
+# Multiplicando mantissas
+mul $t1, $t2, $t3
+# Lidando com sinal
+bne $t4, $t5, MULTIPLICAR_SINAL_NEGATIVO
 	li $t2, 0x0
 	j RETORNO_MULTIPLICAR
 MULTIPLICAR_SINAL_NEGATIVO:
 	li $t2, 0x80000000
 
 RETORNO_MULTIPLICAR:
-or $v0, $t2, $t0
+sll $v0, $t0, 23
+or $v0, $v0, $t2
 or $v0, $v0, $t1
 or $ra, $t7, $0
 jr $ra
