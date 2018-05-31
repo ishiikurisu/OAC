@@ -20,10 +20,14 @@ begin
 		variable r: std_logic_vector(WSIZE-1 downto 0);
 	begin
 		if opcode = "0000" then
+			r := A and B;
+		else if opcode = "0001" then
+			r := A or B;
+		else if opcode = "0010" then
 			r := std_logic_vector(signed(A) + signed(B));
 		else
 			r := std_logic_vector(to_signed(0, 32));
-		end if;
+		end if; end if; end if; -- This looks horrible! Can this be better?
 			  
 		Z <= r;
 		if r = X"00000000" 

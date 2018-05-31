@@ -39,19 +39,33 @@ architecture ula_arch of testbench is
 		
 		init: process
 		begin
-			-- Testing sum
+			-- Testing and / or
 			opcode <= "0000";
+			a <= X"AAAAAAAA"; b <= X"55555555";
+			wait for 5 ns;
+			assert(result = X"00000000");
+			assert(zero = '1');
+			
+			opcode <= "0001";
+			wait for 5 ns;
+			assert(result = X"FFFFFFFF");
+			assert(zero = '0');
+			
+			-- Testing add
+			opcode <= "0010";
 			a <= X"00000004"; b <= X"00000005";
-			wait for 4 ps;
+			wait for 5 ns;
 			assert(result = std_logic_vector(to_signed(9, 32)));
 			assert(zero = '0');
 			
 			a <= X"00000000"; b <= X"00000000";
-			wait for 4 ps;
+			wait for 5 ns;
 			assert(result = std_logic_vector(to_signed(0, 32)));
 			assert(zero = '1');
 			
-			a <= X"00000032"; b <= X"00000005";
-			wait for 4 ps;
+			-- TODO Test overflow
+			-- TODO Test addu
+			-- TODO Test sub
+			-- TODO Test subu
 		end process init;
 end ula_arch;
