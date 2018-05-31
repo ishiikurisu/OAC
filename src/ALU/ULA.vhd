@@ -31,6 +31,18 @@ begin
 			r := std_logic_vector(signed(A) - signed(B));
 		elsif opcode = "0101" then
 			r := std_logic_vector(unsigned(A) - unsigned(B));
+		elsif opcode = "0110" then
+			if signed(A) < signed(B) then
+				r := X"00000001";
+			else
+				r := X"00000000";
+			end if;
+		elsif opcode = "0111" then
+			if unsigned(A) < unsigned(B) then
+				r := X"00000001";
+			else
+				r := X"00000000";
+			end if;
 		elsif opcode = "1000" then
 			r := A nor B;
 		elsif opcode = "1001" then
