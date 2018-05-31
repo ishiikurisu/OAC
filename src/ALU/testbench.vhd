@@ -64,8 +64,49 @@ architecture ula_arch of testbench is
 			assert(zero = '1');
 			
 			-- TODO Test overflow
-			-- TODO Test addu
-			-- TODO Test sub
-			-- TODO Test subu
+			
+			-- Testing addu
+			opcode <= "0011";
+			a <= X"00000004"; b <= X"00000005";
+			wait for 5 ns;
+			assert(result = std_logic_vector(to_unsigned(9, 32)));
+			assert(zero = '0');
+			
+			a <= X"10000000"; b <= X"00000000";
+			wait for 5 ns;
+			assert(result = X"10000000");
+			
+			-- Testing sub
+			opcode <= "0100";
+			a <= X"0000000A"; b <= X"00000005";
+			wait for 5 ns;
+			assert(result = std_logic_vector(to_signed(5, 32)));
+			
+			a <= X"00000000"; b <= X"00000001";
+			wait for 5 ns;
+			assert(result = std_logic_vector(to_signed(-1, 32)));
+			
+			-- Testing subu
+			opcode <= "0101";
+			a <= X"0000000A"; b <= X"00000005";
+			wait for 5 ns;
+			assert(result = X"00000005");
+			
+			a <= X"00000000"; b <= X"00000001";
+			wait for 5 ns;
+			assert(result = X"FFFFFFFF");
+			
+			-- Testing nor
+			opcode <= "1000";
+			wait for 5 ns;
+			assert(result = std_logic_vector(to_signed(-2, 32)));
+			
+			-- Testing xor
+			opcode <= "1001";
+			wait for 5 ns;
+			assert(result = std_logic_vector(to_signed(1, 32)));
+			
+			-- TODO Test slt
+			-- TODO Test sltu
 		end process init;
 end ula_arch;

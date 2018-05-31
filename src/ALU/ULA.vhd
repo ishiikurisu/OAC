@@ -21,13 +21,23 @@ begin
 	begin
 		if opcode = "0000" then
 			r := A and B;
-		else if opcode = "0001" then
+		elsif opcode = "0001" then
 			r := A or B;
-		else if opcode = "0010" then
+		elsif opcode = "0010" then
 			r := std_logic_vector(signed(A) + signed(B));
+		elsif opcode = "0011" then
+			r := std_logic_vector(unsigned(A) + unsigned(B));
+		elsif opcode = "0100" then
+			r := std_logic_vector(signed(A) - signed(B));
+		elsif opcode = "0101" then
+			r := std_logic_vector(unsigned(A) - unsigned(B));
+		elsif opcode = "1000" then
+			r := A nor B;
+		elsif opcode = "1001" then
+			r := A xor B;
 		else
 			r := std_logic_vector(to_signed(0, 32));
-		end if; end if; end if; -- This looks horrible! Can this be better?
+		end if;
 			  
 		Z <= r;
 		if r = X"00000000" 
