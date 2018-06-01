@@ -130,11 +130,17 @@ architecture ula_arch of testbench is
 			wait for 5 ns;
 			assert(result = X"000000FF");
 			
-			-- TODO Test sra
+			-- Testing sra
+			opcode <= "1100";
+			a <= X"F000000F";
+			b <= X"00000008";
+			wait for 5 ns;
+			assert(result = X"FFF00000");
 			
 			-- Testing rtr
 			opcode <= "1101";
 			a <= X"FF00FF00";
+			b <= X"00000008";
 			wait for 5 ns;
 			assert(result = X"00FF00FF");
 			
