@@ -120,8 +120,8 @@ architecture ula_arch of testbench is
 			assert(zero = '0');
 			
 			-- Testing sll
-			a <= X"0000FF00"; b <= X"00000008";
 			opcode <= "1010";
+			a <= X"0000FF00"; b <= X"00000008";
 			wait for 5 ns;
 			assert(result = X"00FF0000");
 		
@@ -131,7 +131,18 @@ architecture ula_arch of testbench is
 			assert(result = X"000000FF");
 			
 			-- TODO Test sra
-			-- TODO Test rtr
-			-- TODO Test rtl
+			
+			-- Testing rtr
+			opcode <= "1101";
+			a <= X"FF00FF00";
+			wait for 5 ns;
+			assert(result = X"00FF00FF");
+			
+			-- Testing rtl
+			opcode <= "1110";
+			a <= X"0000FFFF";
+			wait for 5 ns;
+			assert(result = X"FF0000FF");
+			
 		end process init;
 end ula_arch;

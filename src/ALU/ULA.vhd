@@ -48,9 +48,20 @@ begin
 		elsif opcode = "1001" then
 			r := A xor B;
 		elsif opcode = "1010" then
-			r := std_logic_vector(shift_left(unsigned(A), to_integer(unsigned(B))));
+			r := std_logic_vector(shift_left(unsigned(A), 
+			                                 to_integer(unsigned(B))));
 		elsif opcode = "1011" then
-			r := std_logic_vector(shift_right(unsigned(A), to_integer(unsigned(B))));
+			r := std_logic_vector(shift_right(unsigned(A), 
+			                                  to_integer(unsigned(B))));
+		elsif opcode = "1100" then
+			-- TODO Implement me
+			r := std_logic_vector(to_signed(0, 32));
+		elsif opcode = "1101" then
+			r := std_logic_vector(rotate_left(unsigned(A), 
+			                                  to_integer(unsigned(B))));
+		elsif opcode = "1110" then 
+			r := std_logic_vector(rotate_right(unsigned(A), 
+			                                   to_integer(unsigned(B))));
 		else
 			r := std_logic_vector(to_signed(0, 32));
 		end if;
