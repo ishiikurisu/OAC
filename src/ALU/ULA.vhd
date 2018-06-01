@@ -47,6 +47,10 @@ begin
 			r := A nor B;
 		elsif opcode = "1001" then
 			r := A xor B;
+		elsif opcode = "1010" then
+			r := std_logic_vector(shift_left(unsigned(A), to_integer(unsigned(B))));
+		elsif opcode = "1011" then
+			r := std_logic_vector(shift_right(unsigned(A), to_integer(unsigned(B))));
 		else
 			r := std_logic_vector(to_signed(0, 32));
 		end if;

@@ -119,7 +119,19 @@ architecture ula_arch of testbench is
 			assert(result = X"00000001");
 			assert(zero = '0');
 			
-			-- TODO Test sll
-			-- TODO Test srl
+			-- Testing sll
+			a <= X"0000FF00"; b <= X"00000008";
+			opcode <= "1010";
+			wait for 5 ns;
+			assert(result = X"00FF0000");
+		
+			-- Testing srl
+			opcode <= "1011";
+			wait for 5 ns;
+			assert(result = X"000000FF");
+			
+			-- TODO Test sra
+			-- TODO Test rtr
+			-- TODO Test rtl
 		end process init;
 end ula_arch;
