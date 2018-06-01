@@ -71,6 +71,7 @@ begin
 			then zero <= '1';
 			else zero <= '0';
 		end if;
+		-- TODO Detect overflow
 		ovfl <= '0';
 	end process;
 end rtl;
