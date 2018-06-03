@@ -71,7 +71,32 @@ begin
 			then zero <= '1';
 			else zero <= '0';
 		end if;
-		-- TODO Detect overflow
-		ovfl <= '0';
+		if opcode = "0010" then
+			if ((signed(A) > to_signed(0, 32)) 
+			and (signed(B) > to_signed(0, 32)) 
+			and (signed(r) < signed(A)) 
+			and (signed(r) < signed(B)))
+			or ((signed(A) < to_signed(0, 32))
+			and (signed(B) < to_signed(0, 32))
+			and (signed(r) > signed(A))
+			and (signed(r) > signed(B))) then
+				ovfl <= '1';
+			else
+				ovfl <= '0';
+			end if;
+		elsif opcode = "0100" then
+			if ((signed(A) < 0) 
+			and (signed(B) > 0)
+			and (signed(r) > signed(B)))
+			or ((signed(A) > 0) 
+			and (signed(B) < 0)
+			and (signed(r) > signed(A))) then
+				ovfl <= '1';
+			else
+				ovfl <= '0';
+			end if;
+		else
+			ovfl <= '0';
+		end if;
 	end process;
 end rtl;
