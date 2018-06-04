@@ -1,0 +1,92 @@
+\documentclass[12pt, a4paper, twoside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[cm]{fullpage}
+\usepackage{fancyhdr}
+\usepackage{textcomp}
+\usepackage{graphicx}
+\usepackage{commath}
+\usepackage[portuguese]{babel}
+
+\begin{document}
+
+\title{Trabalho 4 da disciplina "Organização e Arquitetura de Computadores" 1 /
+2018}
+\author{Cristiano Silva Júnior: 13/0070629}
+\date{\today}
+\maketitle
+
+\section{Introdução}
+
+O objetivo deste trabalho é implementar a unidade lógico-aritmética (ULA) do
+processador MIPS desenvolvido na disciplina. A ULA deverá implementar as
+seguintes operações:
+
+\begin{itemize}
+    \item Soma e subtração aritméticas
+    \item Soma e subtração lógicas;
+    \item AND, OR, NOR e XOR lógicos;
+    \item "Menor que";
+    \item \textit{Shift} e rotação lógicos para esquerda e direita;
+\end{itemize}
+
+A ULA deverá receber como entrada dois números $A$ e $B$ de 32 bits; e um
+código para oeração definido previamente pelo professor e deverá ter como saída
+um número $Z$ com o resultado da operação escolhida; um indicador se o
+resultado vale zero; e outro indicador para a situação de overflow na operação.
+
+\section{Metodologia}
+
+A implementação da ULA foi feita em VHDL utilizando a ferramenta Altera Quartus
+II com o auxílio do Altera ModelSim para a suíte de testes. Testes unitários
+para cada operação estão contidos no arquivo "testbench.vhd" enquanto a ULA
+foi implementada no arquivo "ALU.vhd".
+
+\section{Resultados}
+
+\subsection{Circuito gerado}
+
+Por meio da implementação, pode-se gerar o circuito indicado na figura 1.
+
+% TODO Gerar vizualização do circuito.
+
+\subsection{Operações aritméticas}
+
+Todas as operações aritméticas foram testadas para resultados incluindo
+números positivos, negativos e zeros, assim como para mostrar a detecção de
+overflow como mostra a figura 2.
+
+% TODO Mostrar simulação para operações aritméticas.
+
+\subsection{Operações lógicas}
+
+Todas as operações lógicas foram testadas com números com os quais seriam
+fáceis de visualizar o resultado final, como mostra a figura 3.
+
+% TODO Mostrar simulação para operações lógicas.
+
+Além disso, implementamos as operações de soma e subtração para os casos
+com números sem sinal, como mostra o resultado da simulação na figura 4.
+
+% TODO Mostrar simulação para soma e subtração lógicas.
+
+\subsubsection{Operações "Menor que"}
+
+Para as operações "menor que", foram utilizas duas situações: uma em que
+o número $A$ é de fato menor que $B$, tornando $Z=1$; e outra em que
+$A>B \rightarrow Z=0$. O resultado da simulação encontra-se na figura 5.
+
+% TODO Mostrar simulação para operações <
+
+\subsection{Operações de \textit{Shift} e rotações}
+
+As operações de \textit{shift} e de rotação foram testadas com casos
+extremos, isto é, que há interações do resultado com o limite da representação
+númerica de 32 bits, como mostra a figura 6.
+
+% TODO Mostrar simulação para operações de shift e rotação
+
+\section{Conclusão}
+
+A implementação de toda a ULA proposta foi possível sem maiores problemas.s
+
+\end{document}
