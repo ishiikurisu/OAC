@@ -18,5 +18,15 @@ architecture rtl of BREG is
 begin
 	working: process(clk, wren, rst, radd1, radd2, wadd, wdata)
 	begin
+		-- $0
+		if radd1 = "00000" then
+			r1 <= X"00000000";
+		end if;
+		if radd2 = "00000" then
+			r2 <= X"00000000";
+		end if;
+		
+		-- $1 until $31
+		-- TODO Implement me!
 	end process;
 end rtl;
