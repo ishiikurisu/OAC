@@ -91,6 +91,34 @@ architecture breg_arch of testbench is
 			wait for 5 ns;
 			assert(out_data_1 = std_logic_vector(to_signed(0, 32)));
 			
-			-- TODO Test remaining registers
+			-- Testing remaining registers
+			write_enable <= '1';
+			for i in 1 to 31 loop
+				clock <= '1';
+				in_reg <= std_logic_vector(to_unsigned(i, 5));
+				in_data <= std_logic_vector(to_unsigned(i, 32));
+				wait for 5 ns;
+				clock <= '0';
+				wait for 5 ns;
+			end loop;
+			write_enable <= '0';
+			for i in 1 to 31 loop
+				clock <= '1';
+				if (i >= 1) and (i < 11) then
+					out_reg_1 <= std_logic_vector(to_unsigned(i, 5));
+					assert(out_data_1 = std_logic_vector(to_unsigned(i, 32)));
+				elsif (i >= 11) and (i < 21) then
+					out_reg_2 <= std_logic_vector(to_unsigned(i, 5));
+					assert(out_data_2 = std_logic_vector(to_unsigned(i, 32)));
+				else
+					out_reg_1 <= std_logic_vector(to_unsigned(i, 5));
+					assert(out_data_1 = std_logic_vector(to_unsigned(i, 32)));
+					out_reg_2 <= std_logic_vector(to_unsigned(i, 5));
+					assert(out_data_2 = std_logic_vector(to_unsigned(i, 32)));
+				end if;
+				wait for 5 ns;
+				clock <= '0';
+				wait for 5 ns;
+			end loop;
 		end process init;
 end breg_arch;
