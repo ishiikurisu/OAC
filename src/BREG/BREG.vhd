@@ -26,7 +26,7 @@ begin
 			end loop;
 		end if;
 		if clk = '1' then
-			-- $0
+			-- Reading
 			if radd1 = "00000" then
 				r1 <= X"00000000";
 			else 
@@ -37,9 +37,10 @@ begin
 			else
 				r2 <= bank(to_integer(unsigned(radd2)));
 			end if;
-			
-			-- $1 until $31
-			-- TODO Implement me!
+			-- Writing
+			if (wren = '1') and (wadd /= "00000") then
+				bank(to_integer(unsigned(wadd))) <= wdata;
+			end if;
 		end if;		
 	end process;
 end rtl;

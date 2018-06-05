@@ -64,13 +64,28 @@ architecture breg_arch of testbench is
 			
 			-- Testing reset
 			clock <= '1';
+			write_enable <= '1';
+			in_reg <= "11111";
+			in_data <= X"0000000A";
+			wait for 5 ns;
+			clock <= '0';
+			wait for 5 ns;
+			clock <= '1';
+			write_enable <= '0';
+			out_reg_2 <= "11111";
+			wait for 5 ns;
+			clock <= '0';
+			wait for 5 ns;
+			assert(out_data_2 = std_logic_vector(to_signed(10, 32)));
+			
+			clock <= '1';
 			reset <= '1';
 			wait for 5 ns;
 			reset <= '0';
 			clock <= '0';
 			wait for 5 ns;
 			clock <= '1';
-			out_reg_1 <= "00001";
+			out_reg_1 <= "11111";
 			wait for 5 ns;
 			clock <= '0';
 			wait for 5 ns;
