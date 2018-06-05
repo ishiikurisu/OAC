@@ -62,6 +62,20 @@ architecture breg_arch of testbench is
 			wait for 5 ns;
 			assert(out_data_1 = std_logic_vector(to_signed(0, 32)));
 			
+			-- Testing reset
+			clock <= '1';
+			reset <= '1';
+			wait for 5 ns;
+			reset <= '0';
+			clock <= '0';
+			wait for 5 ns;
+			clock <= '1';
+			out_reg_1 <= "00001";
+			wait for 5 ns;
+			clock <= '0';
+			wait for 5 ns;
+			assert(out_data_1 = std_logic_vector(to_signed(0, 32)));
+			
 			-- TODO Test remaining registers
 		end process init;
 end breg_arch;
