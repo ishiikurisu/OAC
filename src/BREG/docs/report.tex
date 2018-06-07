@@ -30,14 +30,19 @@ II com o auxílio do Altera ModelSim para a suíte de testes. Testes unitários
 para cada operação estão contidos no arquivo "testbench.vhd" enquanto o BREG
 foi implementado no arquivo "BREG.vhd".
 
+O \textit{testbench} inclui testes unitários para o registrador 0, para o sinal
+de \textit{reset}, e para escrita e leitura nos outros registradores.
+
 \section{Resultados}
 
 \subsection{Circuito gerado}
 
-Por meio da implementação, pode-se gerar o circuito indicado na figura 1,
-que contém X componentes.
+Por meio da implementação, pode-se gerar o circuito, que contém 3475
+componentes.
 
-% TODO Gerar vizualização do circuito.
+O processo de leitura do banco de registradores é assíncrono, ou seja, esta
+parte do circuito é reativa, enquanto a escrita só ocorre na subida do
+\textit{clock} se o sinal \textit{"write enable"} estiver ativo.
 
 \subsection{Simulação}
 
@@ -45,7 +50,22 @@ Utilizando o ModelSim, geramos uma simulação em forma de onda para o circuito.
 No caso, mostramos a dinâmica recomendada de atribuir um valor arbitrário aos
 registradores que depois são lidos em saídas diferentes
 
-% TODO Gerar visualização da forma de onda do circuito.
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\textwidth]{docs/wave_in_reg.png}
+	\caption{Escrita no banco de registradores.}
+\end{figure}
+
+A figura 1 mostra o processo de escrita no banco de registradores enquanto a
+figura 2 mostra o processo de leitura do banco de registradores: dos
+registradores 1 a 10, lemos pela saída 1; dos 11 a 20, pela saída 2; e da 21
+em diante, das duas saídas ao mesmo tempo.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\textwidth]{docs/wave_out_reg.png}
+	\caption{Leitura do banco de registradores.}
+\end{figure}
 
 \section{Conclusão}
 

@@ -2,21 +2,21 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -6.757
-TNS   : -482.001
-
 Type  : Slow 1200mV 85C Model Setup 'rst'
-Slack : -2.458
-TNS   : -700.563
+Slack : -1.660
+TNS   : -648.811
+
+Type  : Slow 1200mV 85C Model Setup 'clk'
+Slack : -0.504
+TNS   : -56.290
 
 Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : -1.810
-TNS   : -450.383
+Slack : -2.036
+TNS   : -637.048
 
 Type  : Slow 1200mV 85C Model Hold 'rst'
-Slack : -0.616
-TNS   : -86.855
+Slack : -1.002
+TNS   : -136.302
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
 Slack : -3.000
@@ -26,21 +26,21 @@ Type  : Slow 1200mV 85C Model Minimum Pulse Width 'rst'
 Slack : -3.000
 TNS   : -3.000
 
-Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -5.969
-TNS   : -428.592
-
 Type  : Slow 1200mV 0C Model Setup 'rst'
-Slack : -2.189
-TNS   : -648.677
+Slack : -1.475
+TNS   : -606.276
+
+Type  : Slow 1200mV 0C Model Setup 'clk'
+Slack : -0.467
+TNS   : -63.378
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : -1.621
-TNS   : -398.130
+Slack : -1.819
+TNS   : -555.057
 
 Type  : Slow 1200mV 0C Model Hold 'rst'
-Slack : -0.560
-TNS   : -75.964
+Slack : -0.934
+TNS   : -130.156
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
@@ -50,25 +50,25 @@ Type  : Slow 1200mV 0C Model Minimum Pulse Width 'rst'
 Slack : -3.000
 TNS   : -3.000
 
-Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -3.568
-TNS   : -209.295
-
 Type  : Fast 1200mV 0C Model Setup 'rst'
-Slack : -0.966
-TNS   : -66.509
+Slack : -0.386
+TNS   : -30.040
+
+Type  : Fast 1200mV 0C Model Setup 'clk'
+Slack : 0.303
+TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
-Slack : -1.155
-TNS   : -350.479
+Slack : -1.389
+TNS   : -496.447
 
 Type  : Fast 1200mV 0C Model Hold 'rst'
-Slack : -0.469
-TNS   : -88.958
+Slack : -0.732
+TNS   : -116.578
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -47.765
+TNS   : -123.362
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'rst'
 Slack : -3.000

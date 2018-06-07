@@ -20,27 +20,26 @@ architecture rtl of BREG is
 begin
 	working: process(clk, wren, rst, radd1, radd2, wadd, wdata)	
 	begin
+		-- Reset
 		if rst = '1' then
 			for i in 0 to WSIZE-1 loop
 				bank(i) <= X"00000000";
 			end loop;
 		end if;
-		if clk = '1' then
-			-- Reading
-			if radd1 = "00000" then
-				r1 <= X"00000000";
-			else 
-				r1 <= bank(to_integer(unsigned(radd1)));
-			end if;
-			if radd2 = "00000" then
-				r2 <= X"00000000";
-			else
-				r2 <= bank(to_integer(unsigned(radd2)));
-			end if;
-			-- Writing
-			if (wren = '1') and (wadd /= "00000") then
-				bank(to_integer(unsigned(wadd))) <= wdata;
-			end if;
+		-- Reading
+		if radd1 = "00000" then
+			r1 <= X"00000000";
+		else 
+			r1 <= bank(to_integer(unsigned(radd1)));
+		end if;
+		if radd2 = "00000" then
+			r2 <= X"00000000";
+		else
+			r2 <= bank(to_integer(unsigned(radd2)));
+		end if;
+		-- Writing
+		if (clk = '1') and (wren = '1') and (wadd /= "00000") then
+			bank(to_integer(unsigned(wadd))) <= wdata;
 		end if;		
 	end process;
 end rtl;
