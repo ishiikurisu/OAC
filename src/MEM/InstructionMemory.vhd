@@ -14,7 +14,6 @@ entity InstructionMemory is
 end InstructionMemory;
 
 architecture rtl of InstructionMemory is
-	-- internal signals
 	signal dummy_inlet: std_logic_vector(WSIZE-1 downto 0);
 
 	component RAM
