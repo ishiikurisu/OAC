@@ -16,6 +16,7 @@ architecture breg_arch of testbench is
 	signal mem_write: std_logic;
 	signal reg_write: std_logic;
 	signal alu_src: std_logic;
+	signal unknown_instruction: std_logic;
 	signal alu_op: std_logic_vector(3 downto 0);
 
 	-- components
@@ -33,6 +34,7 @@ architecture breg_arch of testbench is
 			mem_write,
 			alu_src,
 			reg_write: out std_logic;
+			unknown_instruction: out std_logic;
 			alu_op: out std_logic_vector(3 downto 0)
 		);
 	end component;
@@ -49,7 +51,8 @@ architecture breg_arch of testbench is
 		mem_write => mem_write,
 		alu_src => alu_src,
 		reg_write => reg_write,
-		alu_op => alu_op
+		alu_op => alu_op,
+		unknown_instruction => unknown_instruction
 	);
 
 	-- unit tests
@@ -61,5 +64,6 @@ architecture breg_arch of testbench is
 		assert(jump = '0');
 		assert(branch = '0');
 		assert(mem_read = '0');
+		assert(unknown_instruction = '0');
 	end process init;
 end breg_arch;
